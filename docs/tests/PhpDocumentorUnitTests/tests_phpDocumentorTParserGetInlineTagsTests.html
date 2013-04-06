@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tests_phpDocumentorTParserGetInlineTagsTests</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tests_phpDocumentorTParserGetInlineTagsTests
+</h2> (line <span class="linenumber">60</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+PHPUnit_Framework_TestCase
+   |
+   --tests_phpDocumentorTParserGetInlineTagsTests</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---tests---phpDocumentorTParserGetInlineTagsTests.php.html">/framework/docs/tests/phpDocumentorTParserGetInlineTagsTests.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Unit Testing of the phpDocumentorTParser's getInlineTags() method</h5>
+<div class="desc"><p>Unit Testing of the phpDocumentorTParser's getInlineTags() method</p></div>
+<ul>
+		<li><strong>author:</strong> - Chuck Burgess</li>
+		<li><strong>since:</strong> - 1.4.0a2</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$ps" title="details" class="property"><strong>$ps</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$pswit" title="details" class="property"><strong>$pswit</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$ptp" title="details" class="property"><strong>$ptp</strong></a>
+</div>
+<hr />
+<a name="var$ps" id="var$ps"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ps</strong> (line <span class="linenumber">67</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>phpDocumentor_setup object</h5>
+<div class="desc"><p>phpDocumentor_setup object</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.4.0a2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$pswit" id="var$pswit"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pswit</strong> (line <span class="linenumber">73</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>parserStringWithInlineTag object</h5>
+<div class="desc"><p>parserStringWithInlineTag object</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.4.0a2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$ptp" id="var$ptp"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ptp</strong> (line <span class="linenumber">79</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>phpDocumentorTParser object</h5>
+<div class="desc"><p>phpDocumentorTParser object</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.4.0a2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodmain" title="details" class="method-name">main</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetUp" title="details" class="method-name">setUp</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtearDown" title="details" class="method-name">tearDown</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineExampleWhenParsePrivateOff" title="details" class="method-name">testShowCorrectBehaviorInlineExampleWhenParsePrivateOff</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineExampleWhenParsePrivateOn" title="details" class="method-name">testShowCorrectBehaviorInlineExampleWhenParsePrivateOn</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineInternalWhenParsePrivateOff" title="details" class="method-name">testShowCorrectBehaviorInlineInternalWhenParsePrivateOff</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineInternalWhenParsePrivateOn" title="details" class="method-name">testShowCorrectBehaviorInlineInternalWhenParsePrivateOn</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineLinkWhenParsePrivateOff" title="details" class="method-name">testShowCorrectBehaviorInlineLinkWhenParsePrivateOff</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineLinkWhenParsePrivateOn" title="details" class="method-name">testShowCorrectBehaviorInlineLinkWhenParsePrivateOn</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineSourceWhenParsePrivateOff" title="details" class="method-name">testShowCorrectBehaviorInlineSourceWhenParsePrivateOff</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineSourceWhenParsePrivateOn" title="details" class="method-name">testShowCorrectBehaviorInlineSourceWhenParsePrivateOn</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineTutorialWhenParsePrivateOff" title="details" class="method-name">testShowCorrectBehaviorInlineTutorialWhenParsePrivateOff</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorInlineTutorialWhenParsePrivateOn" title="details" class="method-name">testShowCorrectBehaviorInlineTutorialWhenParsePrivateOn</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodmain" id="methodmain"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method main</strong> (line <span class="linenumber">87</span>)
+ </h4> 
+<h4><i>void</i> <strong>main(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Runs the test methods of this class.</h5>
+<div class="desc"><p>Runs the test methods of this class.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodsetUp" id="methodsetUp"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setUp</strong> (line <span class="linenumber">100</span>)
+ </h4> 
+<h4><i>void</i> <strong>setUp(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets up the fixture, for example, open a network connection.</h5>
+<div class="desc"><p>Sets up the fixture, for example, open a network connection. This method is called before a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtearDown" id="methodtearDown"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tearDown</strong> (line <span class="linenumber">115</span>)
+ </h4> 
+<h4><i>void</i> <strong>tearDown(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tears down the fixture, for example, close a network connection.</h5>
+<div class="desc"><p>Tears down the fixture, for example, close a network connection. This method is called after a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineExampleWhenParsePrivateOff" id="methodtestShowCorrectBehaviorInlineExampleWhenParsePrivateOff"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineExampleWhenParsePrivateOff</strong> (line <span class="linenumber">209</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineExampleWhenParsePrivateOff(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline example tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline example tag e.g. {at-example path-to-file}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineExampleWhenParsePrivateOn" id="methodtestShowCorrectBehaviorInlineExampleWhenParsePrivateOn"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineExampleWhenParsePrivateOn</strong> (line <span class="linenumber">183</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineExampleWhenParsePrivateOn(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline example tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline example tag e.g. {at-example path-to-file}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineInternalWhenParsePrivateOff" id="methodtestShowCorrectBehaviorInlineInternalWhenParsePrivateOff"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineInternalWhenParsePrivateOff</strong> (line <span class="linenumber">347</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineInternalWhenParsePrivateOff(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline internal tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline internal tag e.g. {at-internal blah-blah-blah}
+ There SHOULD be differences in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineInternalWhenParsePrivateOn" id="methodtestShowCorrectBehaviorInlineInternalWhenParsePrivateOn"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineInternalWhenParsePrivateOn</strong> (line <span class="linenumber">331</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineInternalWhenParsePrivateOn(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline internal tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline internal tag e.g. {at-internal blah-blah-blah}
+ There SHOULD be differences in results due to --parseprivate flag
+ This test demonstrates PEAR Bug #10871</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineLinkWhenParsePrivateOff" id="methodtestShowCorrectBehaviorInlineLinkWhenParsePrivateOff"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineLinkWhenParsePrivateOff</strong> (line <span class="linenumber">162</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineLinkWhenParsePrivateOff(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline link tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline link tag e.g. {at-link URL link-text}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineLinkWhenParsePrivateOn" id="methodtestShowCorrectBehaviorInlineLinkWhenParsePrivateOn"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineLinkWhenParsePrivateOn</strong> (line <span class="linenumber">142</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineLinkWhenParsePrivateOn(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline link tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline link tag e.g. {at-link URL link-text}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineSourceWhenParsePrivateOff" id="methodtestShowCorrectBehaviorInlineSourceWhenParsePrivateOff"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineSourceWhenParsePrivateOff</strong> (line <span class="linenumber">260</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineSourceWhenParsePrivateOff(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline source tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline source tag e.g. {at-source}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineSourceWhenParsePrivateOn" id="methodtestShowCorrectBehaviorInlineSourceWhenParsePrivateOn"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineSourceWhenParsePrivateOn</strong> (line <span class="linenumber">236</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineSourceWhenParsePrivateOn(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline source tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline source tag e.g. {at-source}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineTutorialWhenParsePrivateOff" id="methodtestShowCorrectBehaviorInlineTutorialWhenParsePrivateOff"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineTutorialWhenParsePrivateOff</strong> (line <span class="linenumber">306</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineTutorialWhenParsePrivateOff(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline tutorial tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline tutorial tag e.g. {at-tutorial path-to-pkgfile}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorInlineTutorialWhenParsePrivateOn" id="methodtestShowCorrectBehaviorInlineTutorialWhenParsePrivateOn"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorInlineTutorialWhenParsePrivateOn</strong> (line <span class="linenumber">285</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorInlineTutorialWhenParsePrivateOn(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an inline tutorial tag</h5>
+<div class="desc"><p>Shows correct behavior for handling an inline tutorial tag e.g. {at-tutorial path-to-pkgfile}
+ There should be NO difference in results due to --parseprivate flag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:34 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

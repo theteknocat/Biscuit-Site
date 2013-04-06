@@ -1,0 +1,2260 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class PDFdefaultConverter</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class PDFdefaultConverter
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a55">55</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../../Converters/Converter.html">Converter</a>
+   |
+   --PDFdefaultConverter</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---Converters---PDF---default---PDFdefaultConverter.inc.html">/framework/docs/phpDocumentor/Converters/PDF/default/PDFdefaultConverter.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>PDF output converter.</h5>
+<div class="desc"><p>PDF output converter. This Converter takes output from the <a href="../../phpDocumentor/Parsers/Parser.html">Parser</a> and converts it to PDF-ready output for use with <a href="../../Cpdf/Cezpdf.html">Cezpdf</a>. This is now beta code</p></div>
+<ul>
+		<li><strong>author:</strong> - Greg Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - $Id: PDFdefaultConverter.inc,v 1.7 2007/05/31 02:02:42 ashnazg Exp $</li>
+		<li><strong>todo:</strong> - Implement links to conflicts/inheritance</li>
+		<li><strong>since:</strong> - 1.1</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$classpackage_pagenums" title="details" class="property"><strong>$classpackage_pagenums</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$curclasspackage" title="details" class="property"><strong>$curclasspackage</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$curpagepackage" title="details" class="property"><strong>$curpagepackage</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$leftindex" title="details" class="property"><strong>$leftindex</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$name" title="details" class="property"><strong>$name</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$outputformat" title="details" class="property"><strong>$outputformat</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$pagepackage_pagenums" title="details" class="property"><strong>$pagepackage_pagenums</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type"><a href="../../Cpdf/Cezpdf.html">Cezpdf</a></span>
+    <a href="#var$pdf" title="details" class="property"><strong>$pdf</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$ric_set" title="details" class="property"><strong>$ric_set</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$smarty_dir" title="details" class="property"><strong>$smarty_dir</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$sort_absolutely_everything" title="details" class="property"><strong>$sort_absolutely_everything</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$_sourcecode" title="details" class="property"><strong>$_sourcecode</strong></a>
+</div>
+<hr />
+<a name="var$classpackage_pagenums" id="var$classpackage_pagenums"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$classpackage_pagenums = array()</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a65">65</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$curclasspackage" id="var$curclasspackage"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$curclasspackage =  false</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a71">71</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$curpagepackage" id="var$curpagepackage"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$curpagepackage =  false</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a70">70</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$leftindex" id="var$leftindex"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$leftindex = array('classes' =&gt; false, 'pages' =&gt; false, 'functions' =&gt; false, 'defines' =&gt; false, 'globals' =&gt; false)</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a63">63</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$name" id="var$name"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$name =  'default'</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a69">69</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>var:</strong> - always default</li>
+	</ul>
+</div>
+<a name="var$outputformat" id="var$outputformat"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$outputformat =  'PDF'</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a67">67</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>var:</strong> - always PDF</li>
+	</ul>
+</div>
+<a name="var$pagepackage_pagenums" id="var$pagepackage_pagenums"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pagepackage_pagenums = array()</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a64">64</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$pdf" id="var$pdf"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pdf =  false</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a76">76</a></span>)
+ </h4>
+<h4>Data type : <a href="../../Cpdf/Cezpdf.html">Cezpdf</a></h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$ric_set" id="var$ric_set"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ric_set = array()</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a77">77</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$smarty_dir" id="var$smarty_dir"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$smarty_dir</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a72">72</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$sort_absolutely_everything" id="var$sort_absolutely_everything"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$sort_absolutely_everything =  true</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a62">62</a></span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<h5>default PDF Converter wants elements sorted by type as well as alphabetically</h5>
+<div class="desc"><p>default PDF Converter wants elements sorted by type as well as alphabetically</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../../Converters/Converter.html#var$sort_page_contents_by_type">Converter::$sort_page_contents_by_type</a></li>
+	</ul>
+</div>
+<a name="var$_sourcecode" id="var$_sourcecode"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_sourcecode</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a84">84</a></span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Source files for appendix C are stored here</h5>
+<div class="desc"><p>Source files for appendix C are stored here
+ Format: array(array(package =&gt; packagename, code =&gt; array(highlightedsource code 1, ...)))</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">PDFdefaultConverter</span>
+        <a href="#methodPDFdefaultConverter" title="details" class="method-name">PDFdefaultConverter</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$allp</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$packp</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$classes</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$procpages</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$po</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$pp</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$qm</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$targetDir</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$templateDir</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$title</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertClass" title="details" class="method-name">convertClass</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertConst" title="details" class="method-name">convertConst</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertDefine" title="details" class="method-name">convertDefine</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertDocBlock" title="details" class="method-name">convertDocBlock</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertFunction" title="details" class="method-name">convertFunction</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertGlobal" title="details" class="method-name">convertGlobal</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertInclude" title="details" class="method-name">convertInclude</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertMethod" title="details" class="method-name">convertMethod</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertPackagepage" title="details" class="method-name">convertPackagepage</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertPage" title="details" class="method-name">convertPage</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertParams" title="details" class="method-name">convertParams</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertTutorial" title="details" class="method-name">convertTutorial</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvertVar" title="details" class="method-name">convertVar</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodConvert_RIC" title="details" class="method-name">Convert_RIC</a>
+        (<span class="var-type">README|INSTALL|CHANGELOG</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$contents</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgenerateFormattedClassTrees" title="details" class="method-name">generateFormattedClassTrees</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetCData" title="details" class="method-name">getCData</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetClassLink" title="details" class="method-name">getClassLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetConstLink" title="details" class="method-name">getConstLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>], <span class="var-type">boolean</span>&nbsp;<span class="var-name">5</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetDefineLink" title="details" class="method-name">getDefineLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetExampleLink" title="details" class="method-name">getExampleLink</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$title</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetFileSourceName" title="details" class="method-name">getFileSourceName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$anchor</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetFunctionLink" title="details" class="method-name">getFunctionLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetGlobalLink" title="details" class="method-name">getGlobalLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetGlobalValue" title="details" class="method-name">getGlobalValue</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetMethodLink" title="details" class="method-name">getMethodLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetPageLink" title="details" class="method-name">getPageLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetPageName" title="details" class="method-name">getPageName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetRootTree" title="details" class="method-name">getRootTree</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$tree</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$package</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetSourceAnchor" title="details" class="method-name">getSourceAnchor</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$sourcefile</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$anchor</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">''</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$link</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetSourceLink" title="details" class="method-name">getSourceLink</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">1</span>
+        <a href="#methodgetState" title="details" class="method-name">getState</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetTutorialId" title="details" class="method-name">getTutorialId</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$package</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$subpackage</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$tutorial</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetVarLink" title="details" class="method-name">getVarLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$expr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">false</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>], <span class="var-type">boolean</span>&nbsp;<span class="var-name">5</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmystrnatcasecmp" title="details" class="method-name">mystrnatcasecmp</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$a</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$b</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodOutput" title="details" class="method-name">Output</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$title</span> = <span class="var-default">'Generated Documentation'</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodpostProcess" title="details" class="method-name">postProcess</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$text</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodreturnLink" title="details" class="method-name">returnLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$link</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$text</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodreturnSee" title="details" class="method-name">returnSee</a>
+        (<span class="var-type"><a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a></span>&nbsp;<span class="var-name">&$element</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$eltext</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetTemplateDir" title="details" class="method-name">setTemplateDir</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$dir</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodTranslateTag" title="details" class="method-name">TranslateTag</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$attr</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$cdata</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$unconvertedcdata</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodunmangle" title="details" class="method-name">unmangle</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$notused</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$source</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodwriteExample" title="details" class="method-name">writeExample</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$title</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$source</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodwriteSource" title="details" class="method-name">writeSource</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodPDFdefaultConverter" id="methodPDFdefaultConverter"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor PDFdefaultConverter</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a88">88</a></span>)
+ </h4> 
+<h4><i>PDFdefaultConverter</i> <strong>PDFdefaultConverter(
+
+&$allp, 
+&$packp, 
+&$classes, 
+&$procpages, 
+$po, 
+$pp, 
+$qm, 
+$targetDir, 
+$templateDir, 
+$title)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$allp</strong>: </li>
+			<li><strong> &$packp</strong>: </li>
+			<li><strong> &$classes</strong>: </li>
+			<li><strong> &$procpages</strong>: </li>
+			<li><strong> $po</strong>: </li>
+			<li><strong> $pp</strong>: </li>
+			<li><strong> $qm</strong>: </li>
+			<li><strong> $targetDir</strong>: </li>
+			<li><strong> $templateDir</strong>: </li>
+			<li><strong> $title</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodConverter">Converter::Converter()</a></li>
+		</ul>
+</div>
+<a name="methodconvertClass" id="methodconvertClass"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertClass</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a461">461</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertClass(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertClass">Converter::convertClass()</a> Default Class Handler
+ Sets up the class template.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertConst" id="methodconvertConst"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertConst</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a439">439</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertConst(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertConst">Converter::convertConst()</a> Converts class constants for template output.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertDefine" id="methodconvertDefine"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertDefine</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a541">541</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertDefine(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertDefine">Converter::convertDefine()</a> Converts defines for template output</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertDocBlock" id="methodconvertDocBlock"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertDocBlock</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a249">249</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertDocBlock(
+
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertFunction" id="methodconvertFunction"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertFunction</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a508">508</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertFunction(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertFunction">Converter::convertFunction()</a> Converts function for template output</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertGlobal" id="methodconvertGlobal"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertGlobal</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a349">349</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertGlobal(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertGlobal">Converter::convertGlobal()</a> Converts global variables for template output</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertInclude" id="methodconvertInclude"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertInclude</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a494">494</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertInclude(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertInclude">Converter::convertInclude()</a> Converts includes for template output</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertMethod" id="methodconvertMethod"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertMethod</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a376">376</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertMethod(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertMethod">Converter::convertMethod()</a> Converts method for template output</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertPackagepage" id="methodconvertPackagepage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertPackagepage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a638">638</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertPackagepage(
+
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>deprecated</strong> - html package pages just don't work with PDF, use <a href="../../phpDocumentor/tutorial_tutorials.pkg.html">phpDocumentor Tutorials</a></li>
+		</ul>
+</div>
+<a name="methodconvertPage" id="methodconvertPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertPage</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a562">562</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertPage(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertPage">Converter::convertPage()</a> Default Page Handler</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertParams" id="methodconvertParams"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertParams</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a331">331</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertParams(
+
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertTutorial" id="methodconvertTutorial"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertTutorial</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a645">645</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertTutorial(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertTutorial">Converter::convertTutorial()</a> Default Tutorial Handler</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvertVar" id="methodconvertVar"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convertVar</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a416">416</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>convertVar(
+
+&$element)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodconvertVar">Converter::convertVar()</a> Converts class variables for template output.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodConvert_RIC" id="methodConvert_RIC"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method Convert_RIC</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a244">244</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>Convert_RIC(
+README|INSTALL|CHANGELOG
+$name, string
+$contents)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodConvert_RIC">Converter::Convert_RIC()</a> Convert README/INSTALL/CHANGELOG file contents to output format</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Convert README/INSTALL/CHANGELOG file contents to output format</h5>
+<div class="desc"><p>Convert README/INSTALL/CHANGELOG file contents to output format</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>README|INSTALL|CHANGELOG $name</strong>: </li>
+			<li><strong>string $contents</strong>: contents of the file</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgenerateFormattedClassTrees" id="methodgenerateFormattedClassTrees"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method generateFormattedClassTrees</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a665">665</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>generateFormattedClassTrees(
+string
+$package)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>returns a template-enabled array of class trees</h5>
+<div class="desc"><p>returns a template-enabled array of class trees</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $package</strong>: package to generate a class tree for</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - $roots, <a href="../../Converters/PDFdefault/PDFdefaultConverter.html#methodgetRootTree">PDFdefaultConverter::getRootTree()</a></li>
+		</ul>
+</div>
+<a name="methodgetCData" id="methodgetCData"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCData</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a630">630</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getCData(
+
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $value</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetClassLink" id="methodgetClassLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClassLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a843">843</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getClassLink(
+string
+$expr, string
+$package, [string
+$file = false], [
+$text = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetClassLink">Converter::getClassLink()</a> return false or a <a href="../../phpDocumentor/Links/classLink.html">classLink</a> to $expr</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $expr</strong>: name of class</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $file</strong>: full path to look in (used in index generation)</li>
+			<li><strong> $text</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the class's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetClassLink">Converter::getClassLink()</a></li>
+		</ul>
+</div>
+<a name="methodgetConstLink" id="methodgetConstLink"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getConstLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a953">953</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getConstLink(
+string
+$expr, string
+$class, string
+$package, [string
+$file = false], [boolean
+$text = false], boolean
+5)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetConstLink">Converter::getConstLink()</a> return false or a <a href="../../phpDocumentor/Links/constLink.html">constLink</a> to $expr in $class</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>boolean 5</strong>: return just the URL, or enclose it in an html a tag</li>
+			<li><strong>string $expr</strong>: name of class constant</li>
+			<li><strong>string $class</strong>: class containing class constant</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $file</strong>: full path to look in (used in index generation)</li>
+			<li><strong>boolean $text</strong>: deprecated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the var's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetConstLink">Converter::getConstLink()</a></li>
+		</ul>
+</div>
+<a name="methodgetDefineLink" id="methodgetDefineLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getDefineLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a873">873</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getDefineLink(
+string
+$expr, string
+$package, [string
+$file = false], [boolean
+$text = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetDefineLink">Converter::getDefineLink()</a> return false or a <a href="../../phpDocumentor/Links/defineLink.html">defineLink</a> to $expr</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $expr</strong>: name of define</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $file</strong>: full path to look in (used in index generation)</li>
+			<li><strong>boolean $text</strong>: deprecated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the define's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetDefineLink">Converter::getDefineLink()</a></li>
+		</ul>
+</div>
+<a name="methodgetExampleLink" id="methodgetExampleLink"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getExampleLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a140">140</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getExampleLink(
+
+$path, 
+$title)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $path</strong>: </li>
+			<li><strong> $title</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetFileSourceName" id="methodgetFileSourceName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getFileSourceName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a152">152</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getFileSourceName(
+
+$path, [
+$anchor = ''])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetFileSourceName">Converter::getFileSourceName()</a> Translate the path info into a unique file name for the highlighted source code.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $path</strong>: </li>
+			<li><strong> $anchor</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetFunctionLink" id="methodgetFunctionLink"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getFunctionLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a858">858</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getFunctionLink(
+string
+$expr, string
+$package, [string
+$file = false], [boolean
+$text = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetFunctionLink">Converter::getFunctionLink()</a> return false or a <a href="../../phpDocumentor/Links/functionLink.html">functionLink</a> to $expr</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $expr</strong>: name of function</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $file</strong>: full path to look in (used in index generation)</li>
+			<li><strong>boolean $text</strong>: deprecated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the function's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetFunctionLink">Converter::getFunctionLink()</a></li>
+		</ul>
+</div>
+<a name="methodgetGlobalLink" id="methodgetGlobalLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getGlobalLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a888">888</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getGlobalLink(
+string
+$expr, string
+$package, [string
+$file = false], [boolean
+$text = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetGlobalLink">Converter::getGlobalLink()</a> return false or a <a href="../../phpDocumentor/Links/globalLink.html">globalLink</a> to $expr</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $expr</strong>: name of global variable</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $file</strong>: full path to look in (used in index generation)</li>
+			<li><strong>boolean $text</strong>: deprecated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the global variable's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetGlobalLink">Converter::getGlobalLink()</a></li>
+		</ul>
+</div>
+<a name="methodgetGlobalValue" id="methodgetGlobalValue"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getGlobalValue</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a371">371</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getGlobalValue(
+
+$value)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetGlobalValue">Converter::getGlobalValue()</a> Parse a global variable's default value for class initialization.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $value</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetMethodLink" id="methodgetMethodLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getMethodLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a919">919</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getMethodLink(
+string
+$expr, string
+$class, string
+$package, [string
+$file = false], [boolean
+$text = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetMethodLink">Converter::getMethodLink()</a> return false or a <a href="../../phpDocumentor/Links/methodLink.html">methodLink</a> to $expr in $class</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $expr</strong>: name of method</li>
+			<li><strong>string $class</strong>: class containing method</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $file</strong>: full path to look in (used in index generation)</li>
+			<li><strong>boolean $text</strong>: deprecated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the method's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetMethodLink">Converter::getMethodLink()</a></li>
+		</ul>
+</div>
+<a name="methodgetPageLink" id="methodgetPageLink"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPageLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a903">903</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getPageLink(
+string
+$expr, string
+$package, [string
+$path = false], [boolean
+$text = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetPageLink">Converter::getPageLink()</a> return false or a <a href="../../phpDocumentor/Links/pageLink.html">pageLink</a> to $expr</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $expr</strong>: name of procedural page</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $path</strong>: full path to look in (used in index generation)</li>
+			<li><strong>boolean $text</strong>: deprecated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the procedural page's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetPageLink">Converter::getPageLink()</a></li>
+		</ul>
+</div>
+<a name="methodgetPageName" id="methodgetPageName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPageName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a619">619</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getPageName(
+
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$element</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetRootTree" id="methodgetRootTree"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getRootTree</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a684">684</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getRootTree(
+array
+$tree, 
+$package)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>return formatted class tree for the Class Trees page</h5>
+<div class="desc"><p>return formatted class tree for the Class Trees page</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $tree</strong>: output from <a href="../../Converters/Converter.html#methodgetSortedClassTreeFromClass">getSortedClassTreeFromClass()</a></li>
+			<li><strong> $package</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../../phpDocumentor/Classes.html#var$definitechild">Classes::$definitechild</a>, <a href="../../Converters/PDFdefault/PDFdefaultConverter.html#methodgenerateFormattedClassTrees">PDFdefaultConverter::generateFormattedClassTrees()</a></li>
+		</ul>
+</div>
+<a name="methodgetSourceAnchor" id="methodgetSourceAnchor"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSourceAnchor</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a167">167</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getSourceAnchor(
+string
+$sourcefile, string
+$anchor, [string
+$text = ''], [boolean
+$link = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieve a Converter-specific anchor to a segment of a source code file parsed via a tags.</h5>
+<div class="desc"><p>Retrieve a Converter-specific anchor to a segment of a source code file parsed via a <a href="../../phpDocumentor/tutorial_tags.filesource.pkg.html">@filesource</a> tag.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $sourcefile</strong>: full path to source file</li>
+			<li><strong>string $anchor</strong>: name of anchor</li>
+			<li><strong>string $text</strong>: link text, if this is a link</li>
+			<li><strong>boolean $link</strong>: returns either a link or a destination based on this                parameter</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - link to an anchor, or the anchor</li>
+		</ul>
+</div>
+<a name="methodgetSourceLink" id="methodgetSourceLink"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSourceLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a146">146</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getSourceLink(
+
+$path)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetSourceLink">Converter::getSourceLink()</a> parent method not documented</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $path</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetState" id="methodgetState"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getState</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a967">967</a></span>)
+ </h4> 
+<h4><i>1</i> <strong>getState(
+)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetState">Converter::getState()</a> Return parserStringWithInlineTags::Convert() cache state</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - always the same</li>
+		</ul>
+</div>
+<a name="methodgetTutorialId" id="methodgetTutorialId"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getTutorialId</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a625">625</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getTutorialId(
+
+$package, 
+$subpackage, 
+$tutorial, 
+$id)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetTutorialId">Converter::getTutorialId()</a> Return a converter-specific id to distinguish tutorials and their</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $package</strong>: </li>
+			<li><strong> $subpackage</strong>: </li>
+			<li><strong> $tutorial</strong>: </li>
+			<li><strong> $id</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetVarLink" id="methodgetVarLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getVarLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a936">936</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getVarLink(
+string
+$expr, string
+$class, string
+$package, [string
+$file = false], [boolean
+$text = false], boolean
+5)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodgetVarLink">Converter::getVarLink()</a> return false or a <a href="../../phpDocumentor/Links/varLink.html">varLink</a> to $expr in $class</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>boolean 5</strong>: return just the URL, or enclose it in an html a tag</li>
+			<li><strong>string $expr</strong>: name of var</li>
+			<li><strong>string $class</strong>: class containing var</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $file</strong>: full path to look in (used in index generation)</li>
+			<li><strong>boolean $text</strong>: deprecated</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false if not found, or an html a link to the var's documentation</li>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodgetVarLink">Converter::getVarLink()</a></li>
+		</ul>
+</div>
+<a name="methodmystrnatcasecmp" id="methodmystrnatcasecmp"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method mystrnatcasecmp</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a830">830</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>mystrnatcasecmp(
+
+$a, 
+$b)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $a</strong>: </li>
+			<li><strong> $b</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodOutput" id="methodOutput"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method Output</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a751">751</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>Output(
+[
+$title = 'Generated Documentation'])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodOutput">Converter::Output()</a> do all necessary output</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>calls <a href="../../Cpdf/Cezpdf.html#methodezOutput">Cezpdf::ezOutput()</a> and writes documentation.</h5>
+<div class="desc"><p>calls <a href="../../Cpdf/Cezpdf.html#methodezOutput">Cezpdf::ezOutput()</a> and writes documentation.pdf to targetDir</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $title</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodpostProcess" id="methodpostProcess"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method postProcess</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a121">121</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>postProcess(
+
+$text)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodpostProcess">Converter::postProcess()</a> This version does nothing</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $text</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodreturnLink" id="methodreturnLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method returnLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a234">234</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>returnLink(
+string
+$link, string
+$text)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodreturnLink">Converter::returnLink()</a> take URL $link and text $text and return a link in the format needed for the Converter</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $link</strong>: </li>
+			<li><strong>string $text</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - &lt;c:alink:$link&gt;$text&lt;/c:alink&gt;</li>
+		</ul>
+</div>
+<a name="methodreturnSee" id="methodreturnSee"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method returnSee</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a184">184</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>returnSee(
+<a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a>
+&$element, [string
+$eltext = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodreturnSee">Converter::returnSee()</a> take <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a> descendant and text $eltext and return a link</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a bookmark using Cezpdf 009</h5>
+<div class="desc"><p>Returns a bookmark using Cezpdf 009</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a> &$element</strong>: a descendant of abstractlink should be passed, and never text</li>
+			<li><strong>string $eltext</strong>: text to display in the link</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetTemplateDir" id="methodsetTemplateDir"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setTemplateDir</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a960">960</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>setTemplateDir(
+
+$dir)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodsetTemplateDir">Converter::setTemplateDir()</a> sets the template directory based on the $outputformat and $name</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $dir</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodTranslateTag" id="methodTranslateTag"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method TranslateTag</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a602">602</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>TranslateTag(
+string
+$name, string
+$attr, string
+$cdata, string
+$unconvertedcdata)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodTranslateTag">Converter::TranslateTag()</a> Used to translate an XML DocBook tag from a tutorial by reading the options.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Used to translate an XML DocBook tag from a tutorial by reading the options.</h5>
+<div class="desc"><p>Used to translate an XML DocBook tag from a tutorial by reading the options.ini file for the template.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: tag name</li>
+			<li><strong>string $attr</strong>: any attributes Format: array(name =&gt; value)</li>
+			<li><strong>string $cdata</strong>: the tag contents, if any</li>
+			<li><strong>string $unconvertedcdata</strong>: the tag contents, if any, unpost-processed</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodunmangle" id="methodunmangle"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method unmangle</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a975">975</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>unmangle(
+
+$notused, 
+$source)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodunmangle">Converter::unmangle()</a> Called by <a href="../../phpDocumentor/InlineTags/parserSourceInlineTag.html#methodstringConvert">parserSourceInlineTag::stringConvert()</a> to allow converters to format the source code the way they'd like.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $notused</strong>: </li>
+			<li><strong> $source</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../../Converters/Converter.html#methodunmangle">Converter::unmangle()</a></li>
+		</ul>
+</div>
+<a name="methodwriteExample" id="methodwriteExample"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method writeExample</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a126">126</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>writeExample(
+
+$title, 
+$path, 
+$source)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodwriteExample">Converter::writeExample()</a> Write out the formatted source code for an example php file
+ This function provides the primary functionality for the tags.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $title</strong>: </li>
+			<li><strong> $path</strong>: </li>
+			<li><strong> $source</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodwriteSource" id="methodwriteSource"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method writeSource</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_Converters_PDFdefault_frameworkdocsphpDocumentorConvertersPDFdefaultPDFdefaultConverter.inc.html#a106">106</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>writeSource(
+
+$path, 
+$value)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../Converters/Converter.html#methodwriteSource">Converter::writeSource()</a> Write out the formatted source code for a php file
+ This function provides the primary functionality for the tags.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $path</strong>: </li>
+			<li><strong> $value</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../Converters/Converter.html">Converter</a></h4>
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$all_packages">Converter::$all_packages</a></strong> - All packages encountered in parsing
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$class">Converter::$class</a></strong> - set to a classname if currently parsing a class, false if not
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$classes">Converter::$classes</a></strong> - All class information, organized by path, and by package
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$class_contents">Converter::$class_contents</a></strong> - alphabetical index of all methods and vars in a class by package/subpackage
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$class_data">Converter::$class_data</a></strong> - template for the class currently being processed
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$class_elements">Converter::$class_elements</a></strong> - alphabetized index of classes by package
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$curfile">Converter::$curfile</a></strong> - full path of the current file being converted
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$curpage">Converter::$curpage</a></strong> - current procedural page being processed
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$define_elements">Converter::$define_elements</a></strong> - alphabetized index of defines by package
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$elements">Converter::$elements</a></strong> - alphabetical index of all elements
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$function_elements">Converter::$function_elements</a></strong> - alphabetized index of functions by package
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$global_elements">Converter::$global_elements</a></strong> - alphabetized index of global variables by package
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$highlightingSource">Converter::$highlightingSource</a></strong> - Flag used to help converters determine whether to do special source highlighting
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$killclass">Converter::$killclass</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$links">Converter::$links</a></strong> - the workhorse of linking.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$linkswithfile">Converter::$linkswithfile</a></strong> - the workhorse of linking, with allowance for support of multiple elements in different files.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$package">Converter::$package</a></strong> - package name currently being converted
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$packagecategories">Converter::$packagecategories</a></strong> - Packages associated with categories
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$package_elements">Converter::$package_elements</a></strong> - alphabetical index of all elements sorted by package, subpackage, page, and class.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$package_output">Converter::$package_output</a></strong> - set to value of -po commandline
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$package_parents">Converter::$package_parents</a></strong> - Hierarchy of packages
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$page">Converter::$page</a></strong> - name of current page being converted
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$page_contents">Converter::$page_contents</a></strong> - alphabetical index of all elements on a page by package/subpackage
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$page_data">Converter::$page_data</a></strong> - template for the procedural page currently being processed
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$page_elements">Converter::$page_elements</a></strong> - alphabetized index of procedural pages by package
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$parseprivate">Converter::$parseprivate</a></strong> - controls processing of elements marked private with @access private
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$path">Converter::$path</a></strong> - path of current page being converted
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$pkg_elements">Converter::$pkg_elements</a></strong> - alphabetical index of all elements, indexed by package/subpackage
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$processed_tutorials">Converter::$processed_tutorials</a></strong> - list of tutorials that have already been processed.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$processSpecialRoots">Converter::$processSpecialRoots</a></strong> - This converter knows about the new root tree processing
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$quietmode">Converter::$quietmode</a></strong> - controls display of progress information while parsing.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$sort_page_contents_by_type">Converter::$sort_page_contents_by_type</a></strong> - This determines whether the $page_contents array should be sorted by element type as well as alphabetically by name
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$sourcePaths">Converter::$sourcePaths</a></strong> - A list of files that have had source code generated
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$subpackage">Converter::$subpackage</a></strong> - subpackage name currently being converted
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$targetDir">Converter::$targetDir</a></strong> - directory that output is sent to.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$templateDir">Converter::$templateDir</a></strong> - Directory that the template is in, relative to phpDocumentor root directory
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$templateName">Converter::$templateName</a></strong> - Name of the template, from last part of -o
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$template_options">Converter::$template_options</a></strong> - Options for each template, parsed from the options.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$title">Converter::$title</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$todoList">Converter::$todoList</a></strong> - List of all @todo tags and a link to the element with the @todo
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$tutorials">Converter::$tutorials</a></strong> - Tutorials and Extended Documentation parsed from a tutorials/package[/subpackage] directory
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$tutorial_tree">Converter::$tutorial_tree</a></strong> - tree-format structure of tutorials and their child tutorials, if any
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../Converters/Converter.html#var$_compiledDir">Converter::$_compiledDir</a></strong> - Directory where compiled templates go - will be deleted on exit
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../Converters/Converter.html">Converter</a></h4>
+				<h4>
+<img src="../../media/images/Constructor.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodConverter">Converter::Converter()</a></strong> - Initialize Converter data structures
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodaddElement">Converter::addElement()</a></strong> - Adds all elements to the $elements, $pkg_elements, $links,
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodaddLink">Converter::addLink()</a></strong> - returns an abstract link to element.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodaddTodoLink">Converter::addTodoLink()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodAttrToString">Converter::AttrToString()</a></strong> - Convert the attribute of a Tutorial docbook tag's attribute list
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodBolden">Converter::Bolden()</a></strong> - Used to convert the contents of &lt;b&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodBr">Converter::Br()</a></strong> - Used to convert &lt;br&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodcheckKillClass">Converter::checkKillClass()</a></strong> - Used to stop conversion of @ignored or private @access classes
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodcheckState">Converter::checkState()</a></strong> - Compare parserStringWithInlineTags::Convert() cache state to $state
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodcleanup">Converter::cleanup()</a></strong> - Finish up parsing/cleanup directories
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodcompareLink">Converter::compareLink()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodConvert">Converter::Convert()</a></strong> - Convert all elements to output format
+ This will call ConvertXxx where Xxx is <a href="http://www.php.net/ucfirst">http://www.php.net/ucfirst</a>($element-&gt;type).
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertClass">Converter::convertClass()</a></strong> - Default Class Handler
+ Sets up the class template.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertConst">Converter::convertConst()</a></strong> - Converts class constants for template output.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertDefine">Converter::convertDefine()</a></strong> - Converts defines for template output
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodConvertErrorLog">Converter::ConvertErrorLog()</a></strong> - Convert the phpDocumentor parsing/conversion error log
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertFunction">Converter::convertFunction()</a></strong> - Converts function for template output
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertGlobal">Converter::convertGlobal()</a></strong> - Converts global variables for template output
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertInclude">Converter::convertInclude()</a></strong> - Converts includes for template output
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertMethod">Converter::convertMethod()</a></strong> - Converts method for template output
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertPage">Converter::convertPage()</a></strong> - Default Page Handler
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodConvertTitle">Converter::ConvertTitle()</a></strong> - Convert the title of a Tutorial docbook tag section
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodConvertTodoList">Converter::ConvertTodoList()</a></strong> - Convert the list of all @todo tags
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertTutorial">Converter::convertTutorial()</a></strong> - Default Tutorial Handler
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodconvertVar">Converter::convertVar()</a></strong> - Converts class variables for template output.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodConvert_RIC">Converter::Convert_RIC()</a></strong> - Convert README/INSTALL/CHANGELOG file contents to output format
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodcopyFile">Converter::copyFile()</a></strong> - Copies a file from the template directory to the target directory
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodcreateParentDir">Converter::createParentDir()</a></strong> - Recursively creates all subdirectories that don't exist in the $dir path
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methoddefpackagesort">Converter::defpackagesort()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodelementCmp">Converter::elementCmp()</a></strong> - does a nat case sort on the specified second level value of the array
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodeltypecmp">Converter::eltypecmp()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodEncloseList">Converter::EncloseList()</a></strong> - Used to convert the contents of &lt;ol&gt; or &lt;ul&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodEncloseParagraph">Converter::EncloseParagraph()</a></strong> - Used to enclose a paragraph in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodendClass">Converter::endClass()</a></strong> - Called by walk() while converting, when the last class element has been parsed.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodendPage">Converter::endPage()</a></strong> - Called by walk() while converting, when the last procedural page element has been parsed.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodexampleProgramExample">Converter::exampleProgramExample()</a></strong> - Used to convert the {@example} inline tag in a docblock.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodflushHighlightCache">Converter::flushHighlightCache()</a></strong> - Return the close text for the current token
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodformatIndex">Converter::formatIndex()</a></strong> - Called by walk() while converting.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodformatLeftIndex">Converter::formatLeftIndex()</a></strong> - Called by walk() while converting.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodformatPkgIndex">Converter::formatPkgIndex()</a></strong> - Called by walk() while converting.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodformatTutorialTOC">Converter::formatTutorialTOC()</a></strong> - Creates a table of contents for a {@toc} inline tag in a tutorial
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgenerateChildClassList">Converter::generateChildClassList()</a></strong> - returns a list of child classes
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgenerateFormattedClassTree">Converter::generateFormattedClassTree()</a></strong> - returns an array containing the class inheritance tree from the root object to the class.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgenerateTutorialOrder">Converter::generateTutorialOrder()</a></strong> - Remove tutorials one by one from $all, and transfer them into $new in the
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetClassesOnPage">Converter::getClassesOnPage()</a></strong> - gets a list of all classes declared on a procedural page represented by
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetClassLink">Converter::getClassLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/classLink.html">classLink</a> to $expr
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetConstLink">Converter::getConstLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/constLink.html">constLink</a> to $expr in $class
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetConverterDir">Converter::getConverterDir()</a></strong> - Get the absolute path to the converter's base directory
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetCurrentPageLink">Converter::getCurrentPageLink()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetCurrentPageURL">Converter::getCurrentPageURL()</a></strong> - Return the path to the current
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetDefineLink">Converter::getDefineLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/defineLink.html">defineLink</a> to $expr
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFileSourceName">Converter::getFileSourceName()</a></strong> - Translate the path info into a unique file name for the highlighted source code.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFileSourcePath">Converter::getFileSourcePath()</a></strong> - Return the fixed path to the source-code file folder.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedConflicts">Converter::getFormattedConflicts()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedDescMethods">Converter::getFormattedDescMethods()</a></strong> - Get a list of methods in child classes that override this method
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedDescVars">Converter::getFormattedDescVars()</a></strong> - Get a list of vars in child classes that override this var
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedImplements">Converter::getFormattedImplements()</a></strong> - returns an array containing the class inheritance tree from the root object to the class.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedInheritedConsts">Converter::getFormattedInheritedConsts()</a></strong> - Return template-enabled list of inherited class constants
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedInheritedMethods">Converter::getFormattedInheritedMethods()</a></strong> - Return template-enabled list of inherited methods
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedInheritedVars">Converter::getFormattedInheritedVars()</a></strong> - Return template-enabled list of inherited variables
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedMethodImplements">Converter::getFormattedMethodImplements()</a></strong> - Get the method this method(s) implemented from an interface, if any
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFormattedOverrides">Converter::getFormattedOverrides()</a></strong> - Get the method this method overrides, if any
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetFunctionLink">Converter::getFunctionLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/functionLink.html">functionLink</a> to $expr
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetGlobalLink">Converter::getGlobalLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/globalLink.html">globalLink</a> to $expr
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetGlobalValue">Converter::getGlobalValue()</a></strong> - Parse a global variable's default value for class initialization.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetHighlightState">Converter::getHighlightState()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetId">Converter::getId()</a></strong> - take <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a> descendant and text $eltext and return a
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetIncludeValue">Converter::getIncludeValue()</a></strong> - Parse an include's file to see if it is a file documented in this project
+ Although not very smart yet, this method will try to look for the included file file.
+ <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="blue">include&nbsp;</font><strong>(</strong><font color="#66cccc">&quot;</font>file.</div></li>
+</ol></div>
+ If it finds it, it will return a link to the file's documentation. 1. <ul><li>absolute path to file</li><li>.</li><li>relpath/to/file.
+      directory</li></ul> For examples, see Setup.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetLink">Converter::getLink()</a></strong> - The meat of the @see tag and inline {@link} tag
+ $expr is a string with many allowable formats: <ol><li>proceduralpagename.</li><li>constant_name</li><li>classname::function()</li><li>classname::constantname</li><li>classname::$variablename</li><li>classname</li><li>object classname</li><li>function functionname()</li><li>global $globalvarname</li><li>packagename#expr where expr is any of the above</li></ol>
+ New in version 1. is different from the current package. to specify a new package, as in tests#bug-540368. as a link like: &quot;bug-540368.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetLinkConst">Converter::getLinkConst()</a></strong> - cycle through parent classes to retrieve a link to a class constant
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetLinkMethod">Converter::getLinkMethod()</a></strong> - cycle through parent classes to retrieve a link to a method
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetLinkVar">Converter::getLinkVar()</a></strong> - cycle through parent classes to retrieve a link to a var
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetMethodLink">Converter::getMethodLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/methodLink.html">methodLink</a> to $expr in $class
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetPageLink">Converter::getPageLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/pageLink.html">pageLink</a> to $expr
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetSortedClassTreeFromClass">Converter::getSortedClassTreeFromClass()</a></strong> - Return a tree of all classes that extend this class
+ The data structure returned is designed for a non-recursive algorithm, and is somewhat complex.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetSourceLink">Converter::getSourceLink()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetState">Converter::getState()</a></strong> - Return parserStringWithInlineTags::Convert() cache state
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetTutorialId">Converter::getTutorialId()</a></strong> - Return a converter-specific id to distinguish tutorials and their
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetTutorialLink">Converter::getTutorialLink()</a></strong> - The meat of the @tutorial tag and inline {@tutorial} tag
+ Take a string and return an abstract link to the tutorial it represents.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetTutorialTree">Converter::getTutorialTree()</a></strong> - Get a tree structure representing the hierarchy of tutorials
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodgetVarLink">Converter::getVarLink()</a></strong> - return false or a <a href="../../phpDocumentor/Links/varLink.html">varLink</a> to $expr in $class
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodhasSourceCode">Converter::hasSourceCode()</a></strong> - Determine whether an element's file has generated source code, used for linking to line numbers of source.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodhasTutorial">Converter::hasTutorial()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodhighlightDocBlockSource">Converter::highlightDocBlockSource()</a></strong> - Used to allow converters to format the source code of DocBlocks the way they'd like.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodhighlightSource">Converter::highlightSource()</a></strong> - Used to allow converters to format the source code the way they'd like.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodhighlightTutorialSource">Converter::highlightTutorialSource()</a></strong> - Used to allow converters to format the source code of Tutorial XML the way they'd like.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedClass">Converter::isLinkedClass()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedConst">Converter::isLinkedConst()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedDefine">Converter::isLinkedDefine()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedFunction">Converter::isLinkedFunction()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedGlobal">Converter::isLinkedGlobal()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedMethod">Converter::isLinkedMethod()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedPage">Converter::isLinkedPage()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodisLinkedVar">Converter::isLinkedVar()</a></strong> - do not override
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodItalicize">Converter::Italicize()</a></strong> - Used to convert the contents of &lt;i&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodKbdize">Converter::Kbdize()</a></strong> - Used to convert the contents of &lt;kbd&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodListItem">Converter::ListItem()</a></strong> - Used to convert the contents of &lt;li&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodnewSmarty">Converter::newSmarty()</a></strong> - Return a Smarty template object to operate with
+ This returns a Smarty template with pre-initialized variables for use.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodOutput">Converter::Output()</a></strong> - do all necessary output
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodPc_sort">Converter::Pc_sort()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodpostProcess">Converter::postProcess()</a></strong> - This version does nothing
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodprepareDocBlock">Converter::prepareDocBlock()</a></strong> - convert the element's DocBlock for output
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodPreserveWhiteSpace">Converter::PreserveWhiteSpace()</a></strong> - Used to convert the contents of &lt;pre&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodProgramExample">Converter::ProgramExample()</a></strong> - Used to convert the &lt;code&gt; tag in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodreturnLink">Converter::returnLink()</a></strong> - take URL $link and text $text and return a link in the format needed for the Converter
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodreturnSee">Converter::returnSee()</a></strong> - take <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a> descendant and text $eltext and return a link
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodSampize">Converter::Sampize()</a></strong> - Used to convert the contents of &lt;samp&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsetSourcePaths">Converter::setSourcePaths()</a></strong> - Mark a file as having had source code highlighted
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsetTargetDir">Converter::setTargetDir()</a></strong> - Sets the output directory for generated documentation
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsetTemplateBase">Converter::setTemplateBase()</a></strong> - Set the template directory with a different template base directory
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsetTemplateDir">Converter::setTemplateDir()</a></strong> - sets the template directory based on the $outputformat and $name
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsetTutorials">Converter::setTutorials()</a></strong> - Called by IntermediateParser after creation
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsortIndexes">Converter::sortIndexes()</a></strong> - Sorts all indexes - do not override or modify this function
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsortPageContentsByElementType">Converter::sortPageContentsByElementType()</a></strong> - sorts $page_contents by element type as well as alphabetically
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsortTodos">Converter::sortTodos()</a></strong> - Sorts the @todo list - do not override or modify this function
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsort_package_elements">Converter::sort_package_elements()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodsourceLine">Converter::sourceLine()</a></strong> - Return a line of highlighted source code with formatted line number
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodstartHighlight">Converter::startHighlight()</a></strong> - Initialize highlight caching
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodTranslateEntity">Converter::TranslateEntity()</a></strong> - Used to translate an XML DocBook entity like &amp;rdquo; from a tutorial by reading the options.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodTranslateTag">Converter::TranslateTag()</a></strong> - Used to translate an XML DocBook tag from a tutorial by reading the options.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodTutorialExample">Converter::TutorialExample()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodtype_adjust">Converter::type_adjust()</a></strong> - Called by <a href="../../phpDocumentor/DocBlockTags/parserReturnTag.html#methodConvert">parserReturnTag::Convert()</a> to allow converters to
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodunmangle">Converter::unmangle()</a></strong> - Called by <a href="../../phpDocumentor/InlineTags/parserSourceInlineTag.html#methodstringConvert">parserSourceInlineTag::stringConvert()</a> to allow converters to format the source code the way they'd like.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodvardump_tree">Converter::vardump_tree()</a></strong> - Debugging function for dumping $tutorial_tree
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodVarize">Converter::Varize()</a></strong> - Used to convert the contents of &lt;var&gt; in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodwalk">Converter::walk()</a></strong> - called by <a href="../../phpDocumentor/phpDocumentor_IntermediateParser.html#methodConvert">phpDocumentor_IntermediateParser::Convert()</a> to traverse the array of pages and their elements, converting them to the output format
+ The walk() method should be flexible enough such that it never needs modification. logical alphabetical order. Convert(), which then passes to the Convert*() methods. Converter need not override any of these unless special functionality must be added.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodwalk_everything">Converter::walk_everything()</a></strong> - walk over elements by package rather than page
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodwriteExample">Converter::writeExample()</a></strong> - Write out the formatted source code for an example php file
+ This function provides the primary functionality for the tags.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodwriteFile">Converter::writeFile()</a></strong> - Writes a file to target dir
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#methodwriteSource">Converter::writeSource()</a></strong> - Write out the formatted source code for a php file
+ This function provides the primary functionality for the tags.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_createPkgElements">Converter::_createPkgElements()</a></strong> - Create the $elements, $pkg_elements and $links arrays
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_getDoubleColon">Converter::_getDoubleColon()</a></strong> - Split up getLink to make it easier to debug
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_getLink">Converter::_getLink()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_processTutorials">Converter::_processTutorials()</a></strong> - Process the $tutorials array
+ Using the tutorialname. hierarchy. tutorial links to itself, even two levels deep as in tute-&gt;next-&gt;tute.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_rmdir">Converter::_rmdir()</a></strong> - Completely remove a directory and its contents
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_setHighlightCache">Converter::_setHighlightCache()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_setupTutorialTree">Converter::_setupTutorialTree()</a></strong> - Creates a tree structure of tutorials
+ Format:
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_sortTodoPackage">Converter::_sortTodoPackage()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_sortTodos">Converter::_sortTodos()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../Converters/Converter.html#method_tutorial_path">Converter::_tutorial_path()</a></strong> - Returns the path to this tutorial as a string
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:30 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

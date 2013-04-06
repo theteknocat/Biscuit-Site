@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>inline {@source}</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.inlinelink.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.inlinetoc.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>inline {@source}</h1>
+  <h2 class="refpurpose"><em>Display source code of a function or method in the long description</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote>Tag Documentation written by <a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2002, Gregory Beaver</em><br />
+   (phpDocumentor 1.1+ (undocumented in 1.1))<br />
+  <div id="cmdsynopsis"><b class="cmd">{@source</b>
+    <span class = "opt">startline <span class = "opt">number of lines</span></span>
+	<span class = "plain">}</span></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><p>The {@source} inline tag is used in the DocBlock of functions or methods to extract source code of the function/method for display in generated documentation.  This tag is designed to allow detailed line-by-line description of how a function works without having to cut and paste from the source.  This allows modification to the source and automatic update of documentation so that it remains current.</p></span>
+ <span><a name="example"></a><h2 class="title" align="center">Example</h1><p>The inline {@source} differs from all ordinary tags.  Inline tags parse and display their output directly in the documentation.  In other words, this DocBlock:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Text&nbsp;with&nbsp;a&nbsp;normal&nbsp;tag,&nbsp;@copyright</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@copyright</font></strong><font color="#009999">&nbsp;Copyright&nbsp;2002,&nbsp;Greg&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">function&nbsp;</font><a href="../org-phpdoc/_framework---docs---Documentation---tests---bug-904820.php.html#defineelement">element</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+</ol></div></p>
+  <p>will display normal documentation.</p>
+  <p>This DocBlock:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Text&nbsp;with&nbsp;an&nbsp;inline&nbsp;source&nbsp;tag:</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><em><font color="#0099FF">{@source&nbsp;}</font></em><font color="#009999">&nbsp;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;displays&nbsp;without&nbsp;a&nbsp;break&nbsp;in&nbsp;the&nbsp;flow</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">function&nbsp;</font><a href="../org-phpdoc/_framework---docs---Documentation---tests---bug-904820.php.html#defineelement">element</a><strong>(</strong><strong>$pages</strong><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>empty<strong>(</strong><strong>$pages</strong><strong>))</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die<strong>(</strong><font color="#66cccc">&quot;&lt;b&gt;ERROR&lt;/b&gt;:&nbsp;nothing&nbsp;parsed&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+</ol></div></p>
+  <p>will display the complete source inside the documentation as if we had typed it out</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Text&nbsp;with&nbsp;an&nbsp;inline&nbsp;source&nbsp;tag:</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&lt;code&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;function&nbsp;element($pages)</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;{</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(empty($pages))</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(&quot;&lt;b&gt;ERROR&lt;/b&gt;:&nbsp;nothing&nbsp;parsed&quot;);</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;}</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&lt;/code&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;displays&nbsp;without&nbsp;a&nbsp;break&nbsp;in&nbsp;the&nbsp;flow</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+</ol></div></p>
+  <p>The {@source tag has two optional parameters, the starting line number to display and the ending line number to display.  If only the first parameter is present, {@source} will print the source code starting on that line number to the end of the function source code.  If both parameters are present, {@source} will print an excerpt of the source code beginning on the starting line number, and concluding with the ending line number.</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Text&nbsp;with&nbsp;an&nbsp;inline&nbsp;source&nbsp;tag:</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><em><font color="#0099FF">{@source&nbsp;3}</font></em></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;displays&nbsp;without&nbsp;a&nbsp;break&nbsp;in&nbsp;the&nbsp;flow</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">function&nbsp;</font><a href="../org-phpdoc/_framework---docs---Documentation---tests---bug-904820.php.html#defineelement">element</a><strong>(</strong><strong>$pages</strong><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>empty<strong>(</strong><strong>$pages</strong><strong>))</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die<strong>(</strong><font color="#66cccc">&quot;&lt;b&gt;ERROR&lt;/b&gt;:&nbsp;nothing&nbsp;parsed&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">foreach</font><strong>(</strong><strong>$test&nbsp;</strong>as&nbsp;<strong>$hello</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;</font><font color="#66cccc">I&nbsp;love&nbsp;<strong>$hello</strong></font><font color="#66cccc">&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+</ol></div></p>
+  <p>Parses as if we had coded:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Text&nbsp;with&nbsp;an&nbsp;inline&nbsp;source&nbsp;tag:</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&lt;code&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(empty($pages))</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die(&quot;&lt;b&gt;ERROR&lt;/b&gt;:&nbsp;nothing&nbsp;parsed&quot;);</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach($test&nbsp;as&nbsp;$hello)</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;&quot;I&nbsp;love&nbsp;$hello&quot;;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;}</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&lt;/code&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;displays&nbsp;without&nbsp;a&nbsp;break&nbsp;in&nbsp;the&nbsp;flow</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+</ol></div></p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Text&nbsp;with&nbsp;an&nbsp;inline&nbsp;source&nbsp;tag:</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><em><font color="#0099FF">{@source&nbsp;3&nbsp;1}</font></em></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;displays&nbsp;without&nbsp;a&nbsp;break&nbsp;in&nbsp;the&nbsp;flow</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">function&nbsp;</font><a href="../org-phpdoc/_framework---docs---Documentation---tests---bug-904820.php.html#defineelement">element</a><strong>(</strong><strong>$pages</strong><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>empty<strong>(</strong><strong>$pages</strong><strong>))</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die<strong>(</strong><font color="#66cccc">&quot;&lt;b&gt;ERROR&lt;/b&gt;:&nbsp;nothing&nbsp;parsed&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">foreach</font><strong>(</strong><strong>$test&nbsp;</strong>as&nbsp;<strong>$hello</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;</font><font color="#66cccc">I&nbsp;love&nbsp;<strong>$hello</strong></font><font color="#66cccc">&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+</ol></div></p>
+  <p>Parses as if we had coded:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Text&nbsp;with&nbsp;an&nbsp;inline&nbsp;source&nbsp;tag:</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&lt;code&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(empty($pages))</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&lt;/code&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;displays&nbsp;without&nbsp;a&nbsp;break&nbsp;in&nbsp;the&nbsp;flow</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+</ol></div></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.inlinelink.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_inlinetags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.inlinetoc.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">inline {@link}</td>
+<td width="34%" align="center" valign="top">phpDocumentor Inline tags</td>
+<td width="33%" align="right" valign="top">inline {@toc}</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:43 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

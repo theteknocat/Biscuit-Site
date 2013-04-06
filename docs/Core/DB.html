@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class DB</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class DB
+</h2> (line <span class="linenumber">8</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---DB.php.html">/framework/lib/DB.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Set of static methods for connecting to a MySQL database and performing various queries</h5>
+<div class="desc"><p>Set of static methods for connecting to a MySQL database and performing various queries</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodaffected_rows" title="details" class="method-name">affected_rows</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconnect" title="details" class="method-name">connect</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddisconnect" title="details" class="method-name">disconnect</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methoderror" title="details" class="method-name">error</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodescape" title="details" class="method-name">escape</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodfetch" title="details" class="method-name">fetch</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodfetch_one" title="details" class="method-name">fetch_one</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$query</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$table</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$idname</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodfree" title="details" class="method-name">free</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$result</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$result</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodinsert" title="details" class="method-name">insert</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodnum_rows" title="details" class="method-name">num_rows</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$result</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$result</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodquery" title="details" class="method-name">query</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrow" title="details" class="method-name">row</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$result</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$result</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodsafe_query_from_data" title="details" class="method-name">safe_query_from_data</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$data</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodsanitize" title="details" class="method-name">sanitize</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodtable_exists" title="details" class="method-name">table_exists</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">float</span>
+        <a href="#methodversion" title="details" class="method-name">version</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodaffected_rows" id="methodaffected_rows"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method affected_rows</strong> (line <span class="linenumber">162</span>)
+ </h4> 
+<h4><i>int</i> <strong>affected_rows(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the number of rows affected by a query</h5>
+<div class="desc"><p>Return the number of rows affected by a query</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Number of affected rows</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodconnect" id="methodconnect"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method connect</strong> (line <span class="linenumber">15</span>)
+ </h4> 
+<h4><i>void</i> <strong>connect(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Open database connection</h5>
+<div class="desc"><p>Open database connection</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoddisconnect" id="methoddisconnect"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method disconnect</strong> (line <span class="linenumber">33</span>)
+ </h4> 
+<h4><i>void</i> <strong>disconnect(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Close database connection</h5>
+<div class="desc"><p>Close database connection</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoderror" id="methoderror"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method error</strong> (line <span class="linenumber">239</span>)
+ </h4> 
+<h4><i>string</i> <strong>error(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return mysql error message</h5>
+<div class="desc"><p>Return mysql error message</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodescape" id="methodescape"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method escape</strong> (line <span class="linenumber">136</span>)
+ </h4> 
+<h4><i>void</i> <strong>escape(
+string
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Escape a value for database insertion</h5>
+<div class="desc"><p>Escape a value for database insertion</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $value</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfetch" id="methodfetch"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method fetch</strong> (line <span class="linenumber">43</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>fetch(
+string
+$query)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Similar to the query() static function, but intended specifically for selecting multiple rows from a table</h5>
+<div class="desc"><p>Similar to the query() static function, but intended specifically for selecting multiple rows from a table</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $query</strong>: SELECT query string to run</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Returns an indexed array of the tables rows (each of which is an associative array of the row) on success, false on failure, or kills the script on a mysql error</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfetch_one" id="methodfetch_one"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method fetch_one</strong> (line <span class="linenumber">72</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>fetch_one(
+
+$query, string
+$table, mixed
+$id, string
+$idname)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch one row of a table by the value of any column.</h5>
+<div class="desc"><p>Fetch one row of a table by the value of any column. Result is strictly limited to one row.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $table</strong>: The name of the table to fetch data from</li>
+			<li><strong>mixed $id</strong>: The value of the primary key, or whatever other column you want to scope the query to</li>
+			<li><strong>string $idname</strong>: The name of the column to scope the query to</li>
+			<li><strong> $query</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Returns an associative array of the data row on success, false on failure, or kills the script on a mysql error</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfree" id="methodfree"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method free</strong> (line <span class="linenumber">249</span>)
+ </h4> 
+<h4><i>void</i> <strong>free(
+
+&$result, mixed
+$result)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Free a resultset</h5>
+<div class="desc"><p>Free a resultset</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $result</strong>: Resultset</li>
+			<li><strong> &$result</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodinsert" id="methodinsert"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method insert</strong> (line <span class="linenumber">172</span>)
+ </h4> 
+<h4><i>void</i> <strong>insert(
+string
+$query)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Run an insert query and return the new insert ID.</h5>
+<div class="desc"><p>Run an insert query and return the new insert ID.  Only works with INSERT queries (duh).</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $query</strong>: MySql insert query</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodnum_rows" id="methodnum_rows"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method num_rows</strong> (line <span class="linenumber">96</span>)
+ </h4> 
+<h4><i>void</i> <strong>num_rows(
+
+&$result, mixed
+$result)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the number of rows in a resultset</h5>
+<div class="desc"><p>Return the number of rows in a resultset</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $result</strong>: Resultset</li>
+			<li><strong> &$result</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodquery" id="methodquery"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method query</strong> (line <span class="linenumber">149</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>query(
+string
+$query)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Run any DB query, dying on error</h5>
+<div class="desc"><p>Run any DB query, dying on error</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $query</strong>: MySQL query</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Depending on the specific query, this may be a boolean or a result set</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrow" id="methodrow"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method row</strong> (line <span class="linenumber">106</span>)
+ </h4> 
+<h4><i>void</i> <strong>row(
+
+&$result, mixed
+$result)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return one row from a resultset as an associative array</h5>
+<div class="desc"><p>Return one row from a resultset as an associative array</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $result</strong>: Resultset</li>
+			<li><strong> &$result</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsafe_query_from_data" id="methodsafe_query_from_data"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method safe_query_from_data</strong> (line <span class="linenumber">189</span>)
+ </h4> 
+<h4><i>string</i> <strong>safe_query_from_data(
+array
+$data)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Take an associative array of data for DB insertion, sanitize it, and build it into a comma-separated string of `column` = 'data' for use in an UPDATE or INSERT query</h5>
+<div class="desc"><p>Take an associative array of data for DB insertion, sanitize it, and build it into a comma-separated string of `column` = 'data' for use in an UPDATE or INSERT query</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $data</strong>: Associative array of data for DB insertion. Array keys must match the column names, and the primary key column should not be included</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Portion of a DB query string that follows &quot;SET&quot; in the format &quot;`column1_name` = 'column1_data', `column2_name` = 'column2_data'&quot; etc</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsanitize" id="methodsanitize"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method sanitize</strong> (line <span class="linenumber">116</span>)
+ </h4> 
+<h4><i>array</i> <strong>sanitize(
+array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Recursively iterate through an associative array and sanitize the values for DB insertion using mysql_real_escape_string().</h5>
+<div class="desc"><p>Recursively iterate through an associative array and sanitize the values for DB insertion using mysql_real_escape_string().</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: The associative array of data to be sanitized</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - The sanitized array of data</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodtable_exists" id="methodtable_exists"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method table_exists</strong> (line <span class="linenumber">214</span>)
+ </h4> 
+<h4><i>bool</i> <strong>table_exists(
+string
+$table_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Find out if a database table exists</h5>
+<div class="desc"><p>Find out if a database table exists</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $table_name</strong>: Name of the table to find</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodversion" id="methodversion"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method version</strong> (line <span class="linenumber">224</span>)
+ </h4> 
+<h4><i>float</i> <strong>version(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Find and return MySQL version as a numeric value</h5>
+<div class="desc"><p>Find and return MySQL version as a numeric value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - MySQL version number</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:26 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

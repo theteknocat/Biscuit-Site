@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_UnitConverter</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_UnitConverter
+</h2> (line <span class="linenumber">7</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php4---library---HTMLPurifier---UnitConverter.php.html">/framework/plugins/html_purifier/php4/library/HTMLPurifier/UnitConverter.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class for converting between different unit-lengths as specified by CSS.</h5>
+<div class="desc"><p>Class for converting between different unit-lengths as specified by CSS.</p></div>
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$bcmath" title="details" class="property"><strong>$bcmath</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$internalPrecision" title="details" class="property"><strong>$internalPrecision</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$outputPrecision" title="details" class="property"><strong>$outputPrecision</strong></a>
+</div>
+<hr />
+<a name="var$bcmath" id="var$bcmath"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$bcmath</strong> (line <span class="linenumber">23</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Whether or not BCMath is available</h5>
+<div class="desc"><p>Whether or not BCMath is available</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$internalPrecision" id="var$internalPrecision"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$internalPrecision</strong> (line <span class="linenumber">18</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Bcmath precision for internal calculations.</h5>
+<div class="desc"><p>Bcmath precision for internal calculations.</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$outputPrecision" id="var$outputPrecision"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$outputPrecision</strong> (line <span class="linenumber">13</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Minimum bcmath precision for output.</h5>
+<div class="desc"><p>Minimum bcmath precision for output.</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">HTMLPurifier_UnitConverter</span>
+        <a href="#methodHTMLPurifier_UnitConverter" title="details" class="method-name">HTMLPurifier_UnitConverter</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$output_precision</span> = <span class="var-default">4</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$internal_precision</span> = <span class="var-default">10</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$force_no_bcmath</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodadd" title="details" class="method-name">add</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$s1</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$s2</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$scale</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconvert" title="details" class="method-name">convert</a>
+        (<span class="var-type"><a href="../Biscuit/HTMLPurifier_Length.html">HTMLPurifier_Length</a></span>&nbsp;<span class="var-name">$length</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$to_unit</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddiv" title="details" class="method-name">div</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$s1</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$s2</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$scale</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetSigFigs" title="details" class="method-name">getSigFigs</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$n</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmul" title="details" class="method-name">mul</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$s1</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$s2</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$scale</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodround" title="details" class="method-name">round</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$n</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$sigfigs</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodscale" title="details" class="method-name">scale</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$r</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$scale</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodHTMLPurifier_UnitConverter" id="methodHTMLPurifier_UnitConverter"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor HTMLPurifier_UnitConverter</strong> (line <span class="linenumber">25</span>)
+ </h4> 
+<h4><i>HTMLPurifier_UnitConverter</i> <strong>HTMLPurifier_UnitConverter(
+[
+$output_precision = 4], [
+$internal_precision = 10], [
+$force_no_bcmath = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $output_precision</strong>: </li>
+			<li><strong> $internal_precision</strong>: </li>
+			<li><strong> $force_no_bcmath</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodadd" id="methodadd"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method add</strong> (line <span class="linenumber">189</span>)
+ </h4> 
+<h4><i>void</i> <strong>add(
+
+$s1, 
+$s2, 
+$scale)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Adds two numbers, using arbitrary precision when available.</h5>
+<div class="desc"><p>Adds two numbers, using arbitrary precision when available.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $s1</strong>: </li>
+			<li><strong> $s2</strong>: </li>
+			<li><strong> $scale</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconvert" id="methodconvert"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method convert</strong> (line <span class="linenumber">49</span>)
+ </h4> 
+<h4><i>void</i> <strong>convert(
+<a href="../Biscuit/HTMLPurifier_Length.html">HTMLPurifier_Length</a>
+$length, string
+$to_unit)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts a length object of one unit into another unit.</h5>
+<div class="desc"><p>Converts a length object of one unit into another unit.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../Biscuit/HTMLPurifier_Length.html">HTMLPurifier_Length</a> $length</strong>: Instance of HTMLPurifier_Length to convert. You must validate()      it before passing it here!</li>
+			<li><strong>string $to_unit</strong>: Unit to convert to.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddiv" id="methoddiv"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method div</strong> (line <span class="linenumber">205</span>)
+ </h4> 
+<h4><i>void</i> <strong>div(
+
+$s1, 
+$s2, 
+$scale)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Divides two numbers, using arbitrary precision when available.</h5>
+<div class="desc"><p>Divides two numbers, using arbitrary precision when available.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $s1</strong>: </li>
+			<li><strong> $s2</strong>: </li>
+			<li><strong> $scale</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetSigFigs" id="methodgetSigFigs"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSigFigs</strong> (line <span class="linenumber">174</span>)
+ </h4> 
+<h4><i>int</i> <strong>getSigFigs(
+string
+$n)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the number of significant figures in a string number.</h5>
+<div class="desc"><p>Returns the number of significant figures in a string number.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $n</strong>: Decimal number</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - number of sigfigs</li>
+		</ul>
+</div>
+<a name="methodmul" id="methodmul"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method mul</strong> (line <span class="linenumber">197</span>)
+ </h4> 
+<h4><i>void</i> <strong>mul(
+
+$s1, 
+$s2, 
+$scale)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Multiples two numbers, using arbitrary precision when available.</h5>
+<div class="desc"><p>Multiples two numbers, using arbitrary precision when available.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $s1</strong>: </li>
+			<li><strong> $s2</strong>: </li>
+			<li><strong> $scale</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodround" id="methodround"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method round</strong> (line <span class="linenumber">214</span>)
+ </h4> 
+<h4><i>void</i> <strong>round(
+
+$n, 
+$sigfigs)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Rounds a number according to the number of sigfigs it should have, using arbitrary precision when available.</h5>
+<div class="desc"><p>Rounds a number according to the number of sigfigs it should have, using arbitrary precision when available.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $n</strong>: </li>
+			<li><strong> $sigfigs</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodscale" id="methodscale"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method scale</strong> (line <span class="linenumber">237</span>)
+ </h4> 
+<h4><i>void</i> <strong>scale(
+
+$r, 
+$scale)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Scales a float to $scale digits right of decimal point, like BCMath.</h5>
+<div class="desc"><p>Scales a float to $scale digits right of decimal point, like BCMath.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $r</strong>: </li>
+			<li><strong> $scale</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:42 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

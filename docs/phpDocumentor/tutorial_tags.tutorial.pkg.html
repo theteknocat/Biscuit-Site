@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>@tutorial</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.todo.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.uses.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>@tutorial</h1>
+  <h2 class="refpurpose"><em>Display a link to the documentation for a tutorial</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote>Tag Documentation written by <a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2002, Gregory Beaver</em><br />
+   (phpDocumentor 0.1+)<br />
+  <div id="cmdsynopsis"><b class="cmd">@tutorial</b>
+    <span class = "opt">package/</span>
+    <span class = "opt">subpackage/</span>
+    <span class = "req">tutorialname.ext</span>
+    <span class = "opt">#section<span class = "opt">.subsection</span></span>
+    <span class = "opt">description</span></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><p>The @tutorial tag may be used to document any element (global variable, include, page, class, function, define, method, variable)</p>
+  <table border="1"><th align="center">Caution</th><tr><td>@tutorial only displays links to tutorials/extended documentation.  If you want to display a hyperlink or link to a documented element, use <a href="../phpDocumentor/tutorial_tags.see.pkg.html">@see</a> or <a href="../phpDocumentor/tutorial_tags.link.pkg.html">@link</a> or <a href="../phpDocumentor/tutorial_tags.inlinelink.pkg.html">inline {@link}</a></td></tr></table>
+  <p>Along with <a href="../phpDocumentor/tutorial_tags.inlinetutorial.pkg.html">inline {@tutorial}</a>, the @tutorial tag is among the most useful features of phpDocumentor.  With this tag, you can create a link to any tutorial or extended documentation.  The @tutorial parser can be told exactly where to look using a format similar to a URI:
+   <ul><li><p><strong>package/</strong> -- Preface to specify a tutorial in a specific package</p></li>
+    <li><p><strong>subpackage/</strong> -- Preface to specify a tutorial in a specific package/subpackage</p></li>
+    <li><p><strong>#section</strong> -- Link to a specific section of the documentation package/subpackage/tutorial.ext#section</p></li>
+    <li><p><strong>.subsection</strong> -- Link to a specific sub-section of the documentation package/subpackage/tutorial.ext#section.subsection</p></li></ul></p>
+  <p>However, @tutorial, like @see, is also intelligent enough to recognize shorthand.  The search order for a tutorial is identical to what is specified in <a href="../phpDocumentor/tutorial_tags.see.pkg.html">@see</a></p></span>
+ <span><a name="example"></a><h2 class="title" align="center">Example</h1><p>Here's an example of valid @tutorial syntax:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;This&nbsp;will&nbsp;link&nbsp;to&nbsp;the&nbsp;phpDocumentor.pkg&nbsp;tutorial&nbsp;if&nbsp;it&nbsp;is&nbsp;unique,&nbsp;regardless</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;of&nbsp;its&nbsp;location</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@tutorial</font></strong><font color="#009999">&nbsp;phpDocumentor.pkg</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>test1</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;This&nbsp;will&nbsp;link&nbsp;to&nbsp;the&nbsp;phpDocumentor.pkg&nbsp;tutorial&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;it&nbsp;is&nbsp;in&nbsp;the</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;phpDocumentor&nbsp;package,&nbsp;any&nbsp;subpackage.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@tutorial</font></strong><font color="#009999">&nbsp;phpDocumentor/phpDocumentor.pkg</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font><a href="../tests/test2.html">test2</a></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;This&nbsp;will&nbsp;link&nbsp;to&nbsp;the&nbsp;phpDocumentor.pkg&nbsp;tutorial&nbsp;if&nbsp;and&nbsp;only&nbsp;if&nbsp;it&nbsp;is&nbsp;in&nbsp;the</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;phpDocumentor&nbsp;package,&nbsp;info&nbsp;subpackage.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@tutorial</font></strong><font color="#009999">&nbsp;phpDocumentor/info/phpDocumentor.pkg</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>test3</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;This&nbsp;will&nbsp;link&nbsp;to&nbsp;the&nbsp;phpDocumentor.pkg&nbsp;tutorial,&nbsp;section1&nbsp;and&nbsp;subsection&nbsp;one</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@tutorial</font></strong><font color="#009999">&nbsp;phpDocumentor.pkg#section1,&nbsp;phpDocumentor.pkg#section1.subsection1</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>test4</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+</ol></div></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.todo.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.uses.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">@todo</td>
+<td width="34%" align="center" valign="top">phpDocumentor tags</td>
+<td width="33%" align="right" valign="top">@uses</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:42 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

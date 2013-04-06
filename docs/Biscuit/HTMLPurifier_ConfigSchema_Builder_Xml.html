@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_ConfigSchema_Builder_Xml</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_ConfigSchema_Builder_Xml
+</h2> (line <span class="linenumber">7</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+XMLWriter
+   |
+   --HTMLPurifier_ConfigSchema_Builder_Xml</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php5---library---HTMLPurifier---ConfigSchema---Builder---Xml.php.html">/framework/plugins/html_purifier/php5/library/HTMLPurifier/ConfigSchema/Builder/Xml.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Converts HTMLPurifier_ConfigSchema_Interchange to an XML format, which can be further processed to generate documentation.</h5>
+<div class="desc"><p>Converts HTMLPurifier_ConfigSchema_Interchange to an XML format, which can be further processed to generate documentation.</p></div>
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$interchange" title="details" class="property"><strong>$interchange</strong></a>
+</div>
+<hr />
+<a name="var$interchange" id="var$interchange"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$interchange</strong> (line <span class="linenumber">10</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - protected</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodbuild" title="details" class="method-name">build</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$interchange</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodbuildDirective" title="details" class="method-name">buildDirective</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$directive</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodbuildNamespace" title="details" class="method-name">buildNamespace</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$namespace</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodexport" title="details" class="method-name">export</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$var</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodwriteHTMLDiv" title="details" class="method-name">writeHTMLDiv</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$html</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodbuild" id="methodbuild"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method build</strong> (line <span class="linenumber">28</span>)
+ </h4> 
+<h4><i>void</i> <strong>build(
+
+$interchange)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $interchange</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodbuildDirective" id="methodbuildDirective"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method buildDirective</strong> (line <span class="linenumber">62</span>)
+ </h4> 
+<h4><i>void</i> <strong>buildDirective(
+
+$directive)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $directive</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodbuildNamespace" id="methodbuildNamespace"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method buildNamespace</strong> (line <span class="linenumber">45</span>)
+ </h4> 
+<h4><i>void</i> <strong>buildNamespace(
+
+$namespace)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $namespace</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodexport" id="methodexport"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method export</strong> (line <span class="linenumber">23</span>)
+ </h4> 
+<h4><i>void</i> <strong>export(
+
+$var)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $var</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodwriteHTMLDiv" id="methodwriteHTMLDiv"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method writeHTMLDiv</strong> (line <span class="linenumber">12</span>)
+ </h4> 
+<h4><i>void</i> <strong>writeHTMLDiv(
+
+$html)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $html</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class XMLWriter (Internal Class)</h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endAttribute (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endCdata (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endComment (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endDocument (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endDtd (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endDtdAttlist (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endDtdElement (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endDtdEntity (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endElement (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> endPi (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> flush (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> fullEndElement (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> openMemory (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> openUri (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> outputMemory (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> setIndent (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> setIndentString (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startAttribute (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startCdata (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startComment (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startDocument (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startDtd (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startDtdAttlist (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startDtdElement (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startDtdEntity (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startElement (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startElementNs (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> startPi (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> text (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeAttribute (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeCdata (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeComment (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeDtd (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeDtdAttlist (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeDtdElement (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeDtdEntity (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeElement (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeElementNs (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writePi (  )</strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> writeRaw (  )</strong> - 
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:44 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for clone.inc.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file clone.inc.php</h1>
+<p>Documentation is available at <a href="../phpDocumentor/_framework---docs---phpDocumentor---clone.inc.php.html">clone.inc.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a2"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">&nbsp;*&nbsp;Object&nbsp;clone&nbsp;method</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">&nbsp;*&nbsp;phpDocumentor&nbsp;::&nbsp;automatic&nbsp;documentation&nbsp;generator</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">&nbsp;*&nbsp;PHP&nbsp;versions&nbsp;4&nbsp;and&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2001-2006&nbsp;Gregory&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">&nbsp;*&nbsp;LICENSE:</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">&nbsp;*&nbsp;and/or&nbsp;modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">&nbsp;*&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">&nbsp;*&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">&nbsp;*&nbsp;later&nbsp;version.</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</font></div></li>
+<li><div class="src-line"><a name="a20"></a><font color="#009999">&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</font></div></li>
+<li><div class="src-line"><a name="a21"></a><font color="#009999">&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU</font></div></li>
+<li><div class="src-line"><a name="a22"></a><font color="#009999">&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</font></div></li>
+<li><div class="src-line"><a name="a23"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a24"></a><font color="#009999">&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public</font></div></li>
+<li><div class="src-line"><a name="a25"></a><font color="#009999">&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software</font></div></li>
+<li><div class="src-line"><a name="a26"></a><font color="#009999">&nbsp;*&nbsp;Foundation,&nbsp;Inc.,&nbsp;59&nbsp;Temple&nbsp;Place,&nbsp;Suite&nbsp;330,&nbsp;Boston,&nbsp;MA&nbsp;02111-1307&nbsp;USA</font></div></li>
+<li><div class="src-line"><a name="a27"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a28"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@category</font></strong><font color="#009999">&nbsp;&nbsp;ToolsAndUtilities</font></div></li>
+<li><div class="src-line"><a name="a29"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a30"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;Greg&nbsp;Beaver&nbsp;&lt;cellog@php.net&gt;</font></div></li>
+<li><div class="src-line"><a name="a31"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@copyright</font></strong><font color="#009999">&nbsp;2001-2006&nbsp;Gregory&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@license</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;http://www.opensource.org/licenses/lgpl-license.php&nbsp;LGPL</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@version</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;CVS:&nbsp;$Id:&nbsp;clone.inc.php,v&nbsp;1.3&nbsp;2007/09/30&nbsp;02:08:08&nbsp;ashnazg&nbsp;Exp&nbsp;$</font></div></li>
+<li><div class="src-line"><a name="a34"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@filesource</font></strong></div></li>
+<li><div class="src-line"><a name="a35"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.phpdoc.org</font></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://pear.php.net/PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a37"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@since</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0rc1</font></div></li>
+<li><div class="src-line"><a name="a38"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;change&nbsp;package&nbsp;to&nbsp;PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a39"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a40"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a41"></a><font color="#009999">&nbsp;*&nbsp;Clone&nbsp;an&nbsp;object&nbsp;in&nbsp;PHP&nbsp;4</font></div></li>
+<li><div class="src-line"><a name="a42"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a43"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>object&nbsp;</em><strong>$obj&nbsp;</strong><font color="#009999">the&nbsp;object&nbsp;to&nbsp;be&nbsp;cloned</font></div></li>
+<li><div class="src-line"><a name="a44"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a45"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>object&nbsp;</em><em>the&nbsp;</em><font color="#009999">new&nbsp;clone</font></div></li>
+<li><div class="src-line"><a name="a46"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;rename&nbsp;function&nbsp;to&nbsp;PhpDocumentor_clone</font></div></li>
+<li><div class="src-line"><a name="a47"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a48"></a><font color="blue">function&nbsp;</font><a href="../phpDocumentor/_framework---docs---phpDocumentor---clone.inc.php.html#functionphpDocumentor_clone">phpDocumentor_clone</a><strong>(</strong><strong>$obj</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a49"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$obj</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a51"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a53"></a><strong>?&gt;</strong></div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:04 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

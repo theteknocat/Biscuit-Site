@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_VarParser</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_VarParser
+</h2> (line <span class="linenumber">7</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php5---library---HTMLPurifier---VarParser.php.html">/framework/plugins/html_purifier/php5/library/HTMLPurifier/VarParser.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Parses string representations into their corresponding native PHP variable type.</h5>
+<div class="desc"><p>Parses string representations into their corresponding native PHP variable type. The base implementation does a simple type-check.</p></div>
+<ul>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from HTMLPurifier_VarParser:</span>
+ 		<dl>
+	<dt><a href="../Biscuit/HTMLPurifier_VarParser_Flexible.html">HTMLPurifier_VarParser_Flexible</a></dt>
+		<dd>Performs safe variable parsing based on types which can be used by users. however.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Biscuit/HTMLPurifier_VarParser_Native.html">HTMLPurifier_VarParser_Native</a></dt>
+		<dd>This variable parser uses PHP's internal code engine. this, it can represent all inputs; however, it is dangerous and cannot be used by users.</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    static <span class="var-type">mixed</span>
+    <a href="#var$stringTypes" title="details" class="property"><strong>$stringTypes</strong></a>
+</div>
+<div class="var-title">
+    static <span class="var-type">mixed</span>
+    <a href="#var$types" title="details" class="property"><strong>$types</strong></a>
+</div>
+<hr />
+<a name="var$stringTypes" id="var$stringTypes"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">static $stringTypes = array(<br />        self::STRING    =&gt; true,<br />        self::ISTRING   =&gt; true,<br />        self::TEXT      =&gt; true,<br />        self::ITEXT     =&gt; true,<br />    )</strong> (line <span class="linenumber">44</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Lookup table of types that are string, and can have aliases or allowed value lists.</h5>
+<div class="desc"><p>Lookup table of types that are string, and can have aliases or allowed value lists.</p></div>
+<ul>
+		<li><strong>access:</strong> - public</li>
+	</ul>
+</div>
+<a name="var$types" id="var$types"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">static $types = array(<br />        'string'    =&gt; self::STRING,<br />        'istring'   =&gt; self::ISTRING,<br />        'text'      =&gt; self::TEXT,<br />        'itext'     =&gt; self::ITEXT,<br />        'int'       =&gt; self::INT,<br />        'float'     =&gt; self::FLOAT,<br />        'bool'      =&gt; self::BOOL,<br />        'lookup'    =&gt; self::LOOKUP,<br />        'list'      =&gt; self::ALIST,<br />        'hash'      =&gt; self::HASH,<br />        'mixed'     =&gt; self::MIXED<br />    )</strong> (line <span class="linenumber">26</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Lookup table of allowed types. also convenient for transforming string type names to the integer constants.</h5>
+<div class="desc"><p>Lookup table of allowed types. Mainly for backwards compatibility, but also convenient for transforming string type names to the integer constants.</p></div>
+<ul>
+		<li><strong>access:</strong> - public</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="const-title">
+    <a href="#constALIST" title="details" class="property"><strong>ALIST</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constBOOL" title="details" class="property"><strong>BOOL</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constFLOAT" title="details" class="property"><strong>FLOAT</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constHASH" title="details" class="property"><strong>HASH</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constINT" title="details" class="property"><strong>INT</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constISTRING" title="details" class="property"><strong>ISTRING</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constITEXT" title="details" class="property"><strong>ITEXT</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constLOOKUP" title="details" class="property"><strong>LOOKUP</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constMIXED" title="details" class="property"><strong>MIXED</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constSTRING" title="details" class="property"><strong>STRING</strong></a>
+</div>
+<div class="const-title">
+    <a href="#constTEXT" title="details" class="property"><strong>TEXT</strong></a>
+</div>
+<hr />
+<a name="constALIST" id="constALIST"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">ALIST =  9</strong> (line <span class="linenumber">18</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constBOOL" id="constBOOL"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">BOOL =  7</strong> (line <span class="linenumber">16</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constFLOAT" id="constFLOAT"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">FLOAT =  6</strong> (line <span class="linenumber">15</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constHASH" id="constHASH"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">HASH =  10</strong> (line <span class="linenumber">19</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constINT" id="constINT"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">INT =  5</strong> (line <span class="linenumber">14</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constISTRING" id="constISTRING"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">ISTRING =  2</strong> (line <span class="linenumber">11</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constITEXT" id="constITEXT"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">ITEXT =  4</strong> (line <span class="linenumber">13</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constLOOKUP" id="constLOOKUP"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">LOOKUP =  8</strong> (line <span class="linenumber">17</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constMIXED" id="constMIXED"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">MIXED =  11</strong> (line <span class="linenumber">20</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constSTRING" id="constSTRING"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">STRING =  1</strong> (line <span class="linenumber">10</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="constTEXT" id="constTEXT"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/Constant.gif" border="0" /> <strong class="property">TEXT =  3</strong> (line <span class="linenumber">12</span>)
+ </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodgetTypeName" title="details" class="method-name">getTypeName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$type</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoderror" title="details" class="method-name">error</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$msg</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoderrorGeneric" title="details" class="method-name">errorGeneric</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$var</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$type</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoderrorInconsistent" title="details" class="method-name">errorInconsistent</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$class</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$type</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Validated</span>
+        <a href="#methodparse" title="details" class="method-name">parse</a>
+        (<span class="var-type">$var</span>&nbsp;<span class="var-name">$var</span>, <span class="var-type">$type</span>&nbsp;<span class="var-name">$type</span>, [<span class="var-type">$allow_null</span>&nbsp;<span class="var-name">$allow_null</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparseImplementation" title="details" class="method-name">parseImplementation</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$var</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$type</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$allow_null</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodgetTypeName" id="methodgetTypeName"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method getTypeName</strong> (line <span class="linenumber">142</span>)
+ </h4> 
+<h4><i>void</i> <strong>getTypeName(
+
+$type)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $type</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methoderror" id="methoderror"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method error</strong> (line <span class="linenumber">120</span>)
+ </h4> 
+<h4><i>void</i> <strong>error(
+
+$msg)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Throws an exception.</h5>
+<div class="desc"><p>Throws an exception.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $msg</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methoderrorGeneric" id="methoderrorGeneric"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method errorGeneric</strong> (line <span class="linenumber">137</span>)
+ </h4> 
+<h4><i>void</i> <strong>errorGeneric(
+
+$var, 
+$type)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Generic error for if a type didn't work.</h5>
+<div class="desc"><p>Generic error for if a type didn't work.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $var</strong>: </li>
+			<li><strong> $type</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methoderrorInconsistent" id="methoderrorInconsistent"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method errorInconsistent</strong> (line <span class="linenumber">130</span>)
+ </h4> 
+<h4><i>void</i> <strong>errorInconsistent(
+
+$class, 
+$type)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Throws an inconsistency exception.</h5>
+<div class="desc"><p>Throws an inconsistency exception.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $class</strong>: </li>
+			<li><strong> $type</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodparse" id="methodparse"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parse</strong> (line <span class="linenumber">61</span>)
+ </h4> 
+<h4><i>Validated</i> <strong>parse(
+$var
+$var, $type
+$type, [$allow_null
+$allow_null = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Validate a variable according to type. HTMLPurifier_VarParserException if invalid.</h5>
+<div class="desc"><p>Validate a variable according to type. Throws HTMLPurifier_VarParserException if invalid. It may return NULL as a valid type if $allow_null is true.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$var $var</strong>: Variable to validate</li>
+			<li><strong>$type $type</strong>: Type of variable, see HTMLPurifier_VarParser-&gt;types</li>
+			<li><strong>$allow_null $allow_null</strong>: Whether or not to permit null as a value</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - and type-coerced variable</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodparseImplementation" id="methodparseImplementation"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseImplementation</strong> (line <span class="linenumber">113</span>)
+ </h4> 
+<h4><i>void</i> <strong>parseImplementation(
+
+$var, 
+$type, 
+$allow_null)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Biscuit/HTMLPurifier_VarParser_Flexible.html#methodparseImplementation">HTMLPurifier_VarParser_Flexible::parseImplementation()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Biscuit/HTMLPurifier_VarParser_Native.html#methodparseImplementation">HTMLPurifier_VarParser_Native::parseImplementation()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Actually implements the parsing.</h5>
+<div class="desc"><p>Actually implements the parsing. Base implementation is to not do anything to $var. Subclasses should overload this!</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $var</strong>: </li>
+			<li><strong> $type</strong>: </li>
+			<li><strong> $allow_null</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:43 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

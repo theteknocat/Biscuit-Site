@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_Config</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_Config
+</h2> (line <span class="linenumber">39</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php4---library---HTMLPurifier---Config.php.html">/framework/plugins/html_purifier/php4/library/HTMLPurifier/Config.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Configuration object that triggers customizable behavior.</h5>
+<div class="desc"><p>Configuration object that triggers customizable behavior.</p></div>
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$autoFinalize" title="details" class="property"><strong>$autoFinalize</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$conf" title="details" class="property"><strong>$conf</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$def" title="details" class="property"><strong>$def</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$definitions" title="details" class="property"><strong>$definitions</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$finalized" title="details" class="property"><strong>$finalized</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$serial" title="details" class="property"><strong>$serial</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$serials" title="details" class="property"><strong>$serials</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$version" title="details" class="property"><strong>$version</strong></a>
+</div>
+<hr />
+<a name="var$autoFinalize" id="var$autoFinalize"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$autoFinalize =  true</strong> (line <span class="linenumber">71</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Bool indicator whether or not to automatically finalize</h5>
+<div class="desc"><p>Bool indicator whether or not to automatically finalize the object if a read operation is done</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$conf" id="var$conf"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$conf</strong> (line <span class="linenumber">50</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Two-level associative array of configuration directives</h5>
+<div class="desc"><p>Two-level associative array of configuration directives</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$def" id="var$def"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$def</strong> (line <span class="linenumber">55</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Reference HTMLPurifier_ConfigSchema for value checking</h5>
+<div class="desc"><p>Reference HTMLPurifier_ConfigSchema for value checking</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$definitions" id="var$definitions"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$definitions</strong> (line <span class="linenumber">60</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Indexed array of definitions</h5>
+<div class="desc"><p>Indexed array of definitions</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$finalized" id="var$finalized"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$finalized =  false</strong> (line <span class="linenumber">65</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Bool indicator whether or not config is finalized</h5>
+<div class="desc"><p>Bool indicator whether or not config is finalized</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$serial" id="var$serial"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$serial</strong> (line <span class="linenumber">82</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Serial for entire configuration object</h5>
+<div class="desc"><p>Serial for entire configuration object</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$serials" id="var$serials"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$serials = array()</strong> (line <span class="linenumber">77</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Namespace indexed array of serials for specific namespaces (see getSerial for more info).</h5>
+<div class="desc"><p>Namespace indexed array of serials for specific namespaces (see getSerial for more info).</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$version" id="var$version"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$version =  '2.1.5'</strong> (line <span class="linenumber">45</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>HTML Purifier's version</h5>
+<div class="desc"><p>HTML Purifier's version</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">Configured</span>
+        <a href="#methodcreate" title="details" class="method-name">create</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">Default</span>
+        <a href="#methodcreateDefault" title="details" class="method-name">createDefault</a>
+        ()
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodgetAllowedDirectivesForForm" title="details" class="method-name">getAllowedDirectivesForForm</a>
+        (<span class="var-type">$allowed</span>&nbsp;<span class="var-name">$allowed</span>)
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodloadArrayFromForm" title="details" class="method-name">loadArrayFromForm</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$array</span>, <span class="var-type">$index</span>&nbsp;<span class="var-name">$index</span>, [<span class="var-type">$allowed</span>&nbsp;<span class="var-name">$allowed</span> = <span class="var-default">true</span>], [<span class="var-type">$mq_fix</span>&nbsp;<span class="var-name">$mq_fix</span> = <span class="var-default">true</span>], <span class="var-type">$array</span>&nbsp;<span class="var-name">$_GET</span>)
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodprepareArrayFromForm" title="details" class="method-name">prepareArrayFromForm</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$array</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$index</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$allowed</span> = <span class="var-default">true</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$mq_fix</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">HTMLPurifier_Config</span>
+        <a href="#methodHTMLPurifier_Config" title="details" class="method-name">HTMLPurifier_Config</a>
+        (<span class="var-type">$definition</span>&nbsp;<span class="var-name">&$definition</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodautoFinalize" title="details" class="method-name">autoFinalize</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodfinalize" title="details" class="method-name">finalize</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodget" title="details" class="method-name">get</a>
+        (<span class="var-type">$namespace</span>&nbsp;<span class="var-name">$namespace</span>, <span class="var-type">$key</span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$from_alias</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetAll" title="details" class="method-name">getAll</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetBatch" title="details" class="method-name">getBatch</a>
+        (<span class="var-type">$namespace</span>&nbsp;<span class="var-name">$namespace</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetBatchSerial" title="details" class="method-name">getBatchSerial</a>
+        (<span class="var-type">$namespace</span>&nbsp;<span class="var-name">$namespace</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetCSSDefinition" title="details" class="method-name">&amp;getCSSDefinition</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$raw</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetDefinition" title="details" class="method-name">&amp;getDefinition</a>
+        (<span class="var-type">$type</span>&nbsp;<span class="var-name">$type</span>, [<span class="var-type">$raw</span>&nbsp;<span class="var-name">$raw</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetHTMLDefinition" title="details" class="method-name">&amp;getHTMLDefinition</a>
+        ([<span class="var-type">$raw</span>&nbsp;<span class="var-name">$raw</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetSerial" title="details" class="method-name">getSerial</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodisFinalized" title="details" class="method-name">isFinalized</a>
+        ([<span class="var-type">$error</span>&nbsp;<span class="var-name">$error</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodloadArray" title="details" class="method-name">loadArray</a>
+        (<span class="var-type">$config_array</span>&nbsp;<span class="var-name">$config_array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodloadIni" title="details" class="method-name">loadIni</a>
+        (<span class="var-type">$filename</span>&nbsp;<span class="var-name">$filename</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmergeArrayFromForm" title="details" class="method-name">mergeArrayFromForm</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$array</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$index</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$allowed</span> = <span class="var-default">true</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$mq_fix</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset" title="details" class="method-name">set</a>
+        (<span class="var-type">$namespace</span>&nbsp;<span class="var-name">$namespace</span>, <span class="var-type">$key</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">$value</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$from_alias</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#method_listify" title="details" class="method-name">_listify</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$lookup</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodcreate" id="methodcreate"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method create</strong> (line <span class="linenumber">102</span>)
+ </h4> 
+<h4><i>Configured</i> <strong>create(
+mixed
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Convenience constructor that creates a config object based on a mixed var</h5>
+<div class="desc"><p>Convenience constructor that creates a config object based on a mixed var</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $config</strong>: Variable that defines the state of the config                      object. Can be: a HTMLPurifier_Config() object,                      an array of directives based on loadArray(),                      or a string filename of an ini file.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - HTMLPurifier_Config object</li>
+		</ul>
+</div>
+<a name="methodcreateDefault" id="methodcreateDefault"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method createDefault</strong> (line <span class="linenumber">118</span>)
+ </h4> 
+<h4><i>Default</i> <strong>createDefault(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Convenience constructor that creates a default configuration object.</h5>
+<div class="desc"><p>Convenience constructor that creates a default configuration object.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - HTMLPurifier_Config object.</li>
+		</ul>
+</div>
+<a name="methodgetAllowedDirectivesForForm" id="methodgetAllowedDirectivesForForm"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method getAllowedDirectivesForForm</strong> (line <span class="linenumber">371</span>)
+ </h4> 
+<h4><i>void</i> <strong>getAllowedDirectivesForForm(
+$allowed
+$allowed)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a list of array(namespace, directive) for all directives that are allowed in a web-form context as per an allowed namespaces/directives list.</h5>
+<div class="desc"><p>Returns a list of array(namespace, directive) for all directives that are allowed in a web-form context as per an allowed namespaces/directives list.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$allowed $allowed</strong>: List of allowed namespaces/directives</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodloadArrayFromForm" id="methodloadArrayFromForm"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method loadArrayFromForm</strong> (line <span class="linenumber">416</span>)
+ </h4> 
+<h4><i>void</i> <strong>loadArrayFromForm(
+
+$array, $index
+$index, [$allowed
+$allowed = true], [$mq_fix
+$mq_fix = true], $array
+$_GET)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Loads configuration values from $_GET/$_POST that were posted</h5>
+<div class="desc"><p>Loads configuration values from $_GET/$_POST that were posted via ConfigForm</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$array $_GET</strong>: or $_POST array to import</li>
+			<li><strong>$index $index</strong>: Index/name that the config variables are in</li>
+			<li><strong>$allowed $allowed</strong>: List of allowed namespaces/directives</li>
+			<li><strong>$mq_fix $mq_fix</strong>: Boolean whether or not to enable magic quotes fix</li>
+			<li><strong> $array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodprepareArrayFromForm" id="methodprepareArrayFromForm"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method prepareArrayFromForm</strong> (line <span class="linenumber">436</span>)
+ </h4> 
+<h4><i>void</i> <strong>prepareArrayFromForm(
+
+$array, 
+$index, [
+$allowed = true], [
+$mq_fix = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Prepares an array from a form into something usable for the more</h5>
+<div class="desc"><p>Prepares an array from a form into something usable for the more strict parts of HTMLPurifier_Config</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $array</strong>: </li>
+			<li><strong> $index</strong>: </li>
+			<li><strong> $allowed</strong>: </li>
+			<li><strong> $mq_fix</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodHTMLPurifier_Config" id="methodHTMLPurifier_Config"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor HTMLPurifier_Config</strong> (line <span class="linenumber">88</span>)
+ </h4> 
+<h4><i>HTMLPurifier_Config</i> <strong>HTMLPurifier_Config(
+$definition
+&$definition)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$definition &$definition</strong>: HTMLPurifier_ConfigSchema that defines what directives                    are allowed.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodautoFinalize" id="methodautoFinalize"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method autoFinalize</strong> (line <span class="linenumber">481</span>)
+ </h4> 
+<h4><i>void</i> <strong>autoFinalize(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Finalizes configuration only if auto finalize is on and not</h5>
+<div class="desc"><p>Finalizes configuration only if auto finalize is on and not already finalized</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodfinalize" id="methodfinalize"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method finalize</strong> (line <span class="linenumber">488</span>)
+ </h4> 
+<h4><i>void</i> <strong>finalize(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Finalizes a configuration object, prohibiting further change</h5>
+<div class="desc"><p>Finalizes a configuration object, prohibiting further change</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodget" id="methodget"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get</strong> (line <span class="linenumber">129</span>)
+ </h4> 
+<h4><i>void</i> <strong>get(
+$namespace
+$namespace, $key
+$key, [
+$from_alias = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retreives a value from the configuration.</h5>
+<div class="desc"><p>Retreives a value from the configuration.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$namespace $namespace</strong>: String namespace</li>
+			<li><strong>$key $key</strong>: String key</li>
+			<li><strong> $from_alias</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetAll" id="methodgetAll"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getAll</strong> (line <span class="linenumber">190</span>)
+ </h4> 
+<h4><i>void</i> <strong>getAll(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves all directives, organized by namespace</h5>
+<div class="desc"><p>Retrieves all directives, organized by namespace</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetBatch" id="methodgetBatch"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getBatch</strong> (line <span class="linenumber">150</span>)
+ </h4> 
+<h4><i>void</i> <strong>getBatch(
+$namespace
+$namespace)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retreives an array of directives to values from a given namespace</h5>
+<div class="desc"><p>Retreives an array of directives to values from a given namespace</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$namespace $namespace</strong>: String namespace</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetBatchSerial" id="methodgetBatchSerial"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getBatchSerial</strong> (line <span class="linenumber">167</span>)
+ </h4> 
+<h4><i>void</i> <strong>getBatchSerial(
+$namespace
+$namespace)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a md5 signature of a segment of the configuration object</h5>
+<div class="desc"><p>Returns a md5 signature of a segment of the configuration object that uniquely identifies that particular configuration</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$namespace $namespace</strong>: Namespace to get serial for</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetCSSDefinition" id="methodgetCSSDefinition"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getCSSDefinition</strong> (line <span class="linenumber">276</span>)
+ </h4> 
+<h4><i>void</i> <strong>&amp;getCSSDefinition(
+[
+$raw = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves reference to the CSS definition</h5>
+<div class="desc"><p>Retrieves reference to the CSS definition</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $raw</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetDefinition" id="methodgetDefinition"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getDefinition</strong> (line <span class="linenumber">286</span>)
+ </h4> 
+<h4><i>void</i> <strong>&amp;getDefinition(
+$type
+$type, [$raw
+$raw = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves a definition</h5>
+<div class="desc"><p>Retrieves a definition</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$type $type</strong>: Type of definition: HTML, CSS, etc</li>
+			<li><strong>$raw $raw</strong>: Whether or not definition should be returned raw</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetHTMLDefinition" id="methodgetHTMLDefinition"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getHTMLDefinition</strong> (line <span class="linenumber">268</span>)
+ </h4> 
+<h4><i>void</i> <strong>&amp;getHTMLDefinition(
+[$raw
+$raw = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves reference to the HTML definition.</h5>
+<div class="desc"><p>Retrieves reference to the HTML definition.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$raw $raw</strong>: Return a copy that has not been setup yet. Must be             called before it's been setup, otherwise won't work.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetSerial" id="methodgetSerial"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSerial</strong> (line <span class="linenumber">180</span>)
+ </h4> 
+<h4><i>void</i> <strong>getSerial(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a md5 signature for the entire configuration object</h5>
+<div class="desc"><p>Returns a md5 signature for the entire configuration object that uniquely identifies that particular configuration</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodisFinalized" id="methodisFinalized"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method isFinalized</strong> (line <span class="linenumber">470</span>)
+ </h4> 
+<h4><i>void</i> <strong>isFinalized(
+[$error
+$error = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Checks whether or not the configuration object is finalized.</h5>
+<div class="desc"><p>Checks whether or not the configuration object is finalized.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$error $error</strong>: String error message, or false for no error</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodloadArray" id="methodloadArray"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method loadArray</strong> (line <span class="linenumber">346</span>)
+ </h4> 
+<h4><i>void</i> <strong>loadArray(
+$config_array
+$config_array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Loads configuration values from an array with the following structure:</h5>
+<div class="desc"><p>Loads configuration values from an array with the following structure: Namespace.Directive =&gt; Value</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$config_array $config_array</strong>: Configuration associative array</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodloadIni" id="methodloadIni"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method loadIni</strong> (line <span class="linenumber">460</span>)
+ </h4> 
+<h4><i>void</i> <strong>loadIni(
+$filename
+$filename)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Loads configuration values from an ini file</h5>
+<div class="desc"><p>Loads configuration values from an ini file</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$filename $filename</strong>: Name of ini file</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodmergeArrayFromForm" id="methodmergeArrayFromForm"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method mergeArrayFromForm</strong> (line <span class="linenumber">426</span>)
+ </h4> 
+<h4><i>void</i> <strong>mergeArrayFromForm(
+
+$array, 
+$index, [
+$allowed = true], [
+$mq_fix = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Merges in configuration values from $_GET/$_POST to object.</h5>
+<div class="desc"><p>Merges in configuration values from $_GET/$_POST to object. NOT STATIC.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $array</strong>: </li>
+			<li><strong> $index</strong>: </li>
+			<li><strong> $allowed</strong>: </li>
+			<li><strong> $mq_fix</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodset" id="methodset"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set</strong> (line <span class="linenumber">201</span>)
+ </h4> 
+<h4><i>void</i> <strong>set(
+$namespace
+$namespace, $key
+$key, $value
+$value, [
+$from_alias = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets a value to configuration.</h5>
+<div class="desc"><p>Sets a value to configuration.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$namespace $namespace</strong>: String namespace</li>
+			<li><strong>$key $key</strong>: String key</li>
+			<li><strong>$value $value</strong>: Mixed value</li>
+			<li><strong> $from_alias</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="method_listify" id="method_listify"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method _listify</strong> (line <span class="linenumber">257</span>)
+ </h4> 
+<h4><i>void</i> <strong>_listify(
+
+$lookup)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Convenience function for error reporting</h5>
+<div class="desc"><p>Convenience function for error reporting</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $lookup</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>private</strong> - </li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:05 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

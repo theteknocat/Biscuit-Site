@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>@global</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.filesource.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.ignore.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>@global</h1>
+  <h2 class="refpurpose"><em>Document a global variable, or its use in a function/method</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote>Tag Documentation written by <a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2002, Gregory Beaver</em><br />
+   (phpDocumentor 0.1+)<br />
+  <div id="cmdsynopsis"><div id="cmdsynopsis"><b class="cmd">@global</b>
+     <span class = "req">datatype</span>
+     <span class = "req">$globalvariablename</span></div>
+	<div id="cmdsynopsis"><b class="cmd">@global</b>
+     <span class = "req">datatype</span>
+     <span class = "req">description</span></div></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><p>Since there is no standard way to declare global variables, phpDocumentor requires that a @global tag be used in a docblock preceding a global variable's definition.  To support previous usage of @global, there is an alternate syntax that applies to DocBlocks preceding a function, used to document usage of global variables.  in other words, There are two usages of @global: definition and function usage.</p>
+  <p>phpDocumentor will not attempt to automatically parse out any global variables.  Only one @global tag is allowed per global variable DocBlock.  A global variable DocBlock must be followed by the global variable's definition before any other element or DocBlock occurs in the source, or an error will be raised.</p>
+  <p>datatype should be a valid PHP type or &quot;mixed.&quot;</p>
+  <p>$varname should be the EXACT name of the global variable as it is declared in the source (use <a href="../phpDocumentor/tutorial_tags.name.pkg.html">@name</a> to change the name displayed by documentation)</p>
+  <p>The function/method @global syntax is used to document usage of global variables in a function, and MUST NOT have a $ starting the third word.  The datatype will be ignored if a match is made between the declared global variable and a variable documented in the project.</p>
+  <p>phpDocumentor will check to see if the type specified is the name of a class that has been parsed.  If so, it will make a link to that class as the type instead of just the type.</p>
+  <p>phpDocumentor will display the optional description unmodified</p></span>
+ <span><a name="example"></a><h2 class="title" align="center">Example</h1><p>Here's an example of documenting the definition of a global variable:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;example&nbsp;of&nbsp;incorrect&nbsp;@global&nbsp;declaration&nbsp;#1</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>bool&nbsp;</em><strong>$GLOBALS['baz']&nbsp;</strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;blahblah</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@version</font></strong><font color="#009999">&nbsp;-6</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">include</font><strong>(</strong><font color="#66cccc">&quot;file.ext&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><font color="green">//&nbsp;error&nbsp;-&nbsp;element&nbsp;encountered&nbsp;before&nbsp;global&nbsp;variable&nbsp;declaration,&nbsp;docblock&nbsp;will&nbsp;apply&nbsp;to&nbsp;this&nbsp;include!</font></div></li>
+<li><div class="src-line"><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'baz'</font><strong>]&nbsp;</strong>=&nbsp;array<strong>(</strong><font color="#66cccc">'foo'</font><strong>,</strong><font color="#66cccc">'bar'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**&nbsp;example&nbsp;of&nbsp;incorrect&nbsp;@global&nbsp;declaration&nbsp;#2</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>parserElement&nbsp;</em><strong>$_Element&nbsp;</strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;error&nbsp;-&nbsp;this&nbsp;DocBlock&nbsp;occurs&nbsp;before&nbsp;the&nbsp;global&nbsp;variable&nbsp;definition&nbsp;and&nbsp;will&nbsp;apply&nbsp;to&nbsp;the&nbsp;function,</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;ignoring&nbsp;the&nbsp;global&nbsp;variable&nbsp;completely</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;/</font></div></li>
+<li><div class="src-line"><font color="#009999">$_Element&nbsp;=&nbsp;new&nbsp;parserElement;</font></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">function&nbsp;oopsie()</font></div></li>
+<li><div class="src-line"><font color="#009999">{</font></div></li>
+<li><div class="src-line"><font color="#009999">...</font></div></li>
+<li><div class="src-line"><font color="#009999">}</font></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**&nbsp;example&nbsp;of&nbsp;correct&nbsp;@global&nbsp;declaration,</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;even&nbsp;with&nbsp;many&nbsp;irrelevant&nbsp;things&nbsp;in&nbsp;between</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>mixed&nbsp;</em><strong>$_GLOBALS[&quot;myvar&quot;]&nbsp;</strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="green">//&nbsp;this&nbsp;is&nbsp;OK</font></div></li>
+<li><div class="src-line"><font color="blue">if&nbsp;</font><strong>(</strong><strong>$pre</strong><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>$thisstuff&nbsp;</strong>=&nbsp;<font color="#66cccc">'is&nbsp;fine&nbsp;too'</font><strong>;</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line"><strong>$_GLOBALS</strong><strong>[</strong><font color="#66cccc">&quot;myvar&quot;</font><strong>]&nbsp;</strong>=&nbsp;array<strong>(&nbsp;</strong><font color="#66cccc">&quot;this&quot;&nbsp;</font>=&gt;&nbsp;<font color="#66cccc">'works&nbsp;just&nbsp;fine'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;example&nbsp;of&nbsp;using&nbsp;@name&nbsp;with&nbsp;@global</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;the&nbsp;@name&nbsp;tag&nbsp;*must*&nbsp;have&nbsp;a&nbsp;$&nbsp;in&nbsp;the&nbsp;name,&nbsp;or&nbsp;an&nbsp;error&nbsp;will&nbsp;be&nbsp;raised</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>array&nbsp;</em><strong>$GLOBALS['neato']&nbsp;</strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@name</font></strong><font color="#009999">&nbsp;$neato</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'neato'</font><strong>]&nbsp;</strong>=&nbsp;<font color="#66cccc">'This&nbsp;variable\'s&nbsp;name&nbsp;is&nbsp;documented&nbsp;as&nbsp;$neato,&nbsp;and&nbsp;not&nbsp;as&nbsp;$GLOBALS[\'neato\']'</font><strong>;</strong></div></li>
+</ol></div></p>
+  <p>Here's an example of documenting the use of a global variable in a function/method:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Used&nbsp;to&nbsp;showcase&nbsp;linking&nbsp;feature&nbsp;of&nbsp;function&nbsp;@global</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font><a href="../tests/test.html">test</a></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>test&nbsp;</em><strong>$GLOBALS['baz']&nbsp;</strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@name</font></strong><font color="#009999">&nbsp;$bar</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'bar'</font><strong>]&nbsp;</strong>=&nbsp;new&nbsp;<a href="../tests/_framework---docs---Documentation---tests---bug-loseprocedural.php.html#functiontest">test</a></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;example&nbsp;of&nbsp;basic&nbsp;@global&nbsp;usage&nbsp;in&nbsp;a&nbsp;function</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;assume&nbsp;global&nbsp;variables&nbsp;&quot;$foo&quot;&nbsp;and&nbsp;&quot;$bar&quot;&nbsp;are&nbsp;already&nbsp;documented</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>bool&nbsp;</em><font color="#009999">used&nbsp;to&nbsp;control&nbsp;the&nbsp;weather</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>test&nbsp;</em><font color="#009999">used&nbsp;to&nbsp;calculate&nbsp;the&nbsp;division&nbsp;tables</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>bool&nbsp;</em><strong>$baz&nbsp;</strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>mixed&nbsp;</em></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">function&nbsp;</font>function1<strong>(</strong><strong>$baz</strong><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="blue">global&nbsp;</font><strong>$foo</strong><strong>,</strong><strong>$bar</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;note&nbsp;that&nbsp;this&nbsp;also&nbsp;works&nbsp;as:</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;global&nbsp;$foo;</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;global&nbsp;$bar;</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$baz</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$a&nbsp;</strong>=&nbsp;5<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$a&nbsp;</strong>=&nbsp;array<strong>(</strong>1<strong>,</strong>4<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$a</strong><strong>;</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+</ol></div></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.filesource.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.ignore.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">@filesource</td>
+<td width="34%" align="center" valign="top">phpDocumentor tags</td>
+<td width="33%" align="right" valign="top">@ignore</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:41 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

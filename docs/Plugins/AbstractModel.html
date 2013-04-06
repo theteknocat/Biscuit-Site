@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class AbstractModel</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class AbstractModel
+</h2> (line <span class="linenumber">8</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---AbstractModel.php.html">/framework/lib/AbstractModel.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>An abstract model for use with plugin models</h5>
+<div class="desc"><p>An abstract model for use with plugin models</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from AbstractModel:</span>
+ 		<dl>
+	<dt><a href="../Plugins/Contact.html">Contact</a></dt>
+		<dd>Model for the Cantact plugin</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/NewsAndEvents.html">NewsAndEvents</a></dt>
+		<dd>News and events model</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PageContent.html">PageContent</a></dt>
+		<dd>Model for the PageContent plugin which allows arbitrary editing of static page content</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PageIndex.html">PageIndex</a></dt>
+		<dd>Model for dealing with the page_index table for reading and writing data.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/GalleryPhoto.html">GalleryPhoto</a></dt>
+		<dd>Photo model for basic photo gallery</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/GalleryAlbum.html">GalleryAlbum</a></dt>
+		<dd>Album model for basic photo gallery</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/MyModel.html">MyModel</a></dt>
+		<dd>undocumented class</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/User.html">User</a></dt>
+		<dd>The general model for handling all user-related data functions</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$error_messages" title="details" class="property"><strong>$error_messages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">int</span>
+    <a href="#var$id" title="details" class="property"><strong>$id</strong></a>
+</div>
+<hr />
+<a name="var$error_messages" id="var$error_messages"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$error_messages = array()</strong> (line <span class="linenumber">20</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>A list of any error messages resulting from save or validation</h5>
+<div class="desc"><p>A list of any error messages resulting from save or validation</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$id" id="var$id"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$id</strong> (line <span class="linenumber">14</span>)
+ </h4>
+<h4>Data type : int</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Primary key for this object</h5>
+<div class="desc"><p>Primary key for this object</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result"><a href="../Plugins/AbstractModel.html">AbstractModel</a></span>
+        <a href="#methodAbstractModel" title="details" class="method-name">AbstractModel</a>
+        ([<span class="var-type">$attributes</span>&nbsp;<span class="var-name">$attributes</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methoddb_table" title="details" class="method-name">db_table</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddelete" title="details" class="method-name">delete</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodget_attribute" title="details" class="method-name">get_attribute</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodget_attributes" title="details" class="method-name">get_attributes</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhas_been_validated" title="details" class="method-name">has_been_validated</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$bool</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodid" title="details" class="method-name">id</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodmodels_from_query" title="details" class="method-name">models_from_query</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$model</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">object</span>
+        <a href="#methodmodel_from_query" title="details" class="method-name">model_from_query</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$model</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsave" title="details" class="method-name">save</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$data</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_attribute" title="details" class="method-name">set_attribute</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_attributes" title="details" class="method-name">set_attributes</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodAbstractModel" id="methodAbstractModel"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor AbstractModel</strong> (line <span class="linenumber">27</span>)
+ </h4> 
+<h4><i><a href="../Plugins/AbstractModel.html">AbstractModel</a></i> <strong>AbstractModel(
+[$attributes
+$attributes = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Constructor for the AbstractModel class</h5>
+<div class="desc"><p>Constructor for the AbstractModel class</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$attributes $attributes</strong>: (array)  an associative array of attributes</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - object</li>
+		</ul>
+</div>
+<a name="methoddb_table" id="methoddb_table"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method db_table</strong> (line <span class="linenumber">130</span>)
+ </h4> 
+<h4><i>string</i> <strong>db_table(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the database table for the current object</h5>
+<div class="desc"><p>Return the database table for the current object</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoddelete" id="methoddelete"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method delete</strong> (line <span class="linenumber">206</span>)
+ </h4> 
+<h4><i>void</i> <strong>delete(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodget_attribute" id="methodget_attribute"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get_attribute</strong> (line <span class="linenumber">55</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>get_attribute(
+string
+$name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return a specified attribute of the object</h5>
+<div class="desc"><p>Return a specified attribute of the object</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: Name of the attribute</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodget_attributes" id="methodget_attributes"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get_attributes</strong> (line <span class="linenumber">68</span>)
+ </h4> 
+<h4><i>array</i> <strong>get_attributes(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return all the attributes (except the DB table) as an associative array</h5>
+<div class="desc"><p>Return all the attributes (except the DB table) as an associative array</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodhas_been_validated" id="methodhas_been_validated"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method has_been_validated</strong> (line <span class="linenumber">39</span>)
+ </h4> 
+<h4><i>void</i> <strong>has_been_validated(
+[string
+$bool = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set or get the validation status</h5>
+<div class="desc"><p>Set or get the validation status</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $bool</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodid" id="methodid"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method id</strong> (line <span class="linenumber">123</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>id(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the id of the model instance</h5>
+<div class="desc"><p>Return the id of the model instance</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodmodels_from_query" id="methodmodels_from_query"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method models_from_query</strong> (line <span class="linenumber">156</span>)
+ </h4> 
+<h4><i>array</i> <strong>models_from_query(
+string
+$model, string
+$query)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Build a collection of instances of models from a database query</h5>
+<div class="desc"><p>Build a collection of instances of models from a database query</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $model</strong>: The name of the model to create instances of</li>
+			<li><strong>string $query</strong>: Query to build the instances from</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Collection of objects</li>
+			<li><strong>author</strong> - Lee O'Mara</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodmodel_from_query" id="methodmodel_from_query"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method model_from_query</strong> (line <span class="linenumber">140</span>)
+ </h4> 
+<h4><i>object</i> <strong>model_from_query(
+string
+$model, string
+$query)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Build an instance of a model from a database query</h5>
+<div class="desc"><p>Build an instance of a model from a database query</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $model</strong>: Name of the model to create an instance of</li>
+			<li><strong>string $query</strong>: Query to build the instance from</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsave" id="methodsave"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method save</strong> (line <span class="linenumber">174</span>)
+ </h4> 
+<h4><i>void</i> <strong>save(
+array
+$data)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Plugins/NewsAndEvents.html#methodsave">NewsAndEvents::save()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PageContent.html#methodsave">PageContent::save()</a></dt>
+		<dd>Save data to the object's defined database table</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/GalleryPhoto.html#methodsave">GalleryPhoto::save()</a></dt>
+		<dd>Handle file upload and save</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Save data to the object's defined database table</h5>
+<div class="desc"><p>Save data to the object's defined database table</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $data</strong>: Associative array of data with keys matching the database columns to store</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodset_attribute" id="methodset_attribute"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_attribute</strong> (line <span class="linenumber">93</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_attribute(
+string
+$name, string
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set a single model attribute</h5>
+<div class="desc"><p>Set a single model attribute</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: Name of the attribute</li>
+			<li><strong>string $value</strong>: Desired value</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodset_attributes" id="methodset_attributes"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_attributes</strong> (line <span class="linenumber">102</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_attributes(
+array
+$attributes)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set model attributes</h5>
+<div class="desc"><p>Set model attributes</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $attributes</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:46 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

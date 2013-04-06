@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class PhotoGalleryManager</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class PhotoGalleryManager
+</h2> (line <span class="linenumber">9</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a>
+   |
+   --<a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a>
+      |
+      --PhotoGalleryManager</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---PhotoGalleryManager.php.html">/framework/plugins/PhotoGalleryManager.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Controller for basic photo gallery</h5>
+<div class="desc"><p>Controller for basic photo gallery</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$dependencies" title="details" class="property"><strong>$dependencies</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$permission_actions" title="details" class="property"><strong>$permission_actions</strong></a>
+</div>
+<hr />
+<a name="var$dependencies" id="var$dependencies"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$dependencies = array(&quot;Authenticator&quot;,&quot;Prototype&quot;,&quot;LightView&quot;)</strong> (line <span class="linenumber">15</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>List of other plugins this one is dependent on</h5>
+<div class="desc"><p>List of other plugins this one is dependent on</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$permission_actions" id="var$permission_actions"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$permission_actions = array('new_album','new_photo','edit_album','edit_photo','delete_album','delete_photo','batch_add')</strong> (line <span class="linenumber">21</span>)
+ </h4>
+<h4>Data type : string</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<h5>The list of actions that require permissions.</h5>
+<div class="desc"><p>The list of actions that require permissions.</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_ajax_validate" title="details" class="method-name">action_ajax_validate</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_ajax_validate_batch" title="details" class="method-name">action_ajax_validate_batch</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_batch_add" title="details" class="method-name">action_batch_add</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_delete_album" title="details" class="method-name">action_delete_album</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_delete_photo" title="details" class="method-name">action_delete_photo</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_edit_album" title="details" class="method-name">action_edit_album</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_edit_photo" title="details" class="method-name">action_edit_photo</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_index" title="details" class="method-name">action_index</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_new_album" title="details" class="method-name">action_new_album</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_new_photo" title="details" class="method-name">action_new_photo</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_resort_albums" title="details" class="method-name">action_resort_albums</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_resort_photos" title="details" class="method-name">action_resort_photos</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_show_album" title="details" class="method-name">action_show_album</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_xml_output" title="details" class="method-name">action_xml_output</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodbefore_filter" title="details" class="method-name">before_filter</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddb_create_query" title="details" class="method-name">db_create_query</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$table_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddb_tablename" title="details" class="method-name">db_tablename</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodfile_info" title="details" class="method-name">file_info</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$item</span>, <span class="var-type">object</span>&nbsp;<span class="var-name">$item</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoditem_file_path" title="details" class="method-name">item_file_path</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$item</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methoditem_full_file_path" title="details" class="method-name">item_full_file_path</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">&$item</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoditem_full_thumb_path" title="details" class="method-name">item_full_thumb_path</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$item</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoditem_thumb_path" title="details" class="method-name">item_thumb_path</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$item</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender" title="details" class="method-name">render</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrun" title="details" class="method-name">run</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$params</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodurl" title="details" class="method-name">url</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">NULL</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_add_photo" title="details" class="method-name">user_can_add_photo</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_create_album" title="details" class="method-name">user_can_create_album</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_delete_album" title="details" class="method-name">user_can_delete_album</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_delete_photo" title="details" class="method-name">user_can_delete_photo</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_edit_album" title="details" class="method-name">user_can_edit_album</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_edit_photo" title="details" class="method-name">user_can_edit_photo</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodaction_ajax_validate" id="methodaction_ajax_validate"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_ajax_validate</strong> (line <span class="linenumber">91</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_ajax_validate(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Call validation and return a response for use by the Biscuit JS Ajax validation</h5>
+<div class="desc"><p>Call validation and return a response for use by the Biscuit JS Ajax validation</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_ajax_validate_batch" id="methodaction_ajax_validate_batch"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_ajax_validate_batch</strong> (line <span class="linenumber">132</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_ajax_validate_batch(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaction_batch_add" id="methodaction_batch_add"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_batch_add</strong> (line <span class="linenumber">262</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_batch_add(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handle batch photo uploads</h5>
+<div class="desc"><p>Handle batch photo uploads</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_delete_album" id="methodaction_delete_album"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_delete_album</strong> (line <span class="linenumber">300</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_delete_album(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Remove a photo album and all of its contents</h5>
+<div class="desc"><p>Remove a photo album and all of its contents</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_delete_photo" id="methodaction_delete_photo"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_delete_photo</strong> (line <span class="linenumber">334</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_delete_photo(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Remove a single photo</h5>
+<div class="desc"><p>Remove a single photo</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_edit_album" id="methodaction_edit_album"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_edit_album</strong> (line <span class="linenumber">147</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_edit_album(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaction_edit_photo" id="methodaction_edit_photo"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_edit_photo</strong> (line <span class="linenumber">174</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_edit_photo(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaction_index" id="methodaction_index"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_index</strong> (line <span class="linenumber">55</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_index(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Read all albums and render</h5>
+<div class="desc"><p>Read all albums and render</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_new_album" id="methodaction_new_album"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_new_album</strong> (line <span class="linenumber">196</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_new_album(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaction_new_photo" id="methodaction_new_photo"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_new_photo</strong> (line <span class="linenumber">228</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_new_photo(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaction_resort_albums" id="methodaction_resort_albums"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_resort_albums</strong> (line <span class="linenumber">282</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_resort_albums(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tell the model to resort it's database table according to a sorting array.</h5>
+<div class="desc"><p>Tell the model to resort it's database table according to a sorting array.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_resort_photos" id="methodaction_resort_photos"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_resort_photos</strong> (line <span class="linenumber">291</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_resort_photos(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tell the model to resort it's database table according to a sorting array.</h5>
+<div class="desc"><p>Tell the model to resort it's database table according to a sorting array.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_show_album" id="methodaction_show_album"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_show_album</strong> (line <span class="linenumber">65</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_show_album(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Show the contents of a single album</h5>
+<div class="desc"><p>Show the contents of a single album</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodaction_xml_output" id="methodaction_xml_output"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_xml_output</strong> (line <span class="linenumber">80</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_xml_output(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Render XML output for an album</h5>
+<div class="desc"><p>Render XML output for an album</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodbefore_filter" id="methodbefore_filter"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method before_filter</strong> (line <span class="linenumber">376</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>before_filter(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Enforce the presence of some data(notably ID) for certain actions.</h5>
+<div class="desc"><p>Enforce the presence of some data(notably ID) for certain actions. This function is called before the action by AbstractPluginController#run</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddb_create_query" id="methoddb_create_query"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method db_create_query</strong> (line <span class="linenumber">575</span>)
+ </h4> 
+<h4><i>void</i> <strong>db_create_query(
+
+$table_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $table_name</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddb_tablename" id="methoddb_tablename"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method db_tablename</strong> (line <span class="linenumber">572</span>)
+ </h4> 
+<h4><i>void</i> <strong>db_tablename(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodfile_info" id="methodfile_info"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method file_info</strong> (line <span class="linenumber">418</span>)
+ </h4> 
+<h4><i>array</i> <strong>file_info(
+
+&$item, object
+$item)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Function to grab date and size of a file attachment</h5>
+<div class="desc"><p>Function to grab date and size of a file attachment</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>object $item</strong>: The news or event item</li>
+			<li><strong> &$item</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Or boolean - array of data if file exists, false if file does not exist</li>
+		</ul>
+</div>
+<a name="methoditem_file_path" id="methoditem_file_path"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method item_file_path</strong> (line <span class="linenumber">388</span>)
+ </h4> 
+<h4><i>void</i> <strong>item_file_path(
+
+&$item)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$item</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoditem_full_file_path" id="methoditem_full_file_path"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method item_full_file_path</strong> (line <span class="linenumber">407</span>)
+ </h4> 
+<h4><i>string</i> <strong>item_full_file_path(
+array
+&$item)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the full path on the local file system</h5>
+<div class="desc"><p>Return the full path on the local file system</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array &$item</strong>: Publication</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoditem_full_thumb_path" id="methoditem_full_thumb_path"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method item_full_thumb_path</strong> (line <span class="linenumber">410</span>)
+ </h4> 
+<h4><i>void</i> <strong>item_full_thumb_path(
+
+&$item)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$item</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoditem_thumb_path" id="methoditem_thumb_path"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method item_thumb_path</strong> (line <span class="linenumber">394</span>)
+ </h4> 
+<h4><i>void</i> <strong>item_thumb_path(
+
+&$item)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> &$item</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender" id="methodrender"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render</strong> (line <span class="linenumber">363</span>)
+ </h4> 
+<h4><i>void</i> <strong>render(
+)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../Plugins/AbstractPluginController.html#methodrender">AbstractPluginController::render()</a> Render the plugin</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set the view file based on the current data_type (news or events)</h5>
+<div class="desc"><p>Set the view file based on the current data_type (news or events)</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrun" id="methodrun"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method run</strong> (line <span class="linenumber">23</span>)
+ </h4> 
+<h4><i>void</i> <strong>run(
+
+$params)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../Plugins/AbstractPluginController.html#methodrun">AbstractPluginController::run()</a> Dispatch to action methods if found. before_filter(if found) is run.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $params</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodurl" id="methodurl"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method url</strong> (line <span class="linenumber">457</span>)
+ </h4> 
+<h4><i>void</i> <strong>url(
+[string
+$action = NULL], [string
+$id = NULL])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../Plugins/AbstractPluginController.html#methodurl">AbstractPluginController::url()</a> Return the URL for the current plugin based on it's current action.
+ The default URL is the index action.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>If action is &quot;download&quot;, returns a new or event file attachment url, otherwise defers to the parent url function</h5>
+<div class="desc"><p>If action is &quot;download&quot;, returns a new or event file attachment url, otherwise defers to the parent url function</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $action</strong>: </li>
+			<li><strong>string $id</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_add_photo" id="methoduser_can_add_photo"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_add_photo</strong> (line <span class="linenumber">551</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_add_photo(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user create photo permission</h5>
+<div class="desc"><p>A shortcut to checking user create photo permission</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_create_album" id="methoduser_can_create_album"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_create_album</strong> (line <span class="linenumber">542</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_create_album(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user create album permission</h5>
+<div class="desc"><p>A shortcut to checking user create album permission</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_delete_album" id="methoduser_can_delete_album"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_delete_album</strong> (line <span class="linenumber">560</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_delete_album(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user delete album permission</h5>
+<div class="desc"><p>A shortcut to checking user delete album permission</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_delete_photo" id="methoduser_can_delete_photo"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_delete_photo</strong> (line <span class="linenumber">569</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_delete_photo(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user delete photo permission</h5>
+<div class="desc"><p>A shortcut to checking user delete photo permission</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_edit_album" id="methoduser_can_edit_album"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_edit_album</strong> (line <span class="linenumber">524</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_edit_album(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user edit album permission</h5>
+<div class="desc"><p>A shortcut to checking user edit album permission</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_edit_photo" id="methoduser_can_edit_photo"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_edit_photo</strong> (line <span class="linenumber">533</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_edit_photo(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user edit photo permission</h5>
+<div class="desc"><p>A shortcut to checking user edit photo permission</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractPluginController.html#var$page">AbstractPluginController::$page</a></strong> - A reference to the web_page.
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a></h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methoddependencies_met">AbstractPluginController::dependencies_met()</a></strong> - Check to see if a plugin's dependencies are met.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodregister_page">AbstractPluginController::register_page()</a></strong> - Register a reference of the Biscuit in this plugin
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrender">AbstractPluginController::render()</a></strong> - Render the plugin
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrun">AbstractPluginController::run()</a></strong> - Dispatch to action methods if found. before_filter(if found) is run.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrun_success_callback_on_error">AbstractPluginController::run_success_callback_on_error()</a></strong> - Whether or not to run an ajax callback on error.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodsave_response">AbstractPluginController::save_response()</a></strong> - Execute the appropriate response to a save.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodtitle">AbstractPluginController::title()</a></strong> - Set the body title of the page
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodurl">AbstractPluginController::url()</a></strong> - Return the URL for the current plugin based on it's current action.
+ The default URL is the index action.
+		</h4> 
+
+				<br />
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a></h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodaction_requires_permission">AbstractPlugin::action_requires_permission()</a></strong> - Does an action require a permissions check?
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodbuild_table">AbstractPlugin::build_table()</a></strong> - Calls create_table, populate_table and/or alter_table as needed to build a plugin's database table.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcheck_install">AbstractPlugin::check_install()</a></strong> - Check to see if the database for this plugin is installed, and if not call the install_plugin_db function if the plugin can provide the table name.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcreate_table">AbstractPlugin::create_table()</a></strong> - Create a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodmigrate_table">AbstractPlugin::migrate_table()</a></strong> - Perform any required database migration. would use Authenticator's users table) and it needs to modify that table for it's own use.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_check">AbstractPlugin::permission_check()</a></strong> - A before_filter that checks for permission to access certain actions
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_error">AbstractPlugin::permission_error()</a></strong> - What to do when a permission_check fails
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_string_for_action">AbstractPlugin::permission_string_for_action()</a></strong> - Construct a permission string for an action
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpopulate_table">AbstractPlugin::populate_table()</a></strong> - Populate a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodupload_path">AbstractPlugin::upload_path()</a></strong> - Return the upload path for the current plugin.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_create">AbstractPlugin::user_can_create()</a></strong> - A shortcut to checking user new permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_delete">AbstractPlugin::user_can_delete()</a></strong> - A shortcut to checking user delete permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_edit">AbstractPlugin::user_can_edit()</a></strong> - A shortcut to checking user edit permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_view">AbstractPlugin::user_can_view()</a></strong> - A shortcut to checking user show permission on the current object
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:32 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

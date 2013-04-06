@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class parserDefine</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class parserDefine
+</h2> (line <span class="linenumber">1983</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../../phpDocumentor/ParserData/parserBase.html">parserBase</a>
+   |
+   --<a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a>
+      |
+      --parserDefine</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---ParserElements.inc.html">/framework/docs/phpDocumentor/ParserElements.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>author:</strong> - Greg Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - $Id: ParserElements.inc,v 1.20 2007/12/19 02:16:49 ashnazg Exp $</li>
+		<li><strong>copyright:</strong> - 2002-2008 Gregory Beaver</li>
+		<li><strong>since:</strong> - 1.0rc1</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$type" title="details" class="property"><strong>$type</strong></a>
+</div>
+<hr />
+<a name="var$type" id="var$type"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$type =  'define'</strong> (line <span class="linenumber">1989</span>)
+ </h4>
+<h4>Data type : string</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<h5>Type is used by many functions to skip the hassle of if phpDocumentor_get_class($blah) == 'parserBlah'</h5>
+<div class="desc"><p>Type is used by many functions to skip the hassle of if phpDocumentor_get_class($blah) == 'parserBlah'</p></div>
+<ul>
+		<li><strong>var:</strong> - always 'define'</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetConflicts" title="details" class="method-name">getConflicts</a>
+        (<span class="var-type"><a href="../../Converters/Converter.html">Converter</a></span>&nbsp;<span class="var-name">&$c</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetLink" title="details" class="method-name">getLink</a>
+        (<span class="var-type"><a href="../../Converters/Converter.html">Converter</a></span>&nbsp;<span class="var-name">$c</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$returnobj</span> = <span class="var-default">false</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodgetConflicts" id="methodgetConflicts"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getConflicts</strong> (line <span class="linenumber">2011</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getConflicts(
+<a href="../../Converters/Converter.html">Converter</a>
+&$c)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns all defines in other packages that have the same name as this define</h5>
+<div class="desc"><p>Returns all defines in other packages that have the same name as this define</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../Converters/Converter.html">Converter</a> &$c</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - false or an array Format: (package =&gt; <a href="../../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a> of conflicting defines)</li>
+			<li><strong>usedby</strong> - <a href="../../Converters/Converter.html#methodgetFormattedConflicts">Converter::getFormattedConflicts()</a></li>
+		</ul>
+</div>
+<a name="methodgetLink" id="methodgetLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getLink</strong> (line <span class="linenumber">1997</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getLink(
+<a href="../../Converters/Converter.html">Converter</a>
+$c, [string
+$text = false], [
+$returnobj = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>quick way to link to this element</h5>
+<div class="desc"><p>quick way to link to this element</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../Converters/Converter.html">Converter</a> $c</strong>: </li>
+			<li><strong>string $text</strong>: text to display for the link or false for default text</li>
+			<li><strong> $returnobj</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - converter-specific link to this define</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a></h4>
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserElements/parserElement.html#var$conflicts">parserElement::$conflicts</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserElements/parserElement.html#var$docblock">parserElement::$docblock</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserElements/parserElement.html#var$endlinenumber">parserElement::$endlinenumber</a></strong> - line number on file where this element stops
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserElements/parserElement.html#var$file">parserElement::$file</a></strong> - location of this element (filename)
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserElements/parserElement.html#var$linenumber">parserElement::$linenumber</a></strong> - Line number in the source on which this element appears
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserElements/parserElement.html#var$name">parserElement::$name</a></strong> - name of this element, or include type if element is a <a href="../../phpDocumentor/ParserElements/parserInclude.html">parserInclude</a>
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserElements/parserElement.html#var$path">parserElement::$path</a></strong> - full path location of this element (filename)
+	</h4> 
+			<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/ParserData/parserBase.html">parserBase</a></h4>
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserData/parserBase.html#var$value">parserBase::$value</a></strong> - set to different things by its descendants
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a></h4>
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodgetEndLineNumber">parserElement::getEndLineNumber()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodgetFile">parserElement::getFile()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodgetLineNumber">parserElement::getLineNumber()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodgetName">parserElement::getName()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodgetPackage">parserElement::getPackage()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodgetPath">parserElement::getPath()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodsetDocBlock">parserElement::setDocBlock()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodsetEndLineNumber">parserElement::setEndLineNumber()</a></strong> - Sets the ending line number of elements
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodsetFile">parserElement::setFile()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodsetLineNumber">parserElement::setLineNumber()</a></strong> - Set starting line number
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodsetName">parserElement::setName()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserElements/parserElement.html#methodsetPath">parserElement::setPath()</a></strong> - 
+		</h4> 
+
+				<br />
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/ParserData/parserBase.html">parserBase</a></h4>
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserData/parserBase.html#methodgetType">parserBase::getType()</a></strong> - gets the type
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserData/parserBase.html#methodgetValue">parserBase::getValue()</a></strong> - gets the value
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserData/parserBase.html#methodsetValue">parserBase::setValue()</a></strong> - sets the given value
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:24 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

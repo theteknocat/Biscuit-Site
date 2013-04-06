@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class Navigation</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class Navigation
+</h2> (line <span class="linenumber">9</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a>
+   |
+   --<a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a>
+      |
+      --Navigation</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---Navigation.php.html">/framework/plugins/Navigation.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>A collection of rendering functions that draw various navigation widgets</h5>
+<div class="desc"><p>A collection of rendering functions that draw various navigation widgets</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodlogout_url" title="details" class="method-name">logout_url</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$page_name</span> = <span class="var-default">''</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmenu_has_submenu" title="details" class="method-name">menu_has_submenu</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodpagination_widgets" title="details" class="method-name">pagination_widgets</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$wlisting_pages</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$wlisting_limit</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$current_page</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$colspan</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$setnum</span> = <span class="var-default">1</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_bread_crumbs" title="details" class="method-name">render_bread_crumbs</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$separator</span> = <span class="var-default">&quot;&gt;&quot;</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_list_menu" title="details" class="method-name">render_list_menu</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$currentParID</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$indent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_plain_menu" title="details" class="method-name">render_plain_menu</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$currentParID</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_searchbox" title="details" class="method-name">render_searchbox</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$formname</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$userquery</span> = <span class="var-default">&quot;Site Search&quot;</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_sitemap" title="details" class="method-name">render_sitemap</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$indent</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$currentParID</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_submenus" title="details" class="method-name">render_submenus</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_text_mainmenu" title="details" class="method-name">render_text_mainmenu</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_text_submenu" title="details" class="method-name">render_text_submenu</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$page_id</span> = <span class="var-default">&quot;&quot;</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$view_file</span> = <span class="var-default">&quot;text_submenu.php&quot;</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrun" title="details" class="method-name">run</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodurl" title="details" class="method-name">url</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$page_name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$with_logout</span> = <span class="var-default">false</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodlogout_url" id="methodlogout_url"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method logout_url</strong> (line <span class="linenumber">362</span>)
+ </h4> 
+<h4><i>void</i> <strong>logout_url(
+[string
+$page_name = ''], string
+$title)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tell Navigation::url() to build a logout URL</h5>
+<div class="desc"><p>Tell Navigation::url() to build a logout URL</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $page_name</strong>: </li>
+			<li><strong>string $title</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodmenu_has_submenu" id="methodmenu_has_submenu"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method menu_has_submenu</strong> (line <span class="linenumber">232</span>)
+ </h4> 
+<h4><i>void</i> <strong>menu_has_submenu(
+
+$id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $id</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodpagination_widgets" id="methodpagination_widgets"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method pagination_widgets</strong> (line <span class="linenumber">304</span>)
+ </h4> 
+<h4><i>void</i> <strong>pagination_widgets(
+
+$wlisting_pages, 
+$wlisting_limit, 
+$current_page, 
+$colspan, [
+$setnum = 1])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $wlisting_pages</strong>: </li>
+			<li><strong> $wlisting_limit</strong>: </li>
+			<li><strong> $current_page</strong>: </li>
+			<li><strong> $colspan</strong>: </li>
+			<li><strong> $setnum</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_bread_crumbs" id="methodrender_bread_crumbs"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_bread_crumbs</strong> (line <span class="linenumber">241</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_bread_crumbs(
+[
+$separator = &quot;&gt;&quot;])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $separator</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_list_menu" id="methodrender_list_menu"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_list_menu</strong> (line <span class="linenumber">13</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_list_menu(
+
+$currentParID, 
+$indent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $currentParID</strong>: </li>
+			<li><strong> $indent</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_plain_menu" id="methodrender_plain_menu"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_plain_menu</strong> (line <span class="linenumber">164</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_plain_menu(
+
+$currentParID)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $currentParID</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_searchbox" id="methodrender_searchbox"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_searchbox</strong> (line <span class="linenumber">279</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_searchbox(
+
+$formname, [
+$userquery = &quot;Site Search&quot;])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $formname</strong>: </li>
+			<li><strong> $userquery</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_sitemap" id="methodrender_sitemap"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_sitemap</strong> (line <span class="linenumber">59</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_sitemap(
+
+$indent, 
+$currentParID)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $indent</strong>: </li>
+			<li><strong> $currentParID</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_submenus" id="methodrender_submenus"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_submenus</strong> (line <span class="linenumber">211</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_submenus(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_text_mainmenu" id="methodrender_text_mainmenu"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_text_mainmenu</strong> (line <span class="linenumber">29</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_text_mainmenu(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Render all top-level pages as a string of text links using a view file</h5>
+<div class="desc"><p>Render all top-level pages as a string of text links using a view file</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrender_text_submenu" id="methodrender_text_submenu"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_text_submenu</strong> (line <span class="linenumber">44</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_text_submenu(
+[
+$page_id = &quot;&quot;], [
+$view_file = &quot;text_submenu.php&quot;])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Render all sub-pages of the current page (if any exist) as text links using a view file, either with a default or specified filename</h5>
+<div class="desc"><p>Render all sub-pages of the current page (if any exist) as text links using a view file, either with a default or specified filename</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $page_id</strong>: </li>
+			<li><strong> $view_file</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrun" id="methodrun"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method run</strong> (line <span class="linenumber">10</span>)
+ </h4> 
+<h4><i>void</i> <strong>run(
+)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../Plugins/AbstractPluginController.html#methodrun">AbstractPluginController::run()</a> Dispatch to action methods if found. before_filter(if found) is run.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodurl" id="methodurl"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method url</strong> (line <span class="linenumber">332</span>)
+ </h4> 
+<h4><i>string</i> <strong>url(
+string
+$page_name, [string
+$title = ''], [
+$with_logout = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../Plugins/AbstractPluginController.html#methodurl">AbstractPluginController::url()</a> Return the URL for the current plugin based on it's current action.
+ The default URL is the index action.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Create an anchor tag with link to a page in the framework</h5>
+<div class="desc"><p>Create an anchor tag with link to a page in the framework</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $page_name</strong>: The shortname of the page</li>
+			<li><strong>string $title</strong>: The title of the page.  This is optional.  If not set, it will be taken from the page_index table</li>
+			<li><strong> $with_logout</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractPluginController.html#var$page">AbstractPluginController::$page</a></strong> - A reference to the web_page.
+	</h4> 
+			<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractPlugin.html#var$permission_actions">AbstractPlugin::$permission_actions</a></strong> - The list of actions that require permissions by default.
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a></h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methoddependencies_met">AbstractPluginController::dependencies_met()</a></strong> - Check to see if a plugin's dependencies are met.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodregister_page">AbstractPluginController::register_page()</a></strong> - Register a reference of the Biscuit in this plugin
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrender">AbstractPluginController::render()</a></strong> - Render the plugin
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrun">AbstractPluginController::run()</a></strong> - Dispatch to action methods if found. before_filter(if found) is run.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrun_success_callback_on_error">AbstractPluginController::run_success_callback_on_error()</a></strong> - Whether or not to run an ajax callback on error.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodsave_response">AbstractPluginController::save_response()</a></strong> - Execute the appropriate response to a save.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodtitle">AbstractPluginController::title()</a></strong> - Set the body title of the page
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodurl">AbstractPluginController::url()</a></strong> - Return the URL for the current plugin based on it's current action.
+ The default URL is the index action.
+		</h4> 
+
+				<br />
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a></h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodaction_requires_permission">AbstractPlugin::action_requires_permission()</a></strong> - Does an action require a permissions check?
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodbuild_table">AbstractPlugin::build_table()</a></strong> - Calls create_table, populate_table and/or alter_table as needed to build a plugin's database table.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcheck_install">AbstractPlugin::check_install()</a></strong> - Check to see if the database for this plugin is installed, and if not call the install_plugin_db function if the plugin can provide the table name.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcreate_table">AbstractPlugin::create_table()</a></strong> - Create a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodmigrate_table">AbstractPlugin::migrate_table()</a></strong> - Perform any required database migration. would use Authenticator's users table) and it needs to modify that table for it's own use.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_check">AbstractPlugin::permission_check()</a></strong> - A before_filter that checks for permission to access certain actions
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_error">AbstractPlugin::permission_error()</a></strong> - What to do when a permission_check fails
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_string_for_action">AbstractPlugin::permission_string_for_action()</a></strong> - Construct a permission string for an action
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpopulate_table">AbstractPlugin::populate_table()</a></strong> - Populate a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodupload_path">AbstractPlugin::upload_path()</a></strong> - Return the upload path for the current plugin.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_create">AbstractPlugin::user_can_create()</a></strong> - A shortcut to checking user new permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_delete">AbstractPlugin::user_can_delete()</a></strong> - A shortcut to checking user delete permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_edit">AbstractPlugin::user_can_edit()</a></strong> - A shortcut to checking user edit permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_view">AbstractPlugin::user_can_view()</a></strong> - A shortcut to checking user show permission on the current object
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:19 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

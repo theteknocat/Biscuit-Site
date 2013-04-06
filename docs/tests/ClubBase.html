@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class ClubBase</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class ClubBase
+</h2> (line <span class="linenumber">103</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+PEAR
+   |
+   --ClubBase</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---Documentation---tests---bug-561101.php.html">/framework/docs/Documentation/tests/bug-561101.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">integer</span>
+    <a href="#var$_bDebugLevel" title="details" class="property"><strong>$_bDebugLevel</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$_bHideDebug" title="details" class="property"><strong>$_bHideDebug</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$_bPrintDebug" title="details" class="property"><strong>$_bPrintDebug</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$_bPrintFlush" title="details" class="property"><strong>$_bPrintFlush</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$_sLogFile" title="details" class="property"><strong>$_sLogFile</strong></a>
+</div>
+<hr />
+<a name="var$_bDebugLevel" id="var$_bDebugLevel"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_bDebugLevel =  -1</strong> (line <span class="linenumber">117</span>)
+ </h4>
+<h4>Data type : integer</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>$_bDebugLevel	Debug-Level
+ Diese Variablen speichern die Debugging-Einstellungen innerhalb des Objekts.</h5>
+<div class="desc"><p>$_bDebugLevel	Debug-Level
+ Diese Variablen speichern die Debugging-Einstellungen innerhalb des Objekts. Sie ueberschreiben ggf. die Werte in _ClubDebugOptions</p></div>
+<ul>
+		<li><strong>see:</strong> - $_ClubDebugOptions, setdebug(), <a href="../tests/ClubBase.html#method_PHPDOCUMENTOR_DEBUG">ClubBase::_PHPDOCUMENTOR_DEBUG()</a></li>
+		<li><strong>final:</strong> - </li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_bHideDebug" id="var$_bHideDebug"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_bHideDebug =  true</strong> (line <span class="linenumber">126</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>$__bHideDebug	Debugausgabe in HTMl-Kommentare setzen?</h5>
+<div class="desc"><p>$__bHideDebug	Debugausgabe in HTMl-Kommentare setzen?</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_bPrintDebug" id="var$_bPrintDebug"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_bPrintDebug =  true</strong> (line <span class="linenumber">144</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>$_bPrintDebug	Sollen Meldungen auch in HTM geschrieben werden, wenn sie in Datei geloggt werden?</h5>
+<div class="desc"><p>$_bPrintDebug	Sollen Meldungen auch in HTM geschrieben werden, wenn sie in Datei geloggt werden?</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_bPrintFlush" id="var$_bPrintFlush"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_bPrintFlush =  false</strong> (line <span class="linenumber">146</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$_sLogFile" id="var$_sLogFile"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_sLogFile =  ''</strong> (line <span class="linenumber">135</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>$_sLogFile	Logfile, in der Debugmeldungen geschrieben werden</h5>
+<div class="desc"><p>$_sLogFile	Logfile, in der Debugmeldungen geschrieben werden</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodsetDebug" title="details" class="method-name">setDebug</a>
+        (<span class="var-type">integer</span>&nbsp;<span class="var-name">$level</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$hide</span> = <span class="var-default">true</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">''</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$print</span> = <span class="var-default">true</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$flush</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#method_ERROR" title="details" class="method-name">_ERROR</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">'unknown error'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$code</span> = <span class="var-default">PHPDOCUMENTOR_DEBUG_ERROR</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$mode</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$userinfo</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$error_class</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#method_PHPDOCUMENTOR_DEBUG" title="details" class="method-name">_PHPDOCUMENTOR_DEBUG</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$level</span> = <span class="var-default">PHPDOCUMENTOR_DEBUG_INFO</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">ClubBase</span>
+        <a href="#methodClubBase" title="details" class="method-name">ClubBase</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetAllProperties" title="details" class="method-name">getAllProperties</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$simplify</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$exclude</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodgetProperty" title="details" class="method-name">getProperty</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$property</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$target</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">0</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$simplify</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetPropType" title="details" class="method-name">getPropType</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$property</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$target</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">0</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodloadClass" title="details" class="method-name">loadClass</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$classname</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$path</span> = <span class="var-default">'./'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$ext</span> = <span class="var-default">'.class.inc'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$require</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodprintFlush" title="details" class="method-name">printFlush</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodprintVar" title="details" class="method-name">printVar</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$var</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$info</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodsetProperty" title="details" class="method-name">setProperty</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$property</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$target</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">0</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$force</span> = <span class="var-default">false</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodsetDebug" id="methodsetDebug"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method setDebug</strong> (line <span class="linenumber">298</span>)
+ </h4> 
+<h4><i>void</i> <strong>setDebug(
+integer
+$level, [boolean
+$hide = true], [string
+$file = ''], [boolean
+$print = true], [
+$flush = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>set_debug()   Debug-Level fuer die Klasse setzen
+ Wird diese Methode statisch (ClubBase::set_debug()) aufgerufen, dann wird die globale Variable $_ClubDebugOptions gesetzt.</h5>
+<div class="desc"><p>set_debug()   Debug-Level fuer die Klasse setzen
+ Wird diese Methode statisch (ClubBase::set_debug()) aufgerufen, dann wird die globale Variable $_ClubDebugOptions gesetzt. Diese gilt fuer ALLE KLASSEN, die keine eigenen Werte mit $obj-&gt;set_debug() gestzt haben.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>integer $level</strong>: Level, bis zu dem Debugausgaben angezeigt werden</li>
+			<li><strong>boolean $hide</strong>: Sollen Debugausgaben im HTML in Kommentare gepackt werden?</li>
+			<li><strong>string $file</strong>: Soll in eine Datei geschrieben werden (null = nein)</li>
+			<li><strong>boolean $print</strong>: Sollen Kommentare in HTML geschrieben werden,                                auch wenn schon in Datei geloggt wird?</li>
+			<li><strong> $flush</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>global</strong> - array $_ClubDebugOptions: Globale Debugging-Einstellungen</li>
+			<li><strong>see</strong> - $_ClubDebugOptions, ClubBase::set_debug(), <a href="../tests/ClubBase.html#method_PHPDOCUMENTOR_DEBUG">ClubBase::_PHPDOCUMENTOR_DEBUG()</a></li>
+			<li><strong>see</strong> - <a href="../tests/ClubBase.html#var$_bDebugLevel">ClubBase::$_bDebugLevel</a>, <a href="../tests/ClubBase.html#var$_bHideDebug">ClubBase::$_bHideDebug</a>, <a href="../tests/ClubBase.html#var$_sLogFile">ClubBase::$_sLogFile</a>, <a href="../tests/ClubBase.html#var$_bPrintDebug">ClubBase::$_bPrintDebug</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="method_ERROR" id="method_ERROR"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method _ERROR</strong> (line <span class="linenumber">423</span>)
+ </h4> 
+<h4><i>void</i> <strong>_ERROR(
+[
+$message = 'unknown error'], [
+$code = PHPDOCUMENTOR_DEBUG_ERROR], [
+$mode = null], [
+$options = null], [
+$userinfo = null], [
+$error_class = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>_ERROR()   Fehler registrieren und ggf.</h5>
+<div class="desc"><p>_ERROR()   Fehler registrieren und ggf. zur Debug-Ausgabe weiterleiten
+ Dies muss erst noch implementiert werden ;-))</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $message</strong>: </li>
+			<li><strong> $code</strong>: </li>
+			<li><strong> $mode</strong>: </li>
+			<li><strong> $options</strong>: </li>
+			<li><strong> $userinfo</strong>: </li>
+			<li><strong> $error_class</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>final</strong> - </li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="method_PHPDOCUMENTOR_DEBUG" id="method_PHPDOCUMENTOR_DEBUG"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method _PHPDOCUMENTOR_DEBUG</strong> (line <span class="linenumber">375</span>)
+ </h4> 
+<h4><i>void</i> <strong>_PHPDOCUMENTOR_DEBUG(
+string
+$message, [integer
+$level = PHPDOCUMENTOR_DEBUG_INFO])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>_PHPDOCUMENTOR_DEBUG()   Debugmeldungen ausgeben
+ Mit dieser Funktion koennen alle Klassen einheitlich Debug-Meldungnen ausgeben.</h5>
+<div class="desc"><p>_PHPDOCUMENTOR_DEBUG()   Debugmeldungen ausgeben
+ Mit dieser Funktion koennen alle Klassen einheitlich Debug-Meldungnen ausgeben.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $message</strong>: Meldungstext</li>
+			<li><strong>integer $level</strong>: das Debuglevel der Meldung</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>global</strong> - array $_ClubDebugOptions: Globale Debugging-Einstellungen</li>
+			<li><strong>see</strong> - $_ClubDebugOptions, ClubBase::set_debug(), <a href="../tests/ClubBase.html#method_PHPDOCUMENTOR_DEBUG">ClubBase::_PHPDOCUMENTOR_DEBUG()</a></li>
+			<li><strong>see</strong> - <a href="../tests/ClubBase.html#var$_bDebugLevel">ClubBase::$_bDebugLevel</a>, <a href="../tests/ClubBase.html#var$_bHideDebug">ClubBase::$_bHideDebug</a>, <a href="../tests/ClubBase.html#var$_sLogFile">ClubBase::$_sLogFile</a>, <a href="../tests/ClubBase.html#var$_bPrintDebug">ClubBase::$_bPrintDebug</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodClubBase" id="methodClubBase"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor ClubBase</strong> (line <span class="linenumber">158</span>)
+ </h4> 
+<h4><i>ClubBase</i> <strong>ClubBase(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>ClubBase()    Der Konstruktor</h5>
+<div class="desc"><p>ClubBase()    Der Konstruktor
+ Macht nicht viel mehr, als fuer alle abgeleiteten Klassen eine Debug-Meldung abzusetzten und PEAR-Funktionen einzubinden</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetAllProperties" id="methodgetAllProperties"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getAllProperties</strong> (line <span class="linenumber">216</span>)
+ </h4> 
+<h4><i>array</i> <strong>getAllProperties(
+[
+$simplify = false], [array
+$exclude = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>getAllProperties()	Gibt die Wert aller Eigenschaften einer Klasse zurueck</h5>
+<div class="desc"><p>getAllProperties()	Gibt die Wert aller Eigenschaften einer Klasse zurueck
+ Es werden nur 'oeffentliche' Eigenschaften (ohne '_' davor) zurueckgegeben/bearbeitet Wird ein optionales 'Target' angegeben wird versucht den Werte eines Hashes auszulesen (z.B. $class-&gt;$target[$property]) bzw. zu schreiben</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $exclude</strong>: diese Eigenschaften werden ignoriert</li>
+			<li><strong> $simplify</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Array mit den Namen der Eigenschaften als Schluesseln</li>
+			<li><strong>see</strong> - <a href="../tests/ClubBase.html#methodgetProperty">ClubBase::getProperty()</a>, <a href="../tests/ClubBase.html#methodgetAllProperties">ClubBase::getAllProperties()</a>, <a href="../tests/ClubBase.html#methodsetProperty">ClubBase::setProperty()</a>, <a href="../tests/ClubBase.html#methodgetPropType">ClubBase::getPropType()</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetProperty" id="methodgetProperty"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getProperty</strong> (line <span class="linenumber">176</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>getProperty(
+string
+$property, [string
+$target = ''], [
+$index = 0], [
+$simplify = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>getProperty()	Gibt den Wert einer Eigenschaft zurueck</h5>
+<div class="desc"><p>getProperty()	Gibt den Wert einer Eigenschaft zurueck
+ Es werden nur 'oeffentliche' Eigenschaften (ohne '_' davor) zurueckgegeben/bearbeitet Wird ein optionales 'Target' angegeben wird versucht den Werte eines Hashes auszulesen (z.B. $class-&gt;$target[$property]) bzw. zu schreiben</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $property</strong>: Name der Eigenschaft/Schluessel</li>
+			<li><strong>string $target</strong>: Name des Targets</li>
+			<li><strong> $index</strong>: </li>
+			<li><strong> $simplify</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Wert der Eigenschaft/Schluessels</li>
+			<li><strong>see</strong> - <a href="../tests/ClubBase.html#methodgetProperty">ClubBase::getProperty()</a>, <a href="../tests/ClubBase.html#methodgetAllProperties">ClubBase::getAllProperties()</a>, <a href="../tests/ClubBase.html#methodsetProperty">ClubBase::setProperty()</a>, <a href="../tests/ClubBase.html#methodgetPropType">ClubBase::getPropType()</a></li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodgetPropType" id="methodgetPropType"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPropType</strong> (line <span class="linenumber">271</span>)
+ </h4> 
+<h4><i>string</i> <strong>getPropType(
+
+$property, [
+$target = null], [
+$index = 0])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>getPropType	gibt den Datentyp eines Objekt-Eigenschaft zurueck.</h5>
+<div class="desc"><p>getPropType	gibt den Datentyp eines Objekt-Eigenschaft zurueck.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $property</strong>: </li>
+			<li><strong> $target</strong>: </li>
+			<li><strong> $index</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Datentyp der Eigenschaft</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodloadClass" id="methodloadClass"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method loadClass</strong> (line <span class="linenumber">333</span>)
+ </h4> 
+<h4><i>void</i> <strong>loadClass(
+
+$classname, [
+$path = './'], [
+$ext = '.class.inc'], [
+$require = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $classname</strong>: </li>
+			<li><strong> $path</strong>: </li>
+			<li><strong> $ext</strong>: </li>
+			<li><strong> $require</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodprintFlush" id="methodprintFlush"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method printFlush</strong> (line <span class="linenumber">319</span>)
+ </h4> 
+<h4><i>void</i> <strong>printFlush(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodprintVar" id="methodprintVar"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method printVar</strong> (line <span class="linenumber">326</span>)
+ </h4> 
+<h4><i>void</i> <strong>printVar(
+
+$var, [
+$info = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $var</strong>: </li>
+			<li><strong> $info</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetProperty" id="methodsetProperty"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setProperty</strong> (line <span class="linenumber">240</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>setProperty(
+
+$property, mixed
+$value, [
+$target = ''], [
+$index = 0], [
+$force = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>setProperty()	Setzt den Wert einer Eigenschaft</h5>
+<div class="desc"><p>setProperty()	Setzt den Wert einer Eigenschaft</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $value</strong>: Wert der der Eigenschaft zugewiesen werden soll</li>
+			<li><strong> $property</strong>: </li>
+			<li><strong> $target</strong>: </li>
+			<li><strong> $index</strong>: </li>
+			<li><strong> $force</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true im Erfolgsfall, sonst Fehler</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:51 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for builder.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file builder.php</h1>
+<p>Documentation is available at <a href="../phpDocumentor/_framework---docs---docbuilder---builder.php.html">builder.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a>&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;&quot;-//W3C//DTD&nbsp;HTML&nbsp;4.01&nbsp;Transitional//EN&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a2"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">&nbsp;*&nbsp;phpDocumentor&nbsp;::&nbsp;docBuilder&nbsp;Web&nbsp;Interface</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">&nbsp;*&nbsp;Advanced&nbsp;Web&nbsp;Interface&nbsp;to&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">&nbsp;*&nbsp;PHP&nbsp;versions&nbsp;4&nbsp;and&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2003-2006&nbsp;Andrew&nbsp;Eddie,&nbsp;Greg&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">&nbsp;*&nbsp;LICENSE:</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">&nbsp;*&nbsp;and/or&nbsp;modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">&nbsp;*&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">&nbsp;*&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">&nbsp;*&nbsp;later&nbsp;version.</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a20"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</font></div></li>
+<li><div class="src-line"><a name="a21"></a><font color="#009999">&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</font></div></li>
+<li><div class="src-line"><a name="a22"></a><font color="#009999">&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU</font></div></li>
+<li><div class="src-line"><a name="a23"></a><font color="#009999">&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</font></div></li>
+<li><div class="src-line"><a name="a24"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a25"></a><font color="#009999">&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public</font></div></li>
+<li><div class="src-line"><a name="a26"></a><font color="#009999">&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software</font></div></li>
+<li><div class="src-line"><a name="a27"></a><font color="#009999">&nbsp;*&nbsp;Foundation,&nbsp;Inc.,&nbsp;59&nbsp;Temple&nbsp;Place,&nbsp;Suite&nbsp;330,&nbsp;Boston,&nbsp;MA&nbsp;02111-1307&nbsp;USA</font></div></li>
+<li><div class="src-line"><a name="a28"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a29"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a30"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Andrew&nbsp;Eddie</font></div></li>
+<li><div class="src-line"><a name="a31"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greg&nbsp;Beaver&nbsp;&lt;cellog@php.net&gt;</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@copyright</font></strong><font color="#009999">&nbsp;&nbsp;2003-2006&nbsp;Andrew&nbsp;Eddie,&nbsp;Greg&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@license</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;http://www.opensource.org/licenses/lgpl-license.php&nbsp;LGPL</font></div></li>
+<li><div class="src-line"><a name="a34"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@version</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;CVS:&nbsp;$Id:&nbsp;builder.php,v&nbsp;1.4&nbsp;2006/04/30&nbsp;22:18:13&nbsp;cellog&nbsp;Exp&nbsp;$</font></div></li>
+<li><div class="src-line"><a name="a35"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@filesource</font></strong></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;phpdoc.php</font></div></li>
+<li><div class="src-line"><a name="a37"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a39"></a><font color="blue">if&nbsp;</font><strong>(</strong><strong>!</strong><a href="http://www.php.net/function_exists">function_exists</a><strong>(</strong><font color="#66cccc">'version_compare'</font><strong>))</strong></div></li>
+<li><div class="src-line"><a name="a40"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<font color="#66cccc">&quot;phpDocumentor&nbsp;requires&nbsp;PHP&nbsp;version&nbsp;4.1.0&nbsp;or&nbsp;greater&nbsp;to&nbsp;function&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;exit<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a43"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a46"></a><font color="blue">if&nbsp;</font><strong>(</strong><font color="#66cccc">'@DATA-DIR@'&nbsp;</font>!=&nbsp;<font color="#66cccc">'@'</font>.<font color="#66cccc">'DATA-DIR@'</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;set&nbsp;up&nbsp;include&nbsp;path&nbsp;so&nbsp;we&nbsp;can&nbsp;find&nbsp;all&nbsp;files,&nbsp;no&nbsp;matter&nbsp;what</font></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$root_dir&nbsp;</strong>=&nbsp;<font color="#66cccc">'PhpDocumentor'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a50"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;common&nbsp;file&nbsp;information</font></div></li>
+<li><div class="src-line"><a name="a51"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">include_once</font><strong>(</strong><font color="#66cccc">&quot;</font><strong>$root_dir</strong>/phpDocumentor/common.inc.php<font color="#66cccc">&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]&nbsp;</strong>=&nbsp;<font color="#66cccc">'PhpDocumentor'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;find&nbsp;the&nbsp;.ini&nbsp;directory&nbsp;by&nbsp;parsing&nbsp;phpDocumentor.ini&nbsp;and&nbsp;extracting&nbsp;_phpDocumentor_options[userdir]</font></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini&nbsp;</strong>=&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_parse_ini_file">phpDocumentor_parse_ini_file</a><strong>(</strong><font color="#66cccc">'@DATA-DIR@/PhpDocumentor/phpDocumentor.ini'</font><strong>,&nbsp;</strong>true<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>))</strong></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<font color="#66cccc">'@DATA-DIR@/user'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a62"></a><strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;set&nbsp;up&nbsp;include&nbsp;path&nbsp;so&nbsp;we&nbsp;can&nbsp;find&nbsp;all&nbsp;files,&nbsp;no&nbsp;matter&nbsp;what</font></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]&nbsp;</strong>=&nbsp;<a href="http://www.php.net/dirname">dirname</a><strong>(</strong><a href="http://www.php.net/dirname">dirname</a><strong>(</strong><a href="http://www.php.net/realpath">realpath</a><strong>(</strong>__FILE__<strong>)))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$root_dir&nbsp;</strong>=&nbsp;<a href="http://www.php.net/dirname">dirname</a><strong>(</strong><a href="http://www.php.net/dirname">dirname</a><strong>(</strong>__FILE__<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a67"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;common&nbsp;file&nbsp;information</font></div></li>
+<li><div class="src-line"><a name="a68"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">include_once</font><strong>(</strong><font color="#66cccc">&quot;</font><strong>$root_dir</strong>/phpDocumentor/common.inc.php<font color="#66cccc">&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;add&nbsp;my&nbsp;directory&nbsp;to&nbsp;the&nbsp;include&nbsp;path,&nbsp;and&nbsp;make&nbsp;it&nbsp;first,&nbsp;should&nbsp;fix&nbsp;any&nbsp;errors</font></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong>PHP_OS<strong>,&nbsp;</strong>0<strong>,&nbsp;</strong>3<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'WIN'</font><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/ini_set">ini_set</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>,</strong><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]</strong>.<font color="#66cccc">';'</font>.<a href="http://www.php.net/ini_get">ini_get</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/ini_set">ini_set</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>,</strong><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]</strong>.<font color="#66cccc">':'</font>.<a href="http://www.php.net/ini_get">ini_get</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;find&nbsp;the&nbsp;.ini&nbsp;directory&nbsp;by&nbsp;parsing&nbsp;phpDocumentor.ini&nbsp;and&nbsp;extracting&nbsp;_phpDocumentor_options[userdir]</font></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini&nbsp;</strong>=&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_parse_ini_file">phpDocumentor_parse_ini_file</a><strong>(</strong><strong>$_phpDocumentor_install_dir&nbsp;</strong>.&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#definePATH_DELIMITER">PATH_DELIMITER</a>&nbsp;.&nbsp;<font color="#66cccc">'phpDocumentor.ini'</font><strong>,&nbsp;</strong>true<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>))</strong></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<strong>$_phpDocumentor_install_dir&nbsp;</strong>.&nbsp;<font color="#66cccc">'/user'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a85"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a89"></a><font color="green">//&nbsp;allow&nbsp;the&nbsp;user&nbsp;to&nbsp;change&nbsp;this&nbsp;at&nbsp;runtime</font></div></li>
+<li><div class="src-line"><a name="a90"></a><font color="blue">if&nbsp;</font><strong>(</strong><strong>!</strong>empty<strong>(</strong><strong>$_REQUEST</strong><strong>[</strong><font color="#66cccc">'altuserdir'</font><strong>]</strong><strong>))&nbsp;</strong><strong>$configdir&nbsp;</strong>=&nbsp;<strong>$_REQUEST</strong><strong>[</strong><font color="#66cccc">'altuserdir'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a91"></a><strong>?&gt;</strong></div></li>
+<li><div class="src-line"><a name="a92"></a>&lt;html&gt;</div></li>
+<li><div class="src-line"><a name="a93"></a>&lt;head&gt;</div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;</div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output:&nbsp;docbuilder&nbsp;-&nbsp;phpDocumentor&nbsp;v<strong>&lt;?php&nbsp;</strong>print&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#definePHPDOCUMENTOR_VER">PHPDOCUMENTOR_VER</a><strong>;&nbsp;</strong><strong>?&gt;</strong>&nbsp;doc&nbsp;generation&nbsp;information</div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/title&gt;</div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&nbsp;type=&quot;text/css&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body,&nbsp;td,&nbsp;th&nbsp;{</div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family:&nbsp;verdana,sans-serif;</div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:&nbsp;8pt;</div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;</div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a104"></a>&lt;/head&gt;</div></li>
+<li><div class="src-line"><a name="a105"></a>&lt;body&nbsp;bgcolor=&quot;#e0e0e0&quot;&nbsp;text=&quot;#000000&quot;&nbsp;topmargin=&quot;0&quot;&nbsp;leftmargin=&quot;0&quot;&nbsp;marginheight=&quot;0&quot;&nbsp;marginwidth=&quot;0&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a107"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a108"></a><font color="green">//&nbsp;Find&nbsp;out&nbsp;if&nbsp;we&nbsp;are&nbsp;submitting&nbsp;and&nbsp;if&nbsp;we&nbsp;are,&nbsp;send&nbsp;it</font></div></li>
+<li><div class="src-line"><a name="a109"></a><font color="green">//&nbsp;This&nbsp;code&nbsp;originally&nbsp;by&nbsp;Joshua&nbsp;Eichorn&nbsp;on&nbsp;phpdoc.php</font></div></li>
+<li><div class="src-line"><a name="a110"></a><font color="green">//</font></div></li>
+<li><div class="src-line"><a name="a111"></a><font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$_GET</strong><strong>[</strong><font color="#66cccc">'dataform'</font><strong>]</strong><strong>)&nbsp;</strong>&amp;&amp;&nbsp;empty<strong>(</strong><strong>$_REQUEST</strong><strong>[</strong><font color="#66cccc">'altuserdir'</font><strong>]</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">foreach&nbsp;</font><strong>(</strong><strong>$_GET&nbsp;</strong>as&nbsp;<strong>$k</strong>=&gt;<strong>$v</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/strpos">strpos</a><strong>(&nbsp;</strong><strong>$k</strong><strong>,&nbsp;</strong><font color="#66cccc">'setting_'&nbsp;</font><strong>)&nbsp;</strong>===&nbsp;0<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$_GET</strong><strong>[</strong><font color="#66cccc">'setting'</font><strong>]</strong><strong>[</strong><a href="http://www.php.net/substr">substr</a><strong>(&nbsp;</strong><strong>$k</strong><strong>,&nbsp;</strong>8&nbsp;<strong>)</strong><strong>]&nbsp;</strong>=&nbsp;<strong>$v</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;&lt;strong&gt;Parsing&nbsp;Files&nbsp;...&lt;/strong&gt;&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/flush">flush</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;&lt;pre&gt;\n&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**&nbsp;phpdoc.inc&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a122"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">include</font><strong>(</strong><font color="#66cccc">&quot;</font><strong>$root_dir</strong>/phpDocumentor/phpdoc.inc<font color="#66cccc">&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;&lt;/pre&gt;\n&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;&lt;h1&gt;Operation&nbsp;Completed!!&lt;/h1&gt;&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a125"></a><strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;whoops!&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a127"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a128"></a><strong>?&gt;</strong></div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:52 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

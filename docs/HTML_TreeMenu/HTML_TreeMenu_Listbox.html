@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTML_TreeMenu_Listbox</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTML_TreeMenu_Listbox
+</h2> (line <span class="linenumber">493</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../HTML_TreeMenu/HTML_TreeMenu_Presentation.html">HTML_TreeMenu_Presentation</a>
+   |
+   --HTML_TreeMenu_Listbox</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---HTML_TreeMenu-1.1.2---TreeMenu.php.html">/framework/docs/HTML_TreeMenu-1.1.2/TreeMenu.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>HTML_TreeMenu_Listbox class</h5>
+<div class="desc"><p>HTML_TreeMenu_Listbox class
+ This class presents the menu as a listbox</p></div>
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$indentChar" title="details" class="property"><strong>$indentChar</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">integer</span>
+    <a href="#var$indentNum" title="details" class="property"><strong>$indentNum</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$linkTarget" title="details" class="property"><strong>$linkTarget</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$promoText" title="details" class="property"><strong>$promoText</strong></a>
+</div>
+<hr />
+<a name="var$indentChar" id="var$indentChar"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$indentChar</strong> (line <span class="linenumber">505</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The character used for indentation</h5>
+<div class="desc"><p>The character used for indentation</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$indentNum" id="var$indentNum"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$indentNum</strong> (line <span class="linenumber">512</span>)
+ </h4>
+<h4>Data type : integer</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>How many of the indent chars to use</h5>
+<div class="desc"><p>How many of the indent chars to use per indentation level</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$linkTarget" id="var$linkTarget"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$linkTarget</strong> (line <span class="linenumber">518</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Target for the links generated</h5>
+<div class="desc"><p>Target for the links generated</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$promoText" id="var$promoText"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$promoText</strong> (line <span class="linenumber">499</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The text that is displayed in the first option</h5>
+<div class="desc"><p>The text that is displayed in the first option</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">HTML_TreeMenu_Listbox</span>
+        <a href="#methodHTML_TreeMenu_Listbox" title="details" class="method-name">HTML_TreeMenu_Listbox</a>
+        (<span class="var-type">object</span>&nbsp;<span class="var-name">$structure</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$options</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtoHTML" title="details" class="method-name">toHTML</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#method_nodeToHTML" title="details" class="method-name">_nodeToHTML</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$node</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$prefix</span> = <span class="var-default">''</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodHTML_TreeMenu_Listbox" id="methodHTML_TreeMenu_Listbox"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor HTML_TreeMenu_Listbox</strong> (line <span class="linenumber">535</span>)
+ </h4> 
+<h4><i>HTML_TreeMenu_Listbox</i> <strong>HTML_TreeMenu_Listbox(
+object
+$structure, [array
+$options = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Constructor</h5>
+<div class="desc"><p>Constructor</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>object $structure</strong>: The menu structure</li>
+			<li><strong>array $options</strong>: Options whic affect the display of the listbox.                          These can consist of:<ul><li>promoText  The text that appears at the the top of the listbox
+                                        Defaults to &quot;Select...&quot;</li><li>indentChar The character to use for indenting the nodes
+                                        Defaults to &quot;&amp;nbsp;&quot;</li><li>indentNum  How many of the indentChars to use per indentation level
+                                        Defaults to 2</li><li>linkTarget Target for the links. Defaults to &quot;_self&quot;</li><li>submitText Text for the submit button. Defaults to &quot;Go&quot;</li></ul></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodtoHTML" id="methodtoHTML"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method toHTML</strong> (line <span class="linenumber">552</span>)
+ </h4> 
+<h4><i>void</i> <strong>toHTML(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the HTML generated</h5>
+<div class="desc"><p>Returns the HTML generated</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="method_nodeToHTML" id="method_nodeToHTML"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method _nodeToHTML</strong> (line <span class="linenumber">581</span>)
+ </h4> 
+<h4><i>void</i> <strong>_nodeToHTML(
+
+$node, [
+$prefix = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns HTML for a single node</h5>
+<div class="desc"><p>Returns HTML for a single node</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $node</strong>: </li>
+			<li><strong> $prefix</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../HTML_TreeMenu/HTML_TreeMenu_Presentation.html">HTML_TreeMenu_Presentation</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../HTML_TreeMenu/HTML_TreeMenu_Presentation.html#var$menu">HTML_TreeMenu_Presentation::$menu</a></strong> - The TreeMenu structure
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../HTML_TreeMenu/HTML_TreeMenu_Presentation.html">HTML_TreeMenu_Presentation</a></h4>
+				<h4>
+<img src="../media/images/Constructor.gif" border="0" /><strong class="method"> <a href="../HTML_TreeMenu/HTML_TreeMenu_Presentation.html#methodHTML_TreeMenu_Presentation">HTML_TreeMenu_Presentation::HTML_TreeMenu_Presentation()</a></strong> - Base constructor simply sets the menu object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../HTML_TreeMenu/HTML_TreeMenu_Presentation.html#methodprintMenu">HTML_TreeMenu_Presentation::printMenu()</a></strong> - Prints the HTML generated by the toHTML() method.
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:41 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

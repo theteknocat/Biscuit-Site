@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Source code for sample1.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_phpDocumentor.quickstart.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_sample2.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>Source code for sample1.php</h1>
+  <h2 class="refpurpose"><em>phpDocumentor for newbies tutorial</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+   <blockquote><a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font></div>
+ <span><a name="source"></a><h2 class="title" align="center">sample1.php</h1><p><div class="src-code"><ol><li><div class="src-line"><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><font color="green">//&nbsp;sample&nbsp;file&nbsp;#1</font></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="blue">include_once&nbsp;</font><font color="#66cccc">'sample2.php'</font><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_myvar'</font><strong>]&nbsp;</strong>=&nbsp;6<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'testing'</font><strong>,&nbsp;</strong>6<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'anotherconstant'</font><strong>,&nbsp;</strong>strlen<strong>(</strong><font color="#66cccc">'hello'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="blue">function&nbsp;</font>firstFunc<strong>(</strong><strong>$param1</strong><strong>,&nbsp;</strong><strong>$param2&nbsp;</strong>=&nbsp;<font color="#66cccc">'optional'</font><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">static&nbsp;</font><strong>$staticvar&nbsp;</strong>=&nbsp;7<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">global&nbsp;</font><strong>$_myvar</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$staticvar</strong><strong>;</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>myclass&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><strong>$firstvar&nbsp;</strong>=&nbsp;6<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><strong>$secondvar&nbsp;</strong>=</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array<strong>(</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'stuff'&nbsp;</font>=&gt;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array<strong>(</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6<strong>,</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17<strong>,</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'armadillo'</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>)</strong><strong>,</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;testing&nbsp;=&gt;&nbsp;anotherconstant</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>myclass<strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong><strong>firstvar&nbsp;</strong>=&nbsp;7<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>parentfunc<strong>(</strong><strong>$paramie</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$paramie</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font>6<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font>new&nbsp;babyclass<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>babyclass&nbsp;<font color="blue">extends&nbsp;</font>myclass&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><strong>$secondvar&nbsp;</strong>=&nbsp;42<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><strong>$thirdvar</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>babyclass<strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parent<strong>::</strong>myclass<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong><strong>firstvar</strong>++<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>parentfunc<strong>(</strong><strong>$paramie</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font>new&nbsp;myclass<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line"><strong>?&gt;</strong></div></li>
+</ol></div></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_phpDocumentor.quickstart.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_phpDocumentor.quickstart.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_sample2.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">phpDocumentor Quickstart</td>
+<td width="34%" align="center" valign="top">phpDocumentor Quickstart</td>
+<td width="33%" align="right" valign="top">Source code for sample2.php</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:40 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

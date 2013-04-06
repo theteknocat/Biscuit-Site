@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class GalleryPhoto</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class GalleryPhoto
+</h2> (line <span class="linenumber">9</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../Plugins/AbstractModel.html">AbstractModel</a>
+   |
+   --GalleryPhoto</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---PhotoGallery.php.html">/framework/plugins/PhotoGallery.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Photo model for basic photo gallery</h5>
+<div class="desc"><p>Photo model for basic photo gallery</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$album_id" title="details" class="property"><strong>$album_id</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$db_table" title="details" class="property"><strong>$db_table</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$description" title="details" class="property"><strong>$description</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$filename" title="details" class="property"><strong>$filename</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$old_file" title="details" class="property"><strong>$old_file</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$sort_order" title="details" class="property"><strong>$sort_order</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$title" title="details" class="property"><strong>$title</strong></a>
+</div>
+<hr />
+<a name="var$album_id" id="var$album_id"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$album_id</strong> (line <span class="linenumber">15</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The ID of the album the photo is associated with</h5>
+<div class="desc"><p>The ID of the album the photo is associated with</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$db_table" id="var$db_table"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$db_table =  'photos'</strong> (line <span class="linenumber">51</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The database table for gallery photos</h5>
+<div class="desc"><p>The database table for gallery photos</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$description" id="var$description"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$description</strong> (line <span class="linenumber">33</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Description of the photo</h5>
+<div class="desc"><p>Description of the photo</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$filename" id="var$filename"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$filename</strong> (line <span class="linenumber">21</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Filename of the image</h5>
+<div class="desc"><p>Filename of the image</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$old_file" id="var$old_file"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$old_file</strong> (line <span class="linenumber">45</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The old file - for use when saving</h5>
+<div class="desc"><p>The old file - for use when saving</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$sort_order" id="var$sort_order"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$sort_order</strong> (line <span class="linenumber">39</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Display order of photo</h5>
+<div class="desc"><p>Display order of photo</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$title" id="var$title"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$title</strong> (line <span class="linenumber">27</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Title for the photo</h5>
+<div class="desc"><p>Title for the photo</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodalbum_id" title="details" class="method-name">album_id</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodbatch_save" title="details" class="method-name">batch_save</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$upload_path</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddb_create_query" title="details" class="method-name">db_create_query</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddb_tablename" title="details" class="method-name">db_tablename</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddescription" title="details" class="method-name">description</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodfilename" title="details" class="method-name">filename</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodfind" title="details" class="method-name">find</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodfind_all" title="details" class="method-name">find_all</a>
+        ([<span class="var-type">int</span>&nbsp;<span class="var-name">$album_id</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodold_file" title="details" class="method-name">old_file</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodphotos_from_query" title="details" class="method-name">photos_from_query</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">object</span>
+        <a href="#methodphoto_from_query" title="details" class="method-name">photo_from_query</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodresort" title="details" class="method-name">resort</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$sort_list</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsave" title="details" class="method-name">save</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$upload_path</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsave_filter" title="details" class="method-name">save_filter</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$data</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsort_order" title="details" class="method-name">sort_order</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtitle" title="details" class="method-name">title</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodvalidate" title="details" class="method-name">validate</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodvalidate_batch" title="details" class="method-name">validate_batch</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodalbum_id" id="methodalbum_id"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method album_id</strong> (line <span class="linenumber">78</span>)
+ </h4> 
+<h4><i>void</i> <strong>album_id(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodbatch_save" id="methodbatch_save"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method batch_save</strong> (line <span class="linenumber">226</span>)
+ </h4> 
+<h4><i>void</i> <strong>batch_save(
+
+$upload_path)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $upload_path</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddb_create_query" id="methoddb_create_query"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method db_create_query</strong> (line <span class="linenumber">301</span>)
+ </h4> 
+<h4><i>void</i> <strong>db_create_query(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddb_tablename" id="methoddb_tablename"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method db_tablename</strong> (line <span class="linenumber">298</span>)
+ </h4> 
+<h4><i>void</i> <strong>db_tablename(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddescription" id="methoddescription"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method description</strong> (line <span class="linenumber">81</span>)
+ </h4> 
+<h4><i>void</i> <strong>description(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodfilename" id="methodfilename"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method filename</strong> (line <span class="linenumber">79</span>)
+ </h4> 
+<h4><i>void</i> <strong>filename(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodfind" id="methodfind"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find</strong> (line <span class="linenumber">59</span>)
+ </h4> 
+<h4><i>void</i> <strong>find(
+string
+$id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Find one photo in the database</h5>
+<div class="desc"><p>Find one photo in the database</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $id</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfind_all" id="methodfind_all"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find_all</strong> (line <span class="linenumber">70</span>)
+ </h4> 
+<h4><i>void</i> <strong>find_all(
+[int
+$album_id = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Find all photos in a given album, or all photos in the entire gallery</h5>
+<div class="desc"><p>Find all photos in a given album, or all photos in the entire gallery</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $album_id</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodold_file" id="methodold_file"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method old_file</strong> (line <span class="linenumber">83</span>)
+ </h4> 
+<h4><i>void</i> <strong>old_file(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodphotos_from_query" id="methodphotos_from_query"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photos_from_query</strong> (line <span class="linenumber">295</span>)
+ </h4> 
+<h4><i>array</i> <strong>photos_from_query(
+string
+$query)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Build a collection of photos from a database query</h5>
+<div class="desc"><p>Build a collection of photos from a database query</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $query</strong>: Database query</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Collection of news/event objects</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodphoto_from_query" id="methodphoto_from_query"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method photo_from_query</strong> (line <span class="linenumber">285</span>)
+ </h4> 
+<h4><i>object</i> <strong>photo_from_query(
+string
+$query)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Build a photo object from a database query</h5>
+<div class="desc"><p>Build a photo object from a database query</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $query</strong>: Database query</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodresort" id="methodresort"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method resort</strong> (line <span class="linenumber">146</span>)
+ </h4> 
+<h4><i>void</i> <strong>resort(
+array
+$sort_list)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Resort all items in a database table from a sorting array.</h5>
+<div class="desc"><p>Resort all items in a database table from a sorting array.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $sort_list</strong>: An indexed array with elements in the format $sort_list[$sort_index] = $db_primary_key</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsave" id="methodsave"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method save</strong> (line <span class="linenumber">158</span>)
+ </h4> 
+<h4><i>void</i> <strong>save(
+
+$upload_path)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../Plugins/AbstractModel.html#methodsave">AbstractModel::save()</a> Save data to the object's defined database table</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handle file upload and save</h5>
+<div class="desc"><p>Handle file upload and save</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $upload_path</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsave_filter" id="methodsave_filter"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method save_filter</strong> (line <span class="linenumber">91</span>)
+ </h4> 
+<h4><i>void</i> <strong>save_filter(
+
+$data)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A before-filter for saving that gets rid of any attributes that should not be stored. default values.</h5>
+<div class="desc"><p>A before-filter for saving that gets rid of any attributes that should not be stored. It is not responsible for setting default values. That must be done in the validation function.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $data</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsort_order" id="methodsort_order"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method sort_order</strong> (line <span class="linenumber">82</span>)
+ </h4> 
+<h4><i>void</i> <strong>sort_order(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodtitle" id="methodtitle"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method title</strong> (line <span class="linenumber">80</span>)
+ </h4> 
+<h4><i>void</i> <strong>title(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodvalidate" id="methodvalidate"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method validate</strong> (line <span class="linenumber">101</span>)
+ </h4> 
+<h4><i>void</i> <strong>validate(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Validate form data</h5>
+<div class="desc"><p>Validate form data</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodvalidate_batch" id="methodvalidate_batch"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method validate_batch</strong> (line <span class="linenumber">122</span>)
+ </h4> 
+<h4><i>bool</i> <strong>validate_batch(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Validate a batch upload</h5>
+<div class="desc"><p>Validate a batch upload</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractModel.html">AbstractModel</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractModel.html#var$error_messages">AbstractModel::$error_messages</a></strong> - A list of any error messages resulting from save or validation
+	</h4> 
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractModel.html#var$id">AbstractModel::$id</a></strong> - Primary key for this object
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractModel.html">AbstractModel</a></h4>
+				<h4>
+<img src="../media/images/Constructor.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodAbstractModel">AbstractModel::AbstractModel()</a></strong> - Constructor for the AbstractModel class
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methoddb_table">AbstractModel::db_table()</a></strong> - Return the database table for the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methoddelete">AbstractModel::delete()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodget_attribute">AbstractModel::get_attribute()</a></strong> - Return a specified attribute of the object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodget_attributes">AbstractModel::get_attributes()</a></strong> - Return all the attributes (except the DB table) as an associative array
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodhas_been_validated">AbstractModel::has_been_validated()</a></strong> - Set or get the validation status
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodid">AbstractModel::id()</a></strong> - Return the id of the model instance
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodmodels_from_query">AbstractModel::models_from_query()</a></strong> - Build a collection of instances of models from a database query
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodmodel_from_query">AbstractModel::model_from_query()</a></strong> - Build an instance of a model from a database query
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodsave">AbstractModel::save()</a></strong> - Save data to the object's defined database table
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodset_attribute">AbstractModel::set_attribute()</a></strong> - Set a single model attribute
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractModel.html#methodset_attributes">AbstractModel::set_attributes()</a></strong> - Set model attributes
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:32 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class Session</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class Session
+</h2> (line <span class="linenumber">9</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---Session.php.html">/framework/lib/Session.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>A set of functions for handling session data</h5>
+<div class="desc"><p>A set of functions for handling session data</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodbackup" title="details" class="method-name">backup</a>
+        ([<span class="var-type">$exceptions</span>&nbsp;<span class="var-name">$keepers</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodcontents" title="details" class="method-name">contents</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddestroy" title="details" class="method-name">destroy</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodflash" title="details" class="method-name">flash</a>
+        (<span class="var-type">$index</span>&nbsp;<span class="var-name">$index</span>, <span class="var-type">$content</span>&nbsp;<span class="var-name">$content</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodflash_empty" title="details" class="method-name">flash_empty</a>
+        (<span class="var-type">$index</span>&nbsp;<span class="var-name">0</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodflash_get" title="details" class="method-name">flash_get</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodflash_html_dump" title="details" class="method-name">flash_html_dump</a>
+        (<span class="var-type">$index</span>&nbsp;<span class="var-name">$index</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodflash_isset" title="details" class="method-name">flash_isset</a>
+        (<span class="var-type">$index</span>&nbsp;<span class="var-name">$index</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodflash_unset" title="details" class="method-name">flash_unset</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodget" title="details" class="method-name">get</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodis_expired" title="details" class="method-name">is_expired</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodreset" title="details" class="method-name">reset</a>
+        ([<span class="var-type">$backup</span>&nbsp;<span class="var-name">$backup</span> = <span class="var-default">false</span>], [<span class="var-type">$exceptions</span>&nbsp;<span class="var-name">$backup_keepers</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrestore" title="details" class="method-name">restore</a>
+        (<span class="var-type">$backup</span>&nbsp;<span class="var-name">$backup</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset" title="details" class="method-name">set</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_expiry" title="details" class="method-name">set_expiry</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodstart" title="details" class="method-name">start</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodunset_var" title="details" class="method-name">unset_var</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodvar_exists" title="details" class="method-name">var_exists</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodbackup" id="methodbackup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method backup</strong> (line <span class="linenumber">69</span>)
+ </h4> 
+<h4><i>array</i> <strong>backup(
+[$exceptions
+$keepers = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Backup all session variables except those specified in $exceptions</h5>
+<div class="desc"><p>Backup all session variables except those specified in $exceptions</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$exceptions $keepers</strong>: array List of session variables you don't want to back up</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - The array of all the backed up session variables</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodcontents" id="methodcontents"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method contents</strong> (line <span class="linenumber">234</span>)
+ </h4> 
+<h4><i>array</i> <strong>contents(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Dump out the session array</h5>
+<div class="desc"><p>Dump out the session array</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Contents of $_SESSION</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoddestroy" id="methoddestroy"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method destroy</strong> (line <span class="linenumber">26</span>)
+ </h4> 
+<h4><i>void</i> <strong>destroy(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Destroy the current session</h5>
+<div class="desc"><p>Destroy the current session</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodflash" id="methodflash"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method flash</strong> (line <span class="linenumber">144</span>)
+ </h4> 
+<h4><i>void</i> <strong>flash(
+$index
+$index, $content
+$content)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Store a value in the session array with a specified index</h5>
+<div class="desc"><p>Store a value in the session array with a specified index</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$index $index</strong>: string An associative array index name in which to store the value</li>
+			<li><strong>$content $content</strong>: mixed The value to store. This can be any type of variable.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodflash_empty" id="methodflash_empty"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method flash_empty</strong> (line <span class="linenumber">209</span>)
+ </h4> 
+<h4><i>void</i> <strong>flash_empty(
+$index
+0)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Clear a specified session variable</h5>
+<div class="desc"><p>Clear a specified session variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$index 0</strong>: string The associative array index of the desired session variable</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodflash_get" id="methodflash_get"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method flash_get</strong> (line <span class="linenumber">174</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>flash_get(
+string
+$index)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the value of a flash variable</h5>
+<div class="desc"><p>Return the value of a flash variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $index</strong>: The array index of the flash variable to retrieve</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodflash_html_dump" id="methodflash_html_dump"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method flash_html_dump</strong> (line <span class="linenumber">184</span>)
+ </h4> 
+<h4><i>string</i> <strong>flash_html_dump(
+$index
+$index)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Dump out the contents of a session variable with a specified index in HTML format</h5>
+<div class="desc"><p>Dump out the contents of a session variable with a specified index in HTML format</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$index $index</strong>: string The associative array index of the desired session variable</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - The contents of the session variable at the specified index in the form of an HTML string</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodflash_isset" id="methodflash_isset"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method flash_isset</strong> (line <span class="linenumber">199</span>)
+ </h4> 
+<h4><i>bool</i> <strong>flash_isset(
+$index
+$index)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Ascertain the existence of a session variable</h5>
+<div class="desc"><p>Ascertain the existence of a session variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$index $index</strong>: string The associate array index of the desired session variable</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - The state of existence of the specified session variable</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodflash_unset" id="methodflash_unset"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method flash_unset</strong> (line <span class="linenumber">164</span>)
+ </h4> 
+<h4><i>void</i> <strong>flash_unset(
+string
+$index)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Unset a specific flash variable</h5>
+<div class="desc"><p>Unset a specific flash variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $index</strong>: Array index of the variable to unset</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodget" id="methodget"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get</strong> (line <span class="linenumber">101</span>)
+ </h4> 
+<h4><i>void</i> <strong>get(
+string
+$index)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the value of a given session variable</h5>
+<div class="desc"><p>Returns the value of a given session variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $index</strong>: The array index of the value to get</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodis_expired" id="methodis_expired"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method is_expired</strong> (line <span class="linenumber">219</span>)
+ </h4> 
+<h4><i>bool</i> <strong>is_expired(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>If a user session exists determine if it has expired.</h5>
+<div class="desc"><p>If a user session exists determine if it has expired. If not, extend it and return a response based whether the request is normal or a keep-alive ping. This function requires the Authenticator plugin</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - True or false on normal requests, void on ping requests</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodreset" id="methodreset"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method reset</strong> (line <span class="linenumber">52</span>)
+ </h4> 
+<h4><i>void</i> <strong>reset(
+[$backup
+$backup = false], [$exceptions
+$backup_keepers = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Destroy and restart the session, with the optional feature of backing up the session first and then restoring it afterwards.</h5>
+<div class="desc"><p>Destroy and restart the session, with the optional feature of backing up the session first and then restoring it afterwards. The backup and restore functions are for when you want to clear a particular session variable and then restart the session for security reasons, but want to carry forward information from the old session to the new one.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$backup $backup</strong>: bool Optional - Whether or not to backup the session first</li>
+			<li><strong>$exceptions $backup_keepers</strong>: array Optional - An array of session variables you don't want to keep when backing up</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrestore" id="methodrestore"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method restore</strong> (line <span class="linenumber">89</span>)
+ </h4> 
+<h4><i>void</i> <strong>restore(
+$backup
+$backup)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Restore session variables from backup</h5>
+<div class="desc"><p>Restore session variables from backup</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$backup $backup</strong>: array The array of backed up session variables returned by the flash_backup() function</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodset" id="methodset"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set</strong> (line <span class="linenumber">112</span>)
+ </h4> 
+<h4><i>void</i> <strong>set(
+string
+$index, string
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set a session variable</h5>
+<div class="desc"><p>Set a session variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $index</strong>: The array index of the variable to set</li>
+			<li><strong>string $value</strong>: The value of the variable</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodset_expiry" id="methodset_expiry"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_expiry</strong> (line <span class="linenumber">35</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_expiry(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Extend the current session expiry by the amount dictated by the current user's level.</h5>
+<div class="desc"><p>Extend the current session expiry by the amount dictated by the current user's level. This function requires the Authenticator plugin.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodstart" id="methodstart"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method start</strong> (line <span class="linenumber">16</span>)
+ </h4> 
+<h4><i>void</i> <strong>start(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Start a new session</h5>
+<div class="desc"><p>Start a new session</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodunset_var" id="methodunset_var"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method unset_var</strong> (line <span class="linenumber">122</span>)
+ </h4> 
+<h4><i>void</i> <strong>unset_var(
+string
+$index)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Unset a session variable</h5>
+<div class="desc"><p>Unset a session variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $index</strong>: The array index of the variable you want to kill</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodvar_exists" id="methodvar_exists"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method var_exists</strong> (line <span class="linenumber">133</span>)
+ </h4> 
+<h4><i>bool</i> <strong>var_exists(
+string
+$index)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Determine if a session variable exists</h5>
+<div class="desc"><p>Determine if a session variable exists</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $index</strong>: The array index of the variable to test</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Whether or not the session variable is set</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:36 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

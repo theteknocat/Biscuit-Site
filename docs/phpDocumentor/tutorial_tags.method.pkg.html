@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>@method</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.link.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.name.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>@method</h1>
+  <h2 class="refpurpose"><em>&quot;Magic&quot; Method of a class.</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Chuck Burgess
+    <blockquote>Tag Documentation written by <a href="mailto:ashnazg@php.net">ashnazg@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2007, Chuck Burgess</em><br />
+   (phpDocumentor 1.4+)<br />
+  <div id="cmdsynopsis"><b class="cmd">@method</b>
+    <span class = "req">returntype</span>
+	<span class = "opt">description</span></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><p>@method shows a &quot;magic&quot; method that is found inside the class.</p>
+  <p>returntype should be a valid PHP type or &quot;mixed.&quot; phpDocumentor will display the optional description unmodified, and defaults to &quot;void&quot; if the returntype is not present.</p></span>
+ <span><a name="example"></a><h2 class="title" align="center">Example</h1><p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;show&nbsp;off&nbsp;@method</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@method&nbsp;</font></strong><em>int&nbsp;</em><font color="#009999">borp()&nbsp;borp(int&nbsp;$int1,&nbsp;int&nbsp;$int2)&nbsp;multiply&nbsp;two&nbsp;integers</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>Magician</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>__call<strong>(</strong><strong>$method</strong><strong>,&nbsp;</strong><strong>$params</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$method&nbsp;</strong>==&nbsp;<font color="#66cccc">'borp'</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/count">count</a><strong>(</strong><strong>$params</strong><strong>)&nbsp;</strong>==&nbsp;2<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$params</strong><strong>[</strong>0<strong>]&nbsp;</strong>*&nbsp;<strong>$params</strong><strong>[</strong>1<strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}}}}</strong></div></li>
+</ol></div></p>
+  <p>Using this &quot;magic&quot; tag will result in the tag info being listed in the &quot;infomational&quot; tag listing for the class itself.  It does NOT generate actual &quot;method&quot; or &quot;function&quot; entities in the document.</p>
+  <p>In the example above, when using PhpDocumentor with the HTML:Smarty:HandS converter, you'll see the &quot;__call()&quot; method shown in the &quot;Method Summary&quot; listing of your class methods, but you will NOT see &quot;borp()&quot; there, because the latter is not an explicitly declared method in your code.  You WILL see &quot;borp()&quot; in the class-level's &quot;API Tags&quot; listing, thanks to your &quot;@method&quot; tag in the class-level docblock.</p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.link.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.name.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">@link</td>
+<td width="34%" align="center" valign="top">phpDocumentor tags</td>
+<td width="33%" align="right" valign="top">@name</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:41 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

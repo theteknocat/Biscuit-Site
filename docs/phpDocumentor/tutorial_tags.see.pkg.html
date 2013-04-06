@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>@see</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.return.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.since.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>@see</h1>
+  <h2 class="refpurpose"><em>Display a link to the documentation for an element</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote>Tag Documentation written by <a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2002, Gregory Beaver</em><br />
+   (phpDocumentor 0.1+)<br />
+  <div id="cmdsynopsis"><b class="cmd">@see</b>
+    <span class = "req">file.ext|elementname|class::methodname()|class::$variablename|functionname()|function functionname</span>
+	<span class = "opt">unlimited number of values separated by commas</span></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><p>The @see tag may be used to document any element (global variable, include, page, class, function, define, method, variable)</p>
+  <table border="1"><th align="center">Caution</th><tr><td>@see only displays links to element documentation.  If you want to display a hyperlink, use <a href="../phpDocumentor/tutorial_tags.link.pkg.html">@link</a> or <a href="../phpDocumentor/tutorial_tags.inlinelink.pkg.html">inline {@link}</a></td></tr></table>
+  <p><strong>New in version 1.2:</strong> You can link to any defined function in the current php version using the function's name.  This linking is done using the standard php function <a href="http://www.php.net/get_defined_functions">http://www.php.net/get_defined_functions</a>, and so relies on the version of php that is used to execute phpDocumentor.  A benefit of this method is that the function highlighting will automatically upgrade with a php upgrade without any change to the underlying code.  You may also link directly to any portion of the php website using the fake package override PHP_MANUAL (as in PHP_MANUAL#get_defined_functions, or PHP_MANUAL#support.php)</p>
+  <p>Along with <a href="../phpDocumentor/tutorial_tags.inlinelink.pkg.html">inline {@link}</a>, the @see tag is among the most useful features of phpDocumentor.  With this tag, you can create a link to any element (except include/require) in the documentation with a very wide range of options.  The @see parser can be told exactly where to look using some basic punctuation:
+   <ul><li><p><strong>::</strong> -- This is the class scope override.  Use it to tell the @see parser which class to look in for the element specified, like <strong>classname::methodname()</strong> or <strong>classname::$variablename</strong>.</p></li>
+    <li><p><strong>()</strong> -- When present at the end of elementname, like <strong>elementname()</strong>, this tells the @see parser to search for a function or method.</p></li>
+    <li><p><strong>$</strong> -- When present at the beginning of elementname, like <strong>$elementname</strong>, this tells the @see parser to search for a variable in the current class.</p></li></ul></p>
+  <p>However, @see is also intelligent enough to recognize shorthand.  If @see receives an elementname with no punctuation, it will search for an element in this order:
+   <ol><li><p>is elementname the name of a class?</p></li>
+    <li><p>is elementname the name of a procedural page? (file.ext)</p></li>
+    <li><p>is elementname the name of a define?</p></li>
+    <li><p>if the DocBlock containing the @see is in a class:
+     <ol><li><p>is elementname a method?</p></li>
+      <li><p>is elementname a variable?</p></li></ol></p></li>
+	<li><p>is elementname a function?</p></li></ol></p>
+  <p>@see parsing is slightly slower when passed an elementname with no punctuation, especially if the elementname is a function, so use it sparingly in large projects (500+ elements with @sees in their DocBlocks).  The best use for punctuation-less elementname is in a project whose classnames are in flux.</p></span>
+ <span><a name="example"></a><h2 class="title" align="center">Example</h1><p>Here's an example of valid @see syntax:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;class&nbsp;1</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;example&nbsp;of&nbsp;use&nbsp;of&nbsp;the&nbsp;::&nbsp;scope&nbsp;operator</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;subclass::method()</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>main_class</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;example&nbsp;of&nbsp;linking&nbsp;to&nbsp;same&nbsp;class,&nbsp;outputs&nbsp;&lt;u&gt;main_class::parent_method()&lt;/u&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;function&nbsp;parent_method</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font>foo&nbsp;=&nbsp;3<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;subclass&nbsp;inherits&nbsp;this&nbsp;method.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;example&nbsp;of&nbsp;a&nbsp;word&nbsp;which&nbsp;is&nbsp;either&nbsp;a&nbsp;constant&nbsp;or&nbsp;class&nbsp;name,&nbsp;in&nbsp;this&nbsp;case&nbsp;a&nbsp;classname</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;subclass</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;subclass::$foo</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>parent_method<strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$this</strong><strong>-&gt;</strong><strong>foo</strong>==9<strong>)&nbsp;</strong>die<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;this&nbsp;class&nbsp;extends&nbsp;main_class.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;example&nbsp;of&nbsp;linking&nbsp;to&nbsp;a&nbsp;constant,&nbsp;and&nbsp;of&nbsp;putting&nbsp;more&nbsp;than&nbsp;one&nbsp;element&nbsp;on&nbsp;the&nbsp;same&nbsp;line</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;main_class,&nbsp;TEST_CONST</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line">subclass&nbsp;<font color="blue">extends&nbsp;</font>main_class</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;bar.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;example&nbsp;of&nbsp;same&nbsp;class&nbsp;lookup&nbsp;-&nbsp;see&nbsp;will&nbsp;look&nbsp;through&nbsp;parent&nbsp;hierarchy&nbsp;to</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;find&nbsp;the&nbsp;method&nbsp;in&nbsp;{&nbsp;@link&nbsp;main_class}</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;the&nbsp;above&nbsp;inline&nbsp;link&nbsp;tag&nbsp;will&nbsp;parse&nbsp;as&nbsp;&lt;u&gt;main_class&lt;/u&gt;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;parent_method()</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><strong>$foo&nbsp;</strong>=&nbsp;9<strong>;</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">&quot;TEST_CONST&quot;</font><strong>,</strong><font color="#66cccc">&quot;foobar&quot;</font><strong>)</strong><strong>;</strong></div></li>
+</ol></div></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.return.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.since.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">@return</td>
+<td width="34%" align="center" valign="top">phpDocumentor tags</td>
+<td width="33%" align="right" valign="top">@since</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:42 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

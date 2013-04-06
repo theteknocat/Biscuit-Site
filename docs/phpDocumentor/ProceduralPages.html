@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class ProceduralPages</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class ProceduralPages
+</h2> (line <span class="linenumber">58</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---ProceduralPages.inc.html">/framework/docs/phpDocumentor/ProceduralPages.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Intermediate procedural page parsing structure.</h5>
+<div class="desc"><p>Intermediate procedural page parsing structure. This structure parses defines, functions, and global variables by file, and then iterates over the elements to document conflicts.</p></div>
+<ul>
+		<li><strong>author:</strong> - Greg Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - Release: 1.4.2</li>
+		<li><strong>copyright:</strong> - 2002-2008 Gregory Beaver</li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>todo:</strong> - CS cleanup - change package to PhpDocumentor</li>
+		<li><strong>since:</strong> - 1.1</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$curfile" title="details" class="property"><strong>$curfile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$defineconflicts" title="details" class="property"><strong>$defineconflicts</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$definesbyfile" title="details" class="property"><strong>$definesbyfile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$definesbynamefile" title="details" class="property"><strong>$definesbynamefile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$functionconflicts" title="details" class="property"><strong>$functionconflicts</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$functionsbyfile" title="details" class="property"><strong>$functionsbyfile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$functionsbynamefile" title="details" class="property"><strong>$functionsbynamefile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$globalconflicts" title="details" class="property"><strong>$globalconflicts</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$globalsbyfile" title="details" class="property"><strong>$globalsbyfile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$globalsbynamefile" title="details" class="property"><strong>$globalsbynamefile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$ignorepages" title="details" class="property"><strong>$ignorepages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$includesbyfile" title="details" class="property"><strong>$includesbyfile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$packagesetup" title="details" class="property"><strong>$packagesetup</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$pageclasspackages" title="details" class="property"><strong>$pageclasspackages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$pageconflicts" title="details" class="property"><strong>$pageconflicts</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$pagepackages" title="details" class="property"><strong>$pagepackages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$pages" title="details" class="property"><strong>$pages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$pathpages" title="details" class="property"><strong>$pathpages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$revcpbf" title="details" class="property"><strong>$revcpbf</strong></a>
+</div>
+<hr />
+<a name="var$curfile" id="var$curfile"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$curfile</strong> (line <span class="linenumber">67</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>file being parsed, used in every add function</h5>
+<div class="desc"><p>file being parsed, used in every add function to match up elements with the file that contains them</p></div>
+<ul>
+		<li><strong>see:</strong> - addClass(), addMethod(), addVar(), nextFile()</li>
+	</ul>
+</div>
+<a name="var$defineconflicts" id="var$defineconflicts"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$defineconflicts = array()</strong> (line <span class="linenumber">314</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Namespace conflicts within all documented packages of functions Format:</h5>
+<div class="desc"><p>Namespace conflicts within all documented packages of functions Format: <pre>     array(
+         functionname => array(
+             full path,
+             full path,
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$definesbyfile" id="var$definesbyfile"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$definesbyfile = array()</strong> (line <span class="linenumber">157</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed defines organized by the full path of the file that contains the define.</h5>
+<div class="desc"><p>array of parsed defines organized by the full path of the file that contains the define. Format: <pre>     array(
+         full path => array(
+             definename => <a href="../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a>
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$definesbynamefile" id="var$definesbynamefile"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$definesbynamefile = array()</strong> (line <span class="linenumber">211</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of file names organized by defines that are in the file.</h5>
+<div class="desc"><p>array of file names organized by defines that are in the file. This structure is designed to handle name conflicts.  Two files can contain defines with the same name, and this array will record both filenames to help control namespace errors Format: <pre>     array(
+         definename => array(
+             full path of file containing definename,
+             full path of file 2 containing definename,
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$functionconflicts" id="var$functionconflicts"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$functionconflicts = array()</strong> (line <span class="linenumber">282</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Namespace conflicts within all documented packages of functions Format:</h5>
+<div class="desc"><p>Namespace conflicts within all documented packages of functions Format: <pre>     array(
+         functionname => array(
+             full path,
+             full path,
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$functionsbyfile" id="var$functionsbyfile"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$functionsbyfile = array()</strong> (line <span class="linenumber">142</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed functions organized by the full path of the file that contains the function.</h5>
+<div class="desc"><p>array of parsed functions organized by the full path of the file that contains the function. Format: <pre>     array(
+         full path => array(
+             functionname => <a href="../phpDocumentor/ParserElements/parserFunction.html">parserFunction</a>
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$functionsbynamefile" id="var$functionsbynamefile"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$functionsbynamefile = array()</strong> (line <span class="linenumber">192</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of file names organized by functions that are in the file.</h5>
+<div class="desc"><p>array of file names organized by functions that are in the file.
+ This structure is designed to handle name conflicts.  Two files can contain functions with the same name, and this array will record both filenames to help control namespace errors Format: <pre>     array(
+         functionname => array(
+             full path of file containing functionname,
+             full path of file 2 containing functionname,
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$globalconflicts" id="var$globalconflicts"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$globalconflicts = array()</strong> (line <span class="linenumber">330</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Namespace conflicts within all documented packages of functions Format:</h5>
+<div class="desc"><p>Namespace conflicts within all documented packages of functions Format: <pre>     array(
+         functionname => array(
+             full path,
+             full path,
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$globalsbyfile" id="var$globalsbyfile"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$globalsbyfile = array()</strong> (line <span class="linenumber">172</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed global variables organized by the full path of the file that contains the global variable definition.</h5>
+<div class="desc"><p>array of parsed global variables organized by the full path of the file that contains the global variable definition. Format: <pre>     array(
+         full path => array(
+             globalname => <a href="../phpDocumentor/ParserElements/parserGlobal.html">parserGlobal</a>
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$globalsbynamefile" id="var$globalsbynamefile"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$globalsbynamefile = array()</strong> (line <span class="linenumber">231</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of file names organized by global variables that are in the file.</h5>
+<div class="desc"><p>array of file names organized by global variables that are in the file.
+ This structure is designed to handle name conflicts.  Two files can contain global variables with the same name, and this array will record both filenames to help control namespace errors Format: <pre>     array(
+         global variablename => array(
+             full path of file containing global variablename,
+             full path of file 2 containing global variablename,
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$ignorepages" id="var$ignorepages"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ignorepages = array()</strong> (line <span class="linenumber">100</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of all procedural pages ordered by name that have been ignored via -po or @access private or @ignore Format:</h5>
+<div class="desc"><p>array of all procedural pages ordered by name that have been ignored via -po or @access private or @ignore Format: <pre>     array(
+         name => array(
+             fullpath => parserPage,
+             fullpath => parserPage2 [if there are name conflicts],
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$includesbyfile" id="var$includesbyfile"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$includesbyfile = array()</strong> (line <span class="linenumber">127</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed includes organized by the full path of the file that contains the include.</h5>
+<div class="desc"><p>array of parsed includes organized by the full path of the file that contains the include. Format: <pre>     array(
+         full path => array(
+             includename => <a href="../phpDocumentor/ParserElements/parserInclude.html">parserInclude</a>
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$packagesetup" id="var$packagesetup"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$packagesetup =  false</strong> (line <span class="linenumber">340</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$pageclasspackages" id="var$pageclasspackages"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pageclasspackages = array()</strong> (line <span class="linenumber">266</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of packages assigned to classes in a file, ordered by fullpath Format:</h5>
+<div class="desc"><p>array of packages assigned to classes in a file, ordered by fullpath Format: <pre>     array(
+         fullpath => array(
+             packagename => array(
+                 subpackagename => 1,
+                 subpackagename => 1,
+                 ..
+             ),
+             packagename2 => array(...
+             )
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$pageconflicts" id="var$pageconflicts"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pageconflicts = array()</strong> (line <span class="linenumber">298</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Namespace conflicts within all documented pages Format:</h5>
+<div class="desc"><p>Namespace conflicts within all documented pages Format: <pre>     array(
+         pagename => array(
+             fullpath,
+             fullpath,
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$pagepackages" id="var$pagepackages"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pagepackages = array()</strong> (line <span class="linenumber">246</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of packages ordered by full path</h5>
+<div class="desc"><p>array of packages ordered by full path Format: <pre>     array(
+         fullpath => array(
+             packagename,
+             subpackagename
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$pages" id="var$pages"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pages = array()</strong> (line <span class="linenumber">83</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of all procedural pages ordered by name Format:</h5>
+<div class="desc"><p>array of all procedural pages ordered by name Format: <pre>     array(
+         name => array(
+             fullpath => parserPage,
+             fullpath => parserPage2 [if there are name conflicts],
+             ...
+         )
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$pathpages" id="var$pathpages"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pathpages = array()</strong> (line <span class="linenumber">112</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of all procedural page names ordered by full path to the file</h5>
+<div class="desc"><p>array of all procedural page names ordered by full path to the file Format: <pre>     array(
+         fullpath => name
+     )</pre></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$revcpbf" id="var$revcpbf"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$revcpbf = array()</strong> (line <span class="linenumber">335</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddClassPackageToFile" title="details" class="method-name">addClassPackageToFile</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$subpackage</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddDefine" title="details" class="method-name">addDefine</a>
+        (<span class="var-type"><a href="../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddFunction" title="details" class="method-name">addFunction</a>
+        (<span class="var-type"><a href="../phpDocumentor/ParserElements/parserFunction.html">parserFunction</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddGlobal" title="details" class="method-name">addGlobal</a>
+        (<span class="var-type"><a href="../phpDocumentor/ParserElements/parserGlobal.html">parserGlobal</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddInclude" title="details" class="method-name">addInclude</a>
+        (<span class="var-type"><a href="../phpDocumentor/ParserElements/parserInclude.html">parserInclude</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddPage" title="details" class="method-name">addPage</a>
+        (<span class="var-type"><a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddPagePackage" title="details" class="method-name">addPagePackage</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$subpackage</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array|bool</span>
+        <a href="#methodgetDefineConflicts" title="details" class="method-name">getDefineConflicts</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array|bool</span>
+        <a href="#methodgetFuncConflicts" title="details" class="method-name">getFuncConflicts</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array|bool</span>
+        <a href="#methodgetGlobalConflicts" title="details" class="method-name">getGlobalConflicts</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array|bool</span>
+        <a href="#methodgetPathInfo" title="details" class="method-name">getPathInfo</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$c</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array|string</span>
+        <a href="#methodgetRealPath" title="details" class="method-name">getRealPath</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodignorePage" title="details" class="method-name">ignorePage</a>
+        (<span class="var-type"><a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a>|bool</span>
+        <a href="#methodpathMatchesParsedFile" title="details" class="method-name">pathMatchesParsedFile</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$infile</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodreplaceElement" title="details" class="method-name">replaceElement</a>
+        (<span class="var-type"><a href="../phpDocumentor/ParserElements/parserElement.html">parserElement</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetName" title="details" class="method-name">setName</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetParseBase" title="details" class="method-name">setParseBase</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">$pbase</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetupConflicts" title="details" class="method-name">setupConflicts</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">&$render</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetupPagePackages" title="details" class="method-name">setupPagePackages</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetupPages" title="details" class="method-name">setupPages</a>
+        (<span class="var-type"><a href="../phpDocumentor/phpDocumentor_IntermediateParser.html">phpDocumentor_IntermediateParser</a></span>&nbsp;<span class="var-name">&$render</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodaddClassPackageToFile" id="methodaddClassPackageToFile"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addClassPackageToFile</strong> (line <span class="linenumber">613</span>)
+ </h4> 
+<h4><i>void</i> <strong>addClassPackageToFile(
+string
+$file, string
+$package, string
+$subpackage)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>adds a package from a class to the current file</h5>
+<div class="desc"><p>adds a package from a class to the current file</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $file</strong>: full path to the file that contains the class</li>
+			<li><strong>string $package</strong>: package name</li>
+			<li><strong>string $subpackage</strong>: subpackage name</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddDefine" id="methodaddDefine"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addDefine</strong> (line <span class="linenumber">552</span>)
+ </h4> 
+<h4><i>void</i> <strong>addDefine(
+<a href="../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets up the $definesbyfile array using $curfile</h5>
+<div class="desc"><p>sets up the <a href="../phpDocumentor/ProceduralPages.html#var$definesbyfile">$definesbyfile</a> array using <a href="../phpDocumentor/ProceduralPages.html#var$curfile">$curfile</a></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a> &$element</strong>: the &quot;define&quot; element</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddFunction" id="methodaddFunction"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addFunction</strong> (line <span class="linenumber">508</span>)
+ </h4> 
+<h4><i>void</i> <strong>addFunction(
+<a href="../phpDocumentor/ParserElements/parserFunction.html">parserFunction</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets up the $functionsbyfile array using $curfile</h5>
+<div class="desc"><p>sets up the <a href="../phpDocumentor/ProceduralPages.html#var$functionsbyfile">$functionsbyfile</a> array using <a href="../phpDocumentor/ProceduralPages.html#var$curfile">$curfile</a></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/ParserElements/parserFunction.html">parserFunction</a> &$element</strong>: the &quot;function&quot; object</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddGlobal" id="methodaddGlobal"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addGlobal</strong> (line <span class="linenumber">530</span>)
+ </h4> 
+<h4><i>void</i> <strong>addGlobal(
+<a href="../phpDocumentor/ParserElements/parserGlobal.html">parserGlobal</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets up the $globalsbyfile array using $curfile</h5>
+<div class="desc"><p>sets up the <a href="../phpDocumentor/ProceduralPages.html#var$globalsbyfile">$globalsbyfile</a> array using <a href="../phpDocumentor/ProceduralPages.html#var$curfile">$curfile</a></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/ParserElements/parserGlobal.html">parserGlobal</a> &$element</strong>: the &quot;global&quot; element</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddInclude" id="methodaddInclude"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addInclude</strong> (line <span class="linenumber">496</span>)
+ </h4> 
+<h4><i>void</i> <strong>addInclude(
+<a href="../phpDocumentor/ParserElements/parserInclude.html">parserInclude</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets up the $includesbyfile array using $curfile</h5>
+<div class="desc"><p>sets up the <a href="../phpDocumentor/ProceduralPages.html#var$includesbyfile">$includesbyfile</a> array using <a href="../phpDocumentor/ProceduralPages.html#var$curfile">$curfile</a></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/ParserElements/parserInclude.html">parserInclude</a> &$element</strong>: the &quot;include&quot; element object</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddPage" id="methodaddPage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addPage</strong> (line <span class="linenumber">349</span>)
+ </h4> 
+<h4><i>void</i> <strong>addPage(
+<a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets up the $pages array</h5>
+<div class="desc"><p>sets up the <a href="../phpDocumentor/ProceduralPages.html#var$pages">$pages</a> array</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a> &$element</strong>: the parser page element</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddPagePackage" id="methodaddPagePackage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addPagePackage</strong> (line <span class="linenumber">450</span>)
+ </h4> 
+<h4><i>void</i> <strong>addPagePackage(
+string
+$path, string
+$package, string
+$subpackage)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Changes the package of the page represented by $path</h5>
+<div class="desc"><p>Changes the package of the page represented by $path
+ changes package in both the <a href="../phpDocumentor/ProceduralPages.html#var$pages">$pages</a> array and the <a href="../phpDocumentor/ProceduralPages.html#var$pagepackages">pagepackages</a> array</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $path</strong>: full path</li>
+			<li><strong>string $package</strong>: the package name</li>
+			<li><strong>string $subpackage</strong>: the subpackage name</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetDefineConflicts" id="methodgetDefineConflicts"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getDefineConflicts</strong> (line <span class="linenumber">846</span>)
+ </h4> 
+<h4><i>array|bool</i> <strong>getDefineConflicts(
+string
+$name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>called by <a href="../phpDocumentor/ParserElements/parserDefine.html#methodgetConflicts">parserDefine::getConflicts()</a></h5>
+<div class="desc"><p>called by <a href="../phpDocumentor/ParserElements/parserDefine.html#methodgetConflicts">parserDefine::getConflicts()</a> to get inter-package conflicts, should not be called directly</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: the define name to check</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Format: (package =&gt; <a href="../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a>                    of conflicting define)                    or FALSE if the define is not recorded as a conflict</li>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodgetFuncConflicts" id="methodgetFuncConflicts"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getFuncConflicts</strong> (line <span class="linenumber">790</span>)
+ </h4> 
+<h4><i>array|bool</i> <strong>getFuncConflicts(
+string
+$name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>called by <a href="../phpDocumentor/ParserElements/parserFunction.html#methodgetConflicts">parserFunction::getConflicts()</a> to get</h5>
+<div class="desc"><p>called by <a href="../phpDocumentor/ParserElements/parserFunction.html#methodgetConflicts">parserFunction::getConflicts()</a> to get inter-package conflicts, should not be called directly</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: the function name to check</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Format: (package =&gt; <a href="../phpDocumentor/ParserElements/parserFunction.html">parserFunction</a>                    of conflicting function)                    or FALSE if the function is not recorded as a conflict</li>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodgetGlobalConflicts" id="methodgetGlobalConflicts"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getGlobalConflicts</strong> (line <span class="linenumber">818</span>)
+ </h4> 
+<h4><i>array|bool</i> <strong>getGlobalConflicts(
+string
+$name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>called by <a href="../phpDocumentor/ParserElements/parserGlobal.html#methodgetConflicts">parserGlobal::getConflicts()</a></h5>
+<div class="desc"><p>called by <a href="../phpDocumentor/ParserElements/parserGlobal.html#methodgetConflicts">parserGlobal::getConflicts()</a> to get inter-package conflicts, should not be called directly</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: the global name to check</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Format: (package =&gt; <a href="../phpDocumentor/ParserElements/parserGlobal.html">parserGlobal</a>                    of conflicting global variable)                    or FALSE if the global is not recorded as a conflict</li>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodgetPathInfo" id="methodgetPathInfo"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPathInfo</strong> (line <span class="linenumber">385</span>)
+ </h4> 
+<h4><i>array|bool</i> <strong>getPathInfo(
+string
+$path, mixed
+&$c)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>gathers path-related info about a given element</h5>
+<div class="desc"><p>gathers path-related info about a given element</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $path</strong>: path to the element</li>
+			<li><strong>mixed &$c</strong>: ???</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - an array of path info,                    or FALSE</li>
+			<li><strong>todo</strong> - figure out what &amp;$c is and update the param tag</li>
+		</ul>
+</div>
+<a name="methodgetRealPath" id="methodgetRealPath"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getRealPath</strong> (line <span class="linenumber">1033</span>)
+ </h4> 
+<h4><i>array|string</i> <strong>getRealPath(
+string
+$path, string
+$file)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Ensures the path to the file is an absolute path</h5>
+<div class="desc"><p>Ensures the path to the file is an absolute path</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $path</strong>: path to the file</li>
+			<li><strong>string $file</strong>: the file name</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - returns an array of possible file locations or                      a string if there is an exact match</li>
+		</ul>
+</div>
+<a name="methodignorePage" id="methodignorePage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method ignorePage</strong> (line <span class="linenumber">368</span>)
+ </h4> 
+<h4><i>void</i> <strong>ignorePage(
+<a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>moves a page from the $pages array to the $ignorepages array</h5>
+<div class="desc"><p>moves a page from the <a href="../phpDocumentor/ProceduralPages.html#var$pages">$pages</a> array to the <a href="../phpDocumentor/ProceduralPages.html#var$ignorepages">$ignorepages</a> array</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a> &$element</strong>: the parser page element</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodpathMatchesParsedFile" id="methodpathMatchesParsedFile"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method pathMatchesParsedFile</strong> (line <span class="linenumber">983</span>)
+ </h4> 
+<h4><i><a href="../phpDocumentor/ParserData/parserPage.html">parserPage</a>|bool</i> <strong>pathMatchesParsedFile(
+string
+$path, string
+$infile)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>checks to see if the parsed file matches the given path</h5>
+<div class="desc"><p>checks to see if the parsed file matches the given path</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $path</strong>: the path to look for</li>
+			<li><strong>string $infile</strong>: the file to check</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - matched parserPage if found,                         or FALSE if not found</li>
+		</ul>
+</div>
+<a name="methodreplaceElement" id="methodreplaceElement"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method replaceElement</strong> (line <span class="linenumber">575</span>)
+ </h4> 
+<h4><i>void</i> <strong>replaceElement(
+<a href="../phpDocumentor/ParserElements/parserElement.html">parserElement</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Used to align an element with the package of its parent page prior to Conversion.</h5>
+<div class="desc"><p>Used to align an element with the package of its parent page prior to Conversion.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/ParserElements/parserElement.html">parserElement</a> &$element</strong>: the element to align</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetName" id="methodsetName"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setName</strong> (line <span class="linenumber">421</span>)
+ </h4> 
+<h4><i>void</i> <strong>setName(
+string
+$name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Change a page's name from its file to alias $name</h5>
+<div class="desc"><p>Change a page's name from its file to alias $name
+ This function is used to handle a @name tag in a page-level DocBlock</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: the alias</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetParseBase" id="methodsetParseBase"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setParseBase</strong> (line <span class="linenumber">969</span>)
+ </h4> 
+<h4><i>void</i> <strong>setParseBase(
+mixed
+$pbase)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets the parser base</h5>
+<div class="desc"><p>sets the parser base</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $pbase</strong>: the parser base</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetupConflicts" id="methodsetupConflicts"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setupConflicts</strong> (line <span class="linenumber">665</span>)
+ </h4> 
+<h4><i>void</i> <strong>setupConflicts(
+mixed
+&$render)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>extracts function, define, and global variable name conflicts within the same package and between different packages. name are allowed in the same package, to keep automatic linking possible.</h5>
+<div class="desc"><p>extracts function, define, and global variable name conflicts within the same package and between different packages.  No two elements with the same name are allowed in the same package, to keep automatic linking possible.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed &$render</strong>: the renderer object</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>todo</strong> - functions, defines, and globals are coded,       but pages section is empty... does it need to be coded?</li>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodsetupPagePackages" id="methodsetupPagePackages"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setupPagePackages</strong> (line <span class="linenumber">628</span>)
+ </h4> 
+<h4><i>void</i> <strong>setupPagePackages(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>if there is one class package in a file, the parent path inherits the package if its package is default.</h5>
+<div class="desc"><p>if there is one class package in a file, the parent path inherits the package if its package is default. helps with -po to avoid dumb bugs</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetupPages" id="methodsetupPages"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setupPages</strong> (line <span class="linenumber">911</span>)
+ </h4> 
+<h4><i>void</i> <strong>setupPages(
+<a href="../phpDocumentor/phpDocumentor_IntermediateParser.html">phpDocumentor_IntermediateParser</a>
+&$render)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Adjusts packages of all pages and removes name conflicts within a package
+ Automatic linking requires that each linkable name have exactly one element associated with it. foo() in the same package.</h5>
+<div class="desc"><p>Adjusts packages of all pages and removes name conflicts within a package
+ Automatic linking requires that each linkable name have exactly one element associated with it.  In other words, there cannot be two functions named foo() in the same package.
+ This also adheres to php rules with one exception:
+ <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$test&nbsp;</strong>==&nbsp;3<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'whatever'</font><strong>,&nbsp;</strong><font color="#66cccc">'this&nbsp;thing'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'whatever'</font><strong>,&nbsp;</strong><font color="#66cccc">'this&nbsp;other&nbsp;thing'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>}</strong></div></li>
+</ol></div>
+ phpDocumentor is not aware of conditional control structures because it would slow things down considerably.  So, what phpDocumentor does is automatically ignore the second define and raise a warning.  The warning can be eliminated with an @ignore tag on the second element like so:
+ <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$test&nbsp;</strong>==&nbsp;3<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'whatever'</font><strong>,&nbsp;</strong><font color="#66cccc">'this&nbsp;thing'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@ignore</font></strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'whatever'</font><strong>,&nbsp;</strong><font color="#66cccc">'this&nbsp;other&nbsp;thing'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>}</strong></div></li>
+</ol></div>
+ If there are two files that contain the same procedural elements in the same package (for example, a common configuration file common.php), they will also be ignored as if they were in the same file.  The reasoning behind this is simple.  A package is an indivisible set of files and classes that a user will include in their code.  Name conflicts must be avoided to allow successful execution.
+ This function also plays the all-important role of calling <a href="../phpDocumentor/phpDocumentor_IntermediateParser.html#methodaddElementToPage">phpDocumentor_IntermediateParser::addElementToPage()</a> in order to add processed elements to their pages for Conversion.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../phpDocumentor/phpDocumentor_IntermediateParser.html">phpDocumentor_IntermediateParser</a> &$render</strong>: the parser</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>usedby</strong> - <a href="../phpDocumentor/phpDocumentor_IntermediateParser.html#methodfixProcPages">phpDocumentor_IntermediateParser::fixProcPages()</a> - passes $this</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

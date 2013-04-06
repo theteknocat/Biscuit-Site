@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs for page Setup.inc.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h2>File: /framework/docs/phpDocumentor/Setup.inc.php</h2>
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This was all in phpdoc.</h5>
+<div class="desc"><p>This was all in <a href="../phpDocumentor/_framework---docs---phpDocumentor---phpdoc.inc.html">phpdoc.inc</a>, and now encapsulates the complexity
+ phpDocumentor :: automatic documentation generator
+ PHP versions 4 and 5
+ Copyright (c) 2002-2006 Gregory Beaver
+ LICENSE:
+ This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+ This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+ You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA</p></div>
+<ul>
+		<li><strong>author:</strong> - Gregory Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - CVS: $Id: Setup.inc.php,v 1.28 2008/03/30 23:48:51 ashnazg Exp $</li>
+		<li><strong>copyright:</strong> - 2002-2006 Gregory Beaver</li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>since:</strong> - 1.2</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<!-- =========== Used Classes =========== -->
+<A NAME='classes_summary'><!-- --></A>
+<h3>Classes defined in this file</h3>
+
+<TABLE CELLPADDING='3' CELLSPACING='0' WIDTH='100%' CLASS="border">
+	<THEAD>
+		<TR><TD STYLE="width:20%"><h4>CLASS NAME</h4></TD><TD STYLE="width: 80%"><h4>DESCRIPTION</h4></TD></TR>
+	</THEAD>
+	<TBODY>
+				<TR BGCOLOR='white' CLASS='TableRowColor'>
+			<TD><a href="../phpDocumentor/phpDocumentor_setup.html">phpDocumentor_setup</a></TD>
+			<TD></TD>
+		</TR>
+			</TBODY>
+</TABLE>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+<!-- ============ Includes DETAIL =========== -->
+
+<h2 class="tab">Include/Require Statements</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+
+
+<a name="_phpDocumentor/ParserData_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/ParserData.inc"</strong> (line <span class="linenumber">52</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/ParserData.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/EventStack_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/EventStack.inc"</strong> (line <span class="linenumber">51</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/EventStack.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/Io_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/Io.inc"</strong> (line <span class="linenumber">45</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/Io.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/ParserDocBlock_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/ParserDocBlock.inc"</strong> (line <span class="linenumber">56</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/ParserDocBlock.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/Publisher_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/Publisher.inc"</strong> (line <span class="linenumber">46</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/Publisher.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/DocBlockTags_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/DocBlockTags.inc"</strong> (line <span class="linenumber">54</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/DocBlockTags.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/common_inc_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/common.inc.php"</strong> (line <span class="linenumber">43</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/common.inc.php"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>common settings</h5>
+<div class="desc"><p>common settings</p></div>
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/InlineTags_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/InlineTags.inc"</strong> (line <span class="linenumber">53</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/InlineTags.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/Classes_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/Classes.inc"</strong> (line <span class="linenumber">47</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/Classes.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/DescHTML_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/DescHTML.inc"</strong> (line <span class="linenumber">55</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/DescHTML.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/Parser_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/Parser.inc"</strong> (line <span class="linenumber">58</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/Parser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/ParserElements_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/ParserElements.inc"</strong> (line <span class="linenumber">57</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/ParserElements.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/phpDocumentorTWordParser_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/phpDocumentorTWordParser.inc"</strong> (line <span class="linenumber">59</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/phpDocumentorTWordParser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/PackagePageElements_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/PackagePageElements.inc"</strong> (line <span class="linenumber">64</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/PackagePageElements.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/Errors_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/Errors.inc"</strong> (line <span class="linenumber">68</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/Errors.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/HighlightParser_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/HighlightParser.inc"</strong> (line <span class="linenumber">61</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/HighlightParser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/TutorialHighlightParser_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/TutorialHighlightParser.inc"</strong> (line <span class="linenumber">62</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/TutorialHighlightParser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/ParserDescCleanup_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/ParserDescCleanup.inc"</strong> (line <span class="linenumber">63</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/ParserDescCleanup.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/phpDocumentorTParser_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/phpDocumentorTParser.inc"</strong> (line <span class="linenumber">60</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/phpDocumentorTParser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/Converter_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/Converter.inc"</strong> (line <span class="linenumber">67</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/Converter.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/WordParser_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/WordParser.inc"</strong> (line <span class="linenumber">50</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/WordParser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/IntermediateParser_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/IntermediateParser.inc"</strong> (line <span class="linenumber">49</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/IntermediateParser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/XMLpackagePageParser_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/XMLpackagePageParser.inc"</strong> (line <span class="linenumber">65</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/XMLpackagePageParser.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/LinkClasses_inc"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/LinkClasses.inc"</strong> (line <span class="linenumber">66</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/LinkClasses.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_phpDocumentor/ProceduralPages_inc"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">"phpDocumentor/ProceduralPages.inc"</strong> (line <span class="linenumber">48</span>)
+ </h4> 
+<h4>include_once : "phpDocumentor/ProceduralPages.inc"</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage2">
+<!-- ============ GLOBAL DETAIL =========== -->
+
+<h2 class="tab">Global Variables</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+
+<a name="global$interface" id="global$interface"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constants.gif" border="0" /> <strong class="Property">$interface</strong> (line <span class="linenumber">75</span>)
+ </h4> 
+<h4><i>array</i> $interface : $_GET['interface']</h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>$interface is either 'web' or is not set at all</h5>
+<div class="desc"><p>$interface is either 'web' or is not set at all</p></div>
+<ul>
+	</ul>
+</div>
+<a name="global$phpDocumentor_DefaultCategoryName" id="global$phpDocumentor_DefaultCategoryName"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constants.gif" border="0" /> <strong class="Property">$phpDocumentor_DefaultCategoryName</strong> (line <span class="linenumber">95</span>)
+ </h4> 
+<h4><i>string</i> $phpDocumentor_DefaultCategoryName : 'default'</h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>default package name, set using -dn --defaultcategoryname</h5>
+<div class="desc"><p>default package name, set using -dn --defaultcategoryname</p></div>
+<ul>
+		<li><strong>name:</strong> - $phpDocumentor_DefaultCategoryName</li>
+	</ul>
+</div>
+<a name="global$phpDocumentor_DefaultPackageName" id="global$phpDocumentor_DefaultPackageName"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constants.gif" border="0" /> <strong class="Property">$phpDocumentor_DefaultPackageName</strong> (line <span class="linenumber">88</span>)
+ </h4> 
+<h4><i>string</i> $phpDocumentor_DefaultPackageName : 'default'</h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>default package name, set using -dn --defaultpackagename</h5>
+<div class="desc"><p>default package name, set using -dn --defaultpackagename</p></div>
+<ul>
+		<li><strong>name:</strong> - $phpDocumentor_DefaultPackageName</li>
+	</ul>
+</div>
+<a name="global$_phpDocumentor_setting" id="global$_phpDocumentor_setting"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constants.gif" border="0" /> <strong class="Property">$_phpDocumentor_setting</strong> (line <span class="linenumber">80</span>)
+ </h4> 
+<h4><i>array</i> $_phpDocumentor_setting : $_GET['setting']</h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>$_phpDocumentor_setting is either the value from the web interface, or is set up by <a href="../phpDocumentor/Io.html#methodparseArgv">Io::parseArgv()</a></h5>
+<div class="desc"><p>$_phpDocumentor_setting is either the value from the web interface, or is set up by <a href="../phpDocumentor/Io.html#methodparseArgv">Io::parseArgv()</a></p></div>
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage3">
+<!-- ============ CONSTANT DETAIL =========== -->
+
+<A NAME='constant_detail'></A>
+<h2 class="tab">Constants</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage4">
+<!-- ============ FUNCTION DETAIL =========== -->
+
+<h2 class="tab">Functions</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage4" ) );</script>
+
+<a name="functioncheckForBugCondition" id="functioncheckForBugCondition"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">checkForBugCondition</strong> (line <span class="linenumber">964</span>)
+ </h4> 
+<h4><i>void</i> <strong>checkForBugCondition(
+string $php_version, [string $php_bug_number = &#039;none&#039;], [string $pear_bug_number = &#039;none&#039;])</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Crash in case of known, dangerous bug condition
+ Checks the PHP version that is executing PhpDocumentor, in case a known PHP/PEAR bug condition could be triggered by the PhpDocumentor execution.</h5>
+<div class="desc"><p>Crash in case of known, dangerous bug condition
+ Checks the PHP version that is executing PhpDocumentor, in case a known PHP/PEAR bug condition could be triggered by the PhpDocumentor execution.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $php_version</strong>: the PHP version that contains the bug</li>
+			<li><strong>string $php_bug_number</strong>: the PHP bug number (if any)</li>
+			<li><strong>string $pear_bug_number</strong>: the PEAR bug number (if any)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiondecideOnOrOff" id="functiondecideOnOrOff"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">decideOnOrOff</strong> (line <span class="linenumber">923</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>decideOnOrOff(
+[string $value_to_guess = &#039;NO VALUE WAS PASSED&#039;])</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Fuzzy logic to interpret the boolean args' intent</h5>
+<div class="desc"><p>Fuzzy logic to interpret the boolean args' intent</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $value_to_guess</strong>: the command-line option to analyze</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - our best guess of the value's boolean intent</li>
+		</ul>
+</div>
+<a name="functionphpDocumentor_out" id="functionphpDocumentor_out"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">phpDocumentor_out</strong> (line <span class="linenumber">944</span>)
+ </h4> 
+<h4><i>void</i> <strong>phpDocumentor_out(
+ $string)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Print parse information if quiet setting is off</h5>
+<div class="desc"><p>Print parse information if quiet setting is off</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $string</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>usedby</strong> - <a href="../phpDocumentor/phpDocumentor_setup.html#methodsetupConverters">phpDocumentor_setup::setupConverters()</a></li>
+		</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:36 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

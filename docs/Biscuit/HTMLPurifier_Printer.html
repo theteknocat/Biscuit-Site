@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_Printer</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_Printer
+</h2> (line <span class="linenumber">9</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php4---library---HTMLPurifier---Printer.php.html">/framework/plugins/html_purifier/php4/library/HTMLPurifier/Printer.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$config" title="details" class="property"><strong>$config</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$generator" title="details" class="property"><strong>$generator</strong></a>
+</div>
+<hr />
+<a name="var$config" id="var$config"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$config</strong> (line <span class="linenumber">20</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Instance of HTMLPurifier_Config, for easy access</h5>
+<div class="desc"><p>Instance of HTMLPurifier_Config, for easy access</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$generator" id="var$generator"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$generator</strong> (line <span class="linenumber">15</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Instance of HTMLPurifier_Generator for HTML generation convenience funcs</h5>
+<div class="desc"><p>Instance of HTMLPurifier_Generator for HTML generation convenience funcs</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">HTMLPurifier_Printer</span>
+        <a href="#methodHTMLPurifier_Printer" title="details" class="method-name">HTMLPurifier_Printer</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodelement" title="details" class="method-name">element</a>
+        (<span class="var-type">$tag</span>&nbsp;<span class="var-name">$tag</span>, <span class="var-type">$contents</span>&nbsp;<span class="var-name">$contents</span>, [<span class="var-type">$attr</span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>], [<span class="var-type">$escape</span>&nbsp;<span class="var-name">$escape</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodelementEmpty" title="details" class="method-name">elementEmpty</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodend" title="details" class="method-name">end</a>
+        (<span class="var-type">$tag</span>&nbsp;<span class="var-name">$tag</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodescape" title="details" class="method-name">escape</a>
+        (<span class="var-type">$string</span>&nbsp;<span class="var-name">$string</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetClass" title="details" class="method-name">getClass</a>
+        (<span class="var-type">$obj</span>&nbsp;<span class="var-name">$obj</span>, [<span class="var-type">$prefix</span>&nbsp;<span class="var-name">$sec_prefix</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodlistify" title="details" class="method-name">listify</a>
+        (<span class="var-type">$array</span>&nbsp;<span class="var-name">$array</span>, [<span class="var-type">$polite</span>&nbsp;<span class="var-name">$polite</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodprepareGenerator" title="details" class="method-name">prepareGenerator</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrow" title="details" class="method-name">row</a>
+        (<span class="var-type">$name</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">$value</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodstart" title="details" class="method-name">start</a>
+        (<span class="var-type">$tag</span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type">$attr</span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtext" title="details" class="method-name">text</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$text</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodHTMLPurifier_Printer" id="methodHTMLPurifier_Printer"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor HTMLPurifier_Printer</strong> (line <span class="linenumber">25</span>)
+ </h4> 
+<h4><i>HTMLPurifier_Printer</i> <strong>HTMLPurifier_Printer(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Initialize $generator.</h5>
+<div class="desc"><p>Initialize $generator.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodelement" id="methodelement"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method element</strong> (line <span class="linenumber">73</span>)
+ </h4> 
+<h4><i>void</i> <strong>element(
+$tag
+$tag, $contents
+$contents, [$attr
+$attr = array()], [$escape
+$escape = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Prints a complete element with content inside</h5>
+<div class="desc"><p>Prints a complete element with content inside</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$tag $tag</strong>: Tag name</li>
+			<li><strong>$contents $contents</strong>: Element contents</li>
+			<li><strong>$attr $attr</strong>: Tag attributes</li>
+			<li><strong>$escape $escape</strong>: Bool whether or not to escape contents</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodelementEmpty" id="methodelementEmpty"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method elementEmpty</strong> (line <span class="linenumber">79</span>)
+ </h4> 
+<h4><i>void</i> <strong>elementEmpty(
+
+$tag, [
+$attr = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $tag</strong>: </li>
+			<li><strong> $attr</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodend" id="methodend"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method end</strong> (line <span class="linenumber">60</span>)
+ </h4> 
+<h4><i>void</i> <strong>end(
+$tag
+$tag)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns an end teg</h5>
+<div class="desc"><p>Returns an end teg</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$tag $tag</strong>: Tag name</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodescape" id="methodescape"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method escape</strong> (line <span class="linenumber">110</span>)
+ </h4> 
+<h4><i>void</i> <strong>escape(
+$string
+$string)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Escapes a string for HTML output.</h5>
+<div class="desc"><p>Escapes a string for HTML output.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$string $string</strong>: String to escape</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetClass" id="methodgetClass"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClass</strong> (line <span class="linenumber">139</span>)
+ </h4> 
+<h4><i>void</i> <strong>getClass(
+$obj
+$obj, [$prefix
+$sec_prefix = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves the class of an object without prefixes, as well as metadata</h5>
+<div class="desc"><p>Retrieves the class of an object without prefixes, as well as metadata</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$obj $obj</strong>: Object to determine class of</li>
+			<li><strong>$prefix $sec_prefix</strong>: Further prefix to remove</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodlistify" id="methodlistify"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method listify</strong> (line <span class="linenumber">121</span>)
+ </h4> 
+<h4><i>void</i> <strong>listify(
+$array
+$array, [$polite
+$polite = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Takes a list of strings and turns them into a single list</h5>
+<div class="desc"><p>Takes a list of strings and turns them into a single list</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$array $array</strong>: List of strings</li>
+			<li><strong>$polite $polite</strong>: Bool whether or not to add an end before the last</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodprepareGenerator" id="methodprepareGenerator"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method prepareGenerator</strong> (line <span class="linenumber">32</span>)
+ </h4> 
+<h4><i>void</i> <strong>prepareGenerator(
+
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Give generator necessary configuration if possible</h5>
+<div class="desc"><p>Give generator necessary configuration if possible</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrow" id="methodrow"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method row</strong> (line <span class="linenumber">96</span>)
+ </h4> 
+<h4><i>void</i> <strong>row(
+$name
+$name, $value
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Prints a simple key/value row in a table.</h5>
+<div class="desc"><p>Prints a simple key/value row in a table.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$name $name</strong>: Key</li>
+			<li><strong>$value $value</strong>: Value</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodstart" id="methodstart"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method start</strong> (line <span class="linenumber">50</span>)
+ </h4> 
+<h4><i>void</i> <strong>start(
+$tag
+$tag, [$attr
+$attr = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns a start tag</h5>
+<div class="desc"><p>Returns a start tag</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$tag $tag</strong>: Tag name</li>
+			<li><strong>$attr $attr</strong>: Attribute array</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodtext" id="methodtext"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method text</strong> (line <span class="linenumber">85</span>)
+ </h4> 
+<h4><i>void</i> <strong>text(
+
+$text)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $text</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

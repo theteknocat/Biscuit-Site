@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs for page bug-561101.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h2>File: /framework/docs/Documentation/tests/bug-561101.php</h2>
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class ClubBase
+ Basisklasse, die Debugging- und ErrorHandling/Logging-Funktionen liefert Alle komplexeren Klassen sollten von ClubBase abgeleitet werden.</h5>
+<div class="desc"><p>Class ClubBase
+ Basisklasse, die Debugging- und ErrorHandling/Logging-Funktionen liefert Alle komplexeren Klassen sollten von ClubBase abgeleitet werden.</p></div>
+<ul>
+		<li><strong>author:</strong> - Karsten Kraus &lt;<a href="mailto:kk@swr3.de">kk@swr3.de</a>&gt;</li>
+		<li><strong>version:</strong> - $Revision: 1.1 $ ($Date: 2005/10/17 18:36:51 $),</li>
+		<li><strong>copyright:</strong> - Copyright (c) 2001 SWR3.online. All rights reserved.</li>
+		<li><strong>link:</strong> - <a href="http://www.swr3clubde">http://www.swr3clubde</a></li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+<!-- =========== Used Classes =========== -->
+<A NAME='classes_summary'><!-- --></A>
+<h3>Classes defined in this file</h3>
+
+<TABLE CELLPADDING='3' CELLSPACING='0' WIDTH='100%' CLASS="border">
+	<THEAD>
+		<TR><TD STYLE="width:20%"><h4>CLASS NAME</h4></TD><TD STYLE="width: 80%"><h4>DESCRIPTION</h4></TD></TR>
+	</THEAD>
+	<TBODY>
+				<TR BGCOLOR='white' CLASS='TableRowColor'>
+			<TD><a href="../tests/ClubBase.html">ClubBase</a></TD>
+			<TD></TD>
+		</TR>
+			</TBODY>
+</TABLE>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+<!-- ============ Includes DETAIL =========== -->
+
+<h2 class="tab">Include/Require Statements</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+
+
+<a name="_CLUB_PEAR_PATH_Log_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">CLUB_PEAR_PATH.'Log.php'</strong> (line <span class="linenumber">42</span>)
+ </h4> 
+<h4>require_once : CLUB_PEAR_PATH.'Log.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Für das Logging verwenden wir erstmal die Standard PEAR::Log-Klasse</h5>
+<div class="desc"><p>Für das Logging verwenden wir erstmal die Standard PEAR::Log-Klasse</p></div>
+<ul>
+	</ul>
+</div>
+<a name="_CLUB_CLASS_PATH_config/paths_conf_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">CLUB_CLASS_PATH.'config/paths.conf.php'</strong> (line <span class="linenumber">28</span>)
+ </h4> 
+<h4>require_once : CLUB_CLASS_PATH.'config/paths.conf.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>In dieser Datei werden Pfade zu den verschiedenen Spezial-Klassen</h5>
+<div class="desc"><p>In dieser Datei werden Pfade zu den verschiedenen Spezial-Klassen (storages, products, commands) definiert include		Function _require_once_</p></div>
+<ul>
+	</ul>
+</div>
+<a name="_CLUB_CONFIG_PATH_common_conf_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">CLUB_CONFIG_PATH.'common.conf.php'</strong> (line <span class="linenumber">33</span>)
+ </h4> 
+<h4>require_once : CLUB_CONFIG_PATH.'common.conf.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>In dieser Datei werden Konstanten, die fuer alle Klassen gelten definiert</h5>
+<div class="desc"><p>In dieser Datei werden Konstanten, die fuer alle Klassen gelten definiert include		Function _require_once_</p></div>
+<ul>
+	</ul>
+</div>
+<a name="_CLUB_PEAR_PATH_PEAR_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">CLUB_PEAR_PATH.'PEAR.php'</strong> (line <span class="linenumber">38</span>)
+ </h4> 
+<h4>require_once : CLUB_PEAR_PATH.'PEAR.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>ClubBase erbt von PEAR.</h5>
+<div class="desc"><p>ClubBase erbt von PEAR.php, deshalb binden wir sie hier ein include		Function _require_once_</p></div>
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage2">
+<!-- ============ GLOBAL DETAIL =========== -->
+
+<h2 class="tab">Global Variables</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage3">
+<!-- ============ CONSTANT DETAIL =========== -->
+
+<A NAME='constant_detail'></A>
+<h2 class="tab">Constants</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+
+<a name="defineCLUB_CLASS_PATH"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">CLUB_CLASS_PATH</strong> (line <span class="linenumber">22</span>)
+ </h4> 
+<h4>CLUB_CLASS_PATH : '/wwwhome/swr3club.de/php.inc/swr3club/'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>var:</strong> - CLUB_CLASS_PATH        Der Pfad zu den Club-Klassen</li>
+	</ul>
+</div>
+<a name="defineDEBUG_ALL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_ALL</strong> (line <span class="linenumber">95</span>)
+ </h4> 
+<h4>DEBUG_ALL : 11</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_CTRACE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_CTRACE</strong> (line <span class="linenumber">87</span>)
+ </h4> 
+<h4>DEBUG_CTRACE : 9</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_ERROR"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_ERROR</strong> (line <span class="linenumber">67</span>)
+ </h4> 
+<h4>DEBUG_ERROR : 3</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>DEBUG_XXX	Konstanten, die bestimmte Debuglevel definieren
+ Diese Konstanten dienen einfach dazu, den Quellkode lesbarer zu machen.</h5>
+<div class="desc"><p>DEBUG_XXX	Konstanten, die bestimmte Debuglevel definieren
+ Diese Konstanten dienen einfach dazu, den Quellkode lesbarer zu machen. Ob das Debuglevel als Zahl angeben wird, oder mit einer Konstante, ist letztlich egal. Die Konstanten decken immer Bereiche ab (z.B.  DEBUG_INFO = 6, DEBUG_NOTICE = 9)</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_FATAL"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_FATAL</strong> (line <span class="linenumber">98</span>)
+ </h4> 
+<h4>DEBUG_FATAL : 0</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_INFO"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_INFO</strong> (line <span class="linenumber">72</span>)
+ </h4> 
+<h4>DEBUG_INFO : 5</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_INTERNALS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_INTERNALS</strong> (line <span class="linenumber">78</span>)
+ </h4> 
+<h4>DEBUG_INTERNALS : 7</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_MTRACE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_MTRACE</strong> (line <span class="linenumber">91</span>)
+ </h4> 
+<h4>DEBUG_MTRACE : 10</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_NOTICE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_NOTICE</strong> (line <span class="linenumber">76</span>)
+ </h4> 
+<h4>DEBUG_NOTICE : 6</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG_SQL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG_SQL</strong> (line <span class="linenumber">83</span>)
+ </h4> 
+<h4>DEBUG_SQL : 8</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage4">
+<!-- ============ FUNCTION DETAIL =========== -->
+
+<h2 class="tab">Functions</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage4" ) );</script>
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:51 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

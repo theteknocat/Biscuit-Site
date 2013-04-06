@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class FileUpload</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class FileUpload
+</h2> (line <span class="linenumber">159</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---FileUpload.php.html">/framework/lib/FileUpload.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$field_name" title="details" class="property"><strong>$field_name</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$file_error" title="details" class="property"><strong>$file_error</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$file_name" title="details" class="property"><strong>$file_name</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type"></span>
+    <a href="#var$status" title="details" class="property"><strong>$status</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$upload_dir" title="details" class="property"><strong>$upload_dir</strong></a>
+</div>
+<hr />
+<a name="var$field_name" id="var$field_name"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$field_name</strong> (line <span class="linenumber">174</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$file_error" id="var$file_error"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$file_error =  false</strong> (line <span class="linenumber">171</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$file_name" id="var$file_name"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$file_name</strong> (line <span class="linenumber">173</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$status" id="var$status"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$status =  0</strong> (line <span class="linenumber">169</span>)
+ </h4>
+<h4>Data type : </h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Status of the FileUpload object</h5>
+<div class="desc"><p>Status of the FileUpload object
+ status = 0 - nothing happened, no file uploaded status = 1 - successful file upload status = 2 - unsuccessful upload, error occurred</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$upload_dir" id="var$upload_dir"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$upload_dir</strong> (line <span class="linenumber">172</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">FileUpload</span>
+        <a href="#methodFileUpload" title="details" class="method-name">FileUpload</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$uploaded_file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$upload_dir</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">&quot;&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img_width</span> = <span class="var-default">&quot;&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$img_height</span> = <span class="var-default">&quot;&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$thumb_width</span> = <span class="var-default">&quot;&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$thumb_height</span> = <span class="var-default">&quot;&quot;</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodclean_filename" title="details" class="method-name">clean_filename</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$file_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodensure_directory_setup" title="details" class="method-name">ensure_directory_setup</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoderror" title="details" class="method-name">error</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$code</span> = <span class="var-default">0</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodget_error_message" title="details" class="method-name">get_error_message</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodis_okay" title="details" class="method-name">is_okay</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodis_valid_image" title="details" class="method-name">is_valid_image</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$src_file</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodno_file_sent" title="details" class="method-name">no_file_sent</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodpathinfo_filename" title="details" class="method-name">pathinfo_filename</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$path</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_file_error" title="details" class="method-name">set_file_error</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodFileUpload" id="methodFileUpload"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor FileUpload</strong> (line <span class="linenumber">196</span>)
+ </h4> 
+<h4><i>FileUpload</i> <strong>FileUpload(
+array
+$uploaded_file, string
+$upload_dir, [string
+$type = &quot;&quot;], [string
+$img_width = &quot;&quot;], [string
+$img_height = &quot;&quot;], [string
+$thumb_width = &quot;&quot;], [string
+$thumb_height = &quot;&quot;])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handle a file upload.</h5>
+<div class="desc"><p>Handle a file upload.
+    $uploaded_file = new FileUpload($_FILES[&quot;publication_file&quot;], &quot;/uploads/publications&quot;)    if ($uploaded_file-&gt;is_okay()) {        $filename = $uploaded_file-&gt;file_name;        ...    } else {        $error = $uploaded_file-&gt;get_error_message();        ...    }</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $uploaded_file</strong>: Required. Contains the file data (must resemble $_FILES['foo'])</li>
+			<li><strong>string $upload_dir</strong>: Required. File upload directory relative to the web root (ie. &quot;/images/photos&quot;).  If the directory doesn't exist, it will be created</li>
+			<li><strong>string $type</strong>: Optional. If left blank (default), the file will simply be uploaded to the $upload_dir.</li>
+			<li><strong>string $img_width</strong>: If type=image, enter this to override the system-wide global &quot;IMG_WIDTH&quot; for resizing the uploaded image to it's medium/large size</li>
+			<li><strong>string $img_height</strong>: If type=image, enter this to override the system-wide global &quot;IMG_HEIGHT&quot; for resizing the uploaded image to it's medium/large size</li>
+			<li><strong>string $thumb_width</strong>: If type=image, enter this to override the system-wide global &quot;THUMB_WIDTH&quot; for resizing the uploaded image to it's thumbnail size</li>
+			<li><strong>string $thumb_height</strong>: If type=image, enter this to override the system-wide global &quot;THUMB_HEIGHT&quot; for resizing the uploaded image to it's thumbnail size</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodclean_filename" id="methodclean_filename"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method clean_filename</strong> (line <span class="linenumber">325</span>)
+ </h4> 
+<h4><i>void</i> <strong>clean_filename(
+string
+$file_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Remove invalid characters from the filename and give it a unique name if needed</h5>
+<div class="desc"><p>Remove invalid characters from the filename and give it a unique name if needed</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $file_name</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodensure_directory_setup" id="methodensure_directory_setup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method ensure_directory_setup</strong> (line <span class="linenumber">410</span>)
+ </h4> 
+<h4><i>void</i> <strong>ensure_directory_setup(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tests that the destination and temp directories exist and are writable. try to create them if they are not found.</h5>
+<div class="desc"><p>Tests that the destination and temp directories exist and are writable. Will try to create them if they are not found.
+ If an error is encountered, it is recorded in $this-&gt;file_error</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoderror" id="methoderror"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method error</strong> (line <span class="linenumber">436</span>)
+ </h4> 
+<h4><i>void</i> <strong>error(
+
+$message, [
+$code = 0])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $message</strong>: </li>
+			<li><strong> $code</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodget_error_message" id="methodget_error_message"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get_error_message</strong> (line <span class="linenumber">386</span>)
+ </h4> 
+<h4><i>void</i> <strong>get_error_message(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return an error string, or false if no error found</h5>
+<div class="desc"><p>Return an error string, or false if no error found</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodis_okay" id="methodis_okay"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method is_okay</strong> (line <span class="linenumber">377</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>is_okay(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Any errors?</h5>
+<div class="desc"><p>Any errors?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodis_valid_image" id="methodis_valid_image"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method is_valid_image</strong> (line <span class="linenumber">317</span>)
+ </h4> 
+<h4><i>void</i> <strong>is_valid_image(
+string
+$src_file)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Whether or not an uploaded file is a valid image type for resizing</h5>
+<div class="desc"><p>Whether or not an uploaded file is a valid image type for resizing</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $src_file</strong>: Name of the file to check</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodno_file_sent" id="methodno_file_sent"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method no_file_sent</strong> (line <span class="linenumber">398</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>no_file_sent(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>was no file uploaded?</h5>
+<div class="desc"><p>was no file uploaded?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodpathinfo_filename" id="methodpathinfo_filename"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method pathinfo_filename</strong> (line <span class="linenumber">449</span>)
+ </h4> 
+<h4><i>void</i> <strong>pathinfo_filename(
+
+$path)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP4 version of pathinfo</h5>
+<div class="desc"><p>PHP4 version of pathinfo
+ from http://ca3.php.net/manual/en/function.pathinfo.php#77748</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $path</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - anders.jenbo()pc.dk</li>
+		</ul>
+</div>
+<a name="methodset_file_error" id="methodset_file_error"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_file_error</strong> (line <span class="linenumber">344</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_file_error(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return file uploaded error text based on error number passed from $_FILES[your_field_name]['error']</h5>
+<div class="desc"><p>Return file uploaded error text based on error number passed from $_FILES[your_field_name]['error']</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

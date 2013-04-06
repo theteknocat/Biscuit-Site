@@ -1,0 +1,1296 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class parserDescParser</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class parserDescParser
+</h2> (line <span class="linenumber">298</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../../phpDocumentor/Publisher.html">Publisher</a>
+   |
+   --<a href="../../phpDocumentor/Parsers/Parser.html">Parser</a>
+      |
+      --parserDescParser</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">/framework/docs/phpDocumentor/ParserDescCleanup.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Parses a DocBlock description to retrieve abstract representations of</h5>
+<div class="desc"><p>Parses a DocBlock description to retrieve abstract representations of &lt;pre&gt;,&lt;code&gt;,&lt;p&gt;,&lt;ul&gt;,&lt;ol&gt;,&lt;li&gt;,&lt;b&gt;,&lt;i&gt;</p></div>
+<ul>
+		<li><strong>tutorial:</strong> - <a href="../../phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#basics.desc">phpDocumentor Tutorial</a></li>
+		<li><strong>author:</strong> - Greg Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - $Id: Parser.inc,v 1.9 2007/06/22 14:58:30 ashnazg Exp $</li>
+		<li><strong>copyright:</strong> - 2000-2007 Kellin, Joshua Eichorn</li>
+		<li><strong>since:</strong> - 1.2</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$eventHandlers" title="details" class="property"><strong>$eventHandlers</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$pars" title="details" class="property"><strong>$pars</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$parse_Ps" title="details" class="property"><strong>$parse_Ps</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$_context" title="details" class="property"><strong>$_context</strong></a>
+</div>
+<hr />
+<a name="var$eventHandlers" id="var$eventHandlers"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$eventHandlers = array(PHPDOCUMENTOR_PDP_EVENT_CODE =&gt; 'handleCode',<br />                               PHPDOCUMENTOR_PDP_EVENT_PRE =&gt; 'handlePre',<br />                               PHPDOCUMENTOR_PDP_EVENT_P =&gt; 'handleP',<br />                               PHPDOCUMENTOR_PDP_EVENT_DOUBLECR =&gt; 'handleDoubleCR',<br />                               PHPDOCUMENTOR_PDP_EVENT_LIST =&gt; 'handleList',<br />                               PHPDOCUMENTOR_PDP_EVENT_B =&gt; 'handleB',<br />                               PHPDOCUMENTOR_PDP_EVENT_I =&gt; 'handleI',<br />                               PHPDOCUMENTOR_PDP_EVENT_VAR =&gt; 'handleVar',<br />                               PHPDOCUMENTOR_PDP_EVENT_KBD =&gt; 'handleKbd',<br />                               PHPDOCUMENTOR_PDP_EVENT_SAMP =&gt; 'handleSamp',<br />                               PHPDOCUMENTOR_PDP_EVENT_BR =&gt; 'handleBr',<br />                               PHPDOCUMENTOR_PDP_EVENT_ESCAPE =&gt; 'handleEscape',<br />                               PHPDOCUMENTOR_PDP_EVENT_ESCAPE_CODE =&gt; 'handleEscapeCode',<br />                               PHPDOCUMENTOR_PDP_EVENT_ESCAPE_PRE =&gt; 'handleEscapePre',<br />                               PHPDOCUMENTOR_PDP_EVENT_SIMLIST =&gt; 'handleSimpleList',<br />                               PARSER_EVENT_NOEVENTS =&gt; 'defaultHandler',<br />                               )</strong> (line <span class="linenumber">306</span>)
+ </h4>
+<h4>Data type : array</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<div class="desc"><p></p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$pars" id="var$pars"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pars = array()</strong> (line <span class="linenumber">327</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<div class="desc"><p></p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$parse_Ps" id="var$parse_Ps"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$parse_Ps</strong> (line <span class="linenumber">333</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Determines whether parsing of &amp;lt;p&amp;gt; tags will occur, or double CR will</h5>
+<div class="desc"><p>Determines whether parsing of &amp;lt;p&amp;gt; tags will occur, or double CR will be used</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_context" id="var$_context"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_context = array('normal')</strong> (line <span class="linenumber">341</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Context stack.</h5>
+<div class="desc"><p>Context stack.
+ Values can be 'normal', or any tag container like 'my_i', 'my_b'.  This is used to determine which tag text or nested tags should be added to</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+		<li><strong>usedby:</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methodsetContext">parserDescParser::setContext()</a></li>
+		<li><strong>usedby:</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methodgetContext">parserDescParser::getContext()</a></li>
+		<li><strong>usedby:</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methoddropContext">parserDescParser::dropContext()</a></li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">parserDescParser</span>
+        <a href="#methodparserDescParser" title="details" class="method-name">parserDescParser</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddText" title="details" class="method-name">addText</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$text</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddefaultHandler" title="details" class="method-name">defaultHandler</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methoddoSimpleList" title="details" class="method-name">doSimpleList</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$word</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddropContext" title="details" class="method-name">dropContext</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetContext" title="details" class="method-name">getContext</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetParserEventName" title="details" class="method-name">getParserEventName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetStartList" title="details" class="method-name">getStartList</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$word</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleB" title="details" class="method-name">handleB</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleBr" title="details" class="method-name">handleBr</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleCode" title="details" class="method-name">handleCode</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleDoubleCR" title="details" class="method-name">handleDoubleCR</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleEscape" title="details" class="method-name">handleEscape</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleEscapeCode" title="details" class="method-name">handleEscapeCode</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleEscapePre" title="details" class="method-name">handleEscapePre</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleI" title="details" class="method-name">handleI</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleKbd" title="details" class="method-name">handleKbd</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleList" title="details" class="method-name">handleList</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleP" title="details" class="method-name">handleP</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandlePre" title="details" class="method-name">handlePre</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleSamp" title="details" class="method-name">handleSamp</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleSimpleList" title="details" class="method-name">handleSimpleList</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$start</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodhandleVar" title="details" class="method-name">handleVar</a>
+        (<span class="var-type">string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparse" title="details" class="method-name">parse</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">&$parse_data</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$sdesc</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$ind_type</span> = <span class="var-default">'parserDesc'</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodresetStartList" title="details" class="method-name">resetStartList</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$start</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetContext" title="details" class="method-name">setContext</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$context</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetupStates" title="details" class="method-name">setupStates</a>
+        (<span class="var-type">boolean</span>&nbsp;<span class="var-name">$sdesc</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodparserDescParser" id="methodparserDescParser"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor parserDescParser</strong> (line <span class="linenumber">349</span>)
+ </h4> 
+<h4><i>parserDescParser</i> <strong>parserDescParser(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets $wp to be a <a href="../../phpDocumentor/WordParsers/ObjectWordParser.html">ObjectWordParser</a></h5>
+<div class="desc"><p>sets $wp to be a <a href="../../phpDocumentor/WordParsers/ObjectWordParser.html">ObjectWordParser</a>
+ $wp is the word parser that retrieves tokens</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddText" id="methodaddText"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addText</strong> (line <span class="linenumber">533</span>)
+ </h4> 
+<h4><i>void</i> <strong>addText(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$text)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>add input as text to the current paragraph or list</h5>
+<div class="desc"><p>add input as text to the current paragraph or list</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $text</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+			<li><strong>usedby</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methodhandleBr">parserDescParser::handleBr()</a></li>
+		</ul>
+</div>
+<a name="methoddefaultHandler" id="methoddefaultHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method defaultHandler</strong> (line <span class="linenumber">478</span>)
+ </h4> 
+<h4><i>void</i> <strong>defaultHandler(
+
+$word, 
+$pevent)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../phpDocumentor/Parsers/Parser.html#methoddefaultHandler">Parser::defaultHandler()</a> handler for NOEVENTS, OUTPHP, COMMENTBLOCK</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>basic handling</h5>
+<div class="desc"><p>basic handling
+ This function checks to see if the first thing in a description is the  tag.  If so, it will switch  into a mode of parsing out paragraphs by</p><p>instead  of a double line-break   It also removes extra whitespace</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $word</strong>: </li>
+			<li><strong> $pevent</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methoddoSimpleList">parserDescParser::doSimpleList()</a></li>
+		</ul>
+</div>
+<a name="methoddoSimpleList" id="methoddoSimpleList"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method doSimpleList</strong> (line <span class="linenumber">1186</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>doSimpleList(
+string
+$word)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return a simple list, if found
+ This helper function extracts a simple list beginning with any of 'o','-'.</h5>
+<div class="desc"><p>Return a simple list, if found
+ This helper function extracts a simple list beginning with any of 'o','-'.'#','+','0','1','0.','1.' and starts parsing it.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $word</strong>: line that may contain a simple list</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if a list is found, false otherwise</li>
+			<li><strong>usedby</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methodhandleDoubleCR">parserDescParser::handleDoubleCR()</a></li>
+			<li><strong>usedby</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methoddefaultHandler">parserDescParser::defaultHandler()</a></li>
+		</ul>
+</div>
+<a name="methoddropContext" id="methoddropContext"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method dropContext</strong> (line <span class="linenumber">513</span>)
+ </h4> 
+<h4><i>void</i> <strong>dropContext(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Pop a context off of the context stack</h5>
+<div class="desc"><p>Pop a context off of the context stack</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#var$_context">parserDescParser::$_context</a></li>
+		</ul>
+</div>
+<a name="methodgetContext" id="methodgetContext"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getContext</strong> (line <span class="linenumber">503</span>)
+ </h4> 
+<h4><i>void</i> <strong>getContext(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieve the current top-level tag to add text into</h5>
+<div class="desc"><p>Retrieve the current top-level tag to add text into</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#var$_context">parserDescParser::$_context</a></li>
+		</ul>
+</div>
+<a name="methodgetParserEventName" id="methodgetParserEventName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getParserEventName</strong> (line <span class="linenumber">1460</span>)
+ </h4> 
+<h4><i>void</i> <strong>getParserEventName(
+
+$value)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../phpDocumentor/Parsers/Parser.html#methodgetParserEventName">Parser::getParserEventName()</a> Debugging function, takes an event number and attempts to return its name</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $value</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetStartList" id="methodgetStartList"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getStartList</strong> (line <span class="linenumber">766</span>)
+ </h4> 
+<h4><i>string</i> <strong>getStartList(
+string
+$word)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get the next list marker</h5>
+<div class="desc"><p>Get the next list marker
+ In unordered lists, this will be something like &quot;o&quot;, &quot;-&quot;
+ In ordered lists, this will be either the number &quot;3&quot;, &quot;5&quot; or &quot;3.&quot;, &quot;5.&quot;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $word</strong>: current word from the parser</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - text of the next list marker to look for</li>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleB" id="methodhandleB"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleB</strong> (line <span class="linenumber">964</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleB(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;b&gt;&lt;/b&gt; blocks</h5>
+<div class="desc"><p>Handles &lt;b&gt;&lt;/b&gt; blocks</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleBr" id="methodhandleBr"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleBr</strong> (line <span class="linenumber">611</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleBr(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handle &quot;&lt;br&gt;&quot;</h5>
+<div class="desc"><p>Handle &quot;&lt;br&gt;&quot; Add a new <a href="../../phpDocumentor/DescHTML/parserBr.html">parserBr</a></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methodaddText">parserDescParser::addText()</a></li>
+		</ul>
+</div>
+<a name="methodhandleCode" id="methodhandleCode"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleCode</strong> (line <span class="linenumber">918</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleCode(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;code&gt;&lt;/code&gt; blocks</h5>
+<div class="desc"><p>Handles &lt;code&gt;&lt;/code&gt; blocks</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleDoubleCR" id="methodhandleDoubleCR"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleDoubleCR</strong> (line <span class="linenumber">1131</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleDoubleCR(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles \n\n as a paragraph marker</h5>
+<div class="desc"><p>Handles \n\n as a paragraph marker</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#methoddoSimpleList">parserDescParser::doSimpleList()</a></li>
+		</ul>
+</div>
+<a name="methodhandleEscape" id="methodhandleEscape"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleEscape</strong> (line <span class="linenumber">570</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleEscape(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleEscape">Parser::handleEscape()</a> handler for ESCAPE.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles special case where a description needs the text &quot;&lt;tag&gt;&quot; and tag is one of code, b, i, pre, var, or any other valid in-DocBlock html tag.</h5>
+<div class="desc"><p>Handles special case where a description needs the text &quot;&lt;tag&gt;&quot; and tag is one of code, b, i, pre, var, or any other valid in-DocBlock html tag.
+ the text &lt;&lt;code&gt;&gt; in a DocBlock will parse out as &lt;code&gt;, instead of being parsed as markup.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleEscapeCode" id="methodhandleEscapeCode"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleEscapeCode</strong> (line <span class="linenumber">600</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleEscapeCode(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Just like handleEscape, except the only valid escape is</h5>
+<div class="desc"><p>Just like <a href="../../phpDocumentor/Parsers/parserDescParser.html#methodhandleEscape">handleEscape</a>, except the only valid escape is &lt;&lt;/code&gt;&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleEscapePre" id="methodhandleEscapePre"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleEscapePre</strong> (line <span class="linenumber">590</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleEscapePre(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Just like handleEscape, except the only valid escape is</h5>
+<div class="desc"><p>Just like <a href="../../phpDocumentor/Parsers/parserDescParser.html#methodhandleEscape">handleEscape</a>, except the only valid escape is &lt;&lt;/pre&gt;&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleI" id="methodhandleI"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleI</strong> (line <span class="linenumber">988</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleI(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;i&gt;&lt;/i&gt; blocks</h5>
+<div class="desc"><p>Handles &lt;i&gt;&lt;/i&gt; blocks</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleKbd" id="methodhandleKbd"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleKbd</strong> (line <span class="linenumber">1060</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleKbd(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;kbd&gt;&lt;/kbd&gt; blocks</h5>
+<div class="desc"><p>Handles &lt;kbd&gt;&lt;/kbd&gt; blocks</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleList" id="methodhandleList"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleList</strong> (line <span class="linenumber">821</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleList(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;ol&gt;,&lt;li&gt;,&lt;ul&gt;</h5>
+<div class="desc"><p>Handles &lt;ol&gt;,&lt;li&gt;,&lt;ul&gt;
+ This allows parsing of lists nested to any level.  Using the lists and list_item temporary variables and using list_count to control nesting, the method creates a <a href="../../phpDocumentor/DescHTML/parserList.html">parserList</a> for each &lt;ol&gt; or &lt;ul&gt; tag, and a standard <a href="../../phpDocumentor/ParserData/parserStringWithInlineTags.html">parserStringWithInlineTags</a> for all the text, adding in nested lists as if they were inline tags (the conversion interface is the same for both object types)</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleP" id="methodhandleP"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleP</strong> (line <span class="linenumber">1087</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleP(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;p&gt;&lt;/p&gt; blocks
+ Note that the only time &lt;p&gt; will be interpreted as delimiting a paragraph is if it is the first thing in the description.</h5>
+<div class="desc"><p>Handles &lt;p&gt;&lt;/p&gt; blocks
+ Note that the only time &lt;p&gt; will be interpreted as delimiting a paragraph is if it is the first thing in the description.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandlePre" id="methodhandlePre"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handlePre</strong> (line <span class="linenumber">941</span>)
+ </h4> 
+<h4><i>void</i> <strong>handlePre(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;pre&gt;&lt;/pre&gt; blocks</h5>
+<div class="desc"><p>Handles &lt;pre&gt;&lt;/pre&gt; blocks</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleSamp" id="methodhandleSamp"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleSamp</strong> (line <span class="linenumber">1036</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleSamp(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;samp&gt;&lt;/samp&gt; blocks</h5>
+<div class="desc"><p>Handles &lt;samp&gt;&lt;/samp&gt; blocks</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleSimpleList" id="methodhandleSimpleList"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleSimpleList</strong> (line <span class="linenumber">638</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleSimpleList(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent, [boolean
+$start = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles simple lists</h5>
+<div class="desc"><p>Handles simple lists
+ phpEdit has an ingenious facility to handle simple lists used in a DocBlock like this:
+<ul><li>item 1</li><li>item 2</li><li>item 3</li></ul> The DocBlock is: <pre> * - item 1
+ * - item 2
+ * - item 3</pre> This function converts these simple lists into the parserList class</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+			<li><strong>boolean $start</strong>: true if this is the first list item in the list</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodhandleVar" id="methodhandleVar"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method handleVar</strong> (line <span class="linenumber">1012</span>)
+ </h4> 
+<h4><i>void</i> <strong>handleVar(
+string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>
+$word, integer
+$pevent)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleVar">Parser::handleVar()</a> handler for VAR.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handles &lt;var&gt;&lt;/var&gt; blocks</h5>
+<div class="desc"><p>Handles &lt;var&gt;&lt;/var&gt; blocks</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|<a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a> $word</strong>: token from the ObjectWordParser</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---ParserDescCleanup.inc.html">ParserDescCleanup.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodparse" id="methodparse"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parse</strong> (line <span class="linenumber">363</span>)
+ </h4> 
+<h4><i>void</i> <strong>parse(
+array
+&$parse_data, [boolean
+$sdesc = false], [string
+$ind_type = 'parserDesc'])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../phpDocumentor/Parsers/Parser.html#methodparse">Parser::parse()</a> Parse a new file</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Parse a long or short description for tags</h5>
+<div class="desc"><p>Parse a long or short description for tags</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array &$parse_data</strong>: array of strings or <a href="../../phpDocumentor/InlineTags/parserInlineTag.html">parserInlineTag</a>s</li>
+			<li><strong>boolean $sdesc</strong>: true if the description is a short description. (only 1 paragraph allowed in short desc)</li>
+			<li><strong>string $ind_type</strong>: name of the class to instantiate for each paragraph.  parserDesc for desc/sdesc,               parserStringWithInlineTags for tag data</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>staticvar</strong> - integer $endrecur: used for recursion limiting if a handler for an event is not found</li>
+			<li><strong>usedby</strong> - <a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html#methodpostProcess">parserDocBlock::postProcess()</a></li>
+		</ul>
+</div>
+<a name="methodresetStartList" id="methodresetStartList"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method resetStartList</strong> (line <span class="linenumber">799</span>)
+ </h4> 
+<h4><i>void</i> <strong>resetStartList(
+string
+$start)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set the next list marker to the current list marker</h5>
+<div class="desc"><p>Set the next list marker to the current list marker
+ In ordered lists, this will ensure that the next number returned is the right number</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $start</strong>: token for next list marker</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodsetContext" id="methodsetContext"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setContext</strong> (line <span class="linenumber">524</span>)
+ </h4> 
+<h4><i>void</i> <strong>setContext(
+string
+$context)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<div class="desc"><p></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $context</strong>: context name</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/parserDescParser.html#var$_context">parserDescParser::$_context</a></li>
+		</ul>
+</div>
+<a name="methodsetupStates" id="methodsetupStates"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setupStates</strong> (line <span class="linenumber">1229</span>)
+ </h4> 
+<h4><i>void</i> <strong>setupStates(
+boolean
+$sdesc)</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../phpDocumentor/Parsers/Parser.html#methodsetupStates">Parser::setupStates()</a> setup the parser tokens, and the pushEvent/popEvent arrays</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>setup the parser tokens, and the pushEvent/popEvent arrays</h5>
+<div class="desc"><p>setup the parser tokens, and the pushEvent/popEvent arrays</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>boolean $sdesc</strong>: determines whether to allow paragraph parsing</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>global</strong> - boolean 0: used to determine whether to slow things down or not by
+ eliminating whitespace from comments</li>
+			<li><strong>see</strong> - <a href="../../phpDocumentor/Parsers/Parser.html#var$tokens">Parser::$tokens</a>, <a href="../../phpDocumentor/Parsers/Parser.html#var$pushEvent">Parser::$pushEvent</a>, <a href="../../phpDocumentor/Parsers/Parser.html#var$popEvent">Parser::$popEvent</a></li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/Parsers/Parser.html">Parser</a></h4>
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$allowableInlineTags">Parser::$allowableInlineTags</a></strong> - An array of allowed inline @tags
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$allowableTags">Parser::$allowableTags</a></strong> - An array of allowable @tags
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$laststart">Parser::$laststart</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$popEvent">Parser::$popEvent</a></strong> - array of tokens that end an event, organized by event
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$pushEvent">Parser::$pushEvent</a></strong> - array of events that are raised, organized by the tokens that raise them.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$p_flags">Parser::$p_flags</a></strong> - parser flags, for states that don't warrant a new event (like new line in a docblock)
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$p_vars">Parser::$p_vars</a></strong> - temporary parser variables
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$tagHandlers">Parser::$tagHandlers</a></strong> - event handlers for @tags
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$tokens">Parser::$tokens</a></strong> - an array of parsing tokens organized by event number.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Parsers/Parser.html#var$wp">Parser::$wp</a></strong> - Word parser
+	</h4> 
+			<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/Publisher.html">Publisher</a></h4>
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Publisher.html#var$subscriber">Publisher::$subscriber</a></strong> - Array of references objects that have Subscribed to this publisher
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/Parsers/Parser.html">Parser</a></h4>
+				<h4>
+<img src="../../media/images/Constructor.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodParser">Parser::Parser()</a></strong> - Set up invariant parsing variables
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodBetterhandleDocblock">Parser::BetterhandleDocblock()</a></strong> - handler for DOCBLOCK.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodcategoryTagHandler">Parser::categoryTagHandler()</a></strong> - handles @category
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodcheckEventPop">Parser::checkEventPop()</a></strong> - this function checks whether parameter $word is a token for popping the current event off of the Event Stack.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodcheckEventPush">Parser::checkEventPush()</a></strong> - this function checks whether parameter $word is a token for pushing a new event onto the Event Stack.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodconfigWordParser">Parser::configWordParser()</a></strong> - tell the parser's WordParser $wp to set up tokens to parse words by.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methoddefaultHandler">Parser::defaultHandler()</a></strong> - handler for NOEVENTS, OUTPHP, COMMENTBLOCK
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methoddefaultTagHandler">Parser::defaultTagHandler()</a></strong> - Handles all standard tags that only have a description
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodendFunctionParam">Parser::endFunctionParam()</a></strong> - Helper function for handleFunctionParams()
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodendTag">Parser::endTag()</a></strong> - Called to clean up at the end of parsing a @tag in a docblock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodexampleTagHandler">Parser::exampleTagHandler()</a></strong> - handles @example
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodfindGlobal">Parser::findGlobal()</a></strong> - Tells the parser to search for a global variable definition as defined by a @global type $name tag.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodgetParserEventName">Parser::getParserEventName()</a></strong> - Debugging function, takes an event number and attempts to return its name
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodgetSource">Parser::getSource()</a></strong> - 
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodglobalTagHandler">Parser::globalTagHandler()</a></strong> - handles @global
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleArray">Parser::handleArray()</a></strong> - handler for ARRAY.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleClass">Parser::handleClass()</a></strong> - handler for CLASS.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleComment">Parser::handleComment()</a></strong> - handler for COMMENT.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleCR">Parser::handleCR()</a></strong> - Handles a new line in a DocBlock
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleDefine">Parser::handleDefine()</a></strong> - handler for DEFINE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleDefineParams">Parser::handleDefineParams()</a></strong> - handler for DEFINE_PARAMS.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleDefineParamsParenthesis">Parser::handleDefineParamsParenthesis()</a></strong> - handler for DEFINE_PARAMS_PARENTHESIS.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleDesc">Parser::handleDesc()</a></strong> - handler for DOCKEYWORD_DESC.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleDocBlockTemplate">Parser::handleDocBlockTemplate()</a></strong> - Handles docblock templates
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleDockeywordEmail">Parser::handleDockeywordEmail()</a></strong> - handler for DOCKEYWORD_EMAIL.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleEndDocBlockTemplate">Parser::handleEndDocBlockTemplate()</a></strong> - Handles closing docblock templates /**#@-* /
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleEOFQuote">Parser::handleEOFQuote()</a></strong> - handler for EOFQUOTE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleEscape">Parser::handleEscape()</a></strong> - handler for ESCAPE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleFuncGlobal">Parser::handleFuncGlobal()</a></strong> - handler for FUNC_GLOBAL.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleFunction">Parser::handleFunction()</a></strong> - handler for FUNCTION.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleFunctionParams">Parser::handleFunctionParams()</a></strong> - handler for FUNCTION_PARAMS.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleGlobal">Parser::handleGlobal()</a></strong> - handler for global variables
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleGlobalValue">Parser::handleGlobalValue()</a></strong> - Handles the stuff after the = in <div class="src-code"><ol><li><div class="src-line"><strong>$globalvar&nbsp;</strong>=&nbsp;value</div></li>
+</ol></div>
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleInclude">Parser::handleInclude()</a></strong> - handler for INCLUDE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleIncludeParams">Parser::handleIncludeParams()</a></strong> - handler for INCLUDE_PARAMS.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleIncludeParamsParenthesis">Parser::handleIncludeParamsParenthesis()</a></strong> - handler for INCLUDE_PARAMS_PARENTHESIS.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleInlineDockeyword">Parser::handleInlineDockeyword()</a></strong> - handler for INLINE_DOCKEYWORD.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleLogicBlock">Parser::handleLogicBlock()</a></strong> - handler for LOGICBLOCK
+ Logic Blocks are the stuff between { and } in a function/method. logic block can clearly contain other logic blocks, as in:
+ <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="blue">function&nbsp;</font><a href="../../tests/_framework---docs---Documentation---tests---bug-loseprocedural.php.html#functiontest">test</a><strong>(</strong><strong>$a</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>testcondition<strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{&nbsp;</strong><font color="green">//&nbsp;nested&nbsp;logic&nbsp;block</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;<strong>}</strong></div></li>
+</ol></div>
+ So, the exit portion of the logic block handler must check to see if the logic block being exited is the top-level, and it does this by retrieving the last event from the stack. then it backs up the word parser so that the function will exit properly.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandlePhpCode">Parser::handlePhpCode()</a></strong> - handler for PHPCODE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleQuote">Parser::handleQuote()</a></strong> - handler for QUOTE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleSingleQuote">Parser::handleSingleQuote()</a></strong> - handler for SINGLEQUOTE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleStaticValue">Parser::handleStaticValue()</a></strong> - handler for STATIC_VAR_VALUE.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleStaticVar">Parser::handleStaticVar()</a></strong> - handler for STATIC_VAR.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleTag">Parser::handleTag()</a></strong> - handler for DOCKEYWORD.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleTags">Parser::handleTags()</a></strong> - handler for DOCKEYWORD_TAGS.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodhandleVar">Parser::handleVar()</a></strong> - handler for VAR.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodinvalidTagHandler">Parser::invalidTagHandler()</a></strong> - Handles tags like '@filesource' that only work in PHP 4.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodJavaDochandleDesc">Parser::JavaDochandleDesc()</a></strong> - handler for DOCKEYWORD_DESC.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodJavaDochandleDocblock">Parser::JavaDochandleDocblock()</a></strong> - javadoc-desc-compliant handler for DOCBLOCK.
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodpackageTagHandler">Parser::packageTagHandler()</a></strong> - handles @package
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodparamTagHandler">Parser::paramTagHandler()</a></strong> - handles @param
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodparse">Parser::parse()</a></strong> - Parse a new file
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodpropertyTagHandler">Parser::propertyTagHandler()</a></strong> - Handles @property(-read or -write) and @method magic tag
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodreturnTagHandler">Parser::returnTagHandler()</a></strong> - handles @return
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodsetupStates">Parser::setupStates()</a></strong> - setup the parser tokens, and the pushEvent/popEvent arrays
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodstaticvarTagHandler">Parser::staticvarTagHandler()</a></strong> - handles @staticvar
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodusesTagHandler">Parser::usesTagHandler()</a></strong> - handles @uses
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Parsers/Parser.html#methodvarTagHandler">Parser::varTagHandler()</a></strong> - handles @var
+		</h4> 
+
+				<br />
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/Publisher.html">Publisher</a></h4>
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Publisher.html#methodpublishEvent">Publisher::publishEvent()</a></strong> - Publish an event
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Publisher.html#methodsubscribe">Publisher::subscribe()</a></strong> - Adds a subscriber to the $subscriber array().
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:23 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

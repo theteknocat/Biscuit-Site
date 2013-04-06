@@ -1,0 +1,1910 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs for page HTMLPurifier.safe-includes.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h2>File: /framework/plugins/html_purifier/php5/library/HTMLPurifier.safe-includes.php</h2>
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<!-- =========== Used Classes =========== -->
+<A NAME='classes_summary'><!-- --></A>
+<h3>Classes defined in this file</h3>
+
+<TABLE CELLPADDING='3' CELLSPACING='0' WIDTH='100%' CLASS="border">
+	<THEAD>
+		<TR><TD STYLE="width:20%"><h4>CLASS NAME</h4></TD><TD STYLE="width: 80%"><h4>DESCRIPTION</h4></TD></TR>
+	</THEAD>
+	<TBODY>
+			</TBODY>
+</TABLE>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+<!-- ============ Includes DETAIL =========== -->
+
+<h2 class="tab">Include/Require Statements</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+
+
+<a name="_$__dir_/HTMLPurifier/AttrCollections_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrCollections.php'</strong> (line <span class="linenumber">16</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrCollections.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef.php'</strong> (line <span class="linenumber">17</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform.php'</strong> (line <span class="linenumber">18</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Config_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Config.php'</strong> (line <span class="linenumber">25</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Config.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTypes_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTypes.php'</strong> (line <span class="linenumber">19</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTypes.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrValidator_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrValidator.php'</strong> (line <span class="linenumber">20</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrValidator.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Definition_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Definition.php'</strong> (line <span class="linenumber">22</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Definition.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/CSSDefinition_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/CSSDefinition.php'</strong> (line <span class="linenumber">23</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/CSSDefinition.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef.php'</strong> (line <span class="linenumber">24</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ConfigSchema_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ConfigSchema.php'</strong> (line <span class="linenumber">26</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ConfigSchema.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DoctypeRegistry_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DoctypeRegistry.php'</strong> (line <span class="linenumber">32</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DoctypeRegistry.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ContentSets_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ContentSets.php'</strong> (line <span class="linenumber">27</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ContentSets.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Context_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Context.php'</strong> (line <span class="linenumber">28</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Context.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DefinitionCache_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DefinitionCache.php'</strong> (line <span class="linenumber">29</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DefinitionCache.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIDefinition_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIDefinition.php'</strong> (line <span class="linenumber">58</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIDefinition.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DefinitionCacheFactory_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DefinitionCacheFactory.php'</strong> (line <span class="linenumber">30</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DefinitionCacheFactory.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Doctype_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Doctype.php'</strong> (line <span class="linenumber">31</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Doctype.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ElementDef_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ElementDef.php'</strong> (line <span class="linenumber">33</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ElementDef.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Encoder_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Encoder.php'</strong> (line <span class="linenumber">34</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Encoder.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/EntityLookup_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/EntityLookup.php'</strong> (line <span class="linenumber">35</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/EntityLookup.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Bootstrap_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Bootstrap.php'</strong> (line <span class="linenumber">21</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Bootstrap.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/EntityParser_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/EntityParser.php'</strong> (line <span class="linenumber">36</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/EntityParser.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Exception_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Exception.php'</strong> (line <span class="linenumber">38</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Exception.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Filter_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Filter.php'</strong> (line <span class="linenumber">39</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Filter.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Generator_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Generator.php'</strong> (line <span class="linenumber">40</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Generator.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/LanguageFactory_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/LanguageFactory.php'</strong> (line <span class="linenumber">47</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/LanguageFactory.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLDefinition_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLDefinition.php'</strong> (line <span class="linenumber">41</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLDefinition.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule.php'</strong> (line <span class="linenumber">42</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/IDAccumulator_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/IDAccumulator.php'</strong> (line <span class="linenumber">44</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/IDAccumulator.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Injector_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Injector.php'</strong> (line <span class="linenumber">45</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Injector.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Language_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Language.php'</strong> (line <span class="linenumber">46</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Language.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Length_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Length.php'</strong> (line <span class="linenumber">48</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Length.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/TagTransform_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/TagTransform.php'</strong> (line <span class="linenumber">54</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/TagTransform.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Lexer_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Lexer.php'</strong> (line <span class="linenumber">49</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Lexer.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/PercentEncoder_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/PercentEncoder.php'</strong> (line <span class="linenumber">50</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/PercentEncoder.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Strategy_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Strategy.php'</strong> (line <span class="linenumber">51</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Strategy.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ErrorCollector_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ErrorCollector.php'</strong> (line <span class="linenumber">37</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ErrorCollector.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/StringHash_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/StringHash.php'</strong> (line <span class="linenumber">52</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/StringHash.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/StringHashParser_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/StringHashParser.php'</strong> (line <span class="linenumber">53</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/StringHashParser.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Token_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Token.php'</strong> (line <span class="linenumber">55</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Token.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/TokenFactory_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/TokenFactory.php'</strong> (line <span class="linenumber">56</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/TokenFactory.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URI_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URI.php'</strong> (line <span class="linenumber">57</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URI.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIFilter_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIFilter.php'</strong> (line <span class="linenumber">59</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIFilter.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Multiple_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Multiple.php'</strong> (line <span class="linenumber">87</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Multiple.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIParser_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIParser.php'</strong> (line <span class="linenumber">60</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIParser.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIScheme_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIScheme.php'</strong> (line <span class="linenumber">61</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIScheme.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URISchemeRegistry_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URISchemeRegistry.php'</strong> (line <span class="linenumber">62</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URISchemeRegistry.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/Lang_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/Lang.php'</strong> (line <span class="linenumber">69</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/Lang.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/UnitConverter_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/UnitConverter.php'</strong> (line <span class="linenumber">63</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/UnitConverter.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/VarParser_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/VarParser.php'</strong> (line <span class="linenumber">64</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/VarParser.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS.php'</strong> (line <span class="linenumber">66</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/Enum_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/Enum.php'</strong> (line <span class="linenumber">67</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/Enum.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/Integer_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/Integer.php'</strong> (line <span class="linenumber">68</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/Integer.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/Switch_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/Switch.php'</strong> (line <span class="linenumber">70</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/Switch.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/BackgroundPosition_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/BackgroundPosition.php'</strong> (line <span class="linenumber">76</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/BackgroundPosition.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/Text_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/Text.php'</strong> (line <span class="linenumber">71</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/Text.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/URI_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/URI.php'</strong> (line <span class="linenumber">72</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/URI.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Number_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Number.php'</strong> (line <span class="linenumber">73</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Number.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier.php'</strong> (line <span class="linenumber">15</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/AlphaValue_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/AlphaValue.php'</strong> (line <span class="linenumber">74</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/AlphaValue.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Background_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Background.php'</strong> (line <span class="linenumber">75</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Background.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Border_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Border.php'</strong> (line <span class="linenumber">77</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Border.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Color_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Color.php'</strong> (line <span class="linenumber">78</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Color.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Composite_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Composite.php'</strong> (line <span class="linenumber">79</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Composite.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/VarParserException_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/VarParserException.php'</strong> (line <span class="linenumber">65</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/VarParserException.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/DenyElementDecorator_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/DenyElementDecorator.php'</strong> (line <span class="linenumber">80</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/DenyElementDecorator.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Font_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Font.php'</strong> (line <span class="linenumber">82</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Font.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/FontFamily_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/FontFamily.php'</strong> (line <span class="linenumber">83</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/FontFamily.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/ImportantDecorator_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php'</strong> (line <span class="linenumber">84</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/Bool_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/Bool.php'</strong> (line <span class="linenumber">91</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/Bool.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Length_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Length.php'</strong> (line <span class="linenumber">85</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Length.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/ListStyle_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/ListStyle.php'</strong> (line <span class="linenumber">86</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/ListStyle.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Percentage_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Percentage.php'</strong> (line <span class="linenumber">88</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Percentage.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/TextDecoration_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/TextDecoration.php'</strong> (line <span class="linenumber">89</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/TextDecoration.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/URI_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/URI.php'</strong> (line <span class="linenumber">90</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/URI.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/Color_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/Color.php'</strong> (line <span class="linenumber">92</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/Color.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/MultiLength_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/MultiLength.php'</strong> (line <span class="linenumber">98</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/MultiLength.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/FrameTarget_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/FrameTarget.php'</strong> (line <span class="linenumber">93</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/FrameTarget.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/ID_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/ID.php'</strong> (line <span class="linenumber">94</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/ID.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/Pixels_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/Pixels.php'</strong> (line <span class="linenumber">95</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/Pixels.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/CSS/Filter_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/CSS/Filter.php'</strong> (line <span class="linenumber">81</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/CSS/Filter.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/Length_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/Length.php'</strong> (line <span class="linenumber">96</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/Length.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/LinkTypes_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/LinkTypes.php'</strong> (line <span class="linenumber">97</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/LinkTypes.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/HTML/Nmtokens_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/HTML/Nmtokens.php'</strong> (line <span class="linenumber">99</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/HTML/Nmtokens.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/URI/Email_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/URI/Email.php'</strong> (line <span class="linenumber">100</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/URI/Email.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/URI/Host_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/URI/Host.php'</strong> (line <span class="linenumber">101</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/URI/Host.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModuleManager_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModuleManager.php'</strong> (line <span class="linenumber">43</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModuleManager.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/URI/IPv4_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/URI/IPv4.php'</strong> (line <span class="linenumber">102</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/URI/IPv4.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/URI/Email/SimpleCheck_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/URI/Email/SimpleCheck.php'</strong> (line <span class="linenumber">104</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/URI/Email/SimpleCheck.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/BdoDir_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/BdoDir.php'</strong> (line <span class="linenumber">105</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/BdoDir.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/BgColor_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/BgColor.php'</strong> (line <span class="linenumber">106</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/BgColor.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/Length_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/Length.php'</strong> (line <span class="linenumber">113</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/Length.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/BoolToCSS_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/BoolToCSS.php'</strong> (line <span class="linenumber">107</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/BoolToCSS.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/Border_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/Border.php'</strong> (line <span class="linenumber">108</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/Border.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/ImgRequired_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/ImgRequired.php'</strong> (line <span class="linenumber">110</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/ImgRequired.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/ImgSpace_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/ImgSpace.php'</strong> (line <span class="linenumber">111</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/ImgSpace.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/Lang_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/Lang.php'</strong> (line <span class="linenumber">112</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/Lang.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/Name_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/Name.php'</strong> (line <span class="linenumber">114</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/Name.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef/Custom_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef/Custom.php'</strong> (line <span class="linenumber">120</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef/Custom.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/SafeEmbed_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/SafeEmbed.php'</strong> (line <span class="linenumber">115</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/SafeEmbed.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/SafeObject_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/SafeObject.php'</strong> (line <span class="linenumber">116</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/SafeObject.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/SafeParam_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/SafeParam.php'</strong> (line <span class="linenumber">117</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/SafeParam.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/StyleAttribute_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/StyleAttribute.php'</strong> (line <span class="linenumber">146</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/StyleAttribute.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/ScriptRequired_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/ScriptRequired.php'</strong> (line <span class="linenumber">118</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/ScriptRequired.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef/Chameleon_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef/Chameleon.php'</strong> (line <span class="linenumber">119</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef/Chameleon.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef/Empty_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef/Empty.php'</strong> (line <span class="linenumber">121</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef/Empty.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef/Required_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef/Required.php'</strong> (line <span class="linenumber">122</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef/Required.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef/Optional_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef/Optional.php'</strong> (line <span class="linenumber">123</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef/Optional.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrTransform/EnumToCSS_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrTransform/EnumToCSS.php'</strong> (line <span class="linenumber">109</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrTransform/EnumToCSS.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef/StrictBlockquote_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef/StrictBlockquote.php'</strong> (line <span class="linenumber">124</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef/StrictBlockquote.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DefinitionCache/Decorator_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DefinitionCache/Decorator.php'</strong> (line <span class="linenumber">126</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DefinitionCache/Decorator.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DefinitionCache/Null_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DefinitionCache/Null.php'</strong> (line <span class="linenumber">127</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DefinitionCache/Null.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DefinitionCache/Serializer_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DefinitionCache/Serializer.php'</strong> (line <span class="linenumber">128</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DefinitionCache/Serializer.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Image_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Image.php'</strong> (line <span class="linenumber">135</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Image.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DefinitionCache/Decorator/Cleanup_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DefinitionCache/Decorator/Cleanup.php'</strong> (line <span class="linenumber">129</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DefinitionCache/Decorator/Cleanup.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/DefinitionCache/Decorator/Memory_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/DefinitionCache/Decorator/Memory.php'</strong> (line <span class="linenumber">130</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/DefinitionCache/Decorator/Memory.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/CommonAttributes_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/CommonAttributes.php'</strong> (line <span class="linenumber">132</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/CommonAttributes.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Edit_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Edit.php'</strong> (line <span class="linenumber">133</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Edit.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Hypertext_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Hypertext.php'</strong> (line <span class="linenumber">134</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Hypertext.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Legacy_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Legacy.php'</strong> (line <span class="linenumber">136</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Legacy.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Ruby_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Ruby.php'</strong> (line <span class="linenumber">142</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Ruby.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/List_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/List.php'</strong> (line <span class="linenumber">137</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/List.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/NonXMLCommonAttributes_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php'</strong> (line <span class="linenumber">138</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Object_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Object.php'</strong> (line <span class="linenumber">139</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Object.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/ChildDef/Table_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/ChildDef/Table.php'</strong> (line <span class="linenumber">125</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/ChildDef/Table.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Presentation_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Presentation.php'</strong> (line <span class="linenumber">140</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Presentation.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Proprietary_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Proprietary.php'</strong> (line <span class="linenumber">141</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Proprietary.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/SafeEmbed_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/SafeEmbed.php'</strong> (line <span class="linenumber">143</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/SafeEmbed.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/SafeObject_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/SafeObject.php'</strong> (line <span class="linenumber">144</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/SafeObject.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Scripting_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Scripting.php'</strong> (line <span class="linenumber">145</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Scripting.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Tables_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Tables.php'</strong> (line <span class="linenumber">147</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Tables.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Token/Start_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Token/Start.php'</strong> (line <span class="linenumber">175</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Token/Start.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Target_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Target.php'</strong> (line <span class="linenumber">148</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Target.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Text_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Text.php'</strong> (line <span class="linenumber">149</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Text.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Tidy_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Tidy.php'</strong> (line <span class="linenumber">150</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Tidy.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Injector/AutoParagraph_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Injector/AutoParagraph.php'</strong> (line <span class="linenumber">157</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Injector/AutoParagraph.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/XMLCommonAttributes_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/XMLCommonAttributes.php'</strong> (line <span class="linenumber">151</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/XMLCommonAttributes.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Tidy/Proprietary_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Tidy/Proprietary.php'</strong> (line <span class="linenumber">152</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Tidy/Proprietary.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Tidy/Strict_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Tidy/Strict.php'</strong> (line <span class="linenumber">154</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Tidy/Strict.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Tidy/Transitional_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Tidy/Transitional.php'</strong> (line <span class="linenumber">155</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Tidy/Transitional.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Tidy/XHTML_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Tidy/XHTML.php'</strong> (line <span class="linenumber">156</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Tidy/XHTML.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Injector/Linkify_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Injector/Linkify.php'</strong> (line <span class="linenumber">158</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Injector/Linkify.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Strategy/Core_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Strategy/Core.php'</strong> (line <span class="linenumber">164</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Strategy/Core.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Injector/PurifierLinkify_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Injector/PurifierLinkify.php'</strong> (line <span class="linenumber">159</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Injector/PurifierLinkify.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Injector/SafeObject_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Injector/SafeObject.php'</strong> (line <span class="linenumber">160</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Injector/SafeObject.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Lexer/DOMLex_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Lexer/DOMLex.php'</strong> (line <span class="linenumber">161</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Lexer/DOMLex.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/AttrDef/URI/IPv6_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/AttrDef/URI/IPv6.php'</strong> (line <span class="linenumber">103</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/AttrDef/URI/IPv6.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Lexer/DirectLex_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Lexer/DirectLex.php'</strong> (line <span class="linenumber">162</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Lexer/DirectLex.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Strategy/Composite_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Strategy/Composite.php'</strong> (line <span class="linenumber">163</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Strategy/Composite.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Strategy/FixNesting_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Strategy/FixNesting.php'</strong> (line <span class="linenumber">165</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Strategy/FixNesting.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Strategy/MakeWellFormed_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Strategy/MakeWellFormed.php'</strong> (line <span class="linenumber">166</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Strategy/MakeWellFormed.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Strategy/RemoveForeignElements_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Strategy/RemoveForeignElements.php'</strong> (line <span class="linenumber">167</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Strategy/RemoveForeignElements.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Tidy/XHTMLAndHTML4_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Tidy/XHTMLAndHTML4.php'</strong> (line <span class="linenumber">153</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Tidy/XHTMLAndHTML4.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Strategy/ValidateAttributes_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Strategy/ValidateAttributes.php'</strong> (line <span class="linenumber">168</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Strategy/ValidateAttributes.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/TagTransform/Simple_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/TagTransform/Simple.php'</strong> (line <span class="linenumber">170</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/TagTransform/Simple.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Token/Comment_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Token/Comment.php'</strong> (line <span class="linenumber">171</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Token/Comment.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Token/Tag_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Token/Tag.php'</strong> (line <span class="linenumber">172</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Token/Tag.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIFilter/HostBlacklist_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIFilter/HostBlacklist.php'</strong> (line <span class="linenumber">179</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIFilter/HostBlacklist.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Token/Empty_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Token/Empty.php'</strong> (line <span class="linenumber">173</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Token/Empty.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Token/End_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Token/End.php'</strong> (line <span class="linenumber">174</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Token/End.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/Token/Text_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/Token/Text.php'</strong> (line <span class="linenumber">176</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/Token/Text.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIFilter/DisableExternal_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIFilter/DisableExternal.php'</strong> (line <span class="linenumber">177</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIFilter/DisableExternal.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIFilter/DisableExternalResources_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIFilter/DisableExternalResources.php'</strong> (line <span class="linenumber">178</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIFilter/DisableExternalResources.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIFilter/MakeAbsolute_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIFilter/MakeAbsolute.php'</strong> (line <span class="linenumber">180</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIFilter/MakeAbsolute.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIScheme/news_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIScheme/news.php'</strong> (line <span class="linenumber">186</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIScheme/news.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIFilter/Munge_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIFilter/Munge.php'</strong> (line <span class="linenumber">181</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIFilter/Munge.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIScheme/ftp_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIScheme/ftp.php'</strong> (line <span class="linenumber">182</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIScheme/ftp.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIScheme/http_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIScheme/http.php'</strong> (line <span class="linenumber">183</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIScheme/http.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/TagTransform/Font_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/TagTransform/Font.php'</strong> (line <span class="linenumber">169</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/TagTransform/Font.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIScheme/https_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIScheme/https.php'</strong> (line <span class="linenumber">184</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIScheme/https.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIScheme/mailto_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIScheme/mailto.php'</strong> (line <span class="linenumber">185</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIScheme/mailto.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/URIScheme/nntp_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/URIScheme/nntp.php'</strong> (line <span class="linenumber">187</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/URIScheme/nntp.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/VarParser/Flexible_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/VarParser/Flexible.php'</strong> (line <span class="linenumber">188</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/VarParser/Flexible.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/VarParser/Native_php"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/VarParser/Native.php'</strong> (line <span class="linenumber">189</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/VarParser/Native.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="_$__dir_/HTMLPurifier/HTMLModule/Bdo_php"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/file.png" border="0" /> <strong class="Property">$__dir.'/HTMLPurifier/HTMLModule/Bdo.php'</strong> (line <span class="linenumber">131</span>)
+ </h4> 
+<h4>require_once : $__dir.'/HTMLPurifier/HTMLModule/Bdo.php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage2">
+<!-- ============ GLOBAL DETAIL =========== -->
+
+<h2 class="tab">Global Variables</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage3">
+<!-- ============ CONSTANT DETAIL =========== -->
+
+<A NAME='constant_detail'></A>
+<h2 class="tab">Constants</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage4">
+<!-- ============ FUNCTION DETAIL =========== -->
+
+<h2 class="tab">Functions</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage4" ) );</script>
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:57 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

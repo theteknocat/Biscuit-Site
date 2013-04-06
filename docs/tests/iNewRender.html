@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class iNewRender</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class iNewRender
+</h2> (line <span class="linenumber">66</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---Documentation---tests---bug-553560.php.html">/framework/docs/Documentation/tests/bug-553560.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$classpackage" title="details" class="property"><strong>$classpackage</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$classpackages" title="details" class="property"><strong>$classpackages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$classsubpackage" title="details" class="property"><strong>$classsubpackage</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$classtree" title="details" class="property"><strong>$classtree</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$class_children" title="details" class="property"><strong>$class_children</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type"><a href="../phpDocumentor/ParserData/parserData.html">parserData</a></span>
+    <a href="#var$data" title="details" class="property"><strong>$data</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$elements" title="details" class="property"><strong>$elements</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$event_handlers" title="details" class="property"><strong>$event_handlers</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$links" title="details" class="property"><strong>$links</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$methods" title="details" class="property"><strong>$methods</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$packageoutput" title="details" class="property"><strong>$packageoutput</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$pages" title="details" class="property"><strong>$pages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">bool</span>
+    <a href="#var$parsePrivate" title="details" class="property"><strong>$parsePrivate</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$pkg_elements" title="details" class="property"><strong>$pkg_elements</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$private_class" title="details" class="property"><strong>$private_class</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">bool</span>
+    <a href="#var$quietMode" title="details" class="property"><strong>$quietMode</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$targetDir" title="details" class="property"><strong>$targetDir</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$vars" title="details" class="property"><strong>$vars</strong></a>
+</div>
+<hr />
+<a name="var$classpackage" id="var$classpackage"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$classpackage =  'default'</strong> (line <span class="linenumber">233</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>set to the name of the package of the current class being parsed</h5>
+<div class="desc"><p>set to the name of the package of the current class being parsed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$classpackages" id="var$classpackages"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$classpackages = array()</strong> (line <span class="linenumber">153</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used in Converter::getClassPackage() to inherit package from parent classes.</h5>
+<div class="desc"><p>used in Converter::getClassPackage() to inherit package from parent classes. format: array(classname =&gt; array(array(package,subpackage),                          array(package1,subpackage1),.... If a name conflict exists between two packages, automatic inheritance will not work, and the packages will need to be documented separately.</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$classsubpackage" id="var$classsubpackage"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$classsubpackage =  ''</strong> (line <span class="linenumber">239</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>set to the name of the subpackage of the current class being parsed</h5>
+<div class="desc"><p>set to the name of the subpackage of the current class being parsed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$classtree" id="var$classtree"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$classtree = array()</strong> (line <span class="linenumber">140</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>a tree of class inheritance by name.</h5>
+<div class="desc"><p>a tree of class inheritance by name. format: array(childname =&gt; parentname,       childname1 =&gt; parentname1,       rootname =&gt; 0, ...      )</p></div>
+<ul>
+		<li><strong>see:</strong> - Converter::generateClassTreeFromClass()</li>
+	</ul>
+</div>
+<a name="var$class_children" id="var$class_children"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$class_children = array()</strong> (line <span class="linenumber">183</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>An array of extended classes by package and parent class Format: array(packagename =&gt; array(parentclass =&gt; array(childclassname1,                                                 childclassname2,.</h5>
+<div class="desc"><p>An array of extended classes by package and parent class Format: array(packagename =&gt; array(parentclass =&gt; array(childclassname1,                                                 childclassname2,...                                                )                       )      )</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$data" id="var$data"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$data</strong> (line <span class="linenumber">227</span>)
+ </h4>
+<h4>Data type : <a href="../phpDocumentor/ParserData/parserData.html">parserData</a></h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>data contains parsed structures for the current page being parsed</h5>
+<div class="desc"><p>data contains parsed structures for the current page being parsed</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../phpDocumentor/ParserData/parserData.html">parserData</a></li>
+	</ul>
+</div>
+<a name="var$elements" id="var$elements"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$elements = array()</strong> (line <span class="linenumber">185</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$event_handlers" id="var$event_handlers"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$event_handlers = array(<br />			'docblock' =&gt; 'handleDocBlock',<br />			'page' =&gt; 'handlePage',<br />			'class' =&gt; 'handleClass',<br />			'define' =&gt; 'handleDefine',<br />			'function' =&gt; 'handleFunction',<br />			'method' =&gt; 'handleMethod',<br />			'var' =&gt; 'handleVar',<br />			'packagepage' =&gt; 'handlePackagePage',<br />			'include' =&gt; 'handleInclude',<br />			)</strong> (line <span class="linenumber">210</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>the functions which handle output from the <a href="../phpDocumentor/Parsers/Parser.html">Parser</a></h5>
+<div class="desc"><p>the functions which handle output from the <a href="../phpDocumentor/Parsers/Parser.html">Parser</a></p></div>
+<ul>
+		<li><strong>see:</strong> - handleEvent(), handleDocBlock(), handlePage(), handleClass(), handleDefine(), handleFunction(), handleMethod(), handleVar(), handlePackagePage(), handleInclude()</li>
+	</ul>
+</div>
+<a name="var$links" id="var$links"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$links = array()</strong> (line <span class="linenumber">128</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>the workhorse of linking.</h5>
+<div class="desc"><p>the workhorse of linking. This array is an array of link objects of format: [package][subpackage][eltype][elname] = descendant of <a href="../phpDocumentor/Links/abstractLink.html">abstractLink</a> eltype can be page|include|function|define|class|method|var if eltype is method or var, the array format is: [package][subpackage][eltype][class][elname]</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../phpDocumentor/Links/functionLink.html">functionLink</a>, <a href="../phpDocumentor/Links/pageLink.html">pageLink</a>, <a href="../phpDocumentor/Links/classLink.html">classLink</a>, <a href="../phpDocumentor/Links/defineLink.html">defineLink</a>, <a href="../phpDocumentor/Links/methodLink.html">methodLink</a>, <a href="../phpDocumentor/Links/varLink.html">varLink</a></li>
+	</ul>
+</div>
+<a name="var$methods" id="var$methods"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$methods = array()</strong> (line <span class="linenumber">83</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of methods by package, subpackage and class</h5>
+<div class="desc"><p>array of methods by package, subpackage and class format: array(packagename =&gt;       array(subpackagename =&gt;             array(classname =&gt;                   array(methodname1 =&gt; <a href="../phpDocumentor/ParserElements/parserMethod.html">parserMethod</a> class,                         methodname2 =&gt; <a href="../phpDocumentor/ParserElements/parserMethod.html">parserMethod</a> class,...)                         )                  )            )      )</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../Converters/Converter.html">Converter</a></li>
+	</ul>
+</div>
+<a name="var$packageoutput" id="var$packageoutput"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$packageoutput =  false</strong> (line <span class="linenumber">203</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of packages to parser and output documentation for, if not all packages should be documented Format: array(package1,package2,.   or false if not set Use this option to limit output similar to ignoring files. but don't want included in output, set a package name for all the elements in your project, and set packageoutput to that name.</h5>
+<div class="desc"><p>array of packages to parser and output documentation for, if not all packages should be documented Format: array(package1,package2,...)   or false if not set Use this option to limit output similar to ignoring files.  If you have some temporary files that you don't want to specify by name but don't want included in output, set a package name for all the elements in your project, and set packageoutput to that name. the default package will be ignored.  Parsing speed does not improve.  If you want to ignore files for speed reasons, use the ignore command-line option</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../phpDocumentor/Io.html">Io</a></li>
+	</ul>
+</div>
+<a name="var$pages" id="var$pages"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pages = array()</strong> (line <span class="linenumber">189</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$parsePrivate" id="var$parsePrivate"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$parsePrivate =  false</strong> (line <span class="linenumber">107</span>)
+ </h4>
+<h4>Data type : bool</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>set in phpdoc.</h5>
+<div class="desc"><p>set in <a href="../phpDocumentor/_framework---docs---phpDocumentor---phpdoc.inc.html">phpdoc.inc</a> to the value of the parserprivate commandline option. If this option is true, elements with an @access private tag will be parsed and displayed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$pkg_elements" id="var$pkg_elements"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pkg_elements = array()</strong> (line <span class="linenumber">187</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$private_class" id="var$private_class"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$private_class =  false</strong> (line <span class="linenumber">116</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>this variable is used to prevent parsing of private elements if $parsePrivate is false.</h5>
+<div class="desc"><p>this variable is used to prevent parsing of private elements if $parsePrivate is false. it is also used by the packageoutput setting to prevent parsing of elements that aren't in the desired output packages</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../tests/iNewRender.html#var$parsePrivate">iNewRender::$parsePrivate</a></li>
+		<li><strong>see:</strong> - <a href="../tests/iNewRender.html#var$packageoutput">iNewRender::$packageoutput</a></li>
+	</ul>
+</div>
+<a name="var$quietMode" id="var$quietMode"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$quietMode =  false</strong> (line <span class="linenumber">246</span>)
+ </h4>
+<h4>Data type : bool</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>set in phpdoc.</h5>
+<div class="desc"><p>set in <a href="../phpDocumentor/_framework---docs---phpDocumentor---phpdoc.inc.html">phpdoc.inc</a> to the value of the quitemode commandline option. If this option is true, informative output while parsing will not be displayed (documentation is unaffected)</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$targetDir" id="var$targetDir"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$targetDir</strong> (line <span class="linenumber">159</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used to set the output directory</h5>
+<div class="desc"><p>used to set the output directory</p></div>
+<ul>
+		<li><strong>see:</strong> - setTargetDir()</li>
+	</ul>
+</div>
+<a name="var$vars" id="var$vars"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$vars = array()</strong> (line <span class="linenumber">100</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of class variables by package, subpackage and class</h5>
+<div class="desc"><p>array of class variables by package, subpackage and class format: array(packagename =&gt;       array(subpackagename =&gt;             array(classname =&gt;                   array(variablename1 =&gt; <a href="../phpDocumentor/ParserElements/parserMethod.html">parserMethod</a> class,                         variablename2 =&gt; <a href="../phpDocumentor/ParserElements/parserMethod.html">parserMethod</a> class,...)                         )                  )            )      )</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../Converters/Converter.html">Converter</a></li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:51 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

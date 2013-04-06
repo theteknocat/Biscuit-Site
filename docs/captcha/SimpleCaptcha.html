@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class SimpleCaptcha</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class SimpleCaptcha
+</h2> (line <span class="linenumber">12</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---simple_captcha---captcha.php.html">/framework/plugins/simple_captcha/captcha.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Script para la generación de CAPTCHAS</h5>
+<div class="desc"><p>Script para la generación de CAPTCHAS Modified to run on PHP4 and adapted to integrate with the Biscuit framework by Peter Epp on September 8th, 2008</p></div>
+<ul>
+		<li><strong>author:</strong> - Jose Rodriguez &lt;<a href="mailto:jose.rodriguez@exec.cl">jose.rodriguez@exec.cl</a>&gt;</li>
+		<li><strong>link:</strong> - <a href="http://code.google.com/p/cool-php-captcha">http://code.google.com/p/cool-php-captcha</a></li>
+		<li><strong>license:</strong> - GPLv3</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$backgroundColor" title="details" class="property"><strong>$backgroundColor</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$blur" title="details" class="property"><strong>$blur</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$colors" title="details" class="property"><strong>$colors</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$debug" title="details" class="property"><strong>$debug</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$fonts" title="details" class="property"><strong>$fonts</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$height" title="details" class="property"><strong>$height</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$im" title="details" class="property"><strong>$im</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$imageFormat" title="details" class="property"><strong>$imageFormat</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$maxRotation" title="details" class="property"><strong>$maxRotation</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$maxWordLength" title="details" class="property"><strong>$maxWordLength</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$minWordLength" title="details" class="property"><strong>$minWordLength</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$scale" title="details" class="property"><strong>$scale</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$shadowColor" title="details" class="property"><strong>$shadowColor</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$useRandomText" title="details" class="property"><strong>$useRandomText</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$width" title="details" class="property"><strong>$width</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$wordsFile" title="details" class="property"><strong>$wordsFile</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$Xamplitude" title="details" class="property"><strong>$Xamplitude</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$Xperiod" title="details" class="property"><strong>$Xperiod</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$Yamplitude" title="details" class="property"><strong>$Yamplitude</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$Yperiod" title="details" class="property"><strong>$Yperiod</strong></a>
+</div>
+<hr />
+<a name="var$backgroundColor" id="var$backgroundColor"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$backgroundColor = array(255, 255, 255)</strong> (line <span class="linenumber">35</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Background color in RGB-array</h5>
+<div class="desc"><p>Background color in RGB-array</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$blur" id="var$blur"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$blur =  false</strong> (line <span class="linenumber">86</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Blur effect for better image quality (but slower image processing).</h5>
+<div class="desc"><p>Blur effect for better image quality (but slower image processing). Better image results with scale=3</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$colors" id="var$colors"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$colors = array(<br />		array(27,78,181),// bluearray(22,163,35),// greenarray(214,36,7),// red)</strong> (line <span class="linenumber">38</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Foreground colors in RGB-array</h5>
+<div class="desc"><p>Foreground colors in RGB-array</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$debug" id="var$debug"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$debug =  false</strong> (line <span class="linenumber">89</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Debug?</h5>
+<div class="desc"><p>Debug?</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$fonts" id="var$fonts"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$fonts = array(<br />		'Antykwa'  =&gt; array('spacing' =&gt; -3, 'minSize' =&gt; 27, 'maxSize' =&gt; 30, 'font' =&gt; 'AntykwaBold.ttf'),'Candice'=&gt;array('spacing'=&gt;-1.5,'minSize'=&gt;28,'maxSize'=&gt;31,'font'=&gt;'Candice.ttf'),'DingDong'=&gt;array('spacing'=&gt;-2,'minSize'=&gt;24,'maxSize'=&gt;30,'font'=&gt;'Ding-DongDaddyO.ttf'),'Duality'=&gt;array('spacing'=&gt;-2,'minSize'=&gt;30,'maxSize'=&gt;38,'font'=&gt;'Duality.ttf'),'Heineken'=&gt;array('spacing'=&gt;-2,'minSize'=&gt;24,'maxSize'=&gt;34,'font'=&gt;'Heineken.ttf'),'Jura'=&gt;array('spacing'=&gt;-2,'minSize'=&gt;28,'maxSize'=&gt;32,'font'=&gt;'Jura.ttf'),'StayPuft'=&gt;array('spacing'=&gt;-1.5,'minSize'=&gt;28,'maxSize'=&gt;32,'font'=&gt;'StayPuft.ttf'),'Times'=&gt;array('spacing'=&gt;-2,'minSize'=&gt;28,'maxSize'=&gt;34,'font'=&gt;'TimesNewRomanBold.ttf')// ,// 		'VeraSans' =&gt; array('spacing' =&gt; -1, 'minSize' =&gt; 20, 'maxSize' =&gt; 28, 'font' =&gt; 'VeraSansBold.ttf'),)</strong> (line <span class="linenumber">55</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Font configuration</h5>
+<div class="desc"><p>Font configuration
+<ul><li>font: TTF file</li><li>spacing: relative pixel space between character</li><li>minSize: min font size</li><li>maxSize: max font size</li></ul></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$height" id="var$height"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$height =  70</strong> (line <span class="linenumber">18</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Height of the image</h5>
+<div class="desc"><p>Height of the image</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$im" id="var$im"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$im</strong> (line <span class="linenumber">102</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>GD image</h5>
+<div class="desc"><p>GD image</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$imageFormat" id="var$imageFormat"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$imageFormat =  'jpeg'</strong> (line <span class="linenumber">92</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Image format: jpeg or png</h5>
+<div class="desc"><p>Image format: jpeg or png</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$maxRotation" id="var$maxRotation"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$maxRotation =  8</strong> (line <span class="linenumber">74</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>letter rotation clockwise</h5>
+<div class="desc"><p>letter rotation clockwise</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$maxWordLength" id="var$maxWordLength"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$maxWordLength =  8</strong> (line <span class="linenumber">32</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Max word length (for non-dictionary random text generation)</h5>
+<div class="desc"><p>Max word length (for non-dictionary random text generation)
+ Used for dictionary words indicating the word-length for font-size modification purposes</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$minWordLength" id="var$minWordLength"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$minWordLength =  5</strong> (line <span class="linenumber">24</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Min word length (for non-dictionary random text generation)</h5>
+<div class="desc"><p>Min word length (for non-dictionary random text generation)</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$scale" id="var$scale"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$scale =  2</strong> (line <span class="linenumber">80</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Internal image size factor (for better image quality)</h5>
+<div class="desc"><p>Internal image size factor (for better image quality) 1: low, 2: medium, 3: high</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$shadowColor" id="var$shadowColor"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$shadowColor =  false</strong> (line <span class="linenumber">45</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Shadow color in RGB-array or false</h5>
+<div class="desc"><p>Shadow color in RGB-array or false</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$useRandomText" id="var$useRandomText"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$useRandomText =  true</strong> (line <span class="linenumber">99</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Whether or not to use random text.</h5>
+<div class="desc"><p>Whether or not to use random text. Defaults to true.  Set to false to use dictionary text</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$width" id="var$width"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$width =  200</strong> (line <span class="linenumber">15</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Width of the image</h5>
+<div class="desc"><p>Width of the image</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$wordsFile" id="var$wordsFile"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$wordsFile =  'words/en.txt'</strong> (line <span class="linenumber">21</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Dictionary word file (empty for randnom text)</h5>
+<div class="desc"><p>Dictionary word file (empty for randnom text)</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$Xamplitude" id="var$Xamplitude"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$Xamplitude =  5</strong> (line <span class="linenumber">71</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$Xperiod" id="var$Xperiod"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$Xperiod =  11</strong> (line <span class="linenumber">70</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$Yamplitude" id="var$Yamplitude"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$Yamplitude =  14</strong> (line <span class="linenumber">69</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$Yperiod" id="var$Yperiod"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$Yperiod =  12</strong> (line <span class="linenumber">68</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Wave configuracion in X and Y axes</h5>
+<div class="desc"><p>Wave configuracion in X and Y axes</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">SimpleCaptcha</span>
+        <a href="#methodSimpleCaptcha" title="details" class="method-name">SimpleCaptcha</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$session_key</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodCleanup" title="details" class="method-name">Cleanup</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodCreateImage" title="details" class="method-name">CreateImage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodGetCaptchaText" title="details" class="method-name">GetCaptchaText</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodGetDictionaryCaptchaText" title="details" class="method-name">GetDictionaryCaptchaText</a>
+        ([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$extended</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodGetRandomCaptchaText" title="details" class="method-name">GetRandomCaptchaText</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodImageAllocate" title="details" class="method-name">ImageAllocate</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodReduceImage" title="details" class="method-name">ReduceImage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_attribute" title="details" class="method-name">set_attribute</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_attributes" title="details" class="method-name">set_attributes</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$attributes</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodWaveImage" title="details" class="method-name">WaveImage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodWriteImage" title="details" class="method-name">WriteImage</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodWriteText" title="details" class="method-name">WriteText</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$text</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$fontcfg</span> = <span class="var-default">array()</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodSimpleCaptcha" id="methodSimpleCaptcha"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor SimpleCaptcha</strong> (line <span class="linenumber">104</span>)
+ </h4> 
+<h4><i>SimpleCaptcha</i> <strong>SimpleCaptcha(
+
+$session_key)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $session_key</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodCleanup" id="methodCleanup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method Cleanup</strong> (line <span class="linenumber">365</span>)
+ </h4> 
+<h4><i>void</i> <strong>Cleanup(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Cleanup</h5>
+<div class="desc"><p>Cleanup</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodCreateImage" id="methodCreateImage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method CreateImage</strong> (line <span class="linenumber">141</span>)
+ </h4> 
+<h4><i>void</i> <strong>CreateImage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodGetCaptchaText" id="methodGetCaptchaText"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method GetCaptchaText</strong> (line <span class="linenumber">211</span>)
+ </h4> 
+<h4><i>string</i> <strong>GetCaptchaText(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Text generation</h5>
+<div class="desc"><p>Text generation</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Text</li>
+		</ul>
+</div>
+<a name="methodGetDictionaryCaptchaText" id="methodGetDictionaryCaptchaText"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method GetDictionaryCaptchaText</strong> (line <span class="linenumber">248</span>)
+ </h4> 
+<h4><i>string</i> <strong>GetDictionaryCaptchaText(
+[boolean
+$extended = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Random dictionary word generation</h5>
+<div class="desc"><p>Random dictionary word generation</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>boolean $extended</strong>: Add extended &quot;fake&quot; words</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Word</li>
+		</ul>
+</div>
+<a name="methodGetRandomCaptchaText" id="methodGetRandomCaptchaText"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method GetRandomCaptchaText</strong> (line <span class="linenumber">228</span>)
+ </h4> 
+<h4><i>string</i> <strong>GetRandomCaptchaText(
+[
+$length = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Random text generation</h5>
+<div class="desc"><p>Random text generation</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $length</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Text</li>
+		</ul>
+</div>
+<a name="methodImageAllocate" id="methodImageAllocate"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method ImageAllocate</strong> (line <span class="linenumber">177</span>)
+ </h4> 
+<h4><i>void</i> <strong>ImageAllocate(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Creates the image resources</h5>
+<div class="desc"><p>Creates the image resources</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodReduceImage" id="methodReduceImage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method ReduceImage</strong> (line <span class="linenumber">339</span>)
+ </h4> 
+<h4><i>void</i> <strong>ReduceImage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Reduce the image to the final size</h5>
+<div class="desc"><p>Reduce the image to the final size</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodset_attribute" id="methodset_attribute"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_attribute</strong> (line <span class="linenumber">118</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_attribute(
+string
+$name, string
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set a single attribute</h5>
+<div class="desc"><p>Set a single attribute</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: Name of the attribute</li>
+			<li><strong>string $value</strong>: Desired value</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodset_attributes" id="methodset_attributes"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_attributes</strong> (line <span class="linenumber">127</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_attributes(
+array
+$attributes)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set attributes</h5>
+<div class="desc"><p>Set attributes</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $attributes</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+		</ul>
+</div>
+<a name="methodWaveImage" id="methodWaveImage"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method WaveImage</strong> (line <span class="linenumber">317</span>)
+ </h4> 
+<h4><i>void</i> <strong>WaveImage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Wave filter</h5>
+<div class="desc"><p>Wave filter</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodWriteImage" id="methodWriteImage"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method WriteImage</strong> (line <span class="linenumber">353</span>)
+ </h4> 
+<h4><i>void</i> <strong>WriteImage(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>File generation</h5>
+<div class="desc"><p>File generation</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodWriteText" id="methodWriteText"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method WriteText</strong> (line <span class="linenumber">283</span>)
+ </h4> 
+<h4><i>void</i> <strong>WriteText(
+
+$text, [
+$fontcfg = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Text insertion</h5>
+<div class="desc"><p>Text insertion</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $text</strong>: </li>
+			<li><strong> $fontcfg</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:52 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

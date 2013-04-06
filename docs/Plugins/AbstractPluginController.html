@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class AbstractPluginController</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class AbstractPluginController
+</h2> (line <span class="linenumber">14</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a>
+   |
+   --AbstractPluginController</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---AbstractPluginController.php.html">/framework/lib/AbstractPluginController.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>And abstract controller for use with plugins.</h5>
+<div class="desc"><p>And abstract controller for use with plugins. It requires the abstract plugin class, the two of which together provide the following functionality:<ul><li>Dispatch to actions</li><li>Register Biscuit object</li><li>Set view file based on action</li><li>Setting page</li><li>Check database installation for plugin and install tables if plugin has the appropriate methods for providing data needed for installation</li><li>Check permissions for actions</li></ul></p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from AbstractPluginController:</span>
+ 		<dl>
+	<dt><a href="../Plugins/Authenticator.html">Authenticator</a></dt>
+		<dd>Provides user authentication functions</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/BluePrintCSS.html">BluePrintCSS</a></dt>
+		<dd>Plugin for easy inclusion of Blueprint CSS, with the ability to turn it on and off in the database and assign it to specific pages if desired.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Calendar.html">Calendar</a></dt>
+		<dd>Standalone calendar widget allowing for day and week selection and custom Javascript callback function. of a page called &quot;date_selector&quot; in the page_index table. the rendering of other AJAX requests.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Captcha.html">Captcha</a></dt>
+		<dd>And abstract controller for use with plugins.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/ContactManager.html">ContactManager</a></dt>
+		<dd>Controller for Contact plugin</dd>
+	</dl>
+		<dl>
+	<dt><a href="../default/FlashPlayer.html">FlashPlayer</a></dt>
+		<dd>Plugin for inclusion of the Dreamweaver Active Content and Flash version detection JS scripts.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/HitCounter.html">HitCounter</a></dt>
+		<dd>Basic hit counter functions.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/jQuery.html">jQuery</a></dt>
+		<dd>Plugin for easy inclusion of prototype and scriptaculous JS, with the ability to turn it on and off in the database and assign it to specific pages if desired.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/LightView.html">LightView</a></dt>
+		<dd>Plugin for easy inclusion of Lightview JS and CSS files, with the ability to turn it on and off in the database and assign it to specific pages if desired.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Navigation.html">Navigation</a></dt>
+		<dd>A collection of rendering functions that draw various navigation widgets</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/NewsAndEventsManager.html">NewsAndEventsManager</a></dt>
+		<dd>News/Events plugin</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PageContentManager.html">PageContentManager</a></dt>
+		<dd>Controller for the PageContent plugin which allows arbitrary editing of static page content</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PhotoGalleryManager.html">PhotoGalleryManager</a></dt>
+		<dd>Controller for basic photo gallery</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Prototype.html">Prototype</a></dt>
+		<dd>Plugin for easy inclusion of prototype and scriptaculous JS, with the ability to turn it on and off in the database and assign it to specific pages if desired.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/MyModelManager.html">MyModelManager</a></dt>
+		<dd>undocumented class</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/TinyMCE.html">TinyMCE</a></dt>
+		<dd>Plugin for easy inclusion of Tiny MCE HTML editor</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/UserManager.html">UserManager</a></dt>
+		<dd>This plugin contains user contact and admin management functionalities.</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">object(web_page)</span>
+    <a href="#var$page" title="details" class="property"><strong>$page</strong></a>
+</div>
+<hr />
+<a name="var$page" id="var$page"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$page</strong> (line <span class="linenumber">20</span>)
+ </h4>
+<h4>Data type : object(web_page)</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>A reference to the web_page.</h5>
+<div class="desc"><p>A reference to the web_page.</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">string</span>
+        <a href="#methodurl" title="details" class="method-name">url</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span> = <span class="var-default">null</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$id</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoddependencies_met" title="details" class="method-name">dependencies_met</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodregister_page" title="details" class="method-name">register_page</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$page</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$page</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender" title="details" class="method-name">render</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$action_name</span> = <span class="var-default">false</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$render_now</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrun" title="details" class="method-name">run</a>
+        ([<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrun_success_callback_on_error" title="details" class="method-name">run_success_callback_on_error</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsave_response" title="details" class="method-name">save_response</a>
+        (<span class="var-type">mixed</span>&nbsp;<span class="var-name">$save_result</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$redirect_url</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$error_messages</span>, <span class="var-type">bool</span>&nbsp;<span class="var-name">$force_callback_on_failure</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtitle" title="details" class="method-name">title</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodurl" id="methodurl"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method url</strong> (line <span class="linenumber">130</span>)
+ </h4> 
+<h4><i>string</i> <strong>url(
+[string
+$action = null], [integer
+$id = null])</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Plugins/Captcha.html#methodurl">Captcha::url()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Navigation.html#methodurl">Navigation::url()</a></dt>
+		<dd>Create an anchor tag with link to a page in the framework</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PageContentManager.html#methodurl">PageContentManager::url()</a></dt>
+		<dd>Return the URL based on the current action.
+ The default URL is the index action.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PhotoGalleryManager.html#methodurl">PhotoGalleryManager::url()</a></dt>
+		<dd>If action is &quot;download&quot;, returns a new or event file attachment url, otherwise defers to the parent url function</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the URL for the current plugin based on it's current action.
+ The default URL is the index action.</h5>
+<div class="desc"><p>Return the URL for the current plugin based on it's current action. Redefine this function in your plugin if you have special cases
+ The default URL is the index action.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $action</strong>: (optional)</li>
+			<li><strong>integer $id</strong>: (optional)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - root relative URL</li>
+		</ul>
+</div>
+<a name="methoddependencies_met" id="methoddependencies_met"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method dependencies_met</strong> (line <span class="linenumber">107</span>)
+ </h4> 
+<h4><i>bool</i> <strong>dependencies_met(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Check to see if a plugin's dependencies are met.</h5>
+<div class="desc"><p>Check to see if a plugin's dependencies are met. To use this function, add a $dependencies property to your plugin with an array of dependent plugin names</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Whether or not dependencies are met</li>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodregister_page" id="methodregister_page"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method register_page</strong> (line <span class="linenumber">29</span>)
+ </h4> 
+<h4><i>void</i> <strong>register_page(
+
+&$page, string
+$page)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Register a reference of the Biscuit in this plugin</h5>
+<div class="desc"><p>Register a reference of the Biscuit in this plugin</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $page</strong>: The Biscuit object</li>
+			<li><strong> &$page</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodrender" id="methodrender"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render</strong> (line <span class="linenumber">81</span>)
+ </h4> 
+<h4><i>void</i> <strong>render(
+[
+$action_name = false], [
+$render_now = false])</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Plugins/NewsAndEventsManager.html#methodrender">NewsAndEventsManager::render()</a></dt>
+		<dd>Set the view file based on the current data_type (news or events)</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PhotoGalleryManager.html#methodrender">PhotoGalleryManager::render()</a></dt>
+		<dd>Set the view file based on the current data_type (news or events)</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Render the plugin</h5>
+<div class="desc"><p>Render the plugin</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $action_name</strong>: </li>
+			<li><strong> $render_now</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodrun" id="methodrun"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method run</strong> (line <span class="linenumber">40</span>)
+ </h4> 
+<h4><i>void</i> <strong>run(
+[array
+$params = array()])</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../Plugins/Authenticator.html#methodrun">Authenticator::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/BluePrintCSS.html#methodrun">BluePrintCSS::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Calendar.html#methodrun">Calendar::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/ContactManager.html#methodrun">ContactManager::run()</a></dt>
+		<dd>Run the plugin You only need this function if there are JS or CSS files to register, and/or you want to do some custom setup before dispatching to an action.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../default/FlashPlayer.html#methodrun">FlashPlayer::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/HitCounter.html#methodrun">HitCounter::run()</a></dt>
+		<dd>Record a unique page hit in the database.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/jQuery.html#methodrun">jQuery::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/LightView.html#methodrun">LightView::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Navigation.html#methodrun">Navigation::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/NewsAndEventsManager.html#methodrun">NewsAndEventsManager::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PageContentManager.html#methodrun">PageContentManager::run()</a></dt>
+		<dd>Run the plugin You only need this function if there are JS or CSS files to register, and/or you want to do some custom setup before dispatching to an action.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/PhotoGalleryManager.html#methodrun">PhotoGalleryManager::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/Prototype.html#methodrun">Prototype::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/MyModelManager.html#methodrun">MyModelManager::run()</a></dt>
+		<dd>Run the plugin You only need this function if there are JS or CSS files to register, and/or you want to do some custom setup before dispatching to an action.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/TinyMCE.html#methodrun">TinyMCE::run()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../Plugins/UserManager.html#methodrun">UserManager::run()</a></dt>
+		<dd></dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Dispatch to action methods if found. before_filter(if found) is run.</h5>
+<div class="desc"><p>Dispatch to action methods if found. Before the action_{action-name} is fired, before_filter(if found) is run. If before_filter returns false, the program exits.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $params</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodrun_success_callback_on_error" id="methodrun_success_callback_on_error"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method run_success_callback_on_error</strong> (line <span class="linenumber">212</span>)
+ </h4> 
+<h4><i>void</i> <strong>run_success_callback_on_error(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Whether or not to run an ajax callback on error.</h5>
+<div class="desc"><p>Whether or not to run an ajax callback on error. This is used for forms submitted to a hidden iframe.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsave_response" id="methodsave_response"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method save_response</strong> (line <span class="linenumber">180</span>)
+ </h4> 
+<h4><i>void</i> <strong>save_response(
+mixed
+$save_result, string
+$redirect_url, array
+$error_messages, bool
+$force_callback_on_failure)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Execute the appropriate response to a save.</h5>
+<div class="desc"><p>Execute the appropriate response to a save.  This will either be a redirect, JS output, or nothing depending on whether the form was submitted normally or to an hidden iframe (ajax-like) and whether or not the save was successful</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $save_result</strong>: The result of the save</li>
+			<li><strong>string $redirect_url</strong>: The url to redirect to for normal post responses</li>
+			<li><strong>array $error_messages</strong>: The list of error messages to display if save failed</li>
+			<li><strong>bool $force_callback_on_failure</strong>: Whether or not to run the form's JS callback as well as display errors on a failed save submitted to an iframe</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodtitle" id="methodtitle"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method title</strong> (line <span class="linenumber">97</span>)
+ </h4> 
+<h4><i>void</i> <strong>title(
+string
+$title)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set the body title of the page</h5>
+<div class="desc"><p>Set the body title of the page</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $title</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractPlugin.html#var$permission_actions">AbstractPlugin::$permission_actions</a></strong> - The list of actions that require permissions by default.
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a></h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodaction_requires_permission">AbstractPlugin::action_requires_permission()</a></strong> - Does an action require a permissions check?
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodbuild_table">AbstractPlugin::build_table()</a></strong> - Calls create_table, populate_table and/or alter_table as needed to build a plugin's database table.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcheck_install">AbstractPlugin::check_install()</a></strong> - Check to see if the database for this plugin is installed, and if not call the install_plugin_db function if the plugin can provide the table name.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcreate_table">AbstractPlugin::create_table()</a></strong> - Create a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodmigrate_table">AbstractPlugin::migrate_table()</a></strong> - Perform any required database migration. would use Authenticator's users table) and it needs to modify that table for it's own use.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_check">AbstractPlugin::permission_check()</a></strong> - A before_filter that checks for permission to access certain actions
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_error">AbstractPlugin::permission_error()</a></strong> - What to do when a permission_check fails
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_string_for_action">AbstractPlugin::permission_string_for_action()</a></strong> - Construct a permission string for an action
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpopulate_table">AbstractPlugin::populate_table()</a></strong> - Populate a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodupload_path">AbstractPlugin::upload_path()</a></strong> - Return the upload path for the current plugin.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_create">AbstractPlugin::user_can_create()</a></strong> - A shortcut to checking user new permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_delete">AbstractPlugin::user_can_delete()</a></strong> - A shortcut to checking user delete permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_edit">AbstractPlugin::user_can_edit()</a></strong> - A shortcut to checking user edit permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_view">AbstractPlugin::user_can_view()</a></strong> - A shortcut to checking user show permission on the current object
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:46 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

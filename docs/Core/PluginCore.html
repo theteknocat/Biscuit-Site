@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class PluginCore</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class PluginCore
+</h2> (line <span class="linenumber">8</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---PluginCore.php.html">/framework/lib/PluginCore.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Provides core plugin functionality to the Biscuit class</h5>
+<div class="desc"><p>Provides core plugin functionality to the Biscuit class</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from PluginCore:</span>
+ 		<dl>
+	<dt><a href="../Core/Biscuit.html">Biscuit</a></dt>
+		<dd>The little engine that could</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$plugin_has_rendered" title="details" class="property"><strong>$plugin_has_rendered</strong></a>
+</div>
+<hr />
+<a name="var$plugin_has_rendered" id="var$plugin_has_rendered"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$plugin_has_rendered =  false</strong> (line <span class="linenumber">10</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodinit_page_plugins" title="details" class="method-name">init_page_plugins</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodload_plugins" title="details" class="method-name">load_plugins</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodplugin_exists" title="details" class="method-name">plugin_exists</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodplugin_rendered" title="details" class="method-name">plugin_rendered</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$set_value</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_plugin" title="details" class="method-name">render_plugin</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$plugin</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span> = <span class="var-default">'index'</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$render_now</span> = <span class="var-default">false</span>], <span class="var-type">object|string</span>&nbsp;<span class="var-name">$plugin</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrun_page_plugins" title="details" class="method-name">run_page_plugins</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodinit_page_plugins" id="methodinit_page_plugins"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method init_page_plugins</strong> (line <span class="linenumber">35</span>)
+ </h4> 
+<h4><i>void</i> <strong>init_page_plugins(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Instantiate all plugins associated with the current page</h5>
+<div class="desc"><p>Instantiate all plugins associated with the current page</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodload_plugins" id="methodload_plugins"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method load_plugins</strong> (line <span class="linenumber">17</span>)
+ </h4> 
+<h4><i>void</i> <strong>load_plugins(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Include installed plugins</h5>
+<div class="desc"><p>Include installed plugins</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodplugin_exists" id="methodplugin_exists"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method plugin_exists</strong> (line <span class="linenumber">124</span>)
+ </h4> 
+<h4><i>bool</i> <strong>plugin_exists(
+string
+$name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Where or or not a plugin is installed on the current page</h5>
+<div class="desc"><p>Where or or not a plugin is installed on the current page</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: Name of the plugin (camelized)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodplugin_rendered" id="methodplugin_rendered"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method plugin_rendered</strong> (line <span class="linenumber">111</span>)
+ </h4> 
+<h4><i>void</i> <strong>plugin_rendered(
+[
+$set_value = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $set_value</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrender_plugin" id="methodrender_plugin"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_plugin</strong> (line <span class="linenumber">92</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_plugin(
+
+&$plugin, [string
+$name = 'index'], [
+$render_now = false], object|string
+$plugin)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets the view file based on a plugin and calls the page render function
+ eg.     $page-&gt;render_plugin($this, 'list');     sets $page-&gt;viewfile to 'plugins/programmanager/list.
+ Note that due to PHP4 behaviour, ClassNames loose their case.</h5>
+<div class="desc"><p>Sets the view file based on a plugin and calls the page render function
+ eg. from a plugin, say ProgramManager,     $page-&gt;render_plugin($this, 'list');     sets $page-&gt;viewfile to 'plugins/programmanager/list.php'
+ Note that due to PHP4 behaviour, ClassNames loose their case.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>object|string $plugin</strong>: the plugin name</li>
+			<li><strong>string $name</strong>: the name of the 'page' to show (defaults to 'index')</li>
+			<li><strong> &$plugin</strong>: </li>
+			<li><strong> $render_now</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodrun_page_plugins" id="methodrun_page_plugins"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method run_page_plugins</strong> (line <span class="linenumber">65</span>)
+ </h4> 
+<h4><i>void</i> <strong>run_page_plugins(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Run all plugins associated with the current page</h5>
+<div class="desc"><p>Run all plugins associated with the current page</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:34 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

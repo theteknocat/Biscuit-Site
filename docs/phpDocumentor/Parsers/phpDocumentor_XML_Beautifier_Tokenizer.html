@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class phpDocumentor_XML_Beautifier_Tokenizer</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class phpDocumentor_XML_Beautifier_Tokenizer
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a50">50</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+XML_Beautifier_Tokenizer
+   |
+   --phpDocumentor_XML_Beautifier_Tokenizer</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---Converters---XML---DocBook---peardoc2---Tokenizer.php.html">/framework/docs/phpDocumentor/Converters/XML/DocBook/peardoc2/Tokenizer.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Highlights source code using parse()</h5>
+<div class="desc"><p>Highlights source code using parse()</p></div>
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$eventHandlers" title="details" class="property"><strong>$eventHandlers</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$_attr" title="details" class="property"><strong>$_attr</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$_attrs" title="details" class="property"><strong>$_attrs</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$_curthing" title="details" class="property"><strong>$_curthing</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$_tag" title="details" class="property"><strong>$_tag</strong></a>
+</div>
+<hr />
+<a name="var$eventHandlers" id="var$eventHandlers"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$eventHandlers = array(<br />                                PHPDOC_XMLTOKEN_EVENT_NOEVENTS =&gt; 'normalHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_XML =&gt; 'parseXMLHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_PI =&gt; 'parsePiHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_ATTRIBUTE =&gt; 'attrHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_OPENTAG =&gt; 'tagHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_IN_CDATA =&gt; 'realcdataHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_DEF =&gt; 'defHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_CLOSETAG =&gt; 'closetagHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_ENTITY =&gt; 'entityHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_COMMENT =&gt; 'commentHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_SINGLEQUOTE =&gt; 'stringHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_DOUBLEQUOTE =&gt; 'stringHandler',<br />                                PHPDOC_XMLTOKEN_EVENT_CDATA =&gt; 'parseCdataHandler',<br />    )</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a64">64</a></span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$_attr" id="var$_attr"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_attr</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a58">58</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_attrs" id="var$_attrs"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_attrs</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a57">57</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_curthing" id="var$_curthing"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_curthing</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a55">55</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_tag" id="var$_tag"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_tag</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a56">56</a></span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">phpDocumentor_XML_Beautifier_Tokenizer</span>
+        <a href="#methodphpDocumentor_XML_Beautifier_Tokenizer" title="details" class="method-name">phpDocumentor_XML_Beautifier_Tokenizer</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodattrHandler" title="details" class="method-name">attrHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodcheckEventPop" title="details" class="method-name">checkEventPop</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodcheckEventPush" title="details" class="method-name">checkEventPush</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$word</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodclosetagHandler" title="details" class="method-name">closetagHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcommentHandler" title="details" class="method-name">commentHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconfigWordParser" title="details" class="method-name">configWordParser</a>
+        (<span class="var-type">$value</span>&nbsp;<span class="var-name">$e</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoddefHandler" title="details" class="method-name">defHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodentityHandler" title="details" class="method-name">entityHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgetParserEventName" title="details" class="method-name">getParserEventName</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodincdataHandler" title="details" class="method-name">incdataHandler</a>
+        (<span class="var-type">object XML</span>&nbsp;<span class="var-name">$parser</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$cdata</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodnormalHandler" title="details" class="method-name">normalHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparseCdataHandler" title="details" class="method-name">parseCdataHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparsePiHandler" title="details" class="method-name">parsePiHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodparseString" title="details" class="method-name">parseString</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$parse_data</span>, <span class="var-type"><a href="../../Converters/Converter.html">Converter</a></span>&nbsp;<span class="var-name">1</span>, <span class="var-type">false|string</span>&nbsp;<span class="var-name">2</span>, <span class="var-type">false|integer</span>&nbsp;<span class="var-name">3</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparseXMLHandler" title="details" class="method-name">parseXMLHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrealcdataHandler" title="details" class="method-name">realcdataHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetupStates" title="details" class="method-name">setupStates</a>
+        (<span class="var-type">boolean</span>&nbsp;<span class="var-name">$parsedata</span>, <span class="var-type">false|string</span>&nbsp;<span class="var-name">1</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodstringHandler" title="details" class="method-name">stringHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtagHandler" title="details" class="method-name">tagHandler</a>
+        (<span class="var-type">string|array</span>&nbsp;<span class="var-name">$word</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pevent</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#method_addoutput" title="details" class="method-name">_addoutput</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$event</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodphpDocumentor_XML_Beautifier_Tokenizer" id="methodphpDocumentor_XML_Beautifier_Tokenizer"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor phpDocumentor_XML_Beautifier_Tokenizer</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a570">570</a></span>)
+ </h4> 
+<h4><i>phpDocumentor_XML_Beautifier_Tokenizer</i> <strong>phpDocumentor_XML_Beautifier_Tokenizer(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Initialize the $tokenpushEvent, $wordpushEvent arrays</h5>
+<div class="desc"><p>Initialize the $tokenpushEvent, $wordpushEvent arrays</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodattrHandler" id="methodattrHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method attrHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a330">330</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>attrHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Most tokens only need highlighting, and this method handles them</h5>
+<div class="desc"><p>Most tokens only need highlighting, and this method handles them</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodcheckEventPop" id="methodcheckEventPop"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkEventPop</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a535">535</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>checkEventPop(
+
+$word, 
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>this function checks whether parameter $word is a token for popping the current event off of the Event Stack.</h5>
+<div class="desc"><p>this function checks whether parameter $word is a token for popping the current event off of the Event Stack.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $word</strong>: </li>
+			<li><strong> $pevent</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - returns false, or the event number popped off of the stack</li>
+		</ul>
+</div>
+<a name="methodcheckEventPush" id="methodcheckEventPush"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkEventPush</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a513">513</a></span>)
+ </h4> 
+<h4><i>mixed</i> <strong>checkEventPush(
+
+$word, 
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>this function checks whether parameter $word is a token for pushing a new event onto the Event Stack.</h5>
+<div class="desc"><p>this function checks whether parameter $word is a token for pushing a new event onto the Event Stack.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $word</strong>: </li>
+			<li><strong> $pevent</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - returns false, or the event number</li>
+		</ul>
+</div>
+<a name="methodclosetagHandler" id="methodclosetagHandler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method closetagHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a296">296</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>closetagHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &lt;/tags&gt;</h5>
+<div class="desc"><p>handle &lt;/tags&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodcommentHandler" id="methodcommentHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method commentHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a199">199</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>commentHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &lt;!-- comments --&gt;</h5>
+<div class="desc"><p>handle &lt;!-- comments --&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodconfigWordParser" id="methodconfigWordParser"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method configWordParser</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a504">504</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>configWordParser(
+$value
+$e)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>tell the parser's WordParser $wp to set up tokens to parse words by.</h5>
+<div class="desc"><p>tell the parser's WordParser $wp to set up tokens to parse words by. tokens are word separators.  In English, a space or punctuation are examples of tokens. In PHP, a token can be a ;, a parenthesis, or even the word &quot;function&quot;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$value $e</strong>: integer an event number</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../../phpDocumentor/WordParsers/WordParser.html">WordParser</a></li>
+			<li><strong>usedby</strong> - <a href="../../phpDocumentor/Parsers/phpDocumentor_XML_Beautifier_Tokenizer.html#methodparseString">phpDocumentor_XML_Beautifier_Tokenizer::parseString()</a> - pass $parse_data to prepare retrieval of tokens</li>
+		</ul>
+</div>
+<a name="methoddefHandler" id="methoddefHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method defHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a313">313</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>defHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &lt;!def&gt;</h5>
+<div class="desc"><p>handle &lt;!def&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodentityHandler" id="methodentityHandler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method entityHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a361">361</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>entityHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &amp;entities;</h5>
+<div class="desc"><p>handle &amp;entities;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodgetParserEventName" id="methodgetParserEventName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getParserEventName</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a661">661</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>getParserEventName(
+
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $value</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodincdataHandler" id="methodincdataHandler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method incdataHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a408">408</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>incdataHandler(
+object XML
+$parser, string
+$cdata)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Handler for real character data</h5>
+<div class="desc"><p>Handler for real character data</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>object XML $parser</strong>: parser object</li>
+			<li><strong>string $cdata</strong>: CDATA</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodnormalHandler" id="methodnormalHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method normalHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a180">180</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>normalHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Most tokens only need highlighting, and this method handles them</h5>
+<div class="desc"><p>Most tokens only need highlighting, and this method handles them</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodparseCdataHandler" id="methodparseCdataHandler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseCdataHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a377">377</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>parseCdataHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle tag contents</h5>
+<div class="desc"><p>handle tag contents</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodparsePiHandler" id="methodparsePiHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parsePiHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a216">216</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>parsePiHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &lt;?Processor instructions?&gt;</h5>
+<div class="desc"><p>handle &lt;?Processor instructions?&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodparseString" id="methodparseString"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseString</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a108">108</a></span>)
+ </h4> 
+<h4><i>bool</i> <strong>parseString(
+string
+$parse_data, <a href="../../Converters/Converter.html">Converter</a>
+1, false|string
+2, false|integer
+3)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Parse a new file
+ The parse() method is a do. one from the $_event_stack, and uses the token event array set up by the class constructor to call event handlers.</h5>
+<div class="desc"><p>Parse a new file
+ The parse() method is a do...while() loop that retrieves tokens one by one from the $_event_stack, and uses the token event array set up by the class constructor to call event handlers.
+ The event handlers each process the tokens passed to them, and use the <a href="../../phpDocumentor/Parsers/phpDocumentor_XML_Beautifier_Tokenizer.html#method_addoutput">_addoutput()</a> method to append the processed tokens to the $_line variable.  The word parser calls newLineNum() every time a line is reached.
+ In addition, the event handlers use special linking functions _link() and its cousins (_classlink(), etc.) to create in-code hyperlinks to the documentation for source code elements that are in the source code.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../Converters/Converter.html">Converter</a> 1</strong>: </li>
+			<li><strong>false|string 2</strong>: full path to file with @filesource tag, if this           is a @filesource parse</li>
+			<li><strong>false|integer 3</strong>: starting line number from {@source linenum}</li>
+			<li><strong>string $parse_data</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>staticvar</strong> - integer $endrecur: used for recursion limiting if a handler for                          an event is not found</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/phpDocumentor_XML_Beautifier_Tokenizer.html#methodsetupStates">phpDocumentor_XML_Beautifier_Tokenizer::setupStates()</a> - initialize parser state variables</li>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/Parsers/phpDocumentor_XML_Beautifier_Tokenizer.html#methodconfigWordParser">phpDocumentor_XML_Beautifier_Tokenizer::configWordParser()</a> - pass $parse_data to prepare retrieval of tokens</li>
+		</ul>
+</div>
+<a name="methodparseXMLHandler" id="methodparseXMLHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseXMLHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a241">241</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>parseXMLHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &lt;?xml Processor instructions?&gt;</h5>
+<div class="desc"><p>handle &lt;?xml Processor instructions?&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodrealcdataHandler" id="methodrealcdataHandler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method realcdataHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a258">258</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>realcdataHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &lt;![CDATA[ unescaped text ]]&gt;</h5>
+<div class="desc"><p>handle &lt;![CDATA[ unescaped text ]]&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodsetupStates" id="methodsetupStates"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setupStates</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a553">553</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>setupStates(
+boolean
+$parsedata, false|string
+1)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Initialize all parser state variables</h5>
+<div class="desc"><p>Initialize all parser state variables</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>false|string 1</strong>: name of class we are going to start from</li>
+			<li><strong>boolean $parsedata</strong>: true if we are highlighting an inline {@source} tag's                output</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>usedby</strong> - <a href="../../phpDocumentor/Parsers/phpDocumentor_XML_Beautifier_Tokenizer.html#methodparseString">phpDocumentor_XML_Beautifier_Tokenizer::parseString()</a> - initialize parser state variables</li>
+			<li><strong>uses</strong> - $_wp - sets to a new <a href="../../phpDocumentor/Parsers/phpDocumentor_HighlightWordParser.html">phpDocumentor_HighlightWordParser</a></li>
+		</ul>
+</div>
+<a name="methodstringHandler" id="methodstringHandler"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method stringHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a350">350</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>stringHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle attribute values</h5>
+<div class="desc"><p>handle attribute values</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodtagHandler" id="methodtagHandler"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tagHandler</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a270">270</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>tagHandler(
+string|array
+$word, integer
+$pevent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>handle &lt;tags&gt;</h5>
+<div class="desc"><p>handle &lt;tags&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string|array $word</strong>: token value</li>
+			<li><strong>integer $pevent</strong>: parser event from <a href="../../phpDocumentor/Parsers/_framework---docs---phpDocumentor---Parser.inc.html">Parser.inc</a></li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="method_addoutput" id="method_addoutput"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method _addoutput</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Parsers_frameworkdocsphpDocumentorConvertersXMLDocBookpeardoc2Tokenizer.php.html#a433">433</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>_addoutput(
+
+$event)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>This method adds output to $_line
+ If a string with variables like &quot;$test this&quot; is present, then special handling is used to allow processing of the variable in context.</h5>
+<div class="desc"><p>This method adds output to $_line
+ If a string with variables like &quot;$test this&quot; is present, then special handling is used to allow processing of the variable in context.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $event</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - _flush_save()</li>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:41 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

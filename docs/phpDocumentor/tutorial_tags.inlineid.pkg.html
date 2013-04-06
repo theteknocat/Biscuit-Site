@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>inline {@id}</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.inlineexample.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.inlineinternal.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>inline {@id}</h1>
+  <h2 class="refpurpose"><em>Used to control XML tutorial ids in refsects</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote>Tag Documentation written by <a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2002, Gregory Beaver</em><br />
+   (phpDocumentor 1.2+)<br />
+  <div id="cmdsynopsis"><b class="cmd">{@id</b>
+    <span class = "opt">sectionname</span>
+    <b class="cmd">}</b></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><p>The {@id} inline tag is used only in tutorials/extended documentation.  It is very simply designed to solve the problem of identifying sections for hyperlinking.  For instance, in the DocBook Converter, id's are in the format package.packagename[.subpackagename].file[.sectionname], where file is either the classname, function/method name, or summary.  In the other Converters, the id is not nearly as restrictive, but this inline tag allows for the potential of future converters that are equally exacting.  Use <pre>&lt;refsect1 id=&quot;{@id idname}&quot;&gt;</pre> in the tutorial (tutorialname.pkg/tutorialname.cls/tutorialname.proc) to do this.</p>
+ <p>The {@id} tag is context-sensitive, and will pre-pend the id of the current refsect1, refsect2, or refsect3 to any {@id}, allowing further error control.</p>
+ <table border="1"><th align="center">Caution</th><tr><td>The sectionname may only consist of <strong>lower-case</strong> letters, numbers, and hyphens &quot;-.&quot;  No other characters are allowed</td></tr></table></span>
+ <span><a name="example"></a><p>Here is an example of how {@id} must be used</p>
+  <p><ol><li><div class="src-line"><span class="tute-tag">&lt;refentry</span><span class="tute-attribute-name">&nbsp;id=</span><span class="tute-attribute-value">&quot;</span><span class="tute-inline-tag">{@id}</span><span class="tute-attribute-value">&quot;</span><span class="tute-tag">&gt;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="tute-tag">&lt;refnamediv&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;refname&gt;</span>Main&nbsp;Title<span class="tute-tag">&lt;/refname&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;refpurpose&gt;</span>Description&nbsp;of&nbsp;tutorial<span class="tute-tag">&lt;/refpurpose&gt;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="tute-tag">&lt;/refnamediv&gt;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="tute-tag">&lt;refsynopsisdiv&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;refsynopsisdivinfo&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="tute-tag">&lt;author&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;Gregory&nbsp;Beaver</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="tute-tag">&lt;/author&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="tute-tag">&lt;copyright&gt;</span>Copyright&nbsp;2002,&nbsp;Gregory&nbsp;Beaver<span class="tute-tag">&lt;/copyright&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;/refsynopsisdivinfo&gt;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="tute-tag">&lt;/refsynopsisdiv&gt;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="tute-tag">&lt;refsect1</span><span class="tute-attribute-name">&nbsp;id=</span><span class="tute-attribute-value">&quot;</span><span class="tute-inline-tag">{@id&nbsp;section}</span><span class="tute-attribute-value">&quot;</span><span class="tute-tag">&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;title&gt;</span>First&nbsp;Section&nbsp;Title<span class="tute-tag">&lt;/title&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;para&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;Note&nbsp;that&nbsp;the&nbsp;id&nbsp;parameter&nbsp;must&nbsp;be&nbsp;within&nbsp;quotes</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;and&nbsp;there&nbsp;must&nbsp;be&nbsp;no&nbsp;whitespace&nbsp;on&nbsp;either&nbsp;side.</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;id=<span class="tute-entity">&amp;quot;</span>&nbsp;&nbsp;<span class="tute-inline-tag">{@id&nbsp;section}</span><span class="tute-entity">&amp;quot;</span>&nbsp;will&nbsp;break&nbsp;the&nbsp;id&nbsp;parsing</div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;/para&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;para&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;This&nbsp;section's&nbsp;name&nbsp;is&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="tute-entity">&amp;quot;</span>packagesubpackagetutorial.ext.section<span class="tute-entity">&amp;quot;</span>&nbsp;by&nbsp;default.</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;The&nbsp;HTML/CHM&nbsp;converters&nbsp;name&nbsp;it&nbsp;<span class="tute-entity">&amp;quot;</span>section,<span class="tute-entity">&amp;quot;</span>&nbsp;the&nbsp;XML</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;converter&nbsp;names&nbsp;it&nbsp;<span class="tute-entity">&amp;quot;</span>package.subpackage.tutorial-ext.section<span class="tute-entity">&amp;quot;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;/para&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;refsect2</span><span class="tute-attribute-name">&nbsp;id=</span><span class="tute-attribute-value">&quot;</span><span class="tute-inline-tag">{@id&nbsp;subsection}</span><span class="tute-attribute-value">&quot;</span><span class="tute-tag">&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="tute-tag">&lt;title&gt;</span>Subsection&nbsp;Title<span class="tute-tag">&lt;/title&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="tute-tag">&lt;para&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;section&nbsp;inherit's&nbsp;the&nbsp;refsect1's&nbsp;id,&nbsp;and&nbsp;is&nbsp;named</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tute-entity">&amp;quot;</span>packagesubpackagetutorial.ext.section.subsection<span class="tute-entity">&amp;quot;</span>&nbsp;or</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tute-entity">&amp;quot;</span>section.subsection<span class="tute-entity">&amp;quot;</span>&nbsp;for&nbsp;HTML/CHM,&nbsp;and</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tute-entity">&amp;quot;</span>package.subpackage.tutorial-ext.section.subsection<span class="tute-entity">&amp;quot;</span>&nbsp;in&nbsp;XML</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;<span class="tute-tag">&lt;/para&gt;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;<span class="tute-tag">&lt;/refsect2&gt;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="tute-tag">&lt;/refsect1&gt;</span></div></li>
+<li><div class="src-line"><span class="tute-tag">&lt;/refentry&gt;</span></div></li>
+</ol></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.inlineexample.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_inlinetags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.inlineinternal.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">inline {@example}</td>
+<td width="34%" align="center" valign="top">phpDocumentor Inline tags</td>
+<td width="33%" align="right" valign="top">inline {@internal}}</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:43 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

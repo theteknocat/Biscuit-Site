@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tutorialLink</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tutorialLink
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Links_frameworkdocsphpDocumentorLinkClasses.inc.html#a330">330</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a>
+   |
+   --tutorialLink</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---LinkClasses.inc.html">/framework/docs/phpDocumentor/LinkClasses.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>tutorial link</h5>
+<div class="desc"><p>tutorial link</p></div>
+<ul>
+		<li><strong>author:</strong> - Gregory Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - Release: 1.4.2</li>
+		<li><strong>copyright:</strong> - 2002-2008 Gregory Beaver</li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>todo:</strong> - CS cleanup - change package to PhpDocumentor</li>
+		<li><strong>todo:</strong> - CS cleanup - change classname to PhpDocumentor_*</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$section" title="details" class="property"><strong>$section</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$title" title="details" class="property"><strong>$title</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$type" title="details" class="property"><strong>$type</strong></a>
+</div>
+<hr />
+<a name="var$section" id="var$section"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$section =  ''</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Links_frameworkdocsphpDocumentorLinkClasses.inc.html#a336">336</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$title" id="var$title"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$title =  false</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Links_frameworkdocsphpDocumentorLinkClasses.inc.html#a337">337</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$type" id="var$type"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$type =  'tutorial'</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Links_frameworkdocsphpDocumentorLinkClasses.inc.html#a335">335</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddLink" title="details" class="method-name">addLink</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$section</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$package</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$subpackage</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$title</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$category</span> = <span class="var-default">false</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodaddLink" id="methodaddLink"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addLink</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Links_frameworkdocsphpDocumentorLinkClasses.inc.html#a353">353</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>addLink(
+string
+$section, string
+$path, string
+$name, string
+$package, string
+$subpackage, [string
+$title = false], [string
+$category = false])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../../phpDocumentor/Links/abstractLink.html#methodaddLink">abstractLink::addLink()</a> sets up the link</p>
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets up the link</h5>
+<div class="desc"><p>sets up the link</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $section</strong>: section/subsection name</li>
+			<li><strong>string $path</strong>: full path to file containing element</li>
+			<li><strong>string $name</strong>: page name, as configured by Parser::parse</li>
+			<li><strong>string $package</strong>: package element is in</li>
+			<li><strong>string $subpackage</strong>: subpackage element is in</li>
+			<li><strong>string $title</strong>: title of tutorial</li>
+			<li><strong>string $category</strong>: optional category that documentation is in</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a></h4>
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Links/abstractLink.html#var$category">abstractLink::$category</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Links/abstractLink.html#var$fileAlias">abstractLink::$fileAlias</a></strong> - phpdoc alias _phpdoc_inc for phpdoc.
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Links/abstractLink.html#var$name">abstractLink::$name</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Links/abstractLink.html#var$package">abstractLink::$package</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Links/abstractLink.html#var$path">abstractLink::$path</a></strong> - 
+	</h4> 
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/Links/abstractLink.html#var$subpackage">abstractLink::$subpackage</a></strong> - 
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a></h4>
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/Links/abstractLink.html#methodaddLink">abstractLink::addLink()</a></strong> - sets up the link
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:18 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

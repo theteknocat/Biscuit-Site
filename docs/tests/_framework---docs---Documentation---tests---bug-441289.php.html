@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs for page bug-441289.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h2>File: /framework/docs/Documentation/tests/bug-441289.php</h2>
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<!-- =========== Used Classes =========== -->
+<A NAME='classes_summary'><!-- --></A>
+<h3>Classes defined in this file</h3>
+
+<TABLE CELLPADDING='3' CELLSPACING='0' WIDTH='100%' CLASS="border">
+	<THEAD>
+		<TR><TD STYLE="width:20%"><h4>CLASS NAME</h4></TD><TD STYLE="width: 80%"><h4>DESCRIPTION</h4></TD></TR>
+	</THEAD>
+	<TBODY>
+			</TBODY>
+</TABLE>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+<!-- ============ Includes DETAIL =========== -->
+
+<h2 class="tab">Include/Require Statements</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+
+
+</div>
+<div class="tab-page" id="tabPage2">
+<!-- ============ GLOBAL DETAIL =========== -->
+
+<h2 class="tab">Global Variables</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage3">
+<!-- ============ CONSTANT DETAIL =========== -->
+
+<A NAME='constant_detail'></A>
+<h2 class="tab">Constants</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage4">
+<!-- ============ FUNCTION DETAIL =========== -->
+
+<h2 class="tab">Functions</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage4" ) );</script>
+
+<a name="functiontest6" id="functiontest6"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test6</strong> (line <span class="linenumber">58</span>)
+ </h4> 
+<h4><i>void</i> <strong>test6(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This desc</h5>
+<div class="desc"><p>This desc tries to fool the non period short desc systems
+ junk should only show the first line since we dont' look that far down for the short desc line break</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest7" id="functiontest7"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test7</strong> (line <span class="linenumber">69</span>)
+ </h4> 
+<h4><i>void</i> <strong>test7(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This desc tries to fool</h5>
+<div class="desc"><p>This desc tries to fool the non period short desc systems
+ junk junk</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest8" id="functiontest8"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test8</strong> (line <span class="linenumber">90</span>)
+ </h4> 
+<h4><i>void</i> <strong>test8(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This is a test case where i think things break extended desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc more extended desc that ends with a period.</h5>
+<div class="desc"><p>This is a test case where i think things break extended desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc many lines of desc more extended desc that ends with a period. without a line limiter everything til period. would be part of the short desc allowing this many lines to be part of the short desc seemed like a problem to me so now using both the period and line break as a seperator you can only have a 4 line extended desc.  the first line is usually blank since its the /** line</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest_441289" id="functiontest_441289"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test_441289</strong> (line <span class="linenumber">9</span>)
+ </h4> 
+<h4><i>void</i> <strong>test_441289(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This is a long comment which needs more than one line.</h5>
+<div class="desc"><p>This is a long comment which needs more than one line. This is the detailed documentation. This is another line of detailed docs</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest_4412892" id="functiontest_4412892"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test_4412892</strong> (line <span class="linenumber">17</span>)
+ </h4> 
+<h4><i>void</i> <strong>test_4412892(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>I started my short desc on the first line.</h5>
+<div class="desc"><p>I started my short desc on the first line. This is the detailed documentation.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest_4412893" id="functiontest_4412893"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test_4412893</strong> (line <span class="linenumber">25</span>)
+ </h4> 
+<h4><i>void</i> <strong>test_4412893(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>I am using just the first line as my short desc</h5>
+<div class="desc"><p>I am using just the first line as my short desc since i didn't use a period anywhere in this desc</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest_4412894" id="functiontest_4412894"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test_4412894</strong> (line <span class="linenumber">35</span>)
+ </h4> 
+<h4><i>void</i> <strong>test_4412894(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>I am using a blank line to end my short desc</h5>
+<div class="desc"><p>I am using a blank line to end my short desc
+ I think this looks the nicest when writing your code and makes the code more readable</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest_4412895" id="functiontest_4412895"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test_4412895</strong> (line <span class="linenumber">44</span>)
+ </h4> 
+<h4><i>void</i> <strong>test_4412895(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This is a test to see if the desc is fooled by 2. the short desc ends here.</h5>
+<div class="desc"><p>This is a test to see if the desc is fooled by 2.4 the short desc ends here. This is the detailed documentation.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest_bug_567455" id="functiontest_bug_567455"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test_bug_567455</strong> (line <span class="linenumber">100</span>)
+ </h4> 
+<h4><i>void</i> <strong>test_bug_567455(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This example is really tricky
+ The short desc should end on the blank line even though this line ends with a period.</h5>
+<div class="desc"><p>This example is really tricky
+ The short desc should end on the blank line even though this line ends with a period. Here is the long desc</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="functiontest_bug_567455_2" id="functiontest_bug_567455_2"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">test_bug_567455_2</strong> (line <span class="linenumber">111</span>)
+ </h4> 
+<h4><i>void</i> <strong>test_bug_567455_2(
+)</strong></h4>
+
+<!-- ========== Info from phpDoc block ========= -->
+<h5>This example is also really tricky
+ The tries to break the parser test.</h5>
+<div class="desc"><p>This example is also really tricky
+ The tries to break the parser test. Here is the long desc</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:50 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

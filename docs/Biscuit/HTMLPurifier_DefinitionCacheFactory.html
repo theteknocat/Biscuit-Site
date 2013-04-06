@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_DefinitionCacheFactory</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_DefinitionCacheFactory
+</h2> (line <span class="linenumber">23</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php4---library---HTMLPurifier---DefinitionCacheFactory.php.html">/framework/plugins/html_purifier/php4/library/HTMLPurifier/DefinitionCacheFactory.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Responsible for creating definition caches.</h5>
+<div class="desc"><p>Responsible for creating definition caches.</p></div>
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$caches" title="details" class="property"><strong>$caches</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$decorators" title="details" class="property"><strong>$decorators</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$implementations" title="details" class="property"><strong>$implementations</strong></a>
+</div>
+<hr />
+<a name="var$caches" id="var$caches"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$caches = array('Serializer' =&gt; array())</strong> (line <span class="linenumber">26</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$decorators" id="var$decorators"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$decorators = array()</strong> (line <span class="linenumber">28</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$implementations" id="var$implementations"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$implementations = array()</strong> (line <span class="linenumber">27</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodinstance" title="details" class="method-name">&amp;instance</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$prototype</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddDecorator" title="details" class="method-name">addDecorator</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$decorator</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcreate" title="details" class="method-name">&amp;create</a>
+        (<span class="var-type">$name</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">$config</span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodregister" title="details" class="method-name">register</a>
+        (<span class="var-type">$short</span>&nbsp;<span class="var-name">$short</span>, <span class="var-type">$long</span>&nbsp;<span class="var-name">$long</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetup" title="details" class="method-name">setup</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodinstance" id="methodinstance"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method instance</strong> (line <span class="linenumber">41</span>)
+ </h4> 
+<h4><i>void</i> <strong>&amp;instance(
+[
+$prototype = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves an instance of global definition cache factory.</h5>
+<div class="desc"><p>Retrieves an instance of global definition cache factory.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $prototype</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddDecorator" id="methodaddDecorator"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addDecorator</strong> (line <span class="linenumber">100</span>)
+ </h4> 
+<h4><i>void</i> <strong>addDecorator(
+
+$decorator)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Registers a decorator to add to all new cache objects</h5>
+<div class="desc"><p>Registers a decorator to add to all new cache objects</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $decorator</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodcreate" id="methodcreate"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method create</strong> (line <span class="linenumber">66</span>)
+ </h4> 
+<h4><i>void</i> <strong>&amp;create(
+$name
+$type, $config
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Factory method that creates a cache object based on configuration</h5>
+<div class="desc"><p>Factory method that creates a cache object based on configuration</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$name $type</strong>: Name of definitions handled by cache</li>
+			<li><strong>$config $config</strong>: Instance of HTMLPurifier_Config</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodregister" id="methodregister"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method register</strong> (line <span class="linenumber">57</span>)
+ </h4> 
+<h4><i>void</i> <strong>register(
+$short
+$short, $long
+$long)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Registers a new definition cache object</h5>
+<div class="desc"><p>Registers a new definition cache object</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$short $short</strong>: Short name of cache object, for reference</li>
+			<li><strong>$long $long</strong>: Full class name of cache object, for construction</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetup" id="methodsetup"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setup</strong> (line <span class="linenumber">33</span>)
+ </h4> 
+<h4><i>void</i> <strong>setup(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Initialize default decorators</h5>
+<div class="desc"><p>Initialize default decorators</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:26 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

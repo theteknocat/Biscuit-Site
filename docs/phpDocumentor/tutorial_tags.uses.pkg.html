@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>@uses</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.tutorial.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.var.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>@uses</h1>
+  <h2 class="refpurpose"><em>Display a link to the documentation for an element, and create a backlink in the other element's documentation to this</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote>Tag Documentation written by <a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2002, Gregory Beaver</em><br />
+   (phpDocumentor 0.1+)<br />
+  <div id="cmdsynopsis"><b class="cmd">@uses</b>
+    <span class = "req">file.ext|elementname|class::methodname()|class::$variablename|functionname()|function functionname</span>
+    <span class = "opt">description of how the element is used</span></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><table border="1"><th align="center">Caution</th><tr><td>Since version 1.2.0beta3, the syntax for @uses has changed.  It differs in that @uses now contains a description of how the element is used and does not allow a comma-delimited list of values any longer.</td></tr></table>
+  <p>The @uses tag may be used to document any element (global variable, include, page, class, function, define, method, variable)</p>
+  <table border="1"><th align="center">Caution</th><tr><td>@uses only displays links to element documentation.  If you want to display a hyperlink, use <a href="../phpDocumentor/tutorial_tags.link.pkg.html">@link</a> or <a href="../phpDocumentor/tutorial_tags.inlinelink.pkg.html">inline {@link}</a></td></tr></table>
+  <p>@uses is very similar to <a href="../phpDocumentor/tutorial_tags.see.pkg.html">@see</a>, see the documentation for @see for details on format and structure.  The @uses tag differs from @see in two ways.  @see is a one-way link, meaning the documentation containing a @see tag contains a link to other documentation.  The @uses tag automatically creates a virtual @usedby tag in the other documentation that links to the documentation containing the @uses tag.  In other words, it is exactly like @see, except a return link is added automatically.</p>
+  <p>The other difference is that @uses only accepts one element to link to, and a description of that element.</p></span>
+ <span><a name="example"></a><h2 class="title" align="center">Example</h1><p>Here's an example of valid @uses syntax:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;class&nbsp;1</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>main_class</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@var&nbsp;</font></strong><em>integer&nbsp;</em></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font>foo&nbsp;=&nbsp;3<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;subclass&nbsp;inherits&nbsp;this&nbsp;method.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;example&nbsp;of&nbsp;a&nbsp;word&nbsp;which&nbsp;is&nbsp;either&nbsp;a&nbsp;constant&nbsp;or&nbsp;class&nbsp;name,</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;in&nbsp;this&nbsp;case&nbsp;a&nbsp;classname</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@uses</font></strong><font color="#009999">&nbsp;subclass&nbsp;sets&nbsp;a&nbsp;temporary&nbsp;variable</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@uses</font></strong><font color="#009999">&nbsp;subclass::$foo&nbsp;this&nbsp;is&nbsp;compared&nbsp;to&nbsp;TEST_CONST</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@uses</font></strong><font color="#009999">&nbsp;TEST_CONST&nbsp;compared&nbsp;to&nbsp;subclass::$foo,&nbsp;we</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die()&nbsp;if&nbsp;not&nbsp;found</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>parent_method<strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$this</strong><strong>-&gt;</strong><strong>foo</strong>==9<strong>)&nbsp;</strong>die<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$test&nbsp;</strong>=&nbsp;new&nbsp;subclass<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$a&nbsp;</strong>=&nbsp;<strong>$test</strong><strong>-&gt;</strong>foo<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$a&nbsp;</strong>==&nbsp;TEST_CONST<strong>)&nbsp;</strong>die<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;this&nbsp;class&nbsp;extends&nbsp;main_class.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line">subclass&nbsp;<font color="blue">extends&nbsp;</font>main_class</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@var&nbsp;</font></strong><em>integer&nbsp;</em></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><strong>$foo&nbsp;</strong>=&nbsp;9<strong>;</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">&quot;TEST_CONST&quot;</font><strong>,</strong><font color="#66cccc">&quot;foobar&quot;</font><strong>)</strong><strong>;</strong></div></li>
+</ol></div></p>
+  <p>This will parse as if it were:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;class&nbsp;1</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">class&nbsp;</font>main_class</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@var&nbsp;</font></strong><em>integer&nbsp;</em></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font>foo&nbsp;=&nbsp;3<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;subclass&nbsp;inherits&nbsp;this&nbsp;method.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;example&nbsp;of&nbsp;a&nbsp;word&nbsp;which&nbsp;is&nbsp;either&nbsp;a&nbsp;constant&nbsp;or&nbsp;class&nbsp;name,</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;in&nbsp;this&nbsp;case&nbsp;a&nbsp;classname</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@uses</font></strong><font color="#009999">&nbsp;subclass&nbsp;sets&nbsp;a&nbsp;temporary&nbsp;variable</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@uses</font></strong><font color="#009999">&nbsp;subclass::$foo&nbsp;this&nbsp;is&nbsp;compared&nbsp;to&nbsp;TEST_CONST</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@uses</font></strong><font color="#009999">&nbsp;TEST_CONST&nbsp;compared&nbsp;to&nbsp;subclass::$foo,&nbsp;we</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die()&nbsp;if&nbsp;not&nbsp;found</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font>parent_method<strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$this</strong><strong>-&gt;</strong><strong>foo</strong>==9<strong>)&nbsp;</strong>die<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$test&nbsp;</strong>=&nbsp;new&nbsp;subclass<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$a&nbsp;</strong>=&nbsp;<strong>$test</strong><strong>-&gt;</strong>foo<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$a&nbsp;</strong>==&nbsp;TEST_CONST<strong>)&nbsp;</strong>die<strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;this&nbsp;class&nbsp;extends&nbsp;main_class.</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color="#009999">@usedby</font></strong><font color="#009999">&nbsp;main_class::parent_method()&nbsp;sets&nbsp;a&nbsp;temporary&nbsp;variable</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line">subclass&nbsp;<font color="blue">extends&nbsp;</font>main_class</div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@var&nbsp;</font></strong><em>integer&nbsp;</em></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color="#009999">@usedby</font></strong><font color="#009999">&nbsp;main_class::parent_method()&nbsp;this&nbsp;is&nbsp;compared&nbsp;to&nbsp;TEST_CONST</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><strong>$foo&nbsp;</strong>=&nbsp;9<strong>;</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color="#009999">@usedby</font></strong><font color="#009999">&nbsp;main_class::parent_method()&nbsp;compared&nbsp;to&nbsp;subclass::$foo,&nbsp;we</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die()&nbsp;if&nbsp;not&nbsp;found</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">&quot;TEST_CONST&quot;</font><strong>,</strong><font color="#66cccc">&quot;foobar&quot;</font><strong>)</strong><strong>;</strong></div></li>
+</ol></div></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.tutorial.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.var.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">@tutorial</td>
+<td width="34%" align="center" valign="top">phpDocumentor tags</td>
+<td width="33%" align="right" valign="top">@var</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:42 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

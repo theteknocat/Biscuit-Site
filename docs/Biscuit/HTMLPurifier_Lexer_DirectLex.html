@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_Lexer_DirectLex</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_Lexer_DirectLex
+</h2> (line <span class="linenumber">29</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+HTMLPurifier_Lexer
+   |
+   --HTMLPurifier_Lexer_DirectLex</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php4---library---HTMLPurifier---Lexer---DirectLex.php.html">/framework/plugins/html_purifier/php4/library/HTMLPurifier/Lexer/DirectLex.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Our in-house implementation of a parser.</h5>
+<div class="desc"><p>Our in-house implementation of a parser.
+ A pure PHP parser, DirectLex has absolutely no dependencies, making it a reasonably good default for PHP4.  Written with efficiency in mind, it can be four times faster than HTMLPurifier_Lexer_PEARSax3, although it pales in comparison to HTMLPurifier_Lexer_DOMLex.</p></div>
+<ul>
+		<li><strong>todo:</strong> - Reread XML spec and document differences.</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$_whitespace" title="details" class="property"><strong>$_whitespace</strong></a>
+</div>
+<hr />
+<a name="var$_whitespace" id="var$_whitespace"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_whitespace =  &quot;\x20\x09\x0D\x0A&quot;</strong> (line <span class="linenumber">36</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Whitespace characters for str(c)spn.</h5>
+<div class="desc"><p>Whitespace characters for str(c)spn.</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodscriptCallback" title="details" class="method-name">scriptCallback</a>
+        (<span class="var-type">$matches,</span>&nbsp;<span class="var-name">$matches</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Assoc</span>
+        <a href="#methodparseAttributeString" title="details" class="method-name">parseAttributeString</a>
+        (<span class="var-type">$string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$context</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsubstrCount" title="details" class="method-name">substrCount</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$haystack</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$needle</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$length</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtokenizeHTML" title="details" class="method-name">tokenizeHTML</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$context</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodscriptCallback" id="methodscriptCallback"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method scriptCallback</strong> (line <span class="linenumber">43</span>)
+ </h4> 
+<h4><i>void</i> <strong>scriptCallback(
+$matches,
+$matches)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Callback function for script CDATA fudge</h5>
+<div class="desc"><p>Callback function for script CDATA fudge</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$matches, $matches</strong>: in form of array(opening tag, contents, closing tag)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodparseAttributeString" id="methodparseAttributeString"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseAttributeString</strong> (line <span class="linenumber">340</span>)
+ </h4> 
+<h4><i>Assoc</i> <strong>parseAttributeString(
+$string
+$string, 
+$config, 
+&$context)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Takes the inside of an HTML tag and makes an assoc array of attributes.</h5>
+<div class="desc"><p>Takes the inside of an HTML tag and makes an assoc array of attributes.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$string $string</strong>: Inside of tag excluding name.</li>
+			<li><strong> $config</strong>: </li>
+			<li><strong> &$context</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - array of attributes.</li>
+		</ul>
+</div>
+<a name="methodsubstrCount" id="methodsubstrCount"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method substrCount</strong> (line <span class="linenumber">321</span>)
+ </h4> 
+<h4><i>void</i> <strong>substrCount(
+
+$haystack, 
+$needle, 
+$offset, 
+$length)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP 4 compatible substr_count that implements offset and length</h5>
+<div class="desc"><p>PHP 4 compatible substr_count that implements offset and length</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $haystack</strong>: </li>
+			<li><strong> $needle</strong>: </li>
+			<li><strong> $offset</strong>: </li>
+			<li><strong> $length</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodtokenizeHTML" id="methodtokenizeHTML"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tokenizeHTML</strong> (line <span class="linenumber">47</span>)
+ </h4> 
+<h4><i>void</i> <strong>tokenizeHTML(
+
+$html, 
+$config, 
+&$context)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $html</strong>: </li>
+			<li><strong> $config</strong>: </li>
+			<li><strong> &$context</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:27 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

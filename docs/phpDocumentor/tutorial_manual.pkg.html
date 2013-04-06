@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title><a href="http://pear.php.net/package/PhpDocumentor">phpDocumentor</a> Manual</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tutorials.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1><a href="http://pear.php.net/package/PhpDocumentor">phpDocumentor</a> Manual</h1>
+  <h2 class="refpurpose"><em>Introduction to phpDocumentor</em></h2></div>
+ <div class="refsynopsis"><p>phpDocumentor authors</p>
+  <strong>Authors:</strong><br /><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote><a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Joshua Eichorn
+    <blockquote><a href="mailto:jeichorn@phpdoc.org">jeichorn@phpdoc.org</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Kellin
+    <blockquote><a href="mailto:passionplay@hotmail.com">passionplay@hotmail.com</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Juan Pablo Morales
+    <blockquote><a href="mailto:ju-moral@uniandes.edu.co">ju-moral@uniandes.edu.co</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Florian Clever
+    <blockquote><a href="mailto:fclever@verinform.com">fclever@verinform.com</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Dennis Kehrig
+    <blockquote><a href="mailto:TheGeek@web.de">TheGeek@web.de</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Robert Hoffmann
+    <blockquote><a href="mailto:half-dead@users.sourceforge.net">half-dead@users.sourceforge.net</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Roberto Berto
+    <blockquote><a href="mailto:darkelder@users.sourceforge.net">darkelder@users.sourceforge.net</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Dave Viner
+    <blockquote><a href="mailto:dviner@yahoo-inc.com">dviner@yahoo-inc.com</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Walter A Boring IV
+    <blockquote><a href="mailto:hemna@users.sourceforge.net">hemna@users.sourceforge.net</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Mark van Reunswolde
+    <blockquote><a href="mailto:support@esdsoftware.net">support@esdsoftware.net</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Julien Damon
+    <blockquote><a href="mailto:julien.damon@free.fr">julien.damon@free.fr</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Harald Fielker
+    <blockquote><a href="mailto:fielker@informatik.fh-augsburg.de">fielker@informatik.fh-augsburg.de</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Marco von Ballmoos
+    <blockquote><a href="mailto:mvonballmo@users.sourceforge.net">mvonballmo@users.sourceforge.net</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Andrew Eddie
+    <blockquote><a href="mailto:eddieajau@users.sourceforge.net">eddieajau@users.sourceforge.net</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>William K. Hardeman
+    <blockquote><a href="mailto:william_hardeman@hands-solutions.com">william_hardeman@hands-solutions.com</a></blockquote></em></strong></font>
+   <font size="-1"><strong>by <em>Chuck Burgess
+    <blockquote><a href="mailto:ashnazg@php.net">ashnazg@php.net</a></blockquote></em></strong></font></div>
+ <span><a name="intro"></a><a name="intro.documentation"></a><h2 class="title" align="center">Documentation</h2><p>The release of phpDocumentor 1.2.0+ marks a radical shift in the design philosophy of phpDocumentor.  No longer is this tool intended only to generate documentation from the source code.  Now it facilitates generating user-level documentation for people who only wish to use your software, and not to modify it.  This allows complete integration of all the documentation for the software project, and that means even greater ease of documenting, and ultimately more time to work on making the software work!</p>
+   <p>The old functionality of phpDocumentor has not been changed, only extended.  The old HTMLdefaultConverter has been ported to a new HTMLframesConverter.  The output looks the same, or better, but the templates are now smarty.php.net-based templates, and allow much greater customization.  To start out right away, read <a href="../phpDocumentor/tutorial_phpDocumentor.howto.pkg.html">phpDocumentor Tutorial</a>.</p><hr />
+  <a name="intro.bug-reporting"></a><h2 class="title" align="center">Bugs and Features (guaranteed to be separate entities...)</h2><p>If you think you've found a bug in phpDocumentor, please check our bug trackers online at <a href="http://pear.php.net/bugs/search.php?cmd=display&package_name%5B%5D=PhpDocumentor">PEAR</a> and <a href="http://sourceforge.net/tracker/?func=browse&group_id=11194&atid=111194">http://sourceforge.net/tracker/?func=browse&amp;group_id=11194&amp;atid=111194 Sourceforge</a>, the bug may have already been fixed (we develop at a rapid rate).  If you don't find it, please submit a bug (preferably at PEAR), and we will attempt to fix it as quickly as possible.</p>
+   <p>If there is a feature you're dying to have, check our feature tracker at <a href="http://pear.php.net/bugs/search.php?cmd=display&package_name%5B%5D=PhpDocumentor">PEAR</a> and <a href="http://sourceforge.net/tracker/?func=browse&group_id=11194&atid=361194">http://sourceforge.net/tracker/?func=browse&amp;group_id=11194&amp;atid=361194 Sourceforge</a>.  Please don't hesitate to look right at the source code and help apply your feature.  We love that, and can easily give you access to the cvs.</p><hr />
+  <a name="intro.helping-out"></a><h2 class="title" align="center">How to Help Out</h2><p>If you would like to help out with phpDocumentor, don't be shy.  Email <a href="mailto:jeichorn@phpdoc.org">Joshua Eichorn</a> right away and say you'd like to be added to the developer team.  We need people who are willing to develop Converters, translate documentation, and handle various bugs and feature requests as they come up.  phpDocumentor is fast becoming the de facto standard of automatic documentors in PHP, so it is in your best interest to make sure it works the way you need it to work.</p><hr /></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tutorials.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_phpDocumentor.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">phpDocumentor Tutorials</td>
+<td width="34%" align="center" valign="top">phpDocumentor Guide to Creating Fantastic Documentation</td>
+<td width="33%" align="right" valign="top">phpDocumentor tags</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:41 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

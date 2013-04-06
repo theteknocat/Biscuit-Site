@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class Calendar</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class Calendar
+</h2> (line <span class="linenumber">20</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a>
+   |
+   --<a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a>
+      |
+      --Calendar</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---Calendar.php.html">/framework/plugins/Calendar.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Standalone calendar widget allowing for day and week selection and custom Javascript callback function. of a page called &quot;date_selector&quot; in the page_index table. the rendering of other AJAX requests.</h5>
+<div class="desc"><p>Standalone calendar widget allowing for day and week selection and custom Javascript callback function.  To use it as a date selector requires the existence of a page called &quot;date_selector&quot; in the page_index table. This ensures that the calendar only renders when called for specifically, so it cannot interfere with the rendering of other AJAX requests.</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp
+ Dependent files: Calendar.css Calendar.js
+ If calling this only as a popup in a page (not using inline), then the js and css files must be registered by the appropriate plugin. Example found in news and events</li>
+		<li><strong>version:</strong> - $Id: calendar.php 480 2007-12-03 23:40:46Z lee $</li>
+		<li><strong>copyright:</strong> - Kellett Communications, November 14, 2007</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$cal_date" title="details" class="property"><strong>$cal_date</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$cal_events" title="details" class="property"><strong>$cal_events</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$dependencies" title="details" class="property"><strong>$dependencies</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$offset" title="details" class="property"><strong>$offset</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$selection_mode" title="details" class="property"><strong>$selection_mode</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$sel_date" title="details" class="property"><strong>$sel_date</strong></a>
+</div>
+<hr />
+<a name="var$cal_date" id="var$cal_date"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$cal_date</strong> (line <span class="linenumber">50</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Any date in YYYY-MM-DD format defining which month the calendar will display.</h5>
+<div class="desc"><p>Any date in YYYY-MM-DD format defining which month the calendar will display.  Defaults to today's date.</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$cal_events" id="var$cal_events"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$cal_events = array()</strong> (line <span class="linenumber">56</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>An array of dates that contain one or more events.</h5>
+<div class="desc"><p>An array of dates that contain one or more events.  A dot will show up on these dates in the calendar indicating that there is something on that day.</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$dependencies" id="var$dependencies"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$dependencies = array('Prototype')</strong> (line <span class="linenumber">26</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Other plugins this one depends on</h5>
+<div class="desc"><p>Other plugins this one depends on</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$offset" id="var$offset"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$offset</strong> (line <span class="linenumber">32</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>An array of the offsets of each day from the beginning of the week.</h5>
+<div class="desc"><p>An array of the offsets of each day from the beginning of the week.  Defined in the constructor function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$selection_mode" id="var$selection_mode"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$selection_mode</strong> (line <span class="linenumber">44</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Either &quot;day&quot; or &quot;week&quot; to indicate whether the user should be able to select an entire week or just one day at a time.</h5>
+<div class="desc"><p>Either &quot;day&quot; or &quot;week&quot; to indicate whether the user should be able to select an entire week or just one day at a time.  Passed as an argument to the constructor function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$sel_date" id="var$sel_date"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$sel_date</strong> (line <span class="linenumber">38</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The day or week (depending on selecton mode) to be pre-selected in the calendar.</h5>
+<div class="desc"><p>The day or week (depending on selecton mode) to be pre-selected in the calendar. Passed as an argument to the constructor function, or defaults to today's date.</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaction_index" title="details" class="method-name">action_index</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodconfigure" title="details" class="method-name">configure</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$cal_date</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$sel_mode</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$this->sel_date</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoddate_has_event" title="details" class="method-name">date_has_event</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$date</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodget_first_weekday" title="details" class="method-name">get_first_weekday</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$datestr</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_date_field" title="details" class="method-name">render_date_field</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$fieldname</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$default_date</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$date_format</span> = <span class="var-default">&quot;d-M-Y&quot;</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$css_class</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$custom_btn_img</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrender_inline_cal" title="details" class="method-name">render_inline_cal</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$sel_mode</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$div_id</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$cal_date</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$sel_date</span> = <span class="var-default">''</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$events_array</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrun" title="details" class="method-name">run</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$params</span> = <span class="var-default">array()</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_events" title="details" class="method-name">set_events</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">$event_array</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodaction_index" id="methodaction_index"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_index</strong> (line <span class="linenumber">69</span>)
+ </h4> 
+<h4><i>void</i> <strong>action_index(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodconfigure" id="methodconfigure"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method configure</strong> (line <span class="linenumber">86</span>)
+ </h4> 
+<h4><i>void</i> <strong>configure(
+string
+$cal_date, string
+$sel_mode, string
+$this->sel_date)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Setup the properties needed by other functions of the class</h5>
+<div class="desc"><p>Setup the properties needed by other functions of the class</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $cal_date</strong>: Refer to $cal_date above</li>
+			<li><strong>string $sel_mode</strong>: Refer to $sel_mode above</li>
+			<li><strong>string $this->sel_date</strong>: Refer to $this-&gt;sel_date above
+ TODO Can this function be simplified?</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methoddate_has_event" id="methoddate_has_event"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method date_has_event</strong> (line <span class="linenumber">405</span>)
+ </h4> 
+<h4><i>bool</i> <strong>date_has_event(
+string
+$date)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Business logic to determine if a date has any events</h5>
+<div class="desc"><p>Business logic to determine if a date has any events</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $date</strong>: A date to find in the $event_array Requires the $event_array property be set first</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodget_first_weekday" id="methodget_first_weekday"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get_first_weekday</strong> (line <span class="linenumber">415</span>)
+ </h4> 
+<h4><i>string</i> <strong>get_first_weekday(
+string
+$datestr)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Determine the date of the first day of a week containing the day in the $date parameter</h5>
+<div class="desc"><p>Determine the date of the first day of a week containing the day in the $date parameter</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $datestr</strong>: A date in the format YYYY-MM-DD</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Date in the format YYYY-MM-DD</li>
+		</ul>
+</div>
+<a name="methodrender_date_field" id="methodrender_date_field"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_date_field</strong> (line <span class="linenumber">479</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_date_field(
+string
+$fieldname, [string
+$default_date = ''], [string
+$date_format = &quot;d-M-Y&quot;], [string
+$css_class = ''], [string
+$custom_btn_img = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Render a date field with an actuator button</h5>
+<div class="desc"><p>Render a date field with an actuator button</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $fieldname</strong>: Name/ID of the form text field to contain the date</li>
+			<li><strong>string $date_format</strong>: Optional - How the date in the form-field should be formatted. Defaults to d-M-Y (eg. 20-Jan-2008).  This MUST be a format that PHP's strtotime() function can parse into a unix timestamp.  See the PHP manual on the date() and strtotime() functions if you need help determining what formats can be used.</li>
+			<li><strong>string $default_date</strong>: Optional - The date you want to appear in the form field by default.  This can be in any string date format.  It will be converted to the format provided by $date_format regardless</li>
+			<li><strong>string $css_class</strong>: Optional - A CSS classname to add to the text field</li>
+			<li><strong>string $custom_btn_img</strong>: Optional - an image to use for the actuator button. If left blank it will display a standard form button labelled &quot;Pick&quot;</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrender_inline_cal" id="methodrender_inline_cal"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method render_inline_cal</strong> (line <span class="linenumber">448</span>)
+ </h4> 
+<h4><i>void</i> <strong>render_inline_cal(
+string
+$sel_mode, string
+$div_id, string
+$cal_date, [string
+$sel_date = ''], [array
+$events_array = array()])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Display a calendar inline in the page</h5>
+<div class="desc"><p>Display a calendar inline in the page</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $sel_mode</strong>: How the user can select a date - can be &quot;day&quot; or &quot;week&quot;</li>
+			<li><strong>string $div_id</strong>: The id of the div containing the calendar</li>
+			<li><strong>string $cal_date</strong>: The calendar's date - will determine which month to display</li>
+			<li><strong>string $sel_date</strong>: Optional - date to have pre-selected. Will default to today's date if left out</li>
+			<li><strong>array $events_array</strong>: Optional - an array of dates containing events. These dates will be highlighted in the calendar.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrun" id="methodrun"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method run</strong> (line <span class="linenumber">58</span>)
+ </h4> 
+<h4><i>void</i> <strong>run(
+[
+$params = array()])</strong></h4>
+
+<p><strong>Overrides :</strong> <a href="../Plugins/AbstractPluginController.html#methodrun">AbstractPluginController::run()</a> Dispatch to action methods if found. before_filter(if found) is run.</p>
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $params</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodset_events" id="methodset_events"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_events</strong> (line <span class="linenumber">395</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_events(
+array
+$event_array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Puts an array of events dates into the event_array property</h5>
+<div class="desc"><p>Puts an array of events dates into the event_array property Must call this function after the constructor and before displaying the calendar</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $event_array</strong>: An array of dates on which events occur. Pass this from the function or class that is calling the calendar class</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractPluginController.html#var$page">AbstractPluginController::$page</a></strong> - A reference to the web_page.
+	</h4> 
+			<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a></h4>
+		<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../Plugins/AbstractPlugin.html#var$permission_actions">AbstractPlugin::$permission_actions</a></strong> - The list of actions that require permissions by default.
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a></h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methoddependencies_met">AbstractPluginController::dependencies_met()</a></strong> - Check to see if a plugin's dependencies are met.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodregister_page">AbstractPluginController::register_page()</a></strong> - Register a reference of the Biscuit in this plugin
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrender">AbstractPluginController::render()</a></strong> - Render the plugin
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrun">AbstractPluginController::run()</a></strong> - Dispatch to action methods if found. before_filter(if found) is run.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodrun_success_callback_on_error">AbstractPluginController::run_success_callback_on_error()</a></strong> - Whether or not to run an ajax callback on error.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodsave_response">AbstractPluginController::save_response()</a></strong> - Execute the appropriate response to a save.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodtitle">AbstractPluginController::title()</a></strong> - Set the body title of the page
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPluginController.html#methodurl">AbstractPluginController::url()</a></strong> - Return the URL for the current plugin based on it's current action.
+ The default URL is the index action.
+		</h4> 
+
+				<br />
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../Plugins/AbstractPlugin.html">AbstractPlugin</a></h4>
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodaction_requires_permission">AbstractPlugin::action_requires_permission()</a></strong> - Does an action require a permissions check?
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodbuild_table">AbstractPlugin::build_table()</a></strong> - Calls create_table, populate_table and/or alter_table as needed to build a plugin's database table.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcheck_install">AbstractPlugin::check_install()</a></strong> - Check to see if the database for this plugin is installed, and if not call the install_plugin_db function if the plugin can provide the table name.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodcreate_table">AbstractPlugin::create_table()</a></strong> - Create a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodmigrate_table">AbstractPlugin::migrate_table()</a></strong> - Perform any required database migration. would use Authenticator's users table) and it needs to modify that table for it's own use.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_check">AbstractPlugin::permission_check()</a></strong> - A before_filter that checks for permission to access certain actions
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_error">AbstractPlugin::permission_error()</a></strong> - What to do when a permission_check fails
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpermission_string_for_action">AbstractPlugin::permission_string_for_action()</a></strong> - Construct a permission string for an action
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodpopulate_table">AbstractPlugin::populate_table()</a></strong> - Populate a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methodupload_path">AbstractPlugin::upload_path()</a></strong> - Return the upload path for the current plugin.
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_create">AbstractPlugin::user_can_create()</a></strong> - A shortcut to checking user new permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_delete">AbstractPlugin::user_can_delete()</a></strong> - A shortcut to checking user delete permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_edit">AbstractPlugin::user_can_edit()</a></strong> - A shortcut to checking user edit permission on the current object
+		</h4> 
+
+				<h4>
+<img src="../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../Plugins/AbstractPlugin.html#methoduser_can_view">AbstractPlugin::user_can_view()</a></strong> - A shortcut to checking user show permission on the current object
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:52 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

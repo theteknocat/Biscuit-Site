@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Using the PDFParser XML templating language</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../../Converters/PDFdefault/tutorial_PDFdefaultConverter.cls.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../../Converters/XMLDocBook/tutorial_XMLDocBookConverter.cls.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>Using the PDFParser XML templating language</h1>
+  <h2 class="refpurpose"><em>Learn how the PDFParser XML templating language is constructed and used</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+   <blockquote><a href="mailto:cellog@sourceforge.com">cellog@sourceforge.com</a></blockquote></em></strong></font></div>
+ <h1 align="center">Table of Contents</h1>
+<ul>
+
+<a href="../../Converters/PDFdefault/tutorial_PDFParser.cls.html#intro">PDFParser Introduction</a><br />
+
+<a href="../../Converters/PDFdefault/tutorial_PDFParser.cls.html#overview">Overview</a><br />
+
+<a href="../../Converters/PDFdefault/tutorial_PDFParser.cls.html#tags">PDFParser XML tags</a><br />
+
+&nbsp;&nbsp;&nbsp;<a href="../../Converters/PDFdefault/tutorial_PDFParser.cls.html#tags.text">&lt;text&gt;</a><br />
+
+&nbsp;&nbsp;&nbsp;<a href="../../Converters/PDFdefault/tutorial_PDFParser.cls.html#tags.font">&lt;font&gt;</a><br />
+
+&nbsp;&nbsp;&nbsp;<a href="../../Converters/PDFdefault/tutorial_PDFParser.cls.html#tags.newpage">&lt;newpage&gt;</a><br />
+
+&nbsp;&nbsp;&nbsp;<a href="../../Converters/PDFdefault/tutorial_PDFParser.cls.html#tags.pdffunction">&lt;pdffunction&gt;</a><br />
+</ul>
+
+ <span><a name="intro"></a><h2 class="title" align="center">PDFParser Introduction</h1><p>This documentation deals only with the PDFParser XML templating language.  To learn how to use phpDocumentor, read the <a href="../../phpDocumentor/tutorial_phpDocumentor.pkg.html">phpDocumentor Guide to Creating Fantastic Documentation</a>.  To learn how to write a new Converter, read <a href="../../Converters/tutorial_Converters.pkg.html">Converter Manual</a></p></span>
+ <span><a name="overview"></a><h2 class="title" align="center">Overview</h1><p>The PDF:default Converter uses the powerful Cezpdf class library written by Wayne Munro.  Although the Cezpdf library is very versatile and useful, it is designed to be used as PHP code, and does not allow access to its methods from the text passed to it.  The PDFParser class was written to solve this problem.  Through the use of a few basic XML-based tags, and the versatile &lt;pdffunction /&gt; tag, one can access any feature of the Cezpdf library and do anything that it can do.  This is what makes it possible to use Smarty templates without modifying any code in phpDocumentor, a primary goal of the 1.2.0 release.</p></span>
+ <span><a name="tags"></a><h2 class="title" align="center">PDFParser XML tags</h1><a name="tags.text"></a><h2 class="title" align="center">&lt;text&gt;</h2><p>The &lt;text&gt; tag is a block tag (requires a closing tag).  All output that is not a PDFParser tag must be enclosed in this tag.  These are the parameters to the text tag:
+    <li><p>size (<strong>required</strong>) - font size</p></li>
+     <li><p>any legal parameter to <a href="../../Cpdf/Cezpdf.html#methodezText">Cezpdf::ezText()</a> (all optional):
+      <li><p>left - indentation from the left margin</p></li>
+       <li><p>right - indentation from the right margin</p></li>
+       <li><p>aleft - absolute indentation from the left side of the page</p></li>
+       <li><p>aright - absolute indentation from the right side of the page</p></li>
+       <li><p>justification - one of left, right, center/centre, full</p></li>
+       <li><p><strong>either</strong> leading <strong>or</strong> spacing</p></li></p></li></p>
+   <p>Examples might include:
+    <li><p>&lt;text size=&quot;11&quot;&gt;Hello World!&lt;/text&gt;</p></li>
+     <li><p>&lt;text size=&quot;11&quot; justification=&quot;right&quot;&gt;Hello World!&lt;/text&gt;</p></li>
+     <li><p>&lt;text size=&quot;11&quot; left=&quot;10&quot; right=&quot;10&quot; justification=&quot;center&quot;&gt;Hello World!&lt;/text&gt;</p></li></p><hr />
+  <a name="tags.font"></a><h2 class="title" align="center">&lt;font&gt;</h2><p>Unlike HTML, the &lt;font /&gt; tag is a self-enclosed tag, and is only used to select the font face (and future versions will also select color).  Syntax is &lt;font face=&quot;fontface&quot; /&gt;  The fontface must be present in the  Converters/PDF/default/templates/fonts/ subdirectory as a fontface-php.afm and fontface.afm file, otherwise Cezpdf will cause all kinds of PHP warnings.  This is an issue with Cezpdf that we are assisting the author in fixing, and will not be a problem in the future.</p><hr />
+  <a name="tags.newpage"></a><h2 class="title" align="center">&lt;newpage&gt;</h2><p>This is the simplest tag, use it as &lt;newpage /&gt; to tell Cezpdf to jump to the top of the next page in output.</p><hr />
+  <a name="tags.pdffunction"></a><h2 class="title" align="center">&lt;pdffunction&gt;</h2><p>The &lt;pdffunction&gt; tag is the most versatile of the PDFParser tags.  This tag can be used to arbitrarily call any Cpdf or Cezpdf method.  Arguments can be passed to the function both as literal values and using dynamic variables, both class variables and temporary variables.  The method chosen is selected as if pdffunction were a namespace rather than a</p>
+   <p>Here are the parameters to the pdffunction:
+    <li><p>return (<strong>optional</strong>) set a temporary variable to the value returned from the function.  This parameter allows a later reference to the temporary variable like: &lt;pdffunction:getYPlusOffset return=&quot;newy&quot; offset=&quot;0&quot; /&gt; &lt;pdffunction:addJpegFromFile arg=&quot;logo.jpg&quot; x=&quot;250&quot; y=$newy /&gt;</p></li>
+    any other parameter represents an argument.  Since the parameters passed are simply passed by value to the method, the names can be anything that is useful to understanding how they work.  &lt;pdffunction:ezStartPageNumbers x=&quot;500&quot; y=&quot;28&quot; size=&quot;10&quot; pos=&quot;&quot; pattern=&quot;{ldelim}PAGENUM{rdelim} of {ldelim}TOTALPAGENUM{rdelim}&quot; num=&quot;1&quot; /&gt; could just as easily be &lt;pdffunction:ezStartPageNumbers arg=&quot;500&quot; foo=&quot;28&quot; bar=&quot;10&quot; mylord=&quot;&quot; goodnessgracious=&quot;{ldelim}PAGENUM{rdelim} of {ldelim}TOTALPAGENUM{rdelim}&quot; num=&quot;1&quot; /&gt; and the code would still work splendidly.  The first way is obviously easier to handle, and so is recommended.</p>
+   <p>Most arguments to the method will be literals, like numbers or strings, but some arguments may need to be more dynamic, based on the values returned from other pdffunction tags.  To do this, use the return parameter as described above, and reference the temporary variable as if it were a php variable like &lt;pdffunction:whatever arg=$tempvar /&gt;  It may even be necessary to access a data member of the pdf class.  In this case, use $this-&gt;datamember as in &lt;pdffunction:whatever arg=$this-&gt;datamember /&gt;</p><hr /></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../../Converters/PDFdefault/tutorial_PDFdefaultConverter.cls.html">Prev</a></td>
+<td width="34%" align="center" valign="top">&nbsp;</td>
+<td width="33%" align="right" valign="top"><a href=
+"../../Converters/XMLDocBook/tutorial_XMLDocBookConverter.cls.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">Writing templates for the PDFdefault Converter</td>
+<td width="34%" align="center" valign="top"></td>
+<td width="33%" align="right" valign="top">Writing templates for the XMLDocBook Converter</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:40 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

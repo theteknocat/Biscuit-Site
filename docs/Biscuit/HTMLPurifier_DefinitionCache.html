@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_DefinitionCache</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_DefinitionCache
+</h2> (line <span class="linenumber">22</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php4---library---HTMLPurifier---DefinitionCache.php.html">/framework/plugins/html_purifier/php4/library/HTMLPurifier/DefinitionCache.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Abstract class representing Definition cache managers that implements useful common methods and is a factory.</h5>
+<div class="desc"><p>Abstract class representing Definition cache managers that implements useful common methods and is a factory.</p></div>
+<ul>
+		<li><strong>todo:</strong> - Get some sort of versioning variable so the library can easily       invalidate the cache with a new version</li>
+		<li><strong>todo:</strong> - Make the test runner cache aware and allow the user to easily       flush the cache</li>
+		<li><strong>todo:</strong> - Create a separate maintenance file advanced users can use to       cache their custom HTMLDefinition, which can be loaded       via a configuration directive</li>
+		<li><strong>todo:</strong> - Implement memcached</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$type" title="details" class="property"><strong>$type</strong></a>
+</div>
+<hr />
+<a name="var$type" id="var$type"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$type</strong> (line <span class="linenumber">25</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">HTMLPurifier_DefinitionCache</span>
+        <a href="#methodHTMLPurifier_DefinitionCache" title="details" class="method-name">HTMLPurifier_DefinitionCache</a>
+        (<span class="var-type">$name</span>&nbsp;<span class="var-name">$type</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodadd" title="details" class="method-name">add</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$def</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Boolean</span>
+        <a href="#methodcheckDefType" title="details" class="method-name">checkDefType</a>
+        (<span class="var-type">$def</span>&nbsp;<span class="var-name">$def</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcleanup" title="details" class="method-name">cleanup</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodflush" title="details" class="method-name">flush</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodgenerateKey" title="details" class="method-name">generateKey</a>
+        (<span class="var-type">Instance</span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodget" title="details" class="method-name">get</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodisOld" title="details" class="method-name">isOld</a>
+        (<span class="var-type">$key</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">$config</span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodremove" title="details" class="method-name">remove</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodreplace" title="details" class="method-name">replace</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$def</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset" title="details" class="method-name">set</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$def</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodHTMLPurifier_DefinitionCache" id="methodHTMLPurifier_DefinitionCache"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor HTMLPurifier_DefinitionCache</strong> (line <span class="linenumber">31</span>)
+ </h4> 
+<h4><i>HTMLPurifier_DefinitionCache</i> <strong>HTMLPurifier_DefinitionCache(
+$name
+$type)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$name $type</strong>: Type of definition objects this instance of the      cache will handle.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodadd" id="methodadd"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method add</strong> (line <span class="linenumber">82</span>)
+ </h4> 
+<h4><i>void</i> <strong>add(
+
+$def, 
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Adds a definition object to the cache</h5>
+<div class="desc"><p>Adds a definition object to the cache</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $def</strong>: </li>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodcheckDefType" id="methodcheckDefType"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkDefType</strong> (line <span class="linenumber">71</span>)
+ </h4> 
+<h4><i>Boolean</i> <strong>checkDefType(
+$def
+$def)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Checks if a definition's type jives with the cache's type</h5>
+<div class="desc"><p>Checks if a definition's type jives with the cache's type</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$def $def</strong>: Definition object to check</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - true if good, false if not</li>
+		</ul>
+</div>
+<a name="methodcleanup" id="methodcleanup"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method cleanup</strong> (line <span class="linenumber">127</span>)
+ </h4> 
+<h4><i>void</i> <strong>cleanup(
+
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Clears all expired (older version or revision) objects from cache</h5>
+<div class="desc"><p>Clears all expired (older version or revision) objects from cache</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodflush" id="methodflush"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method flush</strong> (line <span class="linenumber">117</span>)
+ </h4> 
+<h4><i>void</i> <strong>flush(
+
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Clears all objects from cache</h5>
+<div class="desc"><p>Clears all objects from cache</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgenerateKey" id="methodgenerateKey"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method generateKey</strong> (line <span class="linenumber">39</span>)
+ </h4> 
+<h4><i>void</i> <strong>generateKey(
+Instance
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Generates a unique identifier for a particular configuration</h5>
+<div class="desc"><p>Generates a unique identifier for a particular configuration</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>Instance $config</strong>: of HTMLPurifier_Config</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodget" id="methodget"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method get</strong> (line <span class="linenumber">103</span>)
+ </h4> 
+<h4><i>void</i> <strong>get(
+
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves a definition object from the cache</h5>
+<div class="desc"><p>Retrieves a definition object from the cache</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodisOld" id="methodisOld"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method isOld</strong> (line <span class="linenumber">51</span>)
+ </h4> 
+<h4><i>void</i> <strong>isOld(
+$key
+$key, $config
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tests whether or not a key is old with respect to the configuration's version and revision number.</h5>
+<div class="desc"><p>Tests whether or not a key is old with respect to the configuration's version and revision number.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$key $key</strong>: Key to test</li>
+			<li><strong>$config $config</strong>: Instance of HTMLPurifier_Config to test against</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodremove" id="methodremove"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method remove</strong> (line <span class="linenumber">110</span>)
+ </h4> 
+<h4><i>void</i> <strong>remove(
+
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Removes a definition object to the cache</h5>
+<div class="desc"><p>Removes a definition object to the cache</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodreplace" id="methodreplace"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method replace</strong> (line <span class="linenumber">96</span>)
+ </h4> 
+<h4><i>void</i> <strong>replace(
+
+$def, 
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Replace an object in the cache</h5>
+<div class="desc"><p>Replace an object in the cache</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $def</strong>: </li>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodset" id="methodset"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set</strong> (line <span class="linenumber">89</span>)
+ </h4> 
+<h4><i>void</i> <strong>set(
+
+$def, 
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Unconditionally saves a definition object to the cache</h5>
+<div class="desc"><p>Unconditionally saves a definition object to the cache</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $def</strong>: </li>
+			<li><strong> $config</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:26 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

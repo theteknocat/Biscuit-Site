@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class RecordWarning</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class RecordWarning
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a746">746</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---Errors.inc.html">/framework/docs/phpDocumentor/Errors.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>encapsulates warning information</h5>
+<div class="desc"><p>encapsulates warning information</p></div>
+<ul>
+		<li><strong>author:</strong> - Greg Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - Release: 1.4.2</li>
+		<li><strong>copyright:</strong> - 2001-2008 Gregory Beaver</li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>todo:</strong> - CS cleanup - change package to PhpDocumentor</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from RecordWarning:</span>
+ 		<dl>
+	<dt><a href="../../phpDocumentor/Errors/RecordError.html">RecordError</a></dt>
+		<dd>encapsulates error information</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$data" title="details" class="property"><strong>$data</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$file" title="details" class="property"><strong>$file</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">integer</span>
+    <a href="#var$linenum" title="details" class="property"><strong>$linenum</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$num" title="details" class="property"><strong>$num</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$type" title="details" class="property"><strong>$type</strong></a>
+</div>
+<hr />
+<a name="var$data" id="var$data"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$data</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a767">767</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>error string</h5>
+<div class="desc"><p>error string</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$file" id="var$file"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$file =  false</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a757">757</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>file this error occurred in</h5>
+<div class="desc"><p>file this error occurred in</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$linenum" id="var$linenum"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$linenum</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a762">762</a></span>)
+ </h4>
+<h4>Data type : integer</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>line number of the file this error occurred in</h5>
+<div class="desc"><p>line number of the file this error occurred in</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$num" id="var$num"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$num</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a773">773</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>error number</h5>
+<div class="desc"><p>error number</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../../phpDocumentor/Errors/_framework---docs---phpDocumentor---Errors.inc.html">Errors.inc</a></li>
+	</ul>
+</div>
+<a name="var$type" id="var$type"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$type =  'phpDocumentor_warning_descrip'</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a752">752</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>name of global variable that descriptors for this warning/error is kept</h5>
+<div class="desc"><p>name of global variable that descriptors for this warning/error is kept</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">RecordWarning</span>
+        <a href="#methodRecordWarning" title="details" class="method-name">RecordWarning</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$linenum</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$num</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$data...</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodoutput" title="details" class="method-name">output</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span> = <span class="var-default">false</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodRecordWarning" id="methodRecordWarning"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor RecordWarning</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a785">785</a></span>)
+ </h4> 
+<h4><i>RecordWarning</i> <strong>RecordWarning(
+string
+$file, integer
+$linenum, integer
+$num, string
+$data...)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Constructor</h5>
+<div class="desc"><p>Constructor</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $file</strong>: filename this error occurred in (<a href="../../phpDocumentor/Errors/RecordWarning.html#var$file">$file</a>)</li>
+			<li><strong>integer $linenum</strong>: line number this error occurred on (<a href="../../phpDocumentor/Errors/RecordWarning.html#var$linenum">$linenum</a>)</li>
+			<li><strong>integer $num</strong>: Error number defined in <a href="../../phpDocumentor/Errors/_framework---docs---phpDocumentor---Errors.inc.html">Errors.inc</a></li>
+			<li><strong>string $data...</strong>: variable number of strings, up to 4,</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>todo</strong> - CS Cleanup - do I need to add $data to the method signature?                         to sprintf based on the error number</li>
+		</ul>
+</div>
+<a name="methodoutput" id="methodoutput"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method output</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_Errors_frameworkdocsphpDocumentorErrors.inc.html#a809">809</a></span>)
+ </h4> 
+<h4><i>void</i> <strong>output(
+[string
+$string = false])</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/Errors/RecordError.html#methodoutput">RecordError::output()</a></dt>
+		<dd>prints the error</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>prints the warning</h5>
+<div class="desc"><p>prints the warning</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $string</strong>: the warning to print</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

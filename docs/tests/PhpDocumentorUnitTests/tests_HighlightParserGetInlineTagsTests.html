@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tests_HighlightParserGetInlineTagsTests</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tests_HighlightParserGetInlineTagsTests
+</h2> (line <span class="linenumber">60</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+PHPUnit_Framework_TestCase
+   |
+   --tests_HighlightParserGetInlineTagsTests</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---tests---HighlightParserGetInlineTagsTests.php.html">/framework/docs/tests/HighlightParserGetInlineTagsTests.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Unit Testing of the HighlightParser's getInlineTags() method</h5>
+<div class="desc"><p>Unit Testing of the HighlightParser's getInlineTags() method</p></div>
+<ul>
+		<li><strong>author:</strong> - Chuck Burgess</li>
+		<li><strong>since:</strong> - 1.4.0a2</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$hp" title="details" class="property"><strong>$hp</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$ps" title="details" class="property"><strong>$ps</strong></a>
+</div>
+<hr />
+<a name="var$hp" id="var$hp"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$hp</strong> (line <span class="linenumber">73</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>phpDocumentor_HighlightParser object</h5>
+<div class="desc"><p>phpDocumentor_HighlightParser object</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.4.0a2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$ps" id="var$ps"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ps</strong> (line <span class="linenumber">67</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>phpDocumentor_setup object</h5>
+<div class="desc"><p>phpDocumentor_setup object</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.4.0a2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodmain" title="details" class="method-name">main</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetUp" title="details" class="method-name">setUp</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtearDown" title="details" class="method-name">tearDown</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorWhenGivenOneEmptyArg" title="details" class="method-name">testShowCorrectBehaviorWhenGivenOneEmptyArg</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorWhenGivenOneEmptyArgAndFalse" title="details" class="method-name">testShowCorrectBehaviorWhenGivenOneEmptyArgAndFalse</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestShowCorrectBehaviorWhenGivenOneEmptyArgAndTrue" title="details" class="method-name">testShowCorrectBehaviorWhenGivenOneEmptyArgAndTrue</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodmain" id="methodmain"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method main</strong> (line <span class="linenumber">81</span>)
+ </h4> 
+<h4><i>void</i> <strong>main(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Runs the test methods of this class.</h5>
+<div class="desc"><p>Runs the test methods of this class.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodsetUp" id="methodsetUp"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setUp</strong> (line <span class="linenumber">94</span>)
+ </h4> 
+<h4><i>void</i> <strong>setUp(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets up the fixture, for example, open a network connection.</h5>
+<div class="desc"><p>Sets up the fixture, for example, open a network connection. This method is called before a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtearDown" id="methodtearDown"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tearDown</strong> (line <span class="linenumber">108</span>)
+ </h4> 
+<h4><i>void</i> <strong>tearDown(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tears down the fixture, for example, close a network connection.</h5>
+<div class="desc"><p>Tears down the fixture, for example, close a network connection. This method is called after a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorWhenGivenOneEmptyArg" id="methodtestShowCorrectBehaviorWhenGivenOneEmptyArg"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorWhenGivenOneEmptyArg</strong> (line <span class="linenumber">131</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorWhenGivenOneEmptyArg(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior when called with no actual value</h5>
+<div class="desc"><p>Shows correct behavior when called with no actual value and no $endinternal flag arg</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorWhenGivenOneEmptyArgAndFalse" id="methodtestShowCorrectBehaviorWhenGivenOneEmptyArgAndFalse"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorWhenGivenOneEmptyArgAndFalse</strong> (line <span class="linenumber">139</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorWhenGivenOneEmptyArgAndFalse(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior when called with no actual value</h5>
+<div class="desc"><p>Shows correct behavior when called with no actual value and a FALSE $endinternal flag arg</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestShowCorrectBehaviorWhenGivenOneEmptyArgAndTrue" id="methodtestShowCorrectBehaviorWhenGivenOneEmptyArgAndTrue"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testShowCorrectBehaviorWhenGivenOneEmptyArgAndTrue</strong> (line <span class="linenumber">147</span>)
+ </h4> 
+<h4><i>void</i> <strong>testShowCorrectBehaviorWhenGivenOneEmptyArgAndTrue(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior when called with no actual value</h5>
+<div class="desc"><p>Shows correct behavior when called with no actual value and a TRUE $endinternal flag arg</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0a2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:51 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

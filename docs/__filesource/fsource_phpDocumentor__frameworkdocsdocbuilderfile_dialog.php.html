@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for file_dialog.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file file_dialog.php</h1>
+<p>Documentation is available at <a href="../phpDocumentor/_framework---docs---docbuilder---file_dialog.php.html">file_dialog.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a>&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;&quot;-//W3C//DTD&nbsp;HTML&nbsp;4.01&nbsp;Transitional//EN&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a2"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">&nbsp;*&nbsp;phpDocumentor&nbsp;::&nbsp;docBuilder&nbsp;Web&nbsp;Interface</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">&nbsp;*&nbsp;Advanced&nbsp;Web&nbsp;Interface&nbsp;to&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">&nbsp;*&nbsp;PHP&nbsp;versions&nbsp;4&nbsp;and&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2003-2006&nbsp;Andrew&nbsp;Eddie,&nbsp;Greg&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">&nbsp;*&nbsp;LICENSE:</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">&nbsp;*&nbsp;and/or&nbsp;modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">&nbsp;*&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">&nbsp;*&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">&nbsp;*&nbsp;later&nbsp;version.</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a20"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</font></div></li>
+<li><div class="src-line"><a name="a21"></a><font color="#009999">&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</font></div></li>
+<li><div class="src-line"><a name="a22"></a><font color="#009999">&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU</font></div></li>
+<li><div class="src-line"><a name="a23"></a><font color="#009999">&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</font></div></li>
+<li><div class="src-line"><a name="a24"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a25"></a><font color="#009999">&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public</font></div></li>
+<li><div class="src-line"><a name="a26"></a><font color="#009999">&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software</font></div></li>
+<li><div class="src-line"><a name="a27"></a><font color="#009999">&nbsp;*&nbsp;Foundation,&nbsp;Inc.,&nbsp;59&nbsp;Temple&nbsp;Place,&nbsp;Suite&nbsp;330,&nbsp;Boston,&nbsp;MA&nbsp;02111-1307&nbsp;USA</font></div></li>
+<li><div class="src-line"><a name="a28"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a29"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a30"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Andrew&nbsp;Eddie</font></div></li>
+<li><div class="src-line"><a name="a31"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greg&nbsp;Beaver&nbsp;&lt;cellog@php.net&gt;</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@copyright</font></strong><font color="#009999">&nbsp;&nbsp;2003-2006&nbsp;Andrew&nbsp;Eddie,&nbsp;Greg&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@license</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;http://www.opensource.org/licenses/lgpl-license.php&nbsp;LGPL</font></div></li>
+<li><div class="src-line"><a name="a34"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@version</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;CVS:&nbsp;$Id:&nbsp;file_dialog.php,v&nbsp;1.6&nbsp;2007/03/14&nbsp;12:48:37&nbsp;ashnazg&nbsp;Exp&nbsp;$</font></div></li>
+<li><div class="src-line"><a name="a35"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@filesource</font></strong></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;phpdoc.php</font></div></li>
+<li><div class="src-line"><a name="a37"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a38"></a><font color="blue">if&nbsp;</font><strong>(</strong><strong>!</strong><a href="http://www.php.net/function_exists">function_exists</a><strong>(&nbsp;</strong><font color="#66cccc">'version_compare'&nbsp;</font><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;<font color="#66cccc">&quot;phpDocumentor&nbsp;requires&nbsp;PHP&nbsp;version&nbsp;4.1.0&nbsp;or&nbsp;greater&nbsp;to&nbsp;function&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;exit<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a41"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a43"></a><font color="blue">if&nbsp;</font><strong>(</strong><font color="#66cccc">'@WEB-DIR@'&nbsp;</font>!=&nbsp;<font color="#66cccc">'@'</font>.<font color="#66cccc">'WEB-DIR@'</font><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a44"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a46"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;common&nbsp;file&nbsp;information</font></div></li>
+<li><div class="src-line"><a name="a47"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">require_once&nbsp;</font><font color="#66cccc">'PhpDocumentor/phpDocumentor/common.inc.php'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">require_once&nbsp;</font><font color="#66cccc">'PhpDocumentor/HTML_TreeMenu-1.1.2/TreeMenu.php'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">require_once</font><strong>(&nbsp;</strong><font color="#66cccc">'@WEB-DIR@'&nbsp;</font>.&nbsp;PATH_DELIMITER&nbsp;.&nbsp;<font color="#66cccc">'PhpDocumentor/docbuilder/includes/utilities.php'&nbsp;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a52"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong>PHPDOC_WEBROOT_DIR<strong>,&nbsp;</strong><font color="#66cccc">'PhpDocumentor'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;set&nbsp;up&nbsp;include&nbsp;path&nbsp;so&nbsp;we&nbsp;can&nbsp;find&nbsp;all&nbsp;files,&nbsp;no&nbsp;matter&nbsp;what</font></div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]&nbsp;</strong>=&nbsp;<a href="../phpDocumentor/_framework---docs---docbuilder---file_dialog.php.html#definePHPDOC_WEBROOT_DIR">PHPDOC_WEBROOT_DIR</a><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;find&nbsp;the&nbsp;.ini&nbsp;directory&nbsp;by&nbsp;parsing&nbsp;phpDocumentor.ini&nbsp;and&nbsp;extracting&nbsp;_phpDocumentor_options[userdir]</font></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini&nbsp;</strong>=&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_parse_ini_file">phpDocumentor_parse_ini_file</a><strong>(</strong><font color="#66cccc">'@DATA-DIR@'&nbsp;</font>.&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#definePATH_DELIMITER">PATH_DELIMITER</a>&nbsp;.&nbsp;<font color="#66cccc">'PhpDocumentor/phpDocumentor.ini'</font><strong>,&nbsp;</strong>true<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a62"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<font color="#66cccc">'@DATA-DIR@'&nbsp;</font>.&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#definePATH_DELIMITER">PATH_DELIMITER</a>&nbsp;.&nbsp;<font color="#66cccc">'PhpDocumentor/user'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a64"></a><strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong>PHPDOC_WEBROOT_DIR<strong>,&nbsp;</strong>dirname<strong>(</strong>dirname<strong>(</strong>__FILE__<strong>)))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a68"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;common&nbsp;file&nbsp;information</font></div></li>
+<li><div class="src-line"><a name="a69"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a70"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">include_once</font><strong>(</strong>PHPDOC_WEBROOT_DIR&nbsp;.&nbsp;<font color="#66cccc">&quot;/phpDocumentor/common.inc.php&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">include_once</font><strong>(</strong>PHPDOC_WEBROOT_DIR&nbsp;.&nbsp;<font color="#66cccc">&quot;/HTML_TreeMenu-1.1.2/TreeMenu.php&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">include_once</font><strong>(</strong>PHPDOC_WEBROOT_DIR&nbsp;.&nbsp;<font color="#66cccc">&quot;/docbuilder/includes/utilities.php&quot;&nbsp;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;set&nbsp;up&nbsp;include&nbsp;path&nbsp;so&nbsp;we&nbsp;can&nbsp;find&nbsp;all&nbsp;files,&nbsp;no&nbsp;matter&nbsp;what</font></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]&nbsp;</strong>=&nbsp;<a href="http://www.php.net/dirname">dirname</a><strong>(</strong><a href="http://www.php.net/dirname">dirname</a><strong>(&nbsp;</strong><a href="http://www.php.net/realpath">realpath</a><strong>(&nbsp;</strong>__FILE__&nbsp;<strong>)&nbsp;))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;add&nbsp;my&nbsp;directory&nbsp;to&nbsp;the&nbsp;include&nbsp;path,&nbsp;and&nbsp;make&nbsp;it&nbsp;first,&nbsp;should&nbsp;fix&nbsp;any&nbsp;errors</font></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong>PHP_OS<strong>,&nbsp;</strong>0<strong>,&nbsp;</strong>3<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'WIN'</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/ini_set">ini_set</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>,</strong><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]</strong>.<font color="#66cccc">';'</font>.<a href="http://www.php.net/ini_get">ini_get</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/ini_set">ini_set</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>,</strong><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_install_dir'</font><strong>]</strong>.<font color="#66cccc">':'</font>.<a href="http://www.php.net/ini_get">ini_get</a><strong>(</strong><font color="#66cccc">'include_path'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a81"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;find&nbsp;the&nbsp;.ini&nbsp;directory&nbsp;by&nbsp;parsing&nbsp;phpDocumentor.ini&nbsp;and&nbsp;extracting&nbsp;_phpDocumentor_options[userdir]</font></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini&nbsp;</strong>=&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_parse_ini_file">phpDocumentor_parse_ini_file</a><strong>(</strong><strong>$_phpDocumentor_install_dir&nbsp;</strong>.&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#definePATH_DELIMITER">PATH_DELIMITER</a>&nbsp;.&nbsp;<font color="#66cccc">'phpDocumentor.ini'</font><strong>,&nbsp;</strong>true<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<strong>$ini</strong><strong>[</strong><font color="#66cccc">'_phpDocumentor_options'</font><strong>]</strong><strong>[</strong><font color="#66cccc">'userdir'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<strong>$_phpDocumentor_install_dir&nbsp;</strong>.&nbsp;<font color="#66cccc">'/user'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a90"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a92"></a><font color="green">//&nbsp;allow&nbsp;the&nbsp;user&nbsp;to&nbsp;change&nbsp;this&nbsp;at&nbsp;runtime</font></div></li>
+<li><div class="src-line"><a name="a93"></a><font color="blue">if&nbsp;</font><strong>(</strong><strong>!</strong>empty<strong>(&nbsp;</strong><strong>$_REQUEST</strong><strong>[</strong><font color="#66cccc">'altuserdir'</font><strong>]&nbsp;</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$configdir&nbsp;</strong>=&nbsp;<strong>$_REQUEST</strong><strong>[</strong><font color="#66cccc">'altuserdir'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a95"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a96"></a><strong>?&gt;</strong></div></li>
+<li><div class="src-line"><a name="a97"></a>&lt;html&gt;</div></li>
+<li><div class="src-line"><a name="a98"></a>&lt;head&gt;</div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;</div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File&nbsp;browser</div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/title&gt;</div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&nbsp;type=&quot;text/css&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body,&nbsp;td,&nbsp;th,&nbsp;select,&nbsp;input&nbsp;{</div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family:&nbsp;verdana,sans-serif;</div></li>
+<li><div class="src-line"><a name="a105"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:&nbsp;9pt;</div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a107"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.text&nbsp;{</div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-family:&nbsp;verdana,sans-serif;</div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:&nbsp;9pt;</div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border:&nbsp;solid&nbsp;1px&nbsp;#000000;</div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.button&nbsp;{</div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;border:&nbsp;solid&nbsp;1px&nbsp;#000000;</div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.small&nbsp;{</div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size:&nbsp;7pt;</div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;</div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;../HTML_TreeMenu-1.1.2/TreeMenu.js&quot;&nbsp;language=&quot;JavaScript&quot;&nbsp;type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a122"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/set_time_limit">set_time_limit</a><strong>(</strong>0<strong>)</strong><strong>;&nbsp;&nbsp;&nbsp;&nbsp;</strong><font color="green">//&nbsp;six&nbsp;minute&nbsp;timeout</font></div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/ini_set">ini_set</a><strong>(</strong><font color="#66cccc">&quot;memory_limit&quot;</font><strong>,</strong><font color="#66cccc">&quot;256M&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a125"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a127"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Directory&nbsp;Node</font></div></li>
+<li><div class="src-line"><a name="a128"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;HTML_TreeMenu</font></div></li>
+<li><div class="src-line"><a name="a129"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a130"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">class&nbsp;</font><a href="../HTML_TreeMenu/DirNode.html">DirNode</a>&nbsp;<font color="blue">extends&nbsp;</font><a href="../HTML_TreeMenu/HTML_TreeNode.html">HTML_TreeNode</a></div></li>
+<li><div class="src-line"><a name="a131"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a132"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a133"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;full&nbsp;path&nbsp;to&nbsp;this&nbsp;node</font></div></li>
+<li><div class="src-line"><a name="a134"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@var&nbsp;</font></strong><em>string&nbsp;</em></div></li>
+<li><div class="src-line"><a name="a135"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a136"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><a href="../HTML_TreeMenu/DirNode.html#var$path">$path</a><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a137"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a138"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../HTML_TreeMenu/DirNode.html#methodDirNode">DirNode</a><strong>(</strong><strong>$text&nbsp;</strong>=&nbsp;false<strong>,&nbsp;</strong><strong>$link&nbsp;</strong>=&nbsp;false<strong>,&nbsp;</strong><strong>$icon&nbsp;</strong>=&nbsp;false<strong>,&nbsp;</strong><strong>$path</strong><strong>,&nbsp;</strong><strong>$events&nbsp;</strong>=&nbsp;array<strong>(</strong><strong>))</strong></div></li>
+<li><div class="src-line"><a name="a139"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a140"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../HTML_TreeMenu/DirNode.html#var$path">path</a>&nbsp;=&nbsp;<strong>$path</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a141"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$options&nbsp;</strong>=&nbsp;array<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a142"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$text</strong><strong>)&nbsp;</strong><strong>$options</strong><strong>[</strong><font color="#66cccc">'text'</font><strong>]&nbsp;</strong>=&nbsp;<strong>$text</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a143"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$link</strong><strong>)&nbsp;</strong><strong>$options</strong><strong>[</strong><font color="#66cccc">'link'</font><strong>]&nbsp;</strong>=&nbsp;<strong>$link</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a144"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$icon</strong><strong>)&nbsp;</strong><strong>$options</strong><strong>[</strong><font color="#66cccc">'icon'</font><strong>]&nbsp;</strong>=&nbsp;<strong>$icon</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a145"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../HTML_TreeMenu/HTML_TreeNode.html">HTML_TreeNode</a><strong>::</strong><a href="../HTML_TreeMenu/HTML_TreeNode.html#methodHTML_TreeNode">HTML_TreeNode</a><strong>(</strong><strong>$options</strong><strong>,</strong><strong>$events</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a146"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a147"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a148"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a149"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a150"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$menu&nbsp;&nbsp;</strong>=&nbsp;new&nbsp;<a href="../HTML_TreeMenu/HTML_TreeMenu.html">HTML_TreeMenu</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a151"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$filename&nbsp;</strong>=&nbsp;<font color="#66cccc">''</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a152"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$_GET</strong><strong>)&nbsp;</strong>&amp;&amp;&nbsp;isset<strong>(</strong><strong>$_GET</strong><strong>[</strong><font color="#66cccc">'fileName'</font><strong>]</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a153"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$filename&nbsp;</strong>=&nbsp;<strong>$_GET</strong><strong>[</strong><font color="#66cccc">'fileName'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a154"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a155"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$filename&nbsp;</strong>=&nbsp;<a href="http://www.php.net/realpath">realpath</a><strong>(</strong><strong>$filename</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a156"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$pd&nbsp;</strong>=&nbsp;<strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong>PHP_OS<strong>,&nbsp;</strong>0<strong>,&nbsp;</strong>3<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'WIN'</font><strong>)&nbsp;</strong>?&nbsp;<font color="#66cccc">'\\'&nbsp;</font>:&nbsp;<font color="#66cccc">'/'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a157"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$test&nbsp;</strong>=&nbsp;<strong>(</strong><strong>$pd&nbsp;</strong>==&nbsp;<font color="#66cccc">'/'</font><strong>)&nbsp;</strong>?&nbsp;<font color="#66cccc">'/'&nbsp;</font>:&nbsp;<font color="#66cccc">'C:\\'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a158"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>empty<strong>(</strong><strong>$filename</strong><strong>)&nbsp;</strong>||&nbsp;<strong>(</strong><strong>$filename&nbsp;</strong>==&nbsp;<strong>$test</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a159"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$filename&nbsp;</strong>=&nbsp;<strong>(</strong><strong>$pd&nbsp;</strong>==&nbsp;<font color="#66cccc">'/'</font><strong>)&nbsp;</strong>?&nbsp;<font color="#66cccc">'/'&nbsp;</font>:&nbsp;<font color="#66cccc">'C:\\'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a160"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$node&nbsp;</strong>=&nbsp;false<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a161"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../phpDocumentor/_framework---docs---docbuilder---includes---utilities.php.html#functiongetDir">getDir</a><strong>(</strong><strong>$filename</strong><strong>,</strong><strong>$node</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a162"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/flush">flush</a><strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a164"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($pd&nbsp;!=&nbsp;'/')&nbsp;$pd&nbsp;=&nbsp;$pd.$pd;</font></div></li>
+<li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$anode&nbsp;</strong>=&nbsp;false<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../phpDocumentor/_framework---docs---docbuilder---includes---utilities.php.html#functionswitchDirTree">switchDirTree</a><strong>(</strong><strong>$filename</strong><strong>,</strong><strong>$anode</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a167"></a><font color="green">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recurseDir($filename,$anode);</font></div></li>
+<li><div class="src-line"><a name="a168"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$node&nbsp;</strong>=&nbsp;new&nbsp;<a href="../HTML_TreeMenu/HTML_TreeNode.html">HTML_TreeNode</a><strong>(</strong>array<strong>(</strong><font color="#66cccc">'text'&nbsp;</font>=&gt;&nbsp;<font color="#66cccc">&quot;Click&nbsp;to&nbsp;view&nbsp;&quot;</font>.<a href="http://www.php.net/addslashes">addslashes</a><strong>(</strong><strong>$filename</strong><strong>)</strong><strong>,</strong><font color="#66cccc">'link'&nbsp;</font>=&gt;&nbsp;<font color="#66cccc">&quot;&quot;</font><strong>,</strong><font color="#66cccc">'icon'&nbsp;</font>=&gt;&nbsp;<font color="#66cccc">'branchtop.gif'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a169"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$node</strong><strong>-&gt;</strong>addItem<strong>(</strong><strong>$anode</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a170"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a171"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$menu</strong><strong>-&gt;</strong>addItem<strong>(</strong><strong>$node</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a172"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><font color="#66cccc">'@WEB-DIR@'&nbsp;</font>!=&nbsp;<font color="#66cccc">'@'</font>.<font color="#66cccc">'WEB-DIR@'</font><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a173"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a174"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$DHTMLmenu&nbsp;</strong>=&nbsp;<strong>&amp;</strong>new&nbsp;<a href="../HTML_TreeMenu/HTML_TreeMenu_DHTML.html">HTML_TreeMenu_DHTML</a><strong>(</strong><strong>$menu</strong><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a175"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array<strong>(</strong><font color="#66cccc">'images'&nbsp;</font>=&gt;&nbsp;<font color="#66cccc">'../HTML_TreeMenu-1.1.2/images'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a176"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a177"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$DHTMLmenu&nbsp;</strong>=&nbsp;<strong>&amp;</strong>new&nbsp;<a href="../HTML_TreeMenu/HTML_TreeMenu_DHTML.html">HTML_TreeMenu_DHTML</a><strong>(</strong><strong>$menu</strong><strong>,</strong></div></li>
+<li><div class="src-line"><a name="a178"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array<strong>(</strong><font color="#66cccc">'images'&nbsp;</font>=&gt;&nbsp;<a href="http://www.php.net/str_replace">str_replace</a><strong>(</strong><font color="#66cccc">'/docbuilder/file_dialog.php'</font><strong>,</strong><font color="#66cccc">''</font><strong>,</strong><strong>$_SERVER</strong><strong>[</strong><font color="#66cccc">'PHP_SELF'</font><strong>]</strong><strong>)&nbsp;</strong>.</div></li>
+<li><div class="src-line"><a name="a179"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#66cccc">'/HTML_TreeMenu-1.1.2/images'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a180"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a181"></a><strong>?&gt;</strong></div></li>
+<li><div class="src-line"><a name="a182"></a>&lt;script&nbsp;type=&quot;text/javascript&quot;&nbsp;language=&quot;Javascript&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a183"></a>/**</div></li>
+<li><div class="src-line"><a name="a184"></a>&nbsp;&nbsp;&nbsp;Creates&nbsp;some&nbsp;global&nbsp;variables</div></li>
+<li><div class="src-line"><a name="a185"></a>*/</div></li>
+<li><div class="src-line"><a name="a186"></a>function&nbsp;initializate()&nbsp;{</div></li>
+<li><div class="src-line"><a name="a187"></a>//</div></li>
+<li><div class="src-line"><a name="a188"></a>//The&nbsp;&quot;platform&nbsp;independent&quot;&nbsp;newLine</div></li>
+<li><div class="src-line"><a name="a189"></a>//</div></li>
+<li><div class="src-line"><a name="a190"></a>//Taken&nbsp;from&nbsp;http://developer.netscape.com/docs/manuals/communicator/jsref/brow1.htm#1010426</div></li>
+<li><div class="src-line"><a name="a191"></a>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(navigator.appVersion.lastIndexOf(&nbsp;'Win'&nbsp;)&nbsp;!=&nbsp;-1)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a192"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$pathdelim=&quot;\\&quot;;</div></li>
+<li><div class="src-line"><a name="a193"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$newLine=&quot;\r\n&quot;;</div></li>
+<li><div class="src-line"><a name="a194"></a>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</div></li>
+<li><div class="src-line"><a name="a195"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$newLine=&quot;\n&quot;;</div></li>
+<li><div class="src-line"><a name="a196"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$pathdelim=&quot;/&quot;;</div></li>
+<li><div class="src-line"><a name="a197"></a>&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a198"></a>&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;for($a=0;$a&lt;document.dataForm.elements.length;$a++)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a199"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;The&nbsp;name&nbsp;is&nbsp;'&quot;+document.dataForm.elements[$a].name+&quot;'&nbsp;&quot;+$a);</div></li>
+<li><div class="src-line"><a name="a200"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a201"></a>&nbsp;&nbsp;&nbsp;&nbsp;*/</div></li>
+<li><div class="src-line"><a name="a202"></a>}</div></li>
+<li><div class="src-line"><a name="a203"></a>/**&nbsp;Sets&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;help&nbsp;box,&nbsp;and&nbsp;submits&nbsp;the&nbsp;form</div></li>
+<li><div class="src-line"><a name="a204"></a>*/</div></li>
+<li><div class="src-line"><a name="a205"></a>function&nbsp;setHelp(&nbsp;$str&nbsp;)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a206"></a>&nbsp;&nbsp;&nbsp;&nbsp;document.helpForm.fileName.value&nbsp;=&nbsp;$str;</div></li>
+<li><div class="src-line"><a name="a207"></a>&nbsp;&nbsp;&nbsp;&nbsp;document.helpForm.submit();</div></li>
+<li><div class="src-line"><a name="a208"></a>}</div></li>
+<li><div class="src-line"><a name="a209"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a210"></a>/**&nbsp;Sets&nbsp;the&nbsp;contents&nbsp;of&nbsp;the&nbsp;help&nbsp;box&nbsp;only</div></li>
+<li><div class="src-line"><a name="a211"></a>*/</div></li>
+<li><div class="src-line"><a name="a212"></a>function&nbsp;setHelpVal(&nbsp;$str&nbsp;)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a213"></a>&nbsp;&nbsp;&nbsp;&nbsp;document.helpForm.fileName.value&nbsp;=&nbsp;$str;</div></li>
+<li><div class="src-line"><a name="a214"></a>}</div></li>
+<li><div class="src-line"><a name="a215"></a>/**Takes&nbsp;a&nbsp;given&nbsp;string&nbsp;and&nbsp;leaves&nbsp;it&nbsp;ready&nbsp;to&nbsp;add&nbsp;a&nbsp;new&nbsp;string</div></li>
+<li><div class="src-line"><a name="a216"></a>&nbsp;&nbsp;&nbsp;That&nbsp;is,&nbsp;puts&nbsp;the&nbsp;comma&nbsp;and&nbsp;the&nbsp;new&nbsp;line&nbsp;if&nbsp;needed</div></li>
+<li><div class="src-line"><a name="a217"></a>*/</div></li>
+<li><div class="src-line"><a name="a218"></a>function&nbsp;prepareString($myString)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a219"></a>&nbsp;//First&nbsp;verify&nbsp;that&nbsp;a&nbsp;comma&nbsp;is&nbsp;not&nbsp;at&nbsp;the&nbsp;end</div></li>
+<li><div class="src-line"><a name="a220"></a>&nbsp;if($myString.lastIndexOf(&quot;,&quot;)&nbsp;&gt;=&nbsp;$myString.length-2)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a221"></a>&nbsp;&nbsp;//We&nbsp;have&nbsp;a&nbsp;comma&nbsp;at&nbsp;the&nbsp;end</div></li>
+<li><div class="src-line"><a name="a222"></a>&nbsp;&nbsp;return&nbsp;$myString;</div></li>
+<li><div class="src-line"><a name="a223"></a>&nbsp;}</div></li>
+<li><div class="src-line"><a name="a224"></a>&nbsp;if($myString.length&nbsp;&gt;&nbsp;0)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a225"></a>&nbsp;&nbsp;$myString+=&quot;,&quot;+$newLine;</div></li>
+<li><div class="src-line"><a name="a226"></a>&nbsp;}</div></li>
+<li><div class="src-line"><a name="a227"></a>&nbsp;return&nbsp;$myString;</div></li>
+<li><div class="src-line"><a name="a228"></a>}</div></li>
+<li><div class="src-line"><a name="a229"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a230"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a231"></a>&nbsp;function&nbsp;myReplace($string,$text,$by)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a232"></a>&nbsp;//&nbsp;Replaces&nbsp;text&nbsp;with&nbsp;by&nbsp;in&nbsp;string</div></li>
+<li><div class="src-line"><a name="a233"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$strLength&nbsp;=&nbsp;$string.length,&nbsp;$txtLength&nbsp;=&nbsp;$text.length;</div></li>
+<li><div class="src-line"><a name="a234"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(($strLength&nbsp;==&nbsp;0)&nbsp;||&nbsp;($txtLength&nbsp;==&nbsp;0))&nbsp;return&nbsp;$string;</div></li>
+<li><div class="src-line"><a name="a235"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a236"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$i&nbsp;=&nbsp;$string.indexOf($text);</div></li>
+<li><div class="src-line"><a name="a237"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;((!$i)&nbsp;&amp;&amp;&nbsp;($text&nbsp;!=&nbsp;$string.substring(0,$txtLength)))&nbsp;return&nbsp;$string;</div></li>
+<li><div class="src-line"><a name="a238"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($i&nbsp;==&nbsp;-1)&nbsp;return&nbsp;$string;</div></li>
+<li><div class="src-line"><a name="a239"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a240"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;$newstr&nbsp;=&nbsp;$string.substring(0,$i)&nbsp;+&nbsp;$by;</div></li>
+<li><div class="src-line"><a name="a241"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a242"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;($i+$txtLength&nbsp;&lt;&nbsp;$strLength)</div></li>
+<li><div class="src-line"><a name="a243"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$newstr&nbsp;+=&nbsp;myReplace($string.substring($i+$txtLength,$strLength),$text,$by);</div></li>
+<li><div class="src-line"><a name="a244"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a245"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;$newstr;</div></li>
+<li><div class="src-line"><a name="a246"></a>&nbsp;}</div></li>
+<li><div class="src-line"><a name="a247"></a>&lt;/script&gt;</div></li>
+<li><div class="src-line"><a name="a248"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a249"></a>&lt;/head&gt;</div></li>
+<li><div class="src-line"><a name="a250"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a251"></a>&lt;body&nbsp;bgcolor=&quot;#ffffff&quot;&nbsp;onload=&quot;javascript:initializate()&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a252"></a>&lt;strong&gt;Directory&nbsp;Browser&lt;/strong&gt;</div></li>
+<li><div class="src-line"><a name="a253"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a254"></a>&lt;table&nbsp;cellpadding=&quot;1&quot;&nbsp;cellspacing=&quot;1&quot;&nbsp;border=&quot;0&quot;&nbsp;width=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a255"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a256"></a>&lt;form&nbsp;name=&quot;helpForm&quot;&nbsp;action=&quot;<strong>&lt;?php&nbsp;</strong>print&nbsp;<strong>$_SERVER</strong><strong>[</strong><font color="#66cccc">'PHP_SELF'</font><strong>]</strong><strong>;&nbsp;</strong><strong>?&gt;</strong>&quot;&nbsp;method=&quot;get&quot;&nbsp;enctype=&quot;multipart/form-data&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a257"></a>&lt;tr&gt;</div></li>
+<li><div class="src-line"><a name="a258"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;colspan=&quot;2&quot;&nbsp;width=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a259"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use&nbsp;this&nbsp;to&nbsp;find&nbsp;directories&nbsp;and&nbsp;files&nbsp;which&nbsp;can&nbsp;be&nbsp;used&nbsp;below:</div></li>
+<li><div class="src-line"><a name="a260"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</div></li>
+<li><div class="src-line"><a name="a261"></a>&lt;/tr&gt;</div></li>
+<li><div class="src-line"><a name="a262"></a>&lt;tr&gt;</div></li>
+<li><div class="src-line"><a name="a263"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;align=&quot;right&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a264"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;a&nbsp;href=&quot;javascript:document.helpForm.submit();&quot;&nbsp;title=&quot;browse&nbsp;tree&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a265"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a266"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<a href="../phpDocumentor/_framework---docs---docbuilder---includes---utilities.php.html#functionshowImage">showImage</a><strong>(&nbsp;</strong><font color="#66cccc">'images/rc-gui-install-24.png'</font><strong>,&nbsp;</strong><font color="#66cccc">'24'</font><strong>,&nbsp;</strong><font color="#66cccc">'24'&nbsp;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a267"></a><strong>?&gt;</strong></div></li>
+<li><div class="src-line"><a name="a268"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;</div></li>
+<li><div class="src-line"><a name="a269"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</div></li>
+<li><div class="src-line"><a name="a270"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;</div></li>
+<li><div class="src-line"><a name="a271"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;size=&quot;60&quot;&nbsp;type=&quot;text&quot;&nbsp;name=&quot;fileName&quot;&nbsp;value=&quot;<strong>&lt;?php&nbsp;</strong>print&nbsp;<strong>$filename</strong><strong>;</strong><strong>?&gt;</strong>&quot;&nbsp;class=&quot;text&quot;&nbsp;/&gt;</div></li>
+<li><div class="src-line"><a name="a272"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</div></li>
+<li><div class="src-line"><a name="a273"></a>&lt;/tr&gt;</div></li>
+<li><div class="src-line"><a name="a274"></a>&lt;tr&gt;</div></li>
+<li><div class="src-line"><a name="a275"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;</div></li>
+<li><div class="src-line"><a name="a276"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;submit&quot;&nbsp;name=&quot;helpdata&quot;&nbsp;value=&quot;close&quot;&nbsp;class=&quot;button&quot;&nbsp;onclick=&quot;window.close();&quot;&nbsp;/&gt;</div></li>
+<li><div class="src-line"><a name="a277"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</div></li>
+<li><div class="src-line"><a name="a278"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;align=&quot;right&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a279"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type=&quot;submit&quot;&nbsp;name=&quot;helpdata&quot;&nbsp;value=&quot;accept&quot;&nbsp;class=&quot;button&quot;&nbsp;onclick=&quot;opener.setFile(document.helpForm.fileName.value);window.close();&quot;&nbsp;/&gt;</div></li>
+<li><div class="src-line"><a name="a280"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</div></li>
+<li><div class="src-line"><a name="a281"></a>&lt;/tr&gt;</div></li>
+<li><div class="src-line"><a name="a282"></a>&lt;tr&gt;</div></li>
+<li><div class="src-line"><a name="a283"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;colspan=&quot;2&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a284"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&nbsp;id='menuLayer'&gt;&lt;/div&gt;</div></li>
+<li><div class="src-line"><a name="a285"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>&lt;?php&nbsp;</strong><strong>$DHTMLmenu</strong><strong>-&gt;</strong>printMenu<strong>(</strong><strong>)</strong><strong>;&nbsp;</strong><strong>?&gt;</strong></div></li>
+<li><div class="src-line"><a name="a286"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/td&gt;</div></li>
+<li><div class="src-line"><a name="a287"></a>&lt;/tr&gt;</div></li>
+<li><div class="src-line"><a name="a288"></a>&lt;/form&gt;</div></li>
+<li><div class="src-line"><a name="a289"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a290"></a>&lt;/table&gt;</div></li>
+<li><div class="src-line"><a name="a291"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a292"></a>&lt;/body&gt;</div></li>
+<li><div class="src-line"><a name="a293"></a>&lt;/html&gt;</div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tests_phpDocumentorSetupDecideOnOrOffTests</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tests_phpDocumentorSetupDecideOnOrOffTests
+</h2> (line <span class="linenumber">60</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+PHPUnit_Framework_TestCase
+   |
+   --tests_phpDocumentorSetupDecideOnOrOffTests</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---tests---phpDocumentorSetupDecideOnOrOffTests.php.html">/framework/docs/tests/phpDocumentorSetupDecideOnOrOffTests.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Unit Testing of the phpDocumentor_setup's decideOnOrOff() method</h5>
+<div class="desc"><p>Unit Testing of the phpDocumentor_setup's decideOnOrOff() method</p></div>
+<ul>
+		<li><strong>author:</strong> - Chuck Burgess</li>
+		<li><strong>since:</strong> - 1.3.2</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$ps" title="details" class="property"><strong>$ps</strong></a>
+</div>
+<hr />
+<a name="var$ps" id="var$ps"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ps</strong> (line <span class="linenumber">67</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>phpDocumentor_setup object</h5>
+<div class="desc"><p>phpDocumentor_setup object</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.3.2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodmain" title="details" class="method-name">main</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetUp" title="details" class="method-name">setUp</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtearDown" title="details" class="method-name">tearDown</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestBasicOff" title="details" class="method-name">testBasicOff</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestBasicOn" title="details" class="method-name">testBasicOn</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyEmpty" title="details" class="method-name">testFuzzyEmpty</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyFalseA" title="details" class="method-name">testFuzzyFalseA</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyFalseB" title="details" class="method-name">testFuzzyFalseB</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyFalseC" title="details" class="method-name">testFuzzyFalseC</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyNoA" title="details" class="method-name">testFuzzyNoA</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyNoB" title="details" class="method-name">testFuzzyNoB</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyNoC" title="details" class="method-name">testFuzzyNoC</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyOffA" title="details" class="method-name">testFuzzyOffA</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyOffB" title="details" class="method-name">testFuzzyOffB</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyOnA" title="details" class="method-name">testFuzzyOnA</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyOnB" title="details" class="method-name">testFuzzyOnB</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyOne" title="details" class="method-name">testFuzzyOne</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyTrueA" title="details" class="method-name">testFuzzyTrueA</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyTrueB" title="details" class="method-name">testFuzzyTrueB</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyTrueC" title="details" class="method-name">testFuzzyTrueC</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyYesA" title="details" class="method-name">testFuzzyYesA</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyYesB" title="details" class="method-name">testFuzzyYesB</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyYesC" title="details" class="method-name">testFuzzyYesC</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyYesD" title="details" class="method-name">testFuzzyYesD</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyYesE" title="details" class="method-name">testFuzzyYesE</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestFuzzyZero" title="details" class="method-name">testFuzzyZero</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestUnexpectedGreatLiterature" title="details" class="method-name">testUnexpectedGreatLiterature</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestUnexpectedLargeNumber" title="details" class="method-name">testUnexpectedLargeNumber</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestUnexpectedNegative" title="details" class="method-name">testUnexpectedNegative</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestUnexpectedNull" title="details" class="method-name">testUnexpectedNull</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestUnexpectedSpaces" title="details" class="method-name">testUnexpectedSpaces</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodmain" id="methodmain"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method main</strong> (line <span class="linenumber">75</span>)
+ </h4> 
+<h4><i>void</i> <strong>main(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Runs the test methods of this class.</h5>
+<div class="desc"><p>Runs the test methods of this class.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodsetUp" id="methodsetUp"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setUp</strong> (line <span class="linenumber">88</span>)
+ </h4> 
+<h4><i>void</i> <strong>setUp(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets up the fixture, for example, open a network connection.</h5>
+<div class="desc"><p>Sets up the fixture, for example, open a network connection. This method is called before a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtearDown" id="methodtearDown"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tearDown</strong> (line <span class="linenumber">99</span>)
+ </h4> 
+<h4><i>void</i> <strong>tearDown(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tears down the fixture, for example, close a network connection.</h5>
+<div class="desc"><p>Tears down the fixture, for example, close a network connection. This method is called after a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtestBasicOff" id="methodtestBasicOff"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testBasicOff</strong> (line <span class="linenumber">120</span>)
+ </h4> 
+<h4><i>void</i> <strong>testBasicOff(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;off&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;off&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestBasicOn" id="methodtestBasicOn"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testBasicOn</strong> (line <span class="linenumber">127</span>)
+ </h4> 
+<h4><i>void</i> <strong>testBasicOn(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;on&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;on&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyEmpty" id="methodtestFuzzyEmpty"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyEmpty</strong> (line <span class="linenumber">199</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyEmpty(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyFalseA" id="methodtestFuzzyFalseA"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyFalseA</strong> (line <span class="linenumber">170</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyFalseA(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;false&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;false&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyFalseB" id="methodtestFuzzyFalseB"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyFalseB</strong> (line <span class="linenumber">177</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyFalseB(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;False&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;False&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyFalseC" id="methodtestFuzzyFalseC"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyFalseC</strong> (line <span class="linenumber">184</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyFalseC(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;FALSE&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;FALSE&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyNoA" id="methodtestFuzzyNoA"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyNoA</strong> (line <span class="linenumber">149</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyNoA(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;no&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;no&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyNoB" id="methodtestFuzzyNoB"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyNoB</strong> (line <span class="linenumber">156</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyNoB(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;No&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;No&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyNoC" id="methodtestFuzzyNoC"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyNoC</strong> (line <span class="linenumber">163</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyNoC(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;NO&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;NO&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyOffA" id="methodtestFuzzyOffA"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyOffA</strong> (line <span class="linenumber">135</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyOffA(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;Off&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;Off&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyOffB" id="methodtestFuzzyOffB"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyOffB</strong> (line <span class="linenumber">142</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyOffB(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;OFF&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;OFF&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyOnA" id="methodtestFuzzyOnA"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyOnA</strong> (line <span class="linenumber">206</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyOnA(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;On&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;On&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyOnB" id="methodtestFuzzyOnB"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyOnB</strong> (line <span class="linenumber">213</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyOnB(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;ON&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;ON&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyOne" id="methodtestFuzzyOne"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyOne</strong> (line <span class="linenumber">276</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyOne(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;1&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;1&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyTrueA" id="methodtestFuzzyTrueA"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyTrueA</strong> (line <span class="linenumber">255</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyTrueA(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;true&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;true&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyTrueB" id="methodtestFuzzyTrueB"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyTrueB</strong> (line <span class="linenumber">262</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyTrueB(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;True&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;True&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyTrueC" id="methodtestFuzzyTrueC"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyTrueC</strong> (line <span class="linenumber">269</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyTrueC(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;TRUE&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;TRUE&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyYesA" id="methodtestFuzzyYesA"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyYesA</strong> (line <span class="linenumber">220</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyYesA(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;y&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;y&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyYesB" id="methodtestFuzzyYesB"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyYesB</strong> (line <span class="linenumber">227</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyYesB(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;Y&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;Y&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyYesC" id="methodtestFuzzyYesC"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyYesC</strong> (line <span class="linenumber">234</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyYesC(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;yes&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;yes&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyYesD" id="methodtestFuzzyYesD"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyYesD</strong> (line <span class="linenumber">241</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyYesD(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;Yes&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;Yes&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyYesE" id="methodtestFuzzyYesE"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyYesE</strong> (line <span class="linenumber">248</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyYesE(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;YES&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;YES&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestFuzzyZero" id="methodtestFuzzyZero"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testFuzzyZero</strong> (line <span class="linenumber">191</span>)
+ </h4> 
+<h4><i>void</i> <strong>testFuzzyZero(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the fuzzy &quot;0&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling the fuzzy &quot;0&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestUnexpectedGreatLiterature" id="methodtestUnexpectedGreatLiterature"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testUnexpectedGreatLiterature</strong> (line <span class="linenumber">324</span>)
+ </h4> 
+<h4><i>void</i> <strong>testUnexpectedGreatLiterature(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an odd &quot;ash nazg durbatuluk&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling an odd &quot;ash nazg durbatuluk&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestUnexpectedLargeNumber" id="methodtestUnexpectedLargeNumber"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testUnexpectedLargeNumber</strong> (line <span class="linenumber">317</span>)
+ </h4> 
+<h4><i>void</i> <strong>testUnexpectedLargeNumber(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an odd &quot;10&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling an odd &quot;10&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestUnexpectedNegative" id="methodtestUnexpectedNegative"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testUnexpectedNegative</strong> (line <span class="linenumber">310</span>)
+ </h4> 
+<h4><i>void</i> <strong>testUnexpectedNegative(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an odd &quot;-1&quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling an odd &quot;-1&quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestUnexpectedNull" id="methodtestUnexpectedNull"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testUnexpectedNull</strong> (line <span class="linenumber">303</span>)
+ </h4> 
+<h4><i>void</i> <strong>testUnexpectedNull(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an odd NULL value</h5>
+<div class="desc"><p>Shows correct behavior for handling an odd NULL value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestUnexpectedSpaces" id="methodtestUnexpectedSpaces"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testUnexpectedSpaces</strong> (line <span class="linenumber">296</span>)
+ </h4> 
+<h4><i>void</i> <strong>testUnexpectedSpaces(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling an odd &quot;  &quot; value</h5>
+<div class="desc"><p>Shows correct behavior for handling an odd &quot;  &quot; value</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:33 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

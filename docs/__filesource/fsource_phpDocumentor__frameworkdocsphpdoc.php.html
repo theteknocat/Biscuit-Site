@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for phpdoc.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file phpdoc.php</h1>
+<p>Documentation is available at <a href="../phpDocumentor/_framework---docs---phpdoc.php.html">phpdoc.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a>&lt;!DOCTYPE&nbsp;html&nbsp;PUBLIC&nbsp;&quot;-//W3C//DTD&nbsp;HTML&nbsp;4.01&nbsp;Transitional//EN&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a2"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">&nbsp;*&nbsp;Original&nbsp;Web&nbsp;Interface&nbsp;to&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">&nbsp;*&nbsp;PHP&nbsp;versions&nbsp;4&nbsp;and&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@category</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;ToolsAndUtilities</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Juan&nbsp;Pablo&nbsp;Morales&nbsp;&lt;ju-moral@uniandes.edu.co&gt;</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Joshua&nbsp;Eichorn&nbsp;&lt;jeichorn@phpdoc.org&gt;</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gregory&nbsp;Beaver&nbsp;&lt;cellog@php.net&gt;</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chuck&nbsp;Burgess&nbsp;&lt;ashnazg@php.net&gt;</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@license</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;http://www.opensource.org/licenses/lgpl-license.php&nbsp;LGPL</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://pear.php.net/package/PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@filesource</font></strong></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;change&nbsp;package&nbsp;to&nbsp;PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@deprecated</font></strong><font color="#009999">&nbsp;redirects&nbsp;automatically&nbsp;to&nbsp;docbuilder</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(see&nbsp;</font><em><font color="#0099FF">{@link&nbsp;docbuilder/index.html}</font></em><font color="#009999">)</font></div></li>
+<li><div class="src-line"><a name="a20"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a21"></a><strong>?&gt;</strong></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a23"></a>&lt;html&gt;</div></li>
+<li><div class="src-line"><a name="a24"></a>&lt;head&gt;</div></li>
+<li><div class="src-line"><a name="a25"></a>&lt;title&gt;PhpDocumentor&nbsp;(deprecated&nbsp;web&nbsp;interface)&lt;/title&gt;</div></li>
+<li><div class="src-line"><a name="a26"></a>&lt;META&nbsp;HTTP-EQUIV=&quot;Refresh&quot;&nbsp;CONTENT=&quot;5;&nbsp;URL=docbuilder/&quot;/&gt;</div></li>
+<li><div class="src-line"><a name="a27"></a>&lt;/head&gt;</div></li>
+<li><div class="src-line"><a name="a28"></a>&lt;body&gt;</div></li>
+<li><div class="src-line"><a name="a29"></a>This&nbsp;PhpDocumentor&nbsp;web&nbsp;interface&nbsp;is&nbsp;deprecated...&nbsp;</div></li>
+<li><div class="src-line"><a name="a30"></a>you&nbsp;will&nbsp;be&nbsp;redirected&nbsp;to&nbsp;the&nbsp;DocBuilder&nbsp;interface.</div></li>
+<li><div class="src-line"><a name="a31"></a>&lt;/body&gt;</div></li>
+<li><div class="src-line"><a name="a32"></a>&lt;/html&gt;</div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:32 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

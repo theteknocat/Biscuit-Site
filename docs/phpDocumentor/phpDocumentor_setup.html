@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class phpDocumentor_setup</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class phpDocumentor_setup
+</h2> (line <span class="linenumber">100</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---Setup.inc.php.html">/framework/docs/phpDocumentor/Setup.inc.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$dirs" title="details" class="property"><strong>$dirs</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$files" title="details" class="property"><strong>$files</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$hidden" title="details" class="property"><strong>$hidden</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$ignoresymlinks" title="details" class="property"><strong>$ignoresymlinks</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$ignore_files" title="details" class="property"><strong>$ignore_files</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$packages" title="details" class="property"><strong>$packages</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type"><a href="../phpDocumentor/Parsers/Parser.html">Parser</a>|<a href="../phpDocumentor/Parsers/phpDocumentorTParser.html">phpDocumentorTParser</a></span>
+    <a href="#var$parse" title="details" class="property"><strong>$parse</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$parse_start_time" title="details" class="property"><strong>$parse_start_time</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type"><a href="../phpDocumentor/phpDocumentor_IntermediateParser.html">phpDocumentor_IntermediateParser</a></span>
+    <a href="#var$render" title="details" class="property"><strong>$render</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type"><a href="../phpDocumentor/Io.html">Io</a></span>
+    <a href="#var$setup" title="details" class="property"><strong>$setup</strong></a>
+</div>
+<hr />
+<a name="var$dirs" id="var$dirs"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$dirs =  ''</strong> (line <span class="linenumber">133</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>contents of --directory commandline</h5>
+<div class="desc"><p>contents of --directory commandline</p></div>
+<ul>
+		<li><strong>tutorial:</strong> - <a href="../phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#using.command-line.directory">-d, --directory</a></li>
+	</ul>
+</div>
+<a name="var$files" id="var$files"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$files =  ''</strong> (line <span class="linenumber">127</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>contents of --filename commandline</h5>
+<div class="desc"><p>contents of --filename commandline</p></div>
+<ul>
+		<li><strong>tutorial:</strong> - <a href="../phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#using.command-line.filename">-f, --filename</a></li>
+	</ul>
+</div>
+<a name="var$hidden" id="var$hidden"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$hidden =  false</strong> (line <span class="linenumber">139</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>contents of --hidden commandline</h5>
+<div class="desc"><p>contents of --hidden commandline</p></div>
+<ul>
+		<li><strong>tutorial:</strong> - <a href="../phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#using.command-line.hidden">-dh, --hidden</a></li>
+	</ul>
+</div>
+<a name="var$ignoresymlinks" id="var$ignoresymlinks"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ignoresymlinks =  false</strong> (line <span class="linenumber">155</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>contents of --ignoresymlinks commandline</h5>
+<div class="desc"><p>contents of --ignoresymlinks commandline</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$ignore_files" id="var$ignore_files"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ignore_files = array()</strong> (line <span class="linenumber">150</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>contents of --ignore commandline</h5>
+<div class="desc"><p>contents of --ignore commandline</p></div>
+<ul>
+		<li><strong>tutorial:</strong> - <a href="../phpDocumentor/tutorial_phpDocumentor.howto.pkg.html#using.command-line.ignore">-i, --ignore</a></li>
+	</ul>
+</div>
+<a name="var$packages" id="var$packages"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$packages =  false</strong> (line <span class="linenumber">121</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Packages to create documentation for</h5>
+<div class="desc"><p>Packages to create documentation for</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$parse" id="var$parse"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$parse</strong> (line <span class="linenumber">106</span>)
+ </h4>
+<h4>Data type : <a href="../phpDocumentor/Parsers/Parser.html">Parser</a>|<a href="../phpDocumentor/Parsers/phpDocumentorTParser.html">phpDocumentorTParser</a></h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The main parser</h5>
+<div class="desc"><p>The main parser</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$parse_start_time" id="var$parse_start_time"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$parse_start_time</strong> (line <span class="linenumber">144</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>time that parsing was started, used for informative timing of output</h5>
+<div class="desc"><p>time that parsing was started, used for informative timing of output</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$render" id="var$render"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$render =  false</strong> (line <span class="linenumber">116</span>)
+ </h4>
+<h4>Data type : <a href="../phpDocumentor/phpDocumentor_IntermediateParser.html">phpDocumentor_IntermediateParser</a></h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Used to organize output from the Parser before Conversion</h5>
+<div class="desc"><p>Used to organize output from the Parser before Conversion</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$setup" id="var$setup"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$setup</strong> (line <span class="linenumber">111</span>)
+ </h4>
+<h4>Data type : <a href="../phpDocumentor/Io.html">Io</a></h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Used to parse command-line options</h5>
+<div class="desc"><p>Used to parse command-line options</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">phpDocumentor_setup</span>
+        <a href="#methodphpDocumentor_setup" title="details" class="method-name">phpDocumentor_setup</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcheckIgnoreTag" title="details" class="method-name">checkIgnoreTag</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$tagname</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$inline</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string|bool</span>
+        <a href="#methodcleanConverterNamePiece" title="details" class="method-name">cleanConverterNamePiece</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$extra_characters_to_allow</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcreateDocs" title="details" class="method-name">createDocs</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$title</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparseHiddenFiles" title="details" class="method-name">parseHiddenFiles</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodparseIni" title="details" class="method-name">parseIni</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodreadCommandLineSettings" title="details" class="method-name">readCommandLineSettings</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodreadConfigFile" title="details" class="method-name">readConfigFile</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetDirectoriesToParse" title="details" class="method-name">setDirectoriesToParse</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$dirs</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetFilesToParse" title="details" class="method-name">setFilesToParse</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$files</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetIgnore" title="details" class="method-name">setIgnore</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$ig</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetJavadocDesc" title="details" class="method-name">setJavadocDesc</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetMemoryLimit" title="details" class="method-name">setMemoryLimit</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetPackageOutput" title="details" class="method-name">setPackageOutput</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$po</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetParsePrivate" title="details" class="method-name">setParsePrivate</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetQuietMode" title="details" class="method-name">setQuietMode</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetTargetDir" title="details" class="method-name">setTargetDir</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetTemplateBase" title="details" class="method-name">setTemplateBase</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$dir</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetTitle" title="details" class="method-name">setTitle</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$ti</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetUndocumentedElementWarnings" title="details" class="method-name">setUndocumentedElementWarnings</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$flag</span> = <span class="var-default">true</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetupConverters" title="details" class="method-name">setupConverters</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$output</span> = <span class="var-default">false</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodphpDocumentor_setup" id="methodphpDocumentor_setup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor phpDocumentor_setup</strong> (line <span class="linenumber">162</span>)
+ </h4> 
+<h4><i>phpDocumentor_setup</i> <strong>phpDocumentor_setup(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Checks PHP version, makes sure it is 4.</h5>
+<div class="desc"><p>Checks PHP version, makes sure it is 4.2.0+, and chooses the phpDocumentorTParser if version is 4.3.0+</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>uses</strong> - <a href="../phpDocumentor/phpDocumentor_setup.html#methodparseIni">phpDocumentor_setup::parseIni()</a></li>
+		</ul>
+</div>
+<a name="methodcheckIgnoreTag" id="methodcheckIgnoreTag"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method checkIgnoreTag</strong> (line <span class="linenumber">397</span>)
+ </h4> 
+<h4><i>void</i> <strong>checkIgnoreTag(
+
+$tagname, [
+$inline = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $tagname</strong>: </li>
+			<li><strong> $inline</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodcleanConverterNamePiece" id="methodcleanConverterNamePiece"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method cleanConverterNamePiece</strong> (line <span class="linenumber">832</span>)
+ </h4> 
+<h4><i>string|bool</i> <strong>cleanConverterNamePiece(
+string
+$name, [string
+$extra_characters_to_allow = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Performs character-based validation of Output Converter Template name pieces</h5>
+<div class="desc"><p>Performs character-based validation of Output Converter Template name pieces</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $name</strong>: the name piece (just ONE of either Output, Converter, or Template piece)</li>
+			<li><strong>string $extra_characters_to_allow</strong>: any extra characters to allow beyond the default character set</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - the clean name, or FALSE if piece is deemed invalid</li>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodcreateDocs" id="methodcreateDocs"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method createDocs</strong> (line <span class="linenumber">530</span>)
+ </h4> 
+<h4><i>void</i> <strong>createDocs(
+[
+$title = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $title</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodparseHiddenFiles" id="methodparseHiddenFiles"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseHiddenFiles</strong> (line <span class="linenumber">513</span>)
+ </h4> 
+<h4><i>void</i> <strong>parseHiddenFiles(
+[
+$flag = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $flag</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodparseIni" id="methodparseIni"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseIni</strong> (line <span class="linenumber">771</span>)
+ </h4> 
+<h4><i>void</i> <strong>parseIni(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Parse configuration file phpDocumentor.</h5>
+<div class="desc"><p>Parse configuration file phpDocumentor.ini</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>usedby</strong> - <a href="../phpDocumentor/phpDocumentor_setup.html#methodphpDocumentor_setup">phpDocumentor_setup::phpDocumentor_setup()</a></li>
+		</ul>
+</div>
+<a name="methodreadCommandLineSettings" id="methodreadCommandLineSettings"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method readCommandLineSettings</strong> (line <span class="linenumber">260</span>)
+ </h4> 
+<h4><i>void</i> <strong>readCommandLineSettings(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get phpDocumentor settings from command-line or web interface</h5>
+<div class="desc"><p>Get phpDocumentor settings from command-line or web interface</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodreadConfigFile" id="methodreadConfigFile"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method readConfigFile</strong> (line <span class="linenumber">226</span>)
+ </h4> 
+<h4><i>void</i> <strong>readConfigFile(
+string
+$file)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get phpDocumentor settings from a user configuration file</h5>
+<div class="desc"><p>Get phpDocumentor settings from a user configuration file</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $file</strong>: user configuration file</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetDirectoriesToParse" id="methodsetDirectoriesToParse"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setDirectoriesToParse</strong> (line <span class="linenumber">508</span>)
+ </h4> 
+<h4><i>void</i> <strong>setDirectoriesToParse(
+
+$dirs)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $dirs</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetFilesToParse" id="methodsetFilesToParse"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setFilesToParse</strong> (line <span class="linenumber">503</span>)
+ </h4> 
+<h4><i>void</i> <strong>setFilesToParse(
+
+$files)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $files</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetIgnore" id="methodsetIgnore"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setIgnore</strong> (line <span class="linenumber">518</span>)
+ </h4> 
+<h4><i>void</i> <strong>setIgnore(
+
+$ig)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $ig</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetJavadocDesc" id="methodsetJavadocDesc"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setJavadocDesc</strong> (line <span class="linenumber">462</span>)
+ </h4> 
+<h4><i>void</i> <strong>setJavadocDesc(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetMemoryLimit" id="methodsetMemoryLimit"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setMemoryLimit</strong> (line <span class="linenumber">410</span>)
+ </h4> 
+<h4><i>void</i> <strong>setMemoryLimit(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Allow a memory_limit setting in phpDocumentor.</h5>
+<div class="desc"><p>Allow a memory_limit setting in phpDocumentor.ini to override php.ini or default memory limit</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>todo</strong> - recognize &quot;K&quot; and &quot;G&quot; in memory_limit settings, rather than just &quot;M&quot;</li>
+		</ul>
+</div>
+<a name="methodsetPackageOutput" id="methodsetPackageOutput"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setPackageOutput</strong> (line <span class="linenumber">492</span>)
+ </h4> 
+<h4><i>void</i> <strong>setPackageOutput(
+
+$po)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $po</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetParsePrivate" id="methodsetParsePrivate"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setParsePrivate</strong> (line <span class="linenumber">467</span>)
+ </h4> 
+<h4><i>void</i> <strong>setParsePrivate(
+[
+$flag = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $flag</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetQuietMode" id="methodsetQuietMode"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setQuietMode</strong> (line <span class="linenumber">472</span>)
+ </h4> 
+<h4><i>void</i> <strong>setQuietMode(
+[
+$flag = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $flag</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetTargetDir" id="methodsetTargetDir"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setTargetDir</strong> (line <span class="linenumber">482</span>)
+ </h4> 
+<h4><i>void</i> <strong>setTargetDir(
+
+$target)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $target</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetTemplateBase" id="methodsetTemplateBase"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setTemplateBase</strong> (line <span class="linenumber">487</span>)
+ </h4> 
+<h4><i>void</i> <strong>setTemplateBase(
+
+$dir)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $dir</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetTitle" id="methodsetTitle"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setTitle</strong> (line <span class="linenumber">498</span>)
+ </h4> 
+<h4><i>void</i> <strong>setTitle(
+
+$ti)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $ti</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetUndocumentedElementWarnings" id="methodsetUndocumentedElementWarnings"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setUndocumentedElementWarnings</strong> (line <span class="linenumber">477</span>)
+ </h4> 
+<h4><i>void</i> <strong>setUndocumentedElementWarnings(
+[
+$flag = true])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $flag</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetupConverters" id="methodsetupConverters"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setupConverters</strong> (line <span class="linenumber">851</span>)
+ </h4> 
+<h4><i>void</i> <strong>setupConverters(
+[string
+$output = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Figures out what output converter to use</h5>
+<div class="desc"><p>Figures out what output converter to use</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $output</strong>: Output Converter Template name</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>global</strong> - array <a href="../phpDocumentor/_framework---docs---phpDocumentor---Setup.inc.php.html#global$_phpDocumentor_setting">$_phpDocumentor_setting</a>: </li>
+			<li><strong>access</strong> - private</li>
+			<li><strong>uses</strong> - <a href="../phpDocumentor/_framework---docs---phpDocumentor---Setup.inc.php.html#functionphpDocumentor_out">phpDocumentor_out()</a></li>
+			<li><strong>uses</strong> - cleanConverterNamePieces</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:36 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

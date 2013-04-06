@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class Request</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class Request
+</h2> (line <span class="linenumber">8</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---Request.php.html">/framework/lib/Request.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>HTTP request helpers</h5>
+<div class="desc"><p>HTTP request helpers</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodclear_form" title="details" class="method-name">clear_form</a>
+        ([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$keys</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodclear_query" title="details" class="method-name">clear_query</a>
+        ([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$keys</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodfiles" title="details" class="method-name">files</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span> = <span class="var-default">null</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodform" title="details" class="method-name">form</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodhas_form_data" title="details" class="method-name">has_form_data</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodhas_query_string" title="details" class="method-name">has_query_string</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">mixed</span>
+        <a href="#methodheader" title="details" class="method-name">header</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodheaders" title="details" class="method-name">headers</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodis_ajax" title="details" class="method-name">is_ajax</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodis_ajaxy_iframe_post" title="details" class="method-name">is_ajaxy_iframe_post</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodis_ping_keepalive" title="details" class="method-name">is_ping_keepalive</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodis_post" title="details" class="method-name">is_post</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmethod" title="details" class="method-name">method</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodport" title="details" class="method-name">port</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodquery_string" title="details" class="method-name">query_string</a>
+        ([<span class="var-type"></span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_form" title="details" class="method-name">set_form</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodset_query" title="details" class="method-name">set_query</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodtype" title="details" class="method-name">type</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoduri" title="details" class="method-name">uri</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodclear_form" id="methodclear_form"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method clear_form</strong> (line <span class="linenumber">157</span>)
+ </h4> 
+<h4><i>void</i> <strong>clear_form(
+[mixed
+$keys = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Unset all or specified $_POST variables</h5>
+<div class="desc"><p>Unset all or specified $_POST variables</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $keys</strong>: Optional - either a single key name or an array of key names. If omitted, all keys will be unset.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodclear_query" id="methodclear_query"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method clear_query</strong> (line <span class="linenumber">132</span>)
+ </h4> 
+<h4><i>void</i> <strong>clear_query(
+[mixed
+$keys = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Unset all or specified $_GET variables</h5>
+<div class="desc"><p>Unset all or specified $_GET variables</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>mixed $keys</strong>: Optional - either a single key name or an array of key names. If omitted, all keys will be unset.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfiles" id="methodfiles"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method files</strong> (line <span class="linenumber">182</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>files(
+[string
+$key = null])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return either the entire $_FILES array or just one key in the $_FILES array</h5>
+<div class="desc"><p>Return either the entire $_FILES array or just one key in the $_FILES array</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $key</strong>: Optional - the key to retrieve</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodform" id="methodform"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method form</strong> (line <span class="linenumber">89</span>)
+ </h4> 
+<h4><i>void</i> <strong>form(
+[string
+$index = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the value of a form post variable</h5>
+<div class="desc"><p>Return the value of a form post variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $index</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodhas_form_data" id="methodhas_form_data"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method has_form_data</strong> (line <span class="linenumber">206</span>)
+ </h4> 
+<h4><i>bool</i> <strong>has_form_data(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Is there any data posted from a form?</h5>
+<div class="desc"><p>Is there any data posted from a form?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodhas_query_string" id="methodhas_query_string"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method has_query_string</strong> (line <span class="linenumber">197</span>)
+ </h4> 
+<h4><i>bool</i> <strong>has_query_string(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Is there a set of query string vars?</h5>
+<div class="desc"><p>Is there a set of query string vars?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodheader" id="methodheader"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method header</strong> (line <span class="linenumber">44</span>)
+ </h4> 
+<h4><i>mixed</i> <strong>header(
+string
+$key)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the value of a specific request header.</h5>
+<div class="desc"><p>Return the value of a specific request header. Returns null if the header doesn't exist</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $key</strong>: The header name to retrieve (eg. &quot;Host&quot;, &quot;User-Agent&quot;)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodheaders" id="methodheaders"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method headers</strong> (line <span class="linenumber">15</span>)
+ </h4> 
+<h4><i>array</i> <strong>headers(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return all Apache request headers in an array</h5>
+<div class="desc"><p>Return all Apache request headers in an array</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodis_ajax" id="methodis_ajax"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method is_ajax</strong> (line <span class="linenumber">248</span>)
+ </h4> 
+<h4><i>bool</i> <strong>is_ajax(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Is the current request over ajax?</h5>
+<div class="desc"><p>Is the current request over ajax?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodis_ajaxy_iframe_post" id="methodis_ajaxy_iframe_post"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method is_ajaxy_iframe_post</strong> (line <span class="linenumber">276</span>)
+ </h4> 
+<h4><i>void</i> <strong>is_ajaxy_iframe_post(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Whether or not the request is a post from a form to an iframe for an ajax-like result</h5>
+<div class="desc"><p>Whether or not the request is a post from a form to an iframe for an ajax-like result</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodis_ping_keepalive" id="methodis_ping_keepalive"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method is_ping_keepalive</strong> (line <span class="linenumber">59</span>)
+ </h4> 
+<h4><i>bool</i> <strong>is_ping_keepalive(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Whether or not it's a ping to keep the session alive</h5>
+<div class="desc"><p>Whether or not it's a ping to keep the session alive</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodis_post" id="methodis_post"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method is_post</strong> (line <span class="linenumber">239</span>)
+ </h4> 
+<h4><i>bool</i> <strong>is_post(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Is the current request over POST?</h5>
+<div class="desc"><p>Is the current request over POST?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodmethod" id="methodmethod"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method method</strong> (line <span class="linenumber">231</span>)
+ </h4> 
+<h4><i>void</i> <strong>method(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the request method (ie.</h5>
+<div class="desc"><p>Return the request method (ie. &quot;get&quot; or &quot;post&quot;)</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodport" id="methodport"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method port</strong> (line <span class="linenumber">267</span>)
+ </h4> 
+<h4><i>void</i> <strong>port(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the port on which the request came in</h5>
+<div class="desc"><p>Return the port on which the request came in</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodquery_string" id="methodquery_string"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method query_string</strong> (line <span class="linenumber">68</span>)
+ </h4> 
+<h4><i>void</i> <strong>query_string(
+[
+$index = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the value of query string ($_GET) variable</h5>
+<div class="desc"><p>Return the value of query string ($_GET) variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $index</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodset_form" id="methodset_form"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_form</strong> (line <span class="linenumber">111</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_form(
+string
+$key, string
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set the value of a form variable</h5>
+<div class="desc"><p>Set the value of a form variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $key</strong>: Key to set a value in</li>
+			<li><strong>string $value</strong>: Value to set</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodset_query" id="methodset_query"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method set_query</strong> (line <span class="linenumber">122</span>)
+ </h4> 
+<h4><i>void</i> <strong>set_query(
+string
+$key, string
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set the value of a query string variable</h5>
+<div class="desc"><p>Set the value of a query string variable</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $key</strong>: Key to set a value in</li>
+			<li><strong>string $value</strong>: Value to set</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodtype" id="methodtype"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method type</strong> (line <span class="linenumber">222</span>)
+ </h4> 
+<h4><i>bool</i> <strong>type(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the request type. to render are:
+ standard - normal page request, noting special update - an Ajax update request
+ You can submit any other value you want in the request_type parameter with any page request and use it however you want with plugins that perform actions that do not need to render any output.</h5>
+<div class="desc"><p>Return the request type. Request types in Biscuit are primarily for determining whether or not it should render output. The two types that it checks when asked to render are:
+ standard - normal page request, noting special update - an Ajax update request
+ You can submit any other value you want in the request_type parameter with any page request and use it however you want with plugins that perform actions that do not need to render any output.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduri" id="methoduri"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method uri</strong> (line <span class="linenumber">257</span>)
+ </h4> 
+<h4><i>void</i> <strong>uri(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the requested URL relative to the domain</h5>
+<div class="desc"><p>Return the requested URL relative to the domain</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

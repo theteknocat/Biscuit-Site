@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class tests_phpDocumentorSetupCleanConverterNamePieceTests</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class tests_phpDocumentorSetupCleanConverterNamePieceTests
+</h2> (line <span class="linenumber">61</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+PHPUnit_Framework_TestCase
+   |
+   --tests_phpDocumentorSetupCleanConverterNamePieceTests</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---tests---phpDocumentorSetupCleanConverterNamePieceTests.php.html">/framework/docs/tests/phpDocumentorSetupCleanConverterNamePieceTests.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Unit Testing of the phpDocumentor_setup's cleanConverterNamePiece() method</h5>
+<div class="desc"><p>Unit Testing of the phpDocumentor_setup's cleanConverterNamePiece() method</p></div>
+<ul>
+		<li><strong>author:</strong> - Chuck Burgess</li>
+		<li><strong>since:</strong> - 1.3.2</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$CHARACTERS_ALLOWED_IN_PRIMARY" title="details" class="property"><strong>$CHARACTERS_ALLOWED_IN_PRIMARY</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$CHARACTERS_ALLOWED_IN_SECONDARY" title="details" class="property"><strong>$CHARACTERS_ALLOWED_IN_SECONDARY</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$CHARACTERS_ALLOWED_IN_TERTIARY" title="details" class="property"><strong>$CHARACTERS_ALLOWED_IN_TERTIARY</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$ps" title="details" class="property"><strong>$ps</strong></a>
+</div>
+<hr />
+<a name="var$CHARACTERS_ALLOWED_IN_PRIMARY" id="var$CHARACTERS_ALLOWED_IN_PRIMARY"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$CHARACTERS_ALLOWED_IN_PRIMARY =  ''</strong> (line <span class="linenumber">75</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>container for list of allowed special characters</h5>
+<div class="desc"><p>container for list of allowed special characters in &quot;primary&quot; piece of converter names</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.3.2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$CHARACTERS_ALLOWED_IN_SECONDARY" id="var$CHARACTERS_ALLOWED_IN_SECONDARY"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$CHARACTERS_ALLOWED_IN_SECONDARY =  '\/'</strong> (line <span class="linenumber">82</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>container for list of allowed special characters</h5>
+<div class="desc"><p>container for list of allowed special characters in &quot;secondary&quot; piece of converter names</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.3.2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$CHARACTERS_ALLOWED_IN_TERTIARY" id="var$CHARACTERS_ALLOWED_IN_TERTIARY"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$CHARACTERS_ALLOWED_IN_TERTIARY =  '.\/'</strong> (line <span class="linenumber">89</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>container for list of allowed special characters</h5>
+<div class="desc"><p>container for list of allowed special characters in &quot;tertiary&quot; piece of converter names</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.3.2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$ps" id="var$ps"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$ps</strong> (line <span class="linenumber">68</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>phpDocumentor_setup object</h5>
+<div class="desc"><p>phpDocumentor_setup object</p></div>
+<ul>
+		<li><strong>since:</strong> - 1.3.2</li>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">void</span>
+        <a href="#methodmain" title="details" class="method-name">main</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetUp" title="details" class="method-name">setUp</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtearDown" title="details" class="method-name">tearDown</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestDoNotAllowTruePathingOnPrimaryWithOneArg" title="details" class="method-name">testDoNotAllowTruePathingOnPrimaryWithOneArg</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestDoNotAllowTruePathingOnPrimaryWithTwoArgs" title="details" class="method-name">testDoNotAllowTruePathingOnPrimaryWithTwoArgs</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestDoNotAllowTruePathingOnSecondary" title="details" class="method-name">testDoNotAllowTruePathingOnSecondary</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestDoNotAllowTruePathingOnTertiary" title="details" class="method-name">testDoNotAllowTruePathingOnTertiary</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestExtremeExampleAndInvalidSecondary" title="details" class="method-name">testExtremeExampleAndInvalidSecondary</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestExtremeExampleAndInvalidTertiaryA" title="details" class="method-name">testExtremeExampleAndInvalidTertiaryA</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestExtremeExampleAndInvalidTertiaryB" title="details" class="method-name">testExtremeExampleAndInvalidTertiaryB</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestExtremeExampleButValidPrimaryWithOneArg" title="details" class="method-name">testExtremeExampleButValidPrimaryWithOneArg</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestExtremeExampleButValidPrimaryWithTwoArgs" title="details" class="method-name">testExtremeExampleButValidPrimaryWithTwoArgs</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestExtremeExampleButValidSecondary" title="details" class="method-name">testExtremeExampleButValidSecondary</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalSecondaryDefault" title="details" class="method-name">testNormalSecondaryDefault</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalSecondaryDocbookPeardoc2" title="details" class="method-name">testNormalSecondaryDocbookPeardoc2</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalSecondaryFrames" title="details" class="method-name">testNormalSecondaryFrames</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalSecondarySmarty" title="details" class="method-name">testNormalSecondarySmarty</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryDefault" title="details" class="method-name">testNormalTertiaryDefault</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryDomDefault" title="details" class="method-name">testNormalTertiaryDomDefault</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryDomEarthli" title="details" class="method-name">testNormalTertiaryDomEarthli</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryDomL0l33t" title="details" class="method-name">testNormalTertiaryDomL0l33t</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryDomPhpdocde" title="details" class="method-name">testNormalTertiaryDomPhpdocde</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryDomPhphtmllib" title="details" class="method-name">testNormalTertiaryDomPhphtmllib</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryEarthli" title="details" class="method-name">testNormalTertiaryEarthli</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryHands" title="details" class="method-name">testNormalTertiaryHands</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryL0l33t" title="details" class="method-name">testNormalTertiaryL0l33t</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryPear" title="details" class="method-name">testNormalTertiaryPear</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryPhp" title="details" class="method-name">testNormalTertiaryPhp</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryPhpdocde" title="details" class="method-name">testNormalTertiaryPhpdocde</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalTertiaryPhphtmllib" title="details" class="method-name">testNormalTertiaryPhphtmllib</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithOneArgPrimaryCHM" title="details" class="method-name">testNormalWithOneArgPrimaryCHM</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithOneArgPrimaryHTML" title="details" class="method-name">testNormalWithOneArgPrimaryHTML</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithOneArgPrimaryPDF" title="details" class="method-name">testNormalWithOneArgPrimaryPDF</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithOneArgPrimaryXML" title="details" class="method-name">testNormalWithOneArgPrimaryXML</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithTwoArgsPrimaryCHM" title="details" class="method-name">testNormalWithTwoArgsPrimaryCHM</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithTwoArgsPrimaryHTML" title="details" class="method-name">testNormalWithTwoArgsPrimaryHTML</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithTwoArgsPrimaryPDF" title="details" class="method-name">testNormalWithTwoArgsPrimaryPDF</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestNormalWithTwoArgsPrimaryXML" title="details" class="method-name">testNormalWithTwoArgsPrimaryXML</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestPreventUpToParentPathingOnPrimaryWithOneArg" title="details" class="method-name">testPreventUpToParentPathingOnPrimaryWithOneArg</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestPreventUpToParentPathingOnPrimaryWithTwoArgs" title="details" class="method-name">testPreventUpToParentPathingOnPrimaryWithTwoArgs</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestPreventUpToParentPathingOnSecondary" title="details" class="method-name">testPreventUpToParentPathingOnSecondary</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestPreventUpToParentPathingOnTertiary" title="details" class="method-name">testPreventUpToParentPathingOnTertiary</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtestUserDefinedTertiaryValue" title="details" class="method-name">testUserDefinedTertiaryValue</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodmain" id="methodmain"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method main</strong> (line <span class="linenumber">97</span>)
+ </h4> 
+<h4><i>void</i> <strong>main(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Runs the test methods of this class.</h5>
+<div class="desc"><p>Runs the test methods of this class.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodsetUp" id="methodsetUp"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setUp</strong> (line <span class="linenumber">110</span>)
+ </h4> 
+<h4><i>void</i> <strong>setUp(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets up the fixture, for example, open a network connection.</h5>
+<div class="desc"><p>Sets up the fixture, for example, open a network connection. This method is called before a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtearDown" id="methodtearDown"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tearDown</strong> (line <span class="linenumber">123</span>)
+ </h4> 
+<h4><i>void</i> <strong>tearDown(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tears down the fixture, for example, close a network connection.</h5>
+<div class="desc"><p>Tears down the fixture, for example, close a network connection. This method is called after a test is executed.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - protected</li>
+		</ul>
+</div>
+<a name="methodtestDoNotAllowTruePathingOnPrimaryWithOneArg" id="methodtestDoNotAllowTruePathingOnPrimaryWithOneArg"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testDoNotAllowTruePathingOnPrimaryWithOneArg</strong> (line <span class="linenumber">412</span>)
+ </h4> 
+<h4><i>void</i> <strong>testDoNotAllowTruePathingOnPrimaryWithOneArg(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses one arg with value of &quot;/var/log/HTML&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestDoNotAllowTruePathingOnPrimaryWithTwoArgs" id="methodtestDoNotAllowTruePathingOnPrimaryWithTwoArgs"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testDoNotAllowTruePathingOnPrimaryWithTwoArgs</strong> (line <span class="linenumber">421</span>)
+ </h4> 
+<h4><i>void</i> <strong>testDoNotAllowTruePathingOnPrimaryWithTwoArgs(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses two args with value of &quot;/var/log/HTML&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestDoNotAllowTruePathingOnSecondary" id="methodtestDoNotAllowTruePathingOnSecondary"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testDoNotAllowTruePathingOnSecondary</strong> (line <span class="linenumber">430</span>)
+ </h4> 
+<h4><i>void</i> <strong>testDoNotAllowTruePathingOnSecondary(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses two args with value of &quot;/var/log/frames&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestDoNotAllowTruePathingOnTertiary" id="methodtestDoNotAllowTruePathingOnTertiary"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testDoNotAllowTruePathingOnTertiary</strong> (line <span class="linenumber">439</span>)
+ </h4> 
+<h4><i>void</i> <strong>testDoNotAllowTruePathingOnTertiary(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses two args with value of &quot;/var/log/default&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestExtremeExampleAndInvalidSecondary" id="methodtestExtremeExampleAndInvalidSecondary"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testExtremeExampleAndInvalidSecondary</strong> (line <span class="linenumber">478</span>)
+ </h4> 
+<h4><i>void</i> <strong>testExtremeExampleAndInvalidSecondary(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Extreme example of messy input.</h5>
+<div class="desc"><p>Extreme example of messy input... the resulting converter names are generally invalid. This test uses two args with value of &quot;..//.frames&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestExtremeExampleAndInvalidTertiaryA" id="methodtestExtremeExampleAndInvalidTertiaryA"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testExtremeExampleAndInvalidTertiaryA</strong> (line <span class="linenumber">487</span>)
+ </h4> 
+<h4><i>void</i> <strong>testExtremeExampleAndInvalidTertiaryA(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Extreme example of messy input.</h5>
+<div class="desc"><p>Extreme example of messy input... the resulting converter names are generally invalid. This test uses two arg with value of &quot;/./default/.##/&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestExtremeExampleAndInvalidTertiaryB" id="methodtestExtremeExampleAndInvalidTertiaryB"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testExtremeExampleAndInvalidTertiaryB</strong> (line <span class="linenumber">496</span>)
+ </h4> 
+<h4><i>void</i> <strong>testExtremeExampleAndInvalidTertiaryB(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Extreme example of messy input.</h5>
+<div class="desc"><p>Extreme example of messy input... the resulting converter names are generally invalid. This test uses two arg with value of &quot;//default//&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestExtremeExampleButValidPrimaryWithOneArg" id="methodtestExtremeExampleButValidPrimaryWithOneArg"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testExtremeExampleButValidPrimaryWithOneArg</strong> (line <span class="linenumber">451</span>)
+ </h4> 
+<h4><i>void</i> <strong>testExtremeExampleButValidPrimaryWithOneArg(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Extreme example of messy input.</h5>
+<div class="desc"><p>Extreme example of messy input... the resulting converter names are generally invalid. This test uses one arg with value of &quot;H/.T./M##L&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestExtremeExampleButValidPrimaryWithTwoArgs" id="methodtestExtremeExampleButValidPrimaryWithTwoArgs"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testExtremeExampleButValidPrimaryWithTwoArgs</strong> (line <span class="linenumber">460</span>)
+ </h4> 
+<h4><i>void</i> <strong>testExtremeExampleButValidPrimaryWithTwoArgs(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Extreme example of messy input.</h5>
+<div class="desc"><p>Extreme example of messy input... the resulting converter names are generally invalid. This test uses two args with value of &quot;H/.T./M##L&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestExtremeExampleButValidSecondary" id="methodtestExtremeExampleButValidSecondary"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testExtremeExampleButValidSecondary</strong> (line <span class="linenumber">469</span>)
+ </h4> 
+<h4><i>void</i> <strong>testExtremeExampleButValidSecondary(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Extreme example of messy input.</h5>
+<div class="desc"><p>Extreme example of messy input... the resulting converter names are generally invalid. This test uses two args with value of &quot;....frames&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalSecondaryDefault" id="methodtestNormalSecondaryDefault"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalSecondaryDefault</strong> (line <span class="linenumber">230</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalSecondaryDefault(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;default&quot; secondary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;default&quot; secondary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalSecondaryDocbookPeardoc2" id="methodtestNormalSecondaryDocbookPeardoc2"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalSecondaryDocbookPeardoc2</strong> (line <span class="linenumber">238</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalSecondaryDocbookPeardoc2(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;DocBook/peardoc2&quot; secondary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;DocBook/peardoc2&quot; secondary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalSecondaryFrames" id="methodtestNormalSecondaryFrames"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalSecondaryFrames</strong> (line <span class="linenumber">214</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalSecondaryFrames(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;frames&quot; secondary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;frames&quot; secondary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalSecondarySmarty" id="methodtestNormalSecondarySmarty"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalSecondarySmarty</strong> (line <span class="linenumber">222</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalSecondarySmarty(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;Smarty&quot; secondary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;Smarty&quot; secondary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryDefault" id="methodtestNormalTertiaryDefault"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryDefault</strong> (line <span class="linenumber">247</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryDefault(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;default&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;default&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryDomDefault" id="methodtestNormalTertiaryDomDefault"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryDomDefault</strong> (line <span class="linenumber">312</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryDomDefault(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;DOM/default&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;DOM/default&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryDomEarthli" id="methodtestNormalTertiaryDomEarthli"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryDomEarthli</strong> (line <span class="linenumber">320</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryDomEarthli(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;DOM/earthli&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;DOM/earthli&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryDomL0l33t" id="methodtestNormalTertiaryDomL0l33t"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryDomL0l33t</strong> (line <span class="linenumber">328</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryDomL0l33t(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;DOM/l0l33t&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;DOM/l0l33t&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryDomPhpdocde" id="methodtestNormalTertiaryDomPhpdocde"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryDomPhpdocde</strong> (line <span class="linenumber">336</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryDomPhpdocde(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;DOM/phpdoc.</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;DOM/phpdoc.de&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryDomPhphtmllib" id="methodtestNormalTertiaryDomPhphtmllib"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryDomPhphtmllib</strong> (line <span class="linenumber">344</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryDomPhphtmllib(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;DOM/phphtmllib&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;DOM/phphtmllib&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryEarthli" id="methodtestNormalTertiaryEarthli"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryEarthli</strong> (line <span class="linenumber">255</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryEarthli(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;earthli&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;earthli&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryHands" id="methodtestNormalTertiaryHands"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryHands</strong> (line <span class="linenumber">287</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryHands(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;HandS&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;HandS&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryL0l33t" id="methodtestNormalTertiaryL0l33t"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryL0l33t</strong> (line <span class="linenumber">263</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryL0l33t(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;l0l33t&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;l0l33t&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryPear" id="methodtestNormalTertiaryPear"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryPear</strong> (line <span class="linenumber">295</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryPear(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;PEAR&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;PEAR&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryPhp" id="methodtestNormalTertiaryPhp"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryPhp</strong> (line <span class="linenumber">303</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryPhp(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;PHP&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;PHP&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryPhpdocde" id="methodtestNormalTertiaryPhpdocde"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryPhpdocde</strong> (line <span class="linenumber">271</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryPhpdocde(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;phpdoc.</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;phpdoc.de&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalTertiaryPhphtmllib" id="methodtestNormalTertiaryPhphtmllib"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalTertiaryPhphtmllib</strong> (line <span class="linenumber">279</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalTertiaryPhphtmllib(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;phphtmllib&quot; tertiary  value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;phphtmllib&quot; tertiary  value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithOneArgPrimaryCHM" id="methodtestNormalWithOneArgPrimaryCHM"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithOneArgPrimaryCHM</strong> (line <span class="linenumber">148</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithOneArgPrimaryCHM(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;CHM&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;CHM&quot; primary value when called with one arg</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithOneArgPrimaryHTML" id="methodtestNormalWithOneArgPrimaryHTML"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithOneArgPrimaryHTML</strong> (line <span class="linenumber">156</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithOneArgPrimaryHTML(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;HTML&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;HTML&quot; primary value when called with one arg</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithOneArgPrimaryPDF" id="methodtestNormalWithOneArgPrimaryPDF"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithOneArgPrimaryPDF</strong> (line <span class="linenumber">164</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithOneArgPrimaryPDF(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;PDF&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;PDF&quot; primary value when called with one arg</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithOneArgPrimaryXML" id="methodtestNormalWithOneArgPrimaryXML"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithOneArgPrimaryXML</strong> (line <span class="linenumber">172</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithOneArgPrimaryXML(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;XML&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;XML&quot; primary value when called with one arg</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithTwoArgsPrimaryCHM" id="methodtestNormalWithTwoArgsPrimaryCHM"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithTwoArgsPrimaryCHM</strong> (line <span class="linenumber">181</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithTwoArgsPrimaryCHM(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;CHM&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;CHM&quot; primary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithTwoArgsPrimaryHTML" id="methodtestNormalWithTwoArgsPrimaryHTML"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithTwoArgsPrimaryHTML</strong> (line <span class="linenumber">189</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithTwoArgsPrimaryHTML(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;HTML&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;HTML&quot; primary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithTwoArgsPrimaryPDF" id="methodtestNormalWithTwoArgsPrimaryPDF"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithTwoArgsPrimaryPDF</strong> (line <span class="linenumber">197</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithTwoArgsPrimaryPDF(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;PDF&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;PDF&quot; primary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestNormalWithTwoArgsPrimaryXML" id="methodtestNormalWithTwoArgsPrimaryXML"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testNormalWithTwoArgsPrimaryXML</strong> (line <span class="linenumber">205</span>)
+ </h4> 
+<h4><i>void</i> <strong>testNormalWithTwoArgsPrimaryXML(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;XML&quot; primary value</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;XML&quot; primary value when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestPreventUpToParentPathingOnPrimaryWithOneArg" id="methodtestPreventUpToParentPathingOnPrimaryWithOneArg"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testPreventUpToParentPathingOnPrimaryWithOneArg</strong> (line <span class="linenumber">375</span>)
+ </h4> 
+<h4><i>void</i> <strong>testPreventUpToParentPathingOnPrimaryWithOneArg(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses one arg with value of &quot;../../HTML&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestPreventUpToParentPathingOnPrimaryWithTwoArgs" id="methodtestPreventUpToParentPathingOnPrimaryWithTwoArgs"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testPreventUpToParentPathingOnPrimaryWithTwoArgs</strong> (line <span class="linenumber">384</span>)
+ </h4> 
+<h4><i>void</i> <strong>testPreventUpToParentPathingOnPrimaryWithTwoArgs(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses two args with value of &quot;../../HTML&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestPreventUpToParentPathingOnSecondary" id="methodtestPreventUpToParentPathingOnSecondary"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testPreventUpToParentPathingOnSecondary</strong> (line <span class="linenumber">393</span>)
+ </h4> 
+<h4><i>void</i> <strong>testPreventUpToParentPathingOnSecondary(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses two args with value of &quot;../../frames&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestPreventUpToParentPathingOnTertiary" id="methodtestPreventUpToParentPathingOnTertiary"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testPreventUpToParentPathingOnTertiary</strong> (line <span class="linenumber">402</span>)
+ </h4> 
+<h4><i>void</i> <strong>testPreventUpToParentPathingOnTertiary(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Verify no up-to-parent pathing is allowed.</h5>
+<div class="desc"><p>Verify no up-to-parent pathing is allowed... the resulting converter names are generally invalid. This test uses two args with value of &quot;../../default&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.3.2</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<a name="methodtestUserDefinedTertiaryValue" id="methodtestUserDefinedTertiaryValue"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method testUserDefinedTertiaryValue</strong> (line <span class="linenumber">353</span>)
+ </h4> 
+<h4><i>void</i> <strong>testUserDefinedTertiaryValue(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Shows correct behavior for handling the perfect expected &quot;b2evo.</h5>
+<div class="desc"><p>Shows correct behavior for handling the perfect expected &quot;b2evo.v-1-10&quot; tertiary value (an example of a user-defined template not packaged with PhpDocumentor) when called with two args</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>since</strong> - 1.4.0</li>
+			<li><strong>access</strong> - public</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:32 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

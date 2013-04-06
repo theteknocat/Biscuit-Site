@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class WordParser</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class WordParser
+</h2> (line <span class="linenumber">56</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---WordParser.inc.html">/framework/docs/phpDocumentor/WordParser.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves tokens from source code for use by the Parser</h5>
+<div class="desc"><p>Retrieves tokens from source code for use by the Parser</p></div>
+<ul>
+		<li><strong>author:</strong> - Joshua Eichorn &lt;<a href="mailto:jeichorn@phpdoc.org">jeichorn@phpdoc.org</a>&gt;</li>
+		<li><strong>version:</strong> - Release: 1.4.2</li>
+		<li><strong>copyright:</strong> - 2000-2007 Joshua Eichorn</li>
+		<li><strong>see:</strong> - <a href="../../phpDocumentor/Parsers/Parser.html">Parser</a></li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>todo:</strong> - CS cleanup - change package to PhpDocumentor</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from WordParser:</span>
+ 		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/ObjectWordParser.html">ObjectWordParser</a></dt>
+		<dd>Like WordParser but designed to handle an array with strings and</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/phpDocumentorTWordParser.html">phpDocumentorTWordParser</a></dt>
+		<dd>Like WordParser, but expects an array of tokens from the tokenizer instead of a string.</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$cache" title="details" class="property"><strong>$cache</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$data" title="details" class="property"><strong>$data</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$getsource" title="details" class="property"><strong>$getsource</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">integer</span>
+    <a href="#var$linenum" title="details" class="property"><strong>$linenum</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">integer</span>
+    <a href="#var$linenumpos" title="details" class="property"><strong>$linenumpos</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">integer</span>
+    <a href="#var$pos" title="details" class="property"><strong>$pos</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$returnWhiteSpace" title="details" class="property"><strong>$returnWhiteSpace</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">integer</span>
+    <a href="#var$size" title="details" class="property"><strong>$size</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$source" title="details" class="property"><strong>$source</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$wordseperators" title="details" class="property"><strong>$wordseperators</strong></a>
+</div>
+<hr />
+<a name="var$cache" id="var$cache"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$cache</strong> (line <span class="linenumber">93</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$data" id="var$data"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$data</strong> (line <span class="linenumber">91</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Source code</h5>
+<div class="desc"><p>Source code</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$getsource" id="var$getsource"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$getsource =  false</strong> (line <span class="linenumber">115</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>flag, determines whether tokens are added to $source</h5>
+<div class="desc"><p>flag, determines whether tokens are added to <a href="../../phpDocumentor/WordParsers/WordParser.html#var$source">$source</a></p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$linenum" id="var$linenum"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$linenum =  0</strong> (line <span class="linenumber">98</span>)
+ </h4>
+<h4>Data type : integer</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Current line number</h5>
+<div class="desc"><p>Current line number</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$linenumpos" id="var$linenumpos"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$linenumpos =  0</strong> (line <span class="linenumber">104</span>)
+ </h4>
+<h4>Data type : integer</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Position the cursor was at the last time line numbers were counted, used</h5>
+<div class="desc"><p>Position the cursor was at the last time line numbers were counted, used to guarantee that line numbers are incremented</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$pos" id="var$pos"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$pos =  0</strong> (line <span class="linenumber">79</span>)
+ </h4>
+<h4>Data type : integer</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Position within input of the cursor pointing to the next text to be</h5>
+<div class="desc"><p>Position within input of the cursor pointing to the next text to be retrieved as a token</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$returnWhiteSpace" id="var$returnWhiteSpace"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$returnWhiteSpace =  false</strong> (line <span class="linenumber">122</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>If true, then white space is returned as a part of tokens, otherwise</h5>
+<div class="desc"><p>If true, then white space is returned as a part of tokens, otherwise tokens are trimmed</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$size" id="var$size"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$size</strong> (line <span class="linenumber">85</span>)
+ </h4>
+<h4>Data type : integer</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Size of the input source code</h5>
+<div class="desc"><p>Size of the input source code</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$source" id="var$source"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$source =  ''</strong> (line <span class="linenumber">110</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Used for {@source} tag, contains currently parsed function source</h5>
+<div class="desc"><p>Used for {@source} tag, contains currently parsed function source</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$wordseperators" id="var$wordseperators"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$wordseperators = array()</strong> (line <span class="linenumber">72</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>List of text that separates tokens, used to retrieve tokens</h5>
+<div class="desc"><p>List of text that separates tokens, used to retrieve tokens</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+		<li><strong>usedby:</strong> - <a href="../../phpDocumentor/WordParsers/WordParser.html#methodsetSeperator">WordParser::setSeperator()</a></li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodbackupPos" title="details" class="method-name">backupPos</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$word</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetBlock" title="details" class="method-name">getBlock</a>
+        (<span class="var-type">integer</span>&nbsp;<span class="var-name">$start</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$len</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">int</span>
+        <a href="#methodgetPos" title="details" class="method-name">getPos</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetSource" title="details" class="method-name">getSource</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string|false</span>
+        <a href="#methodgetWord" title="details" class="method-name">getWord</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodretrievesource" title="details" class="method-name">retrievesource</a>
+        ([<span class="var-type">string</span>&nbsp;<span class="var-name">$word</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetPos" title="details" class="method-name">setPos</a>
+        (<span class="var-type">integer</span>&nbsp;<span class="var-name">$pos</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetSeperator" title="details" class="method-name">setSeperator</a>
+        (<span class="var-type">array</span>&nbsp;<span class="var-name">&$seps</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetup" title="details" class="method-name">setup</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">&$input</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetWhitespace" title="details" class="method-name">setWhitespace</a>
+        ([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$val</span> = <span class="var-default">false</span>])
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodbackupPos" id="methodbackupPos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method backupPos</strong> (line <span class="linenumber">346</span>)
+ </h4> 
+<h4><i>void</i> <strong>backupPos(
+string
+$word)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/phpDocumentorTWordParser.html#methodbackupPos">phpDocumentorTWordParser::backupPos()</a></dt>
+		<dd>backs the parser up to the previous position</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/Parsers/phpDocumentor_HighlightWordParser.html#methodbackupPos">phpDocumentor_HighlightWordParser::backupPos()</a></dt>
+		<dd>back the word parser to the previous token as defined by $last_token</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Backup to the previous token so that it can be retrieved again in a new context.</h5>
+<div class="desc"><p>Backup to the previous token so that it can be retrieved again in a new context.
+ Occasionally, a word will be passed to an event handler that should be handled by another event handler.  This method allows that to happen.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $word</strong>: token to back up to</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetBlock" id="methodgetBlock"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getBlock</strong> (line <span class="linenumber">305</span>)
+ </h4> 
+<h4><i>string</i> <strong>getBlock(
+integer
+$start, integer
+$len)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Unused</h5>
+<div class="desc"><p>Unused
+ <div class="src-code"><ol><li><div class="src-line"><font color="blue">function&nbsp;</font><a href="../../phpDocumentor/WordParsers/WordParser.html#methodgetBlock">getBlock</a><strong>(</strong><strong>$start</strong><strong>,&nbsp;</strong><strong>$len</strong><strong>)</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$this</strong><strong>-&gt;</strong><a href="../../phpDocumentor/WordParsers/WordParser.html#var$data">data</a><strong>,&nbsp;</strong><strong>$start</strong><strong>,&nbsp;</strong><strong>$len</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+</ol></div></p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>integer $start</strong>: starting position</li>
+			<li><strong>integer $len</strong>: length of block to retrieve</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - the requested block of characters</li>
+		</ul>
+</div>
+<a name="methodgetPos" id="methodgetPos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getPos</strong> (line <span class="linenumber">290</span>)
+ </h4> 
+<h4><i>int</i> <strong>getPos(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Returns the current pointer position, or 1 character after the end of the word</h5>
+<div class="desc"><p>Returns the current pointer position, or 1 character after the end of the word</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - the position</li>
+		</ul>
+</div>
+<a name="methodgetSource" id="methodgetSource"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getSource</strong> (line <span class="linenumber">149</span>)
+ </h4> 
+<h4><i>string</i> <strong>getSource(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/phpDocumentorTWordParser.html#methodgetSource">phpDocumentorTWordParser::getSource()</a></dt>
+		<dd>loads up next set of source code</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieve source code for the last function/method</h5>
+<div class="desc"><p>Retrieve source code for the last function/method</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetWord" id="methodgetWord"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getWord</strong> (line <span class="linenumber">206</span>)
+ </h4> 
+<h4><i>string|false</i> <strong>getWord(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/ObjectWordParser.html#methodgetWord">ObjectWordParser::getWord()</a></dt>
+		<dd></dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/phpDocumentorTWordParser.html#methodgetWord">phpDocumentorTWordParser::getWord()</a></dt>
+		<dd>Retrieve a token for the phpDocumentorTParser  This method adds source code to the array for a function to be returned to a {@source} tag, and will return the token unless it is T_WHITESPACE and $returnWhiteSpace is false.{@</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/Parsers/phpDocumentor_HighlightWordParser.html#methodgetWord">phpDocumentor_HighlightWordParser::getWord()</a></dt>
+		<dd>Retrieve the next token</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieve a token from the token list
+ The <a href="../../phpDocumentor/Parsers/Parser.html">Parser</a> class relies upon this method to retrieve the next token. that delineate tokens for the current parser state. is set by the parser with a call to <a href="../../phpDocumentor/Parsers/Parser.html#methodconfigWordParser">Parser::configWordParser()</a> every time a new parser state is reached.</h5>
+<div class="desc"><p>Retrieve a token from the token list
+ The <a href="../../phpDocumentor/Parsers/Parser.html">Parser</a> class relies upon this method to retrieve the next token.  The <a href="../../phpDocumentor/WordParsers/WordParser.html#var$wordseperators">$wordseperators</a> array is a collection of strings that delineate tokens for the current parser state.  $wordseperators is set by the parser with a call to <a href="../../phpDocumentor/Parsers/Parser.html#methodconfigWordParser">Parser::configWordParser()</a> every time a new parser state is reached.
+ For example, while parsing the source code for a class, the word <div class="src-code"><ol><li><div class="src-line"><font color="blue">var</font></div></li>
+</ol></div> is a token, and <div class="src-code"><ol><li><div class="src-line"><font color="blue">global</font></div></li>
+</ol></div> is not, but inside a function, the reverse is true.  The parser state PARSER_STATE_CLASS has a token list that includes whitespace, code delimiters like ; and {}, and comment/DocBlock indicators
+ If the whitespace option has been turned off using <a href="../../phpDocumentor/WordParsers/WordParser.html#methodsetWhitespace">setWhitespace()</a>, then no whitespace is returned with tokens
+  In the first segment of the function, the code attempts to find the next token.  A cache is used to speed repetitious tasks.  The $tpos variable is used to hold the position of the next token.  $npos is used to hold the end of the token, and so $npos - $tpos will give the length of the token.  This is used to allow tokens that contain whitespace, should that option be desired.
+ <a href="../../phpDocumentor/WordParsers/WordParser.html#var$data">$data</a> is of course the string containing the PHP code to be parsed, and {@ <a href="../../phpDocumentor/WordParsers/WordParser.html#var$pos">$pos</a> is the cursor, or current location within the parsed data. }}</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - the next token, an empty string if there are no                      token separators in the $wordseperators array,                      or false if the end of input has been reached</li>
+		</ul>
+</div>
+<a name="methodretrievesource" id="methodretrievesource"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method retrievesource</strong> (line <span class="linenumber">165</span>)
+ </h4> 
+<h4><i>void</i> <strong>retrievesource(
+[string
+$word = ''])</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/phpDocumentorTWordParser.html#methodretrievesource">phpDocumentorTWordParser::retrievesource()</a></dt>
+		<dd>Begin retrieving source code</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Used to tell the WordParser to start retrieving source code</h5>
+<div class="desc"><p>Used to tell the WordParser to start retrieving source code</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $word</strong>: source code</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>access</strong> - private</li>
+		</ul>
+</div>
+<a name="methodsetPos" id="methodsetPos"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setPos</strong> (line <span class="linenumber">330</span>)
+ </h4> 
+<h4><i>void</i> <strong>setPos(
+integer
+$pos)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Set the internal cursor within the source code</h5>
+<div class="desc"><p>Set the internal cursor within the source code</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>integer $pos</strong>: the position</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetSeperator" id="methodsetSeperator"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setSeperator</strong> (line <span class="linenumber">318</span>)
+ </h4> 
+<h4><i>void</i> <strong>setSeperator(
+array
+&$seps)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Sets the list of possible separator tokens</h5>
+<div class="desc"><p>Sets the list of possible separator tokens</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array &$seps</strong>: array of strings that separate tokens</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>uses</strong> - <a href="../../phpDocumentor/WordParsers/WordParser.html#var$wordseperators">WordParser::$wordseperators</a></li>
+		</ul>
+</div>
+<a name="methodsetup" id="methodsetup"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setup</strong> (line <span class="linenumber">132</span>)
+ </h4> 
+<h4><i>void</i> <strong>setup(
+string
+&$input)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/ObjectWordParser.html#methodsetup">ObjectWordParser::setup()</a></dt>
+		<dd>Set the word parser to go.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/WordParsers/phpDocumentorTWordParser.html#methodsetup">phpDocumentorTWordParser::setup()</a></dt>
+		<dd>Uses <a href="http://www.php.net/token_get_all">http://www.php.net/token_get_all</a> to tokenize the source code.</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/Parsers/phpDocumentor_HighlightWordParser.html#methodsetup">phpDocumentor_HighlightWordParser::setup()</a></dt>
+		<dd>Initialize the parser object</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Initialize the WordParser</h5>
+<div class="desc"><p>Initialize the WordParser</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string &$input</strong>: source code</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodsetWhitespace" id="methodsetWhitespace"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setWhitespace</strong> (line <span class="linenumber">360</span>)
+ </h4> 
+<h4><i>void</i> <strong>setWhitespace(
+[boolean
+$val = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>set parser to return or strip whitespace</h5>
+<div class="desc"><p>set parser to return or strip whitespace</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>boolean $val</strong>: flag to return or strip whitespace</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:43 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

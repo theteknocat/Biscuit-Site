@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for common.inc.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file common.inc.php</h1>
+<p>Documentation is available at <a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html">common.inc.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a2"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">&nbsp;*&nbsp;Common&nbsp;information&nbsp;needed&nbsp;by&nbsp;all&nbsp;portions&nbsp;of&nbsp;the&nbsp;application</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">&nbsp;*&nbsp;phpDocumentor&nbsp;::&nbsp;automatic&nbsp;documentation&nbsp;generator</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">&nbsp;*&nbsp;PHP&nbsp;versions&nbsp;4&nbsp;and&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2001-2008&nbsp;Gregory&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">&nbsp;*&nbsp;LICENSE:</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">&nbsp;*&nbsp;and/or&nbsp;modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">&nbsp;*&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">&nbsp;*&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">&nbsp;*&nbsp;later&nbsp;version.</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</font></div></li>
+<li><div class="src-line"><a name="a20"></a><font color="#009999">&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</font></div></li>
+<li><div class="src-line"><a name="a21"></a><font color="#009999">&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU</font></div></li>
+<li><div class="src-line"><a name="a22"></a><font color="#009999">&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</font></div></li>
+<li><div class="src-line"><a name="a23"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a24"></a><font color="#009999">&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public</font></div></li>
+<li><div class="src-line"><a name="a25"></a><font color="#009999">&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software</font></div></li>
+<li><div class="src-line"><a name="a26"></a><font color="#009999">&nbsp;*&nbsp;Foundation,&nbsp;Inc.,&nbsp;59&nbsp;Temple&nbsp;Place,&nbsp;Suite&nbsp;330,&nbsp;Boston,&nbsp;MA&nbsp;02111-1307&nbsp;USA</font></div></li>
+<li><div class="src-line"><a name="a27"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a28"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@category</font></strong><font color="#009999">&nbsp;&nbsp;ToolsAndUtilities</font></div></li>
+<li><div class="src-line"><a name="a29"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a30"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;Greg&nbsp;Beaver&nbsp;&lt;cellog@php.net&gt;</font></div></li>
+<li><div class="src-line"><a name="a31"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@copyright</font></strong><font color="#009999">&nbsp;2001-2008&nbsp;Gregory&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@license</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;http://www.opensource.org/licenses/lgpl-license.php&nbsp;LGPL</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@version</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;CVS:&nbsp;$Id:&nbsp;common.inc.php,v&nbsp;1.15&nbsp;2008/02/24&nbsp;02:35:44&nbsp;ashnazg&nbsp;Exp&nbsp;$</font></div></li>
+<li><div class="src-line"><a name="a34"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@filesource</font></strong></div></li>
+<li><div class="src-line"><a name="a35"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.phpdoc.org</font></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://pear.php.net/PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a37"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parserDocBlock,&nbsp;parserInclude,&nbsp;parserPage,&nbsp;parserClass</font></div></li>
+<li><div class="src-line"><a name="a38"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@see</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;parserDefine,&nbsp;parserFunction,&nbsp;parserMethod,&nbsp;parserVar</font></div></li>
+<li><div class="src-line"><a name="a39"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@since</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.0rc1</font></div></li>
+<li><div class="src-line"><a name="a40"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;change&nbsp;package&nbsp;to&nbsp;PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a41"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;rename&nbsp;constant&nbsp;to&nbsp;TOKENIZER_EXT</font></div></li>
+<li><div class="src-line"><a name="a42"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a44"></a><font color="green">/*&nbsp;phpDocumentor&nbsp;version&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a45"></a><font color="blue">if&nbsp;</font><strong>(</strong><font color="#66cccc">'@PEAR-DIR@'&nbsp;</font>!=&nbsp;<font color="#66cccc">'@'</font>.<font color="#66cccc">'PEAR-DIR@'</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**&nbsp;</font><strong><font color = "#0099FF">@ignore</font></strong><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">&quot;PHPDOCUMENTOR_VER&quot;</font><strong>,&nbsp;</strong><font color="#66cccc">&quot;@VER@&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a48"></a><strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">&quot;PHPDOCUMENTOR_VER&quot;</font><strong>,&nbsp;</strong><font color="#66cccc">&quot;1.4.1&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a50"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a52"></a><font color="green">/*&nbsp;phpDocumentor&nbsp;URL&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a53"></a><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">&quot;PHPDOCUMENTOR_WEBSITE&quot;</font><strong>,&nbsp;</strong><font color="#66cccc">&quot;http://www.phpdoc.org&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a55"></a><font color="green">//&nbsp;set&nbsp;the&nbsp;correct&nbsp;path&nbsp;delimiter</font></div></li>
+<li><div class="src-line"><a name="a56"></a><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'SMART_PATH_DELIMITER'</font><strong>,&nbsp;</strong>DIRECTORY_SEPARATOR<strong>)</strong><strong>;&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a58"></a><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'tokenizer_ext'</font><strong>,&nbsp;</strong>extension_loaded<strong>(</strong><font color="#66cccc">'tokenizer'</font><strong>)&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;version_compare<strong>(</strong>phpversion<strong>(</strong><strong>)</strong><strong>,&nbsp;</strong><font color="#66cccc">&quot;4.3.0&quot;</font><strong>,&nbsp;</strong><font color="#66cccc">&quot;&gt;=&quot;</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a61"></a><font color="green">//&nbsp;we&nbsp;just&nbsp;replace&nbsp;all&nbsp;the&nbsp;\&nbsp;with&nbsp;/&nbsp;so&nbsp;that&nbsp;we&nbsp;can&nbsp;just&nbsp;operate&nbsp;on&nbsp;/</font></div></li>
+<li><div class="src-line"><a name="a62"></a><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'PATH_DELIMITER'</font><strong>,&nbsp;</strong><font color="#66cccc">'/'</font><strong>)</strong><strong>;&nbsp;</strong><font color="green">//&nbsp;set&nbsp;the&nbsp;correct&nbsp;path&nbsp;delimiter</font></div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a64"></a><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'PHPDOCUMENTOR_WINDOWS'</font><strong>,&nbsp;</strong>substr<strong>(</strong>PHP_OS<strong>,&nbsp;</strong>0<strong>,&nbsp;</strong>3<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'WIN'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a66"></a><a href="http://www.php.net/define">define</a><strong>(</strong><font color="#66cccc">'_IN_PHP5'</font><strong>,&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a67"></a>&nbsp;&nbsp;&nbsp;&nbsp;phpversion<strong>(</strong><strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'5.0.0RC1-dev'&nbsp;</font>||&nbsp;phpversion<strong>(</strong><strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'5.0.0RC2-dev'&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a68"></a>&nbsp;&nbsp;&nbsp;&nbsp;||&nbsp;version_compare<strong>(</strong>phpversion<strong>(</strong><strong>)</strong><strong>,&nbsp;</strong><font color="#66cccc">'5.0.0'</font><strong>,&nbsp;</strong><font color="#66cccc">'ge'</font><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a69"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a70"></a><font color="green">//&nbsp;determine&nbsp;which&nbsp;&quot;clone&quot;&nbsp;class&nbsp;to&nbsp;set,&nbsp;based&nbsp;on&nbsp;PHP&nbsp;major&nbsp;version</font></div></li>
+<li><div class="src-line"><a name="a71"></a><strong>$cloneClassDir&nbsp;&nbsp;</strong>=&nbsp;<font color="#66cccc">'PhpDocumentor'&nbsp;</font>.&nbsp;DIRECTORY_SEPARATOR&nbsp;.&nbsp;<font color="#66cccc">'phpDocumentor'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a72"></a><strong>$cloneClassFile&nbsp;</strong>=&nbsp;<font color="#66cccc">'clone.inc.php'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a73"></a><font color="blue">if&nbsp;</font><strong>(</strong><font color="#66cccc">'@VER@'&nbsp;</font>==&nbsp;<font color="#66cccc">'@'</font>.<font color="#66cccc">'VER@'</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;we're&nbsp;_not_&nbsp;in&nbsp;a&nbsp;PEAR&nbsp;installation</font></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$cloneClassDir&nbsp;</strong>=&nbsp;<a href="http://www.php.net/dirname">dirname</a><strong>(</strong>__FILE__<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a76"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a77"></a><font color="blue">if&nbsp;</font><strong>(</strong><a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#define_IN_PHP5">_IN_PHP5</a><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;we&nbsp;_are_&nbsp;in&nbsp;PHP5</font></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$cloneClassFile&nbsp;</strong>=&nbsp;<font color="#66cccc">'clone5.inc.php'</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a80"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a81"></a><font color="blue">require_once&nbsp;</font><strong>$cloneClassDir&nbsp;</strong>.&nbsp;DIRECTORY_SEPARATOR&nbsp;.&nbsp;<strong>$cloneClassFile</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a83"></a><font color="green">//&nbsp;make&nbsp;arg&nbsp;arrays&nbsp;available</font></div></li>
+<li><div class="src-line"><a name="a84"></a><font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$_SERVER</strong><strong>[</strong><font color="#66cccc">'argv'</font><strong>]</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$argv&nbsp;</strong>=&nbsp;<strong>$_SERVER</strong><strong>[</strong><font color="#66cccc">'argv'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$argc&nbsp;</strong>=&nbsp;<strong>$_SERVER</strong><strong>[</strong><font color="#66cccc">'argc'</font><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a87"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a89"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a90"></a><font color="#009999">&nbsp;*&nbsp;used&nbsp;in&nbsp;phpdoc.php&nbsp;and&nbsp;new_phpdoc.php</font></div></li>
+<li><div class="src-line"><a name="a91"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a92"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>string&nbsp;</em><strong>$directory&nbsp;</strong><font color="#009999">a&nbsp;directory&nbsp;string</font></div></li>
+<li><div class="src-line"><a name="a93"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a94"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>array&nbsp;</em><font color="#009999">an&nbsp;array&nbsp;of&nbsp;directory&nbsp;contents</font></div></li>
+<li><div class="src-line"><a name="a95"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;rename&nbsp;function&nbsp;to&nbsp;PhpDocumentor_ConfigFileList</font></div></li>
+<li><div class="src-line"><a name="a96"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a97"></a><font color="blue">function&nbsp;</font><a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_ConfigFileList">phpDocumentor_ConfigFileList</a><strong>(</strong><strong>$directory</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a98"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ret&nbsp;</strong>=&nbsp;array<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a100"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>@</strong><a href="http://www.php.net/is_dir">is_dir</a><strong>(</strong><strong>$directory</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a101"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ret&nbsp;</strong>=&nbsp;array<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;thanks&nbsp;to&nbsp;Jason&nbsp;E&nbsp;Sweat&nbsp;(jsweat@users.sourceforge.net)&nbsp;for&nbsp;fix</font></div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$d&nbsp;</strong>=&nbsp;<strong>@</strong><a href="http://www.php.net/dir">dir</a><strong>(</strong><strong>$directory</strong><strong>)</strong><strong>;&nbsp;</strong></div></li>
+<li><div class="src-line"><a name="a105"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;<strong>(</strong><strong>$d&nbsp;</strong>&amp;&amp;&nbsp;<strong>$entry</strong>=<strong>$d</strong><strong>-&gt;</strong>read<strong>(</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a107"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$getentry&nbsp;</strong>=&nbsp;false<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/strcmp">strcmp</a><strong>(</strong><strong>$entry</strong><strong>,&nbsp;</strong><font color="#66cccc">&quot;.&quot;</font><strong>)&nbsp;</strong>!=&nbsp;0&nbsp;&amp;&amp;&nbsp;<a href="http://www.php.net/strcmp">strcmp</a><strong>(</strong><strong>$entry</strong><strong>,&nbsp;</strong><font color="#66cccc">&quot;..&quot;</font><strong>)&nbsp;</strong>!=&nbsp;0<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$entry</strong><strong>,&nbsp;</strong>0<strong>,&nbsp;</strong>1<strong>)&nbsp;</strong>!=&nbsp;<font color="#66cccc">&quot;.&quot;</font><strong>)&nbsp;</strong><strong>$getentry&nbsp;</strong>=&nbsp;true<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$getentry&nbsp;</strong>==&nbsp;true<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/strpos">strpos</a><strong>(</strong><strong>$entry</strong><strong>,&nbsp;</strong><font color="#66cccc">'.ini'</font><strong>))</strong></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/is_file">is_file</a><strong>(</strong><strong>$directory&nbsp;</strong>.&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#definePATH_DELIMITER">PATH_DELIMITER</a>&nbsp;.&nbsp;<strong>$entry</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ret</strong><strong>[</strong><strong>]&nbsp;</strong>=&nbsp;<a href="http://www.php.net/str_replace">str_replace</a><strong>(</strong><font color="#66cccc">'.ini'</font><strong>,&nbsp;</strong><font color="#66cccc">''</font><strong>,&nbsp;</strong><strong>$entry</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$d</strong><strong>)&nbsp;</strong><strong>$d</strong><strong>-&gt;</strong>close<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$ret</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a122"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a125"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a126"></a><font color="#009999">&nbsp;*&nbsp;Parse&nbsp;an&nbsp;.ini&nbsp;file</font></div></li>
+<li><div class="src-line"><a name="a127"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a128"></a><font color="#009999">&nbsp;*&nbsp;Works&nbsp;like&nbsp;</font><em><font color="#0099FF">{@link&nbsp;parse_ini_file}</font></em><font color="#009999">,&nbsp;except&nbsp;it&nbsp;will&nbsp;take&nbsp;a&nbsp;section&nbsp;like:</font></div></li>
+<li><div class="src-line"><a name="a129"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a130"></a><font color="#009999">&nbsp;*&nbsp;&lt;pre&gt;</font></div></li>
+<li><div class="src-line"><a name="a131"></a><font color="#009999">&nbsp;*&nbsp;[MYVAR]</font></div></li>
+<li><div class="src-line"><a name="a132"></a><font color="#009999">&nbsp;*&nbsp;value1</font></div></li>
+<li><div class="src-line"><a name="a133"></a><font color="#009999">&nbsp;*&nbsp;value2</font></div></li>
+<li><div class="src-line"><a name="a134"></a><font color="#009999">&nbsp;*&nbsp;value3</font></div></li>
+<li><div class="src-line"><a name="a135"></a><font color="#009999">&nbsp;*&nbsp;&lt;/pre&gt;</font></div></li>
+<li><div class="src-line"><a name="a136"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a137"></a><font color="#009999">&nbsp;*&nbsp;and&nbsp;return&nbsp;an&nbsp;associative&nbsp;array(MYVAR&nbsp;=&gt;&nbsp;array(value1,&nbsp;value2,&nbsp;value3))</font></div></li>
+<li><div class="src-line"><a name="a138"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a139"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>string&nbsp;</em><strong>$filename&nbsp;</strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full&nbsp;path&nbsp;to&nbsp;the&nbsp;ini&nbsp;file</font></div></li>
+<li><div class="src-line"><a name="a140"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>bool&nbsp;</em><font color="#009999">&nbsp;&nbsp;</font><strong>$process_sections&nbsp;</strong><font color="#009999">add&nbsp;an&nbsp;associative&nbsp;index</font></div></li>
+<li><div class="src-line"><a name="a141"></a><font color="#009999">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;each&nbsp;section&nbsp;[in&nbsp;brackets]</font></div></li>
+<li><div class="src-line"><a name="a142"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a143"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>array&nbsp;</em></div></li>
+<li><div class="src-line"><a name="a144"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;rename&nbsp;function&nbsp;to&nbsp;PhpDocumentor_parse_ini_file</font></div></li>
+<li><div class="src-line"><a name="a145"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a146"></a><font color="blue">function&nbsp;</font><a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_parse_ini_file">phpDocumentor_parse_ini_file</a><strong>(</strong><strong>$filename</strong><strong>,&nbsp;</strong><strong>$process_sections&nbsp;</strong>=&nbsp;false<strong>)</strong></div></li>
+<li><div class="src-line"><a name="a147"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a148"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini_array&nbsp;</strong>=&nbsp;array<strong>(</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a149"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$sec_name&nbsp;&nbsp;</strong>=&nbsp;<font color="#66cccc">&quot;&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a150"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>$lines&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>=&nbsp;<strong>@</strong><a href="http://www.php.net/file">file</a><strong>(</strong><strong>$filename</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a151"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>!</strong><strong>$lines</strong><strong>)&nbsp;</strong><font color="blue">return&nbsp;</font><strong>$lines</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a152"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">foreach&nbsp;</font><strong>(</strong><strong>$lines&nbsp;</strong>as&nbsp;<strong>$line</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a153"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;code&nbsp;by&nbsp;Greg&nbsp;Beaver,&nbsp;ignore&nbsp;comments</font></div></li>
+<li><div class="src-line"><a name="a154"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$line</strong><strong>[</strong>0<strong>]&nbsp;</strong>==&nbsp;<font color="#66cccc">';'</font><strong>)&nbsp;</strong>continue<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a155"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$line&nbsp;</strong>=&nbsp;<a href="http://www.php.net/trim">trim</a><strong>(</strong><strong>$line</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a156"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a157"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$line&nbsp;</strong>==&nbsp;<font color="#66cccc">&quot;&quot;</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a158"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a159"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a160"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$line</strong><strong>[</strong>0<strong>]&nbsp;</strong>==&nbsp;<font color="#66cccc">&quot;[&quot;&nbsp;</font>&amp;&amp;&nbsp;<strong>$line</strong><strong>[</strong><a href="http://www.php.net/strlen">strlen</a><strong>(</strong><strong>$line</strong><strong>)&nbsp;</strong>-&nbsp;1<strong>]&nbsp;</strong>==&nbsp;<font color="#66cccc">&quot;]&quot;</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a161"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$sec_name&nbsp;</strong>=&nbsp;<a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$line</strong><strong>,&nbsp;</strong>1<strong>,&nbsp;</strong><a href="http://www.php.net/strlen">strlen</a><strong>(</strong><strong>$line</strong><strong>)&nbsp;</strong>-&nbsp;2<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a162"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/strpos">strpos</a><strong>(</strong><strong>$line</strong><strong>,&nbsp;</strong><font color="#66cccc">&quot;=&quot;</font><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a164"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$pos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>=&nbsp;<a href="http://www.php.net/strpos">strpos</a><strong>(</strong><strong>$line</strong><strong>,&nbsp;</strong><font color="#66cccc">&quot;=&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$property&nbsp;</strong>=&nbsp;<a href="http://www.php.net/trim">trim</a><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$line</strong><strong>,&nbsp;</strong>0<strong>,&nbsp;</strong><strong>$pos</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;code&nbsp;by&nbsp;Greg&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a167"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$property</strong><strong>,&nbsp;</strong>0<strong>,&nbsp;</strong>1<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'&quot;'&nbsp;</font>&amp;&amp;&nbsp;<a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$property</strong><strong>,&nbsp;</strong>-1<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'&quot;'</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a168"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$property&nbsp;</strong>=&nbsp;</div></li>
+<li><div class="src-line"><a name="a169"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/stripcslashes">stripcslashes</a><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$property</strong><strong>,&nbsp;</strong>1<strong>,&nbsp;</strong><a href="http://www.php.net/count">count</a><strong>(</strong><strong>$property</strong><strong>)&nbsp;</strong>-&nbsp;2<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a170"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a171"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$value&nbsp;</strong>=&nbsp;<a href="http://www.php.net/trim">trim</a><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$line</strong><strong>,&nbsp;</strong><strong>$pos&nbsp;</strong>+&nbsp;1<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a172"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$value&nbsp;</strong>==&nbsp;<font color="#66cccc">'false'</font><strong>)&nbsp;</strong><strong>$value&nbsp;</strong>=&nbsp;false<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a173"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$value&nbsp;</strong>==&nbsp;<font color="#66cccc">'true'</font><strong>)&nbsp;</strong><strong>$value&nbsp;</strong>=&nbsp;true<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a174"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$value</strong><strong>,&nbsp;</strong>0<strong>,&nbsp;</strong>1<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'&quot;'&nbsp;</font>&amp;&amp;&nbsp;<a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$value</strong><strong>,&nbsp;</strong>-1<strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'&quot;'</font><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a175"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$value&nbsp;</strong>=&nbsp;<a href="http://www.php.net/stripcslashes">stripcslashes</a><strong>(</strong><a href="http://www.php.net/substr">substr</a><strong>(</strong><strong>$value</strong><strong>,&nbsp;</strong>1<strong>,&nbsp;</strong><a href="http://www.php.net/count">count</a><strong>(</strong><strong>$value</strong><strong>)&nbsp;</strong>-&nbsp;2<strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a176"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a177"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;done&nbsp;additions</font></div></li>
+<li><div class="src-line"><a name="a178"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a179"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$process_sections</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a180"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$sec_name&nbsp;</strong>!=&nbsp;<font color="#66cccc">''</font><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a181"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini_array</strong><strong>[</strong><strong>$sec_name</strong><strong>]</strong><strong>[</strong><strong>$property</strong><strong>]&nbsp;</strong>=&nbsp;<strong>$value</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a182"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</div></li>
+<li><div class="src-line"><a name="a183"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini_array</strong><strong>[</strong><strong>$property</strong><strong>]&nbsp;</strong>=&nbsp;<strong>$value</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a184"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a185"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini_array</strong><strong>[</strong><strong>$property</strong><strong>]&nbsp;</strong>=&nbsp;<strong>$value</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a186"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a187"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a188"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;code&nbsp;by&nbsp;Greg&nbsp;Beaver</font></div></li>
+<li><div class="src-line"><a name="a189"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/trim">trim</a><strong>(</strong><strong>$line</strong><strong>[</strong>0<strong>]</strong><strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">';'</font><strong>)&nbsp;</strong>continue<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a190"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$process_sections</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a191"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$ini_array</strong><strong>[</strong><strong>$sec_name</strong><strong>]</strong><strong>[</strong><strong>]&nbsp;</strong>=&nbsp;<a href="http://www.php.net/trim">trim</a><strong>(</strong><strong>$line</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a192"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a193"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;done&nbsp;additions</font></div></li>
+<li><div class="src-line"><a name="a194"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a195"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a196"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a197"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$ini_array</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a198"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a199"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a200"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a201"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a202"></a><font color="#009999">&nbsp;*&nbsp;construct&nbsp;an&nbsp;&quot;array_key_exists()&quot;&nbsp;method</font></div></li>
+<li><div class="src-line"><a name="a203"></a><font color="#009999">&nbsp;*&nbsp;if&nbsp;the&nbsp;runtime&nbsp;PHP&nbsp;version&nbsp;doesn't&nbsp;have&nbsp;one</font></div></li>
+<li><div class="src-line"><a name="a204"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a205"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;CS&nbsp;Cleanup&nbsp;-&nbsp;can't&nbsp;avoid&nbsp;&quot;prefixed&nbsp;by&nbsp;package&quot;&nbsp;error</font></div></li>
+<li><div class="src-line"><a name="a206"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;depend&nbsp;on&nbsp;PHP_Compat&nbsp;for&nbsp;this?</font></div></li>
+<li><div class="src-line"><a name="a207"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a208"></a><font color="blue">if&nbsp;</font><strong>(</strong><strong>!</strong><a href="http://www.php.net/function_exists">function_exists</a><strong>(</strong><font color="#66cccc">'array_key_exists'</font><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a209"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a210"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Determines&nbsp;if&nbsp;a&nbsp;given&nbsp;key&nbsp;exists&nbsp;in&nbsp;a&nbsp;given&nbsp;array</font></div></li>
+<li><div class="src-line"><a name="a211"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a212"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>mixed&nbsp;</em><strong>$key&nbsp;</strong><font color="#009999">&nbsp;&nbsp;&nbsp;key&nbsp;to&nbsp;search&nbsp;for</font></div></li>
+<li><div class="src-line"><a name="a213"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>array&nbsp;</em><strong>$search&nbsp;</strong><font color="#009999">the&nbsp;array&nbsp;of&nbsp;keys&nbsp;to&nbsp;search</font></div></li>
+<li><div class="src-line"><a name="a214"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a215"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>bool&nbsp;</em><font color="#009999">whether&nbsp;or&nbsp;not&nbsp;the&nbsp;key&nbsp;was&nbsp;found</font></div></li>
+<li><div class="src-line"><a name="a216"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@ignore</font></strong></div></li>
+<li><div class="src-line"><a name="a217"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a218"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="http://www.php.net/array_key_exists">array_key_exists</a><strong>(</strong><strong>$key</strong><strong>,&nbsp;</strong><strong>$search</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a219"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a220"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">foreach&nbsp;</font><strong>(</strong><strong>$search&nbsp;</strong>as&nbsp;<strong>$keys&nbsp;</strong>=&gt;&nbsp;<strong>$nul</strong><strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a221"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><strong>$key&nbsp;</strong>==&nbsp;<strong>$keys</strong><strong>)&nbsp;</strong><font color="blue">return&nbsp;</font>true<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a222"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a223"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font>false<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a224"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a225"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a226"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a227"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a228"></a><font color="#009999">&nbsp;*&nbsp;construct&nbsp;an&nbsp;&quot;is_a()&quot;&nbsp;method</font></div></li>
+<li><div class="src-line"><a name="a229"></a><font color="#009999">&nbsp;*&nbsp;if&nbsp;the&nbsp;runtime&nbsp;PHP&nbsp;version&nbsp;doesn't&nbsp;have&nbsp;one</font></div></li>
+<li><div class="src-line"><a name="a230"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a231"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;CS&nbsp;Cleanup&nbsp;-&nbsp;can't&nbsp;avoid&nbsp;&quot;prefixed&nbsp;by&nbsp;package&quot;&nbsp;error</font></div></li>
+<li><div class="src-line"><a name="a232"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;depend&nbsp;on&nbsp;PHP_Compat&nbsp;for&nbsp;this?</font></div></li>
+<li><div class="src-line"><a name="a233"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a234"></a><font color="blue">if&nbsp;</font><strong>(</strong><strong>!</strong><a href="http://www.php.net/function_exists">function_exists</a><strong>(</strong><font color="#66cccc">'is_a'</font><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a235"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a236"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Determines&nbsp;if&nbsp;one&nbsp;item&nbsp;&quot;is&quot;&nbsp;an&nbsp;object&nbsp;of&nbsp;the&nbsp;other&nbsp;item</font></div></li>
+<li><div class="src-line"><a name="a237"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a238"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>string&nbsp;</em><strong>$classname&nbsp;</strong><font color="#009999">&nbsp;the&nbsp;class&nbsp;in&nbsp;question</font></div></li>
+<li><div class="src-line"><a name="a239"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>string&nbsp;</em><strong>$classquery&nbsp;</strong><font color="#009999">the&nbsp;&quot;is&nbsp;it&nbsp;a&quot;&nbsp;class</font></div></li>
+<li><div class="src-line"><a name="a240"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a241"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>bool&nbsp;</em><font color="#009999">whether&nbsp;or&nbsp;not&nbsp;the&nbsp;class&nbsp;&quot;is&quot;&nbsp;one</font></div></li>
+<li><div class="src-line"><a name="a242"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@ignore</font></strong></div></li>
+<li><div class="src-line"><a name="a243"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a244"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="http://www.php.net/is_a">is_a</a><strong>(</strong><strong>$classname</strong><strong>,&nbsp;</strong><strong>$classquery</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a245"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a246"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$father&nbsp;</strong>=&nbsp;<a href="http://www.php.net/get_parent_class">get_parent_class</a><strong>(</strong><strong>$classname</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a247"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/strtolower">strtolower</a><strong>(</strong><strong>$father</strong><strong>)&nbsp;</strong>==&nbsp;<a href="http://www.php.net/strtolower">strtolower</a><strong>(</strong><strong>$classquery</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a248"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font>true<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a249"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>elseif&nbsp;<strong>(</strong><strong>!</strong>empty<strong>(</strong><strong>$father</strong><strong>))&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a250"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><a href="http://www.php.net/is_a">is_a</a><strong>(</strong><strong>$father</strong><strong>,&nbsp;</strong><strong>$classquery</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a251"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}&nbsp;</strong>else&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a252"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font>false<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a253"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a254"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a255"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a256"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a257"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a258"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a259"></a><font color="#009999">&nbsp;*&nbsp;Debugging&nbsp;output</font></div></li>
+<li><div class="src-line"><a name="a260"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a261"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>string&nbsp;</em><strong>$s&nbsp;</strong><font color="#009999">the&nbsp;&quot;debug&nbsp;message&quot;&nbsp;string&nbsp;to&nbsp;echo&nbsp;out</font></div></li>
+<li><div class="src-line"><a name="a262"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a263"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>void&nbsp;</em></div></li>
+<li><div class="src-line"><a name="a264"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;CS&nbsp;Cleanup&nbsp;-&nbsp;can't&nbsp;avoid&nbsp;&quot;prefixed&nbsp;by&nbsp;package&quot;&nbsp;error</font></div></li>
+<li><div class="src-line"><a name="a265"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a266"></a><font color="blue">function&nbsp;</font><a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functiondebug">debug</a><strong>(</strong><strong>$s</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a267"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a268"></a>&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<font color="#66cccc">&quot;</font><font color="#66cccc"><strong>$s</strong>\n</font><font color="#66cccc">&quot;</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a269"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a270"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a271"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a272"></a><font color="#009999">&nbsp;*&nbsp;Returns&nbsp;a&nbsp;formatted&nbsp;var_dump&nbsp;for&nbsp;debugging&nbsp;purposes.</font></div></li>
+<li><div class="src-line"><a name="a273"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a274"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>string&nbsp;</em><strong>$s&nbsp;</strong><font color="#009999">string&nbsp;to&nbsp;display</font></div></li>
+<li><div class="src-line"><a name="a275"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>mixed&nbsp;</em><font color="#009999">&nbsp;</font><strong>$v&nbsp;</strong><font color="#009999">unlimited&nbsp;number&nbsp;of&nbsp;variables&nbsp;to&nbsp;display&nbsp;with&nbsp;var_dump()</font></div></li>
+<li><div class="src-line"><a name="a276"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a277"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>void&nbsp;</em></div></li>
+<li><div class="src-line"><a name="a278"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a279"></a><font color="blue">function&nbsp;</font><a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionfancy_debug">fancy_debug</a><strong>(</strong><strong>$s</strong><strong>,</strong><strong>$v</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a280"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a281"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong>isset<strong>(</strong><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'dont_debug'</font><strong>]</strong><strong>)&nbsp;</strong>&amp;&amp;&nbsp;<strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'dont_debug'</font><strong>]</strong><strong>)&nbsp;</strong><font color="blue">return</font><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a282"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functiondebug">debug</a><strong>(</strong><strong>$s</strong>.<font color="#66cccc">&quot;\n\n&lt;/pre&gt;&lt;blockquote&gt;&lt;pre&gt;&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a283"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/var_dump">var_dump</a><strong>(</strong><strong>$v</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a284"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">if&nbsp;</font><strong>(</strong><a href="http://www.php.net/func_num_args">func_num_args</a><strong>(</strong><strong>)</strong>&gt;2<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a285"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">for&nbsp;</font><strong>(</strong><strong>$i</strong>=2<strong>;</strong><strong>$i</strong>&lt;<a href="http://www.php.net/func_num_args">func_num_args</a><strong>(</strong><strong>)</strong><strong>;</strong><strong>$i</strong>++<strong>)&nbsp;</strong><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a286"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$a&nbsp;</strong>=&nbsp;<a href="http://www.php.net/func_get_arg">func_get_arg</a><strong>(</strong><strong>$i</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a287"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="green">//&nbsp;debug(&quot;&nbsp;&quot;);</font></div></li>
+<li><div class="src-line"><a name="a288"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/var_dump">var_dump</a><strong>(</strong><strong>$a</strong><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a289"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a290"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a291"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functiondebug">debug</a><strong>(</strong><font color="#66cccc">&quot;&lt;/pre&gt;&lt;/blockquote&gt;&lt;pre&gt;\n\n&quot;</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a292"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a293"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a294"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a295"></a><font color="#009999">&nbsp;*&nbsp;Returns&nbsp;a&nbsp;lower-cased&nbsp;version&nbsp;of&nbsp;get_class&nbsp;for&nbsp;PHP&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a296"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a297"></a><font color="#009999">&nbsp;*&nbsp;get_class()&nbsp;returns&nbsp;case&nbsp;as&nbsp;declared&nbsp;in&nbsp;the&nbsp;file&nbsp;in&nbsp;PHP&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a298"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a299"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>object&nbsp;</em><strong>$object&nbsp;</strong><font color="#009999">the&nbsp;object&nbsp;to&nbsp;get&nbsp;the&nbsp;classname&nbsp;for</font></div></li>
+<li><div class="src-line"><a name="a300"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a301"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>string&nbsp;</em><font color="#009999">the&nbsp;class&nbsp;name&nbsp;of&nbsp;the&nbsp;given&nbsp;object</font></div></li>
+<li><div class="src-line"><a name="a302"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;rename&nbsp;function&nbsp;to&nbsp;PhpDocumentor_get_class</font></div></li>
+<li><div class="src-line"><a name="a303"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a304"></a><font color="blue">function&nbsp;</font><a href="../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_get_class">phpDocumentor_get_class</a><strong>(</strong><strong>$object</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a305"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a306"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><a href="http://www.php.net/strtolower">strtolower</a><strong>(</strong><a href="http://www.php.net/get_class">get_class</a><strong>(</strong><strong>$object</strong><strong>))</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a307"></a><strong>}</strong></div></li>
+<li><div class="src-line"><a name="a308"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a309"></a><strong>?&gt;</strong></div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:05 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

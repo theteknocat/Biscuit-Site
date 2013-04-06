@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class Recursive</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class Recursive
+</h2> (line <span class="linenumber">8</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---Recursive.php.html">/framework/lib/Recursive.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Collection of recursive functions, such as recursive sorting and directory deletion.</h5>
+<div class="desc"><p>Collection of recursive functions, such as recursive sorting and directory deletion.</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodarsort" title="details" class="method-name">arsort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodasort" title="details" class="method-name">asort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodkrsort" title="details" class="method-name">krsort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodksort" title="details" class="method-name">ksort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodnatcasesort" title="details" class="method-name">natcasesort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodnatsort" title="details" class="method-name">natsort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrmdir" title="details" class="method-name">rmdir</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$empty</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodrsort" title="details" class="method-name">rsort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsort" title="details" class="method-name">sort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoduasort" title="details" class="method-name">uasort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methoduksort" title="details" class="method-name">uksort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodusort" title="details" class="method-name">usort</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">&$array</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$array</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodarsort" id="methodarsort"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method arsort</strong> (line <span class="linenumber">61</span>)
+ </h4> 
+<h4><i>void</i> <strong>arsort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP arsort() recursively</h5>
+<div class="desc"><p>PHP arsort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodasort" id="methodasort"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method asort</strong> (line <span class="linenumber">46</span>)
+ </h4> 
+<h4><i>void</i> <strong>asort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP asort() recursively</h5>
+<div class="desc"><p>PHP asort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodkrsort" id="methodkrsort"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method krsort</strong> (line <span class="linenumber">91</span>)
+ </h4> 
+<h4><i>void</i> <strong>krsort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP ksort() recursively</h5>
+<div class="desc"><p>PHP ksort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodksort" id="methodksort"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method ksort</strong> (line <span class="linenumber">76</span>)
+ </h4> 
+<h4><i>void</i> <strong>ksort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP ksort() recursively</h5>
+<div class="desc"><p>PHP ksort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodnatcasesort" id="methodnatcasesort"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method natcasesort</strong> (line <span class="linenumber">121</span>)
+ </h4> 
+<h4><i>void</i> <strong>natcasesort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP natcasesort() recursively</h5>
+<div class="desc"><p>PHP natcasesort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodnatsort" id="methodnatsort"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method natsort</strong> (line <span class="linenumber">106</span>)
+ </h4> 
+<h4><i>void</i> <strong>natsort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP natsort() recursively</h5>
+<div class="desc"><p>PHP natsort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrmdir" id="methodrmdir"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method rmdir</strong> (line <span class="linenumber">183</span>)
+ </h4> 
+<h4><i>void</i> <strong>rmdir(
+string
+$directory, [bool
+$empty = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Recursively remove all contents of a given directory.</h5>
+<div class="desc"><p>Recursively remove all contents of a given directory. It will prevent deletion of main site folders. USE THIS FUNCTION WITH GREAT CARE!!!!</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $directory</strong>: The directory to delete</li>
+			<li><strong>bool $empty</strong>: Whether or not to try and delete the directory itself once it is empty</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodrsort" id="methodrsort"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method rsort</strong> (line <span class="linenumber">31</span>)
+ </h4> 
+<h4><i>void</i> <strong>rsort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP rsort() recursively</h5>
+<div class="desc"><p>PHP rsort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodsort" id="methodsort"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method sort</strong> (line <span class="linenumber">16</span>)
+ </h4> 
+<h4><i>void</i> <strong>sort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP sort() recursively</h5>
+<div class="desc"><p>PHP sort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduasort" id="methoduasort"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method uasort</strong> (line <span class="linenumber">136</span>)
+ </h4> 
+<h4><i>void</i> <strong>uasort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP uasort() recursively</h5>
+<div class="desc"><p>PHP uasort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduksort" id="methoduksort"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method uksort</strong> (line <span class="linenumber">151</span>)
+ </h4> 
+<h4><i>void</i> <strong>uksort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP uksort() recursively</h5>
+<div class="desc"><p>PHP uksort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodusort" id="methodusort"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method usort</strong> (line <span class="linenumber">166</span>)
+ </h4> 
+<h4><i>void</i> <strong>usort(
+
+&$array, array
+$array)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>PHP usort() recursively</h5>
+<div class="desc"><p>PHP usort() recursively</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>array $array</strong>: Reference to the array to sort</li>
+			<li><strong> &$array</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs for page Parser.inc</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h2>File: /framework/docs/phpDocumentor/Parser.inc</h2>
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Base parser for all parsers
+ phpDocumentor :: automatic documentation generator
+ PHP versions 4 and 5
+ Copyright (c) 2000-2006 Joshua Eichorn, Gregory Beaver
+ LICENSE:
+ This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2. later version.</h5>
+<div class="desc"><p>Base parser for all parsers
+ phpDocumentor :: automatic documentation generator
+ PHP versions 4 and 5
+ Copyright (c) 2000-2006 Joshua Eichorn, Gregory Beaver
+ LICENSE:
+ This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
+ This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+ You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA</p></div>
+<ul>
+		<li><strong>author:</strong> - Joshua Eichorn &lt;<a href="mailto:jeichorn@phpdoc.org">jeichorn@phpdoc.org</a>&gt;</li>
+		<li><strong>author:</strong> - Gregory Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - CVS: $Id: Parser.inc,v 1.9 2007/06/22 14:58:30 ashnazg Exp $</li>
+		<li><strong>copyright:</strong> - 2000-2006 Joshua Eichorn, Gregory Beaver</li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>since:</strong> - 0.1</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<!-- =========== Used Classes =========== -->
+<A NAME='classes_summary'><!-- --></A>
+<h3>Classes defined in this file</h3>
+
+<TABLE CELLPADDING='3' CELLSPACING='0' WIDTH='100%' CLASS="border">
+	<THEAD>
+		<TR><TD STYLE="width:20%"><h4>CLASS NAME</h4></TD><TD STYLE="width: 80%"><h4>DESCRIPTION</h4></TD></TR>
+	</THEAD>
+	<TBODY>
+				<TR BGCOLOR='white' CLASS='TableRowColor'>
+			<TD><a href="../../phpDocumentor/Parsers/Parser.html">Parser</a></TD>
+			<TD>PHP Parser for PHP 4.
+ This parser is slower than the tokenizer-based parser, and is deprecated.</TD>
+		</TR>
+				<TR BGCOLOR='white' CLASS='TableRowColor'>
+			<TD><a href="../../phpDocumentor/Parsers/ppageParser.html">ppageParser</a></TD>
+			<TD>Global package page parser</TD>
+		</TR>
+			</TBODY>
+</TABLE>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+<!-- ============ Includes DETAIL =========== -->
+
+<h2 class="tab">Include/Require Statements</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+
+
+</div>
+<div class="tab-page" id="tabPage2">
+<!-- ============ GLOBAL DETAIL =========== -->
+
+<h2 class="tab">Global Variables</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage3">
+<!-- ============ CONSTANT DETAIL =========== -->
+
+<A NAME='constant_detail'></A>
+<h2 class="tab">Constants</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+
+<a name="definePARSER_EVENT_ACCESS_MODIFIER"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_ACCESS_MODIFIER</strong> (line <span class="linenumber">277</span>)
+ </h4> 
+<h4>PARSER_EVENT_ACCESS_MODIFIER : 139</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing an access modifier</h5>
+<div class="desc"><p>used when parsing an access modifier</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_ARRAY"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_ARRAY</strong> (line <span class="linenumber">160</span>)
+ </h4> 
+<h4>PARSER_EVENT_ARRAY : 115</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when an array definition is encountered in parsing</h5>
+<div class="desc"><p>used when an array definition is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_CLASS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_CLASS</strong> (line <span class="linenumber">138</span>)
+ </h4> 
+<h4>PARSER_EVENT_CLASS : 111</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a class definition is encountered in parsing</h5>
+<div class="desc"><p>used when a class definition is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_CLASS_CONSTANT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_CLASS_CONSTANT</strong> (line <span class="linenumber">287</span>)
+ </h4> 
+<h4>PARSER_EVENT_CLASS_CONSTANT : 141</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a class implements interfaces</h5>
+<div class="desc"><p>used when a class implements interfaces</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_CLASS_MEMBER"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_CLASS_MEMBER</strong> (line <span class="linenumber">267</span>)
+ </h4> 
+<h4>PARSER_EVENT_CLASS_MEMBER : 137</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used by the HighlightParser only, when -&gt;var or -&gt;function() is encountered in a method</h5>
+<div class="desc"><p>used by the HighlightParser only, when -&gt;var or -&gt;function() is encountered in a method</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_COMMENT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_COMMENT</strong> (line <span class="linenumber">108</span>)
+ </h4> 
+<h4>PARSER_EVENT_COMMENT : 105</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when short comment // is encountered in parsing</h5>
+<div class="desc"><p>used when short comment // is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_COMMENTBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_COMMENTBLOCK</strong> (line <span class="linenumber">103</span>)
+ </h4> 
+<h4>PARSER_EVENT_COMMENTBLOCK : 104</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when long comment /x x/ where x is an asterisk is encountered in parsing</h5>
+<div class="desc"><p>used when long comment /x x/ where x is an asterisk is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DEFINE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DEFINE</strong> (line <span class="linenumber">118</span>)
+ </h4> 
+<h4>PARSER_EVENT_DEFINE : 107</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a define statement is encountered in parsing</h5>
+<div class="desc"><p>used when a define statement is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DEFINE_GLOBAL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DEFINE_GLOBAL</strong> (line <span class="linenumber">222</span>)
+ </h4> 
+<h4>PARSER_EVENT_DEFINE_GLOBAL : 128</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing a global variable declaration</h5>
+<div class="desc"><p>used when parsing a global variable declaration</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DEFINE_PARAMS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DEFINE_PARAMS</strong> (line <span class="linenumber">123</span>)
+ </h4> 
+<h4>PARSER_EVENT_DEFINE_PARAMS : 108</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a define statement opening parenthesis is encountered in parsing</h5>
+<div class="desc"><p>used when a define statement opening parenthesis is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DEFINE_PARAMS_PARENTHESIS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DEFINE_PARAMS_PARENTHESIS</strong> (line <span class="linenumber">185</span>)
+ </h4> 
+<h4>PARSER_EVENT_DEFINE_PARAMS_PARENTHESIS : 120</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a define statement's opening parenthesis is encountered in parsing</h5>
+<div class="desc"><p>used when a define statement's opening parenthesis is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DESC"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DESC</strong> (line <span class="linenumber">212</span>)
+ </h4> 
+<h4>PARSER_EVENT_DESC : 126</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing the desc part of a docblock</h5>
+<div class="desc"><p>used when parsing the desc part of a docblock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DOCBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DOCBLOCK</strong> (line <span class="linenumber">145</span>)
+ </h4> 
+<h4>PARSER_EVENT_DOCBLOCK : 112</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a DocBlock is encountered in parsing</h5>
+<div class="desc"><p>used when a DocBlock is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DOCBLOCK_TEMPLATE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DOCBLOCK_TEMPLATE</strong> (line <span class="linenumber">247</span>)
+ </h4> 
+<h4>PARSER_EVENT_DOCBLOCK_TEMPLATE : 133</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when encountering a /**#@+ comment marking a new docblock template</h5>
+<div class="desc"><p>used when encountering a /**#@+ comment marking a new docblock template</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DOCKEYWORD"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DOCKEYWORD</strong> (line <span class="linenumber">150</span>)
+ </h4> 
+<h4>PARSER_EVENT_DOCKEYWORD : 113</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a @tag is encountered in DocBlock parsing</h5>
+<div class="desc"><p>used when a @tag is encountered in DocBlock parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_DOCKEYWORD_EMAIL"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_DOCKEYWORD_EMAIL</strong> (line <span class="linenumber">155</span>)
+ </h4> 
+<h4>PARSER_EVENT_DOCKEYWORD_EMAIL : 114</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a &lt;email@address&gt; is encountered in parsing an @author tag</h5>
+<div class="desc"><p>used when a &lt;email@address&gt; is encountered in parsing an @author tag</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_END_DOCBLOCK_TEMPLATE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_END_DOCBLOCK_TEMPLATE</strong> (line <span class="linenumber">252</span>)
+ </h4> 
+<h4>PARSER_EVENT_END_DOCBLOCK_TEMPLATE : 134</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when encountering a /**#@-* / comment (no space) marking the end of using a docblock template</h5>
+<div class="desc"><p>used when encountering a /**#@-* / comment (no space) marking the end of using a docblock template</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_END_STATEMENT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_END_STATEMENT</strong> (line <span class="linenumber">189</span>)
+ </h4> 
+<h4>PARSER_EVENT_END_STATEMENT : 121</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_EOFQUOTE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_EOFQUOTE</strong> (line <span class="linenumber">192</span>)
+ </h4> 
+<h4>PARSER_EVENT_EOFQUOTE : 122</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a &lt; is encountered in parsing</h5>
+<div class="desc"><p>used when a &lt; is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_ESCAPE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_ESCAPE</strong> (line <span class="linenumber">40</span>)
+ </h4> 
+<h4>PARSER_EVENT_ESCAPE : 900</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a backslash is encountered in parsing a string or other escapable entity</h5>
+<div class="desc"><p>used when a backslash is encountered in parsing a string or other escapable entity</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_FUNCTION"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_FUNCTION</strong> (line <span class="linenumber">170</span>)
+ </h4> 
+<h4>PARSER_EVENT_FUNCTION : 117</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a function definition is encountered in parsing</h5>
+<div class="desc"><p>used when a function definition is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_FUNCTION_PARAMS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_FUNCTION_PARAMS</strong> (line <span class="linenumber">128</span>)
+ </h4> 
+<h4>PARSER_EVENT_FUNCTION_PARAMS : 109</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a function statement opening parenthesis is encountered in parsing</h5>
+<div class="desc"><p>used when a function statement opening parenthesis is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_FUNCTION_PARAM_VAR"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_FUNCTION_PARAM_VAR</strong> (line <span class="linenumber">302</span>)
+ </h4> 
+<h4>PARSER_EVENT_FUNCTION_PARAM_VAR : 144</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a $param is encountered in a function definition</h5>
+<div class="desc"><p>used when a $param is encountered in a function definition</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_FUNC_GLOBAL"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_FUNC_GLOBAL</strong> (line <span class="linenumber">232</span>)
+ </h4> 
+<h4>PARSER_EVENT_FUNC_GLOBAL : 130</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing a &quot;global $var1, $var2;&quot; declaration in a function</h5>
+<div class="desc"><p>used when parsing a &quot;global $var1, $var2;&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_GLOBAL_VALUE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_GLOBAL_VALUE</strong> (line <span class="linenumber">227</span>)
+ </h4> 
+<h4>PARSER_EVENT_GLOBAL_VALUE : 129</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing the default value in a global variable declaration</h5>
+<div class="desc"><p>used when parsing the default value in a global variable declaration</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_IMPLEMENTS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_IMPLEMENTS</strong> (line <span class="linenumber">282</span>)
+ </h4> 
+<h4>PARSER_EVENT_IMPLEMENTS : 140</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a class implements interfaces</h5>
+<div class="desc"><p>used when a class implements interfaces</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_INCLUDE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_INCLUDE</strong> (line <span class="linenumber">197</span>)
+ </h4> 
+<h4>PARSER_EVENT_INCLUDE : 123</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when an include/require/include_once/include_once statement is encountered in parsing</h5>
+<div class="desc"><p>used when an include/require/include_once/include_once statement is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_INCLUDE_PARAMS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_INCLUDE_PARAMS</strong> (line <span class="linenumber">202</span>)
+ </h4> 
+<h4>PARSER_EVENT_INCLUDE_PARAMS : 124</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when an opening parenthesis of an include/require/include_once/include_once statement is encountered in parsing</h5>
+<div class="desc"><p>used when an opening parenthesis of an include/require/include_once/include_once statement is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_INCLUDE_PARAMS_PARENTHESIS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_INCLUDE_PARAMS_PARENTHESIS</strong> (line <span class="linenumber">207</span>)
+ </h4> 
+<h4>PARSER_EVENT_INCLUDE_PARAMS_PARENTHESIS : 125</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when an inner ( ) is encountered while parsing an include/require/include_once/include_once statement</h5>
+<div class="desc"><p>used when an inner ( ) is encountered while parsing an include/require/include_once/include_once statement</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_INLINE_DOCKEYWORD"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_INLINE_DOCKEYWORD</strong> (line <span class="linenumber">180</span>)
+ </h4> 
+<h4>PARSER_EVENT_INLINE_DOCKEYWORD : 119</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when an inline {@tag} is encountered in parsing a DocBlock</h5>
+<div class="desc"><p>used when an inline {@tag} is encountered in parsing a DocBlock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_LOGICBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_LOGICBLOCK</strong> (line <span class="linenumber">93</span>)
+ </h4> 
+<h4>PARSER_EVENT_LOGICBLOCK : 102</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>{ encountered in parsing a function or php code</h5>
+<div class="desc"><p>{ encountered in parsing a function or php code</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_METHOD"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_METHOD</strong> (line <span class="linenumber">257</span>)
+ </h4> 
+<h4>PARSER_EVENT_METHOD : 135</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used by the HighlightParser only, when a method starts</h5>
+<div class="desc"><p>used by the HighlightParser only, when a method starts</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_METHOD_LOGICBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_METHOD_LOGICBLOCK</strong> (line <span class="linenumber">262</span>)
+ </h4> 
+<h4>PARSER_EVENT_METHOD_LOGICBLOCK : 136</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used by the HighlightParser only, when a method body is parsed</h5>
+<div class="desc"><p>used by the HighlightParser only, when a method body is parsed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_NOEVENTS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_NOEVENTS</strong> (line <span class="linenumber">98</span>)
+ </h4> 
+<h4>PARSER_EVENT_NOEVENTS : 103</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used for the beginning of parsing, before first &lt; ? php encountered</h5>
+<div class="desc"><p>used for the beginning of parsing, before first &lt; ? php encountered</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_OUTPHP"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_OUTPHP</strong> (line <span class="linenumber">175</span>)
+ </h4> 
+<h4>PARSER_EVENT_OUTPHP : 118</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a ? &gt; (with no space) is encountered in parsing</h5>
+<div class="desc"><p>used when a ? &gt; (with no space) is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_PHPCODE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_PHPCODE</strong> (line <span class="linenumber">113</span>)
+ </h4> 
+<h4>PARSER_EVENT_PHPCODE : 106</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when php code processor instruction (&lt; ? php) is encountered in parsing</h5>
+<div class="desc"><p>used when php code processor instruction (&lt; ? php) is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_QUOTE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_QUOTE</strong> (line <span class="linenumber">88</span>)
+ </h4> 
+<h4>PARSER_EVENT_QUOTE : 101</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when double quotation mark (&quot;) encountered in parsing</h5>
+<div class="desc"><p>used when double quotation mark (&quot;) encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_QUOTE_VAR"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_QUOTE_VAR</strong> (line <span class="linenumber">272</span>)
+ </h4> 
+<h4>PARSER_EVENT_QUOTE_VAR : 138</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used by the HighlightParser only, when {$var} is encountered in a string</h5>
+<div class="desc"><p>used by the HighlightParser only, when {$var} is encountered in a string</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_SINGLEQUOTE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_SINGLEQUOTE</strong> (line <span class="linenumber">133</span>)
+ </h4> 
+<h4>PARSER_EVENT_SINGLEQUOTE : 110</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a single quote (') is encountered in parsing</h5>
+<div class="desc"><p>used when a single quote (') is encountered in parsing</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_STATIC_VAR"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_STATIC_VAR</strong> (line <span class="linenumber">237</span>)
+ </h4> 
+<h4>PARSER_EVENT_STATIC_VAR : 131</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing a &quot;static $var1, $var2;&quot; declaration in a function</h5>
+<div class="desc"><p>used when parsing a &quot;static $var1, $var2;&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_STATIC_VAR_VALUE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_STATIC_VAR_VALUE</strong> (line <span class="linenumber">242</span>)
+ </h4> 
+<h4>PARSER_EVENT_STATIC_VAR_VALUE : 132</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing the value in a &quot;static $var1 = x&quot; declaration in a function</h5>
+<div class="desc"><p>used when parsing the value in a &quot;static $var1 = x&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_TAGS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_TAGS</strong> (line <span class="linenumber">217</span>)
+ </h4> 
+<h4>PARSER_EVENT_TAGS : 127</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when parsing the @tag block of a docblock</h5>
+<div class="desc"><p>used when parsing the @tag block of a docblock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_VAR"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_VAR</strong> (line <span class="linenumber">165</span>)
+ </h4> 
+<h4>PARSER_EVENT_VAR : 116</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a var statement is encountered in parsing a class definition</h5>
+<div class="desc"><p>used when a var statement is encountered in parsing a class definition</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_VAR_ARRAY"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_VAR_ARRAY</strong> (line <span class="linenumber">292</span>)
+ </h4> 
+<h4>PARSER_EVENT_VAR_ARRAY : 142</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a variable value is an array</h5>
+<div class="desc"><p>used when a variable value is an array</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePARSER_EVENT_VAR_ARRAY_COMMENT"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PARSER_EVENT_VAR_ARRAY_COMMENT</strong> (line <span class="linenumber">297</span>)
+ </h4> 
+<h4>PARSER_EVENT_VAR_ARRAY_COMMENT : 143</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a comment is found in a variable array value</h5>
+<div class="desc"><p>used when a comment is found in a variable array value</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_CLASS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_CLASS</strong> (line <span class="linenumber">45</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_CLASS : 800</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class published to IntermediateParser with this event</h5>
+<div class="desc"><p>Class published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_CONST"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_CONST</strong> (line <span class="linenumber">57</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_CONST : 806</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class Constant published to IntermediateParser with this event</h5>
+<div class="desc"><p>Class Constant published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_DEFINE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_DEFINE</strong> (line <span class="linenumber">55</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_DEFINE : 805</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Constant (define) published to IntermediateParser with this event</h5>
+<div class="desc"><p>Constant (define) published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_DOCBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_DOCBLOCK</strong> (line <span class="linenumber">47</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_DOCBLOCK : 801</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>DocBlock published to IntermediateParser with this event</h5>
+<div class="desc"><p>DocBlock published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_DOCBLOCK_TEMPLATE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_DOCBLOCK_TEMPLATE</strong> (line <span class="linenumber">84</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_DOCBLOCK_TEMPLATE : 814</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a docblock template is encountered in the source</h5>
+<div class="desc"><p>used when a docblock template is encountered in the source</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_END_DOCBLOCK_TEMPLATE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_END_DOCBLOCK_TEMPLATE</strong> (line <span class="linenumber">86</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_END_DOCBLOCK_TEMPLATE : 815</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a docblock template is encountered in the source</h5>
+<div class="desc"><p>used when a docblock template is encountered in the source</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_END_PAGE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_END_PAGE</strong> (line <span class="linenumber">67</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_END_PAGE : 808</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used to inform phpDocumentor_IntermediateParser that the current file has been completely parsed.</h5>
+<div class="desc"><p>used to inform phpDocumentor_IntermediateParser that the current file has been completely parsed. Render then flushes all buffers for functions/classes/defines/includes on the current page</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../../phpDocumentor/phpDocumentor_IntermediateParser.html#methodHandleEvent">phpDocumentor_IntermediateParser::HandleEvent()</a></li>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_FUNCTION"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_FUNCTION</strong> (line <span class="linenumber">49</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_FUNCTION : 802</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Function published to IntermediateParser with this event</h5>
+<div class="desc"><p>Function published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_GLOBAL"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_GLOBAL</strong> (line <span class="linenumber">82</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_GLOBAL : 813</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a global variable definition is encountered in the source</h5>
+<div class="desc"><p>used when a global variable definition is encountered in the source</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_INCLUDE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_INCLUDE</strong> (line <span class="linenumber">71</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_INCLUDE : 810</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Include (include/require/include_once/include_once) published to IntermediateParser with this event</h5>
+<div class="desc"><p>Include (include/require/include_once/include_once) published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_MESSAGE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_MESSAGE</strong> (line <span class="linenumber">59</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_MESSAGE : 807</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>deprecated:</strong> - </li>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_NEWFILE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_NEWFILE</strong> (line <span class="linenumber">78</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_NEWFILE : 811</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>use to inform ErrorTracker of a new file being parsed</h5>
+<div class="desc"><p>use to inform ErrorTracker of a new file being parsed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_NEWLINENUM"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_NEWLINENUM</strong> (line <span class="linenumber">80</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_NEWLINENUM : 812</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>use to inform ErrorTracker of the next line number being parsed</h5>
+<div class="desc"><p>use to inform ErrorTracker of the next line number being parsed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_NEWSTATE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_NEWSTATE</strong> (line <span class="linenumber">61</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_NEWSTATE : 808</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>use to inform IntermediateParser of a new element being parsed</h5>
+<div class="desc"><p>use to inform IntermediateParser of a new element being parsed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_PACKAGEPAGE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_PACKAGEPAGE</strong> (line <span class="linenumber">69</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_PACKAGEPAGE : 809</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Package-level page published to IntermediateParser with this event</h5>
+<div class="desc"><p>Package-level page published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_PAGE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_PAGE</strong> (line <span class="linenumber">53</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_PAGE : 804</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>New File (page) published to IntermediateParser with this event</h5>
+<div class="desc"><p>New File (page) published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_README_INSTALL_CHANGELOG"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_README_INSTALL_CHANGELOG</strong> (line <span class="linenumber">75</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_README_INSTALL_CHANGELOG : 812</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Contents of README/INSTALL/CHANGELOG files published to IntermediateParser with this event</h5>
+<div class="desc"><p>Contents of README/INSTALL/CHANGELOG files published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_TUTORIAL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_TUTORIAL</strong> (line <span class="linenumber">73</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_TUTORIAL : 811</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Tutorial published to IntermediateParser with this event</h5>
+<div class="desc"><p>Tutorial published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="definePHPDOCUMENTOR_EVENT_VAR"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">PHPDOCUMENTOR_EVENT_VAR</strong> (line <span class="linenumber">51</span>)
+ </h4> 
+<h4>PHPDOCUMENTOR_EVENT_VAR : 803</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Class Variable published to IntermediateParser with this event</h5>
+<div class="desc"><p>Class Variable published to IntermediateParser with this event</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_ACCESS_MODIFIER"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_ACCESS_MODIFIER</strong> (line <span class="linenumber">279</span>)
+ </h4> 
+<h4>STATE_ACCESS_MODIFIER : 239</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an access modifier</h5>
+<div class="desc"><p>currently parsing an access modifier</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_ARRAY"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_ARRAY</strong> (line <span class="linenumber">162</span>)
+ </h4> 
+<h4>STATE_ARRAY : 215</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an array</h5>
+<div class="desc"><p>currently parsing an array</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_CLASS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_CLASS</strong> (line <span class="linenumber">140</span>)
+ </h4> 
+<h4>STATE_CLASS : 211</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a class definition</h5>
+<div class="desc"><p>currently parsing a class definition</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_CLASS_CONSTANT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_CLASS_CONSTANT</strong> (line <span class="linenumber">289</span>)
+ </h4> 
+<h4>STATE_CLASS_CONSTANT : 241</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a class constant</h5>
+<div class="desc"><p>currently parsing a class constant</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_CLASS_MEMBER"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_CLASS_MEMBER</strong> (line <span class="linenumber">269</span>)
+ </h4> 
+<h4>STATE_CLASS_MEMBER : 237</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a class member using the HighlightParser</h5>
+<div class="desc"><p>currently parsing a class member using the HighlightParser</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_COMMENT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_COMMENT</strong> (line <span class="linenumber">110</span>)
+ </h4> 
+<h4>STATE_COMMENT : 205</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a short comment //</h5>
+<div class="desc"><p>currently parsing a short comment //</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_COMMENTBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_COMMENTBLOCK</strong> (line <span class="linenumber">105</span>)
+ </h4> 
+<h4>STATE_COMMENTBLOCK : 204</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a long comment /x x/ where x is an asterisk</h5>
+<div class="desc"><p>currently parsing a long comment /x x/ where x is an asterisk</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DEFINE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DEFINE</strong> (line <span class="linenumber">120</span>)
+ </h4> 
+<h4>STATE_DEFINE : 207</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a define statement</h5>
+<div class="desc"><p>currently parsing a define statement</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DEFINE_PARAMS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DEFINE_PARAMS</strong> (line <span class="linenumber">125</span>)
+ </h4> 
+<h4>STATE_DEFINE_PARAMS : 208</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the stuff in ( ) of a define statement</h5>
+<div class="desc"><p>currently parsing the stuff in ( ) of a define statement</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DEFINE_PARAMS_PARENTHESIS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DEFINE_PARAMS_PARENTHESIS</strong> (line <span class="linenumber">187</span>)
+ </h4> 
+<h4>STATE_DEFINE_PARAMS_PARENTHESIS : 220</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an inner parenthetical statement of a define( )</h5>
+<div class="desc"><p>currently parsing an inner parenthetical statement of a define( )</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DESC"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DESC</strong> (line <span class="linenumber">214</span>)
+ </h4> 
+<h4>STATE_DESC : 226</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the desc part of a docblock</h5>
+<div class="desc"><p>currently parsing the desc part of a docblock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DOCBLOCK"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DOCBLOCK</strong> (line <span class="linenumber">147</span>)
+ </h4> 
+<h4>STATE_DOCBLOCK : 212</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a DocBlock</h5>
+<div class="desc"><p>currently parsing a DocBlock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DOCBLOCK_TEMPLATE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DOCBLOCK_TEMPLATE</strong> (line <span class="linenumber">249</span>)
+ </h4> 
+<h4>STATE_DOCBLOCK_TEMPLATE : 233</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the value in a &quot;static $var1 = x&quot; declaration in a function</h5>
+<div class="desc"><p>currently parsing the value in a &quot;static $var1 = x&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DOCKEYWORD"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DOCKEYWORD</strong> (line <span class="linenumber">152</span>)
+ </h4> 
+<h4>STATE_DOCKEYWORD : 213</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a @tag in a DocBlock</h5>
+<div class="desc"><p>currently parsing a @tag in a DocBlock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_DOCKEYWORD_EMAIL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_DOCKEYWORD_EMAIL</strong> (line <span class="linenumber">157</span>)
+ </h4> 
+<h4>STATE_DOCKEYWORD_EMAIL : 214</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an email in brackets in an @author tag of a DocBlock</h5>
+<div class="desc"><p>currently parsing an email in brackets in an @author tag of a DocBlock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_END_CLASS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_END_CLASS</strong> (line <span class="linenumber">142</span>)
+ </h4> 
+<h4>STATE_END_CLASS : 311</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used to tell Render that a class has been completely parsed, and to flush buffers</h5>
+<div class="desc"><p>used to tell Render that a class has been completely parsed, and to flush buffers</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_END_DOCBLOCK_TEMPLATE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_END_DOCBLOCK_TEMPLATE</strong> (line <span class="linenumber">254</span>)
+ </h4> 
+<h4>STATE_END_DOCBLOCK_TEMPLATE : 234</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the value in a &quot;static $var1 = x&quot; declaration in a function</h5>
+<div class="desc"><p>currently parsing the value in a &quot;static $var1 = x&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_EOFQUOTE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_EOFQUOTE</strong> (line <span class="linenumber">194</span>)
+ </h4> 
+<h4>STATE_EOFQUOTE : 222</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a string defined using Perl &lt;</h5>
+<div class="desc"><p>currently parsing a string defined using Perl &lt;</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_ESCAPE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_ESCAPE</strong> (line <span class="linenumber">42</span>)
+ </h4> 
+<h4>STATE_ESCAPE : 1000</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used when a backslash is encountered in parsing a string or other escapable entity</h5>
+<div class="desc"><p>used when a backslash is encountered in parsing a string or other escapable entity</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_FUNCTION"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_FUNCTION</strong> (line <span class="linenumber">172</span>)
+ </h4> 
+<h4>STATE_FUNCTION : 217</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a Function or Method</h5>
+<div class="desc"><p>currently parsing a Function or Method</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_FUNCTION_PARAMS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_FUNCTION_PARAMS</strong> (line <span class="linenumber">130</span>)
+ </h4> 
+<h4>STATE_FUNCTION_PARAMS : 209</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the stuff in ( ) of a function definition</h5>
+<div class="desc"><p>currently parsing the stuff in ( ) of a function definition</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_FUNCTION_PARAM_VAR"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_FUNCTION_PARAM_VAR</strong> (line <span class="linenumber">304</span>)
+ </h4> 
+<h4>STATE_FUNCTION_PARAM_VAR : 244</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a $param in a function definition</h5>
+<div class="desc"><p>currently parsing a $param in a function definition</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_FUNC_GLOBAL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_FUNC_GLOBAL</strong> (line <span class="linenumber">234</span>)
+ </h4> 
+<h4>STATE_FUNC_GLOBAL : 230</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a &quot;global $var1, $var2;&quot; declaration in a function</h5>
+<div class="desc"><p>currently parsing a &quot;global $var1, $var2;&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_GLOBAL"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_GLOBAL</strong> (line <span class="linenumber">224</span>)
+ </h4> 
+<h4>STATE_GLOBAL : 228</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a global variable declaration</h5>
+<div class="desc"><p>currently parsing a global variable declaration</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_GLOBAL_VALUE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_GLOBAL_VALUE</strong> (line <span class="linenumber">229</span>)
+ </h4> 
+<h4>STATE_GLOBAL_VALUE : 229</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the default value in a global variable declaration</h5>
+<div class="desc"><p>currently parsing the default value in a global variable declaration</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_IMPLEMENTS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_IMPLEMENTS</strong> (line <span class="linenumber">284</span>)
+ </h4> 
+<h4>STATE_IMPLEMENTS : 240</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an implements clause</h5>
+<div class="desc"><p>currently parsing an implements clause</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_INCLUDE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_INCLUDE</strong> (line <span class="linenumber">199</span>)
+ </h4> 
+<h4>STATE_INCLUDE : 223</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an include/require/include_once/include_once</h5>
+<div class="desc"><p>currently parsing an include/require/include_once/include_once</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_INCLUDE_PARAMS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_INCLUDE_PARAMS</strong> (line <span class="linenumber">204</span>)
+ </h4> 
+<h4>STATE_INCLUDE_PARAMS : 224</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the stuff in ( ) of a define statement</h5>
+<div class="desc"><p>currently parsing the stuff in ( ) of a define statement</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_INCLUDE_PARAMS_PARENTHESIS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_INCLUDE_PARAMS_PARENTHESIS</strong> (line <span class="linenumber">209</span>)
+ </h4> 
+<h4>STATE_INCLUDE_PARAMS_PARENTHESIS : 225</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an inner parenthetical statement of an include/includeonce/require/requireonce( )</h5>
+<div class="desc"><p>currently parsing an inner parenthetical statement of an include/includeonce/require/requireonce( )</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_INLINE_DOCKEYWORD"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_INLINE_DOCKEYWORD</strong> (line <span class="linenumber">182</span>)
+ </h4> 
+<h4>STATE_INLINE_DOCKEYWORD : 219</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing an inline tag like { @link} in a DocBlock</h5>
+<div class="desc"><p>currently parsing an inline tag like { @link} in a DocBlock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_LOGICBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_LOGICBLOCK</strong> (line <span class="linenumber">95</span>)
+ </h4> 
+<h4>STATE_LOGICBLOCK : 202</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a { } block</h5>
+<div class="desc"><p>currently parsing a { } block</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_METHOD"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_METHOD</strong> (line <span class="linenumber">259</span>)
+ </h4> 
+<h4>STATE_METHOD : 235</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a method using the HighlightParser</h5>
+<div class="desc"><p>currently parsing a method using the HighlightParser</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_METHOD_LOGICBLOCK"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_METHOD_LOGICBLOCK</strong> (line <span class="linenumber">264</span>)
+ </h4> 
+<h4>STATE_METHOD_LOGICBLOCK : 236</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the method body using the HighlightParser</h5>
+<div class="desc"><p>currently parsing the method body using the HighlightParser</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_NOEVENTS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_NOEVENTS</strong> (line <span class="linenumber">100</span>)
+ </h4> 
+<h4>STATE_NOEVENTS : 203</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>out of &lt; ? php tag</h5>
+<div class="desc"><p>out of &lt; ? php tag</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_OUTPHP"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_OUTPHP</strong> (line <span class="linenumber">177</span>)
+ </h4> 
+<h4>STATE_OUTPHP : 218</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently out of php code</h5>
+<div class="desc"><p>currently out of php code</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_PHPCODE"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_PHPCODE</strong> (line <span class="linenumber">115</span>)
+ </h4> 
+<h4>STATE_PHPCODE : 206</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing php code</h5>
+<div class="desc"><p>currently parsing php code</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_QUOTE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_QUOTE</strong> (line <span class="linenumber">90</span>)
+ </h4> 
+<h4>STATE_QUOTE : 201</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a quote</h5>
+<div class="desc"><p>currently parsing a quote</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_QUOTE_VAR"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_QUOTE_VAR</strong> (line <span class="linenumber">274</span>)
+ </h4> 
+<h4>STATE_QUOTE_VAR : 238</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a {$encapsed_var} using the HighlightParser</h5>
+<div class="desc"><p>currently parsing a {$encapsed_var} using the HighlightParser</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_SINGLEQUOTE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_SINGLEQUOTE</strong> (line <span class="linenumber">135</span>)
+ </h4> 
+<h4>STATE_SINGLEQUOTE : 210</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a string enclosed in single quotes (')</h5>
+<div class="desc"><p>currently parsing a string enclosed in single quotes (')</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_STATIC_VAR"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_STATIC_VAR</strong> (line <span class="linenumber">239</span>)
+ </h4> 
+<h4>STATE_STATIC_VAR : 231</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a &quot;static $var1, $var2;&quot; declaration in a function</h5>
+<div class="desc"><p>currently parsing a &quot;static $var1, $var2;&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_STATIC_VAR_VALUE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_STATIC_VAR_VALUE</strong> (line <span class="linenumber">244</span>)
+ </h4> 
+<h4>STATE_STATIC_VAR_VALUE : 232</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the value in a &quot;static $var1 = x&quot; declaration in a function</h5>
+<div class="desc"><p>currently parsing the value in a &quot;static $var1 = x&quot; declaration in a function</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_TAGS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_TAGS</strong> (line <span class="linenumber">219</span>)
+ </h4> 
+<h4>STATE_TAGS : 227</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing the @tag block of a docblock</h5>
+<div class="desc"><p>currently parsing the @tag block of a docblock</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_VAR"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_VAR</strong> (line <span class="linenumber">167</span>)
+ </h4> 
+<h4>STATE_VAR : 216</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a Class variable</h5>
+<div class="desc"><p>currently parsing a Class variable</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_VAR_ARRAY"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_VAR_ARRAY</strong> (line <span class="linenumber">294</span>)
+ </h4> 
+<h4>STATE_VAR_ARRAY : 242</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a variable value is an array</h5>
+<div class="desc"><p>currently parsing a variable value is an array</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineSTATE_VAR_ARRAY_COMMENT"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">STATE_VAR_ARRAY_COMMENT</strong> (line <span class="linenumber">299</span>)
+ </h4> 
+<h4>STATE_VAR_ARRAY_COMMENT : 243</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>currently parsing a comment in a variable array value</h5>
+<div class="desc"><p>currently parsing a comment in a variable array value</p></div>
+<ul>
+	</ul>
+</div>
+<a name="defineT_ABSTRACT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_ABSTRACT</strong> (line <span class="linenumber">312</span>)
+ </h4> 
+<h4>T_ABSTRACT : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_CONST"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_CONST</strong> (line <span class="linenumber">310</span>)
+ </h4> 
+<h4>T_CONST : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_DOC_COMMENT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_DOC_COMMENT</strong> (line <span class="linenumber">325</span>)
+ </h4> 
+<h4>T_DOC_COMMENT : T_ML_COMMENT</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_FINAL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_FINAL</strong> (line <span class="linenumber">316</span>)
+ </h4> 
+<h4>T_FINAL : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_IMPLEMENTS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_IMPLEMENTS</strong> (line <span class="linenumber">317</span>)
+ </h4> 
+<h4>T_IMPLEMENTS : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_INTERFACE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_INTERFACE</strong> (line <span class="linenumber">308</span>)
+ </h4> 
+<h4>T_INTERFACE : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_ML_COMMENT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_ML_COMMENT</strong> (line <span class="linenumber">321</span>)
+ </h4> 
+<h4>T_ML_COMMENT : T_COMMENT</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_PRIVATE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_PRIVATE</strong> (line <span class="linenumber">313</span>)
+ </h4> 
+<h4>T_PRIVATE : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_PROTECTED"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_PROTECTED</strong> (line <span class="linenumber">315</span>)
+ </h4> 
+<h4>T_PROTECTED : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineT_PUBLIC"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../../media/images/Constant.gif" border="0" /> <strong class="property">T_PUBLIC</strong> (line <span class="linenumber">314</span>)
+ </h4> 
+<h4>T_PUBLIC : 'foo'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage4">
+<!-- ============ FUNCTION DETAIL =========== -->
+
+<h2 class="tab">Functions</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage4" ) );</script>
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:21 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

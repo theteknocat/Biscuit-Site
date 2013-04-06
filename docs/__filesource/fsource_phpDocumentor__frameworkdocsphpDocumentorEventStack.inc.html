@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>File Source for EventStack.inc</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h1 align="center">Source for file EventStack.inc</h1>
+<p>Documentation is available at <a href="../phpDocumentor/_framework---docs---phpDocumentor---EventStack.inc.html">EventStack.inc</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><strong>&lt;?php</strong></div></li>
+<li><div class="src-line"><a name="a2"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a3"></a><font color="#009999">&nbsp;*&nbsp;An&nbsp;Event&nbsp;Stack&nbsp;for&nbsp;inter-program&nbsp;communication,&nbsp;particularly&nbsp;for&nbsp;parsing</font></div></li>
+<li><div class="src-line"><a name="a4"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a5"></a><font color="#009999">&nbsp;*&nbsp;phpDocumentor&nbsp;::&nbsp;automatic&nbsp;documentation&nbsp;generator</font></div></li>
+<li><div class="src-line"><a name="a6"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a7"></a><font color="#009999">&nbsp;*&nbsp;PHP&nbsp;versions&nbsp;4&nbsp;and&nbsp;5</font></div></li>
+<li><div class="src-line"><a name="a8"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a9"></a><font color="#009999">&nbsp;*&nbsp;Copyright&nbsp;(c)&nbsp;2000-2007&nbsp;Joshua&nbsp;Eichorn</font></div></li>
+<li><div class="src-line"><a name="a10"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a11"></a><font color="#009999">&nbsp;*&nbsp;LICENSE:</font></div></li>
+<li><div class="src-line"><a name="a12"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a13"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it</font></div></li>
+<li><div class="src-line"><a name="a14"></a><font color="#009999">&nbsp;*&nbsp;and/or&nbsp;modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General</font></div></li>
+<li><div class="src-line"><a name="a15"></a><font color="#009999">&nbsp;*&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;</font></div></li>
+<li><div class="src-line"><a name="a16"></a><font color="#009999">&nbsp;*&nbsp;either&nbsp;version&nbsp;2.1&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any</font></div></li>
+<li><div class="src-line"><a name="a17"></a><font color="#009999">&nbsp;*&nbsp;later&nbsp;version.</font></div></li>
+<li><div class="src-line"><a name="a18"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a19"></a><font color="#009999">&nbsp;*&nbsp;This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</font></div></li>
+<li><div class="src-line"><a name="a20"></a><font color="#009999">&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</font></div></li>
+<li><div class="src-line"><a name="a21"></a><font color="#009999">&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;See&nbsp;the&nbsp;GNU</font></div></li>
+<li><div class="src-line"><a name="a22"></a><font color="#009999">&nbsp;*&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</font></div></li>
+<li><div class="src-line"><a name="a23"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a24"></a><font color="#009999">&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public</font></div></li>
+<li><div class="src-line"><a name="a25"></a><font color="#009999">&nbsp;*&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software</font></div></li>
+<li><div class="src-line"><a name="a26"></a><font color="#009999">&nbsp;*&nbsp;Foundation,&nbsp;Inc.,&nbsp;59&nbsp;Temple&nbsp;Place,&nbsp;Suite&nbsp;330,&nbsp;Boston,&nbsp;MA&nbsp;02111-1307&nbsp;USA</font></div></li>
+<li><div class="src-line"><a name="a27"></a><font color="#009999">&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a28"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@category</font></strong><font color="#009999">&nbsp;&nbsp;ToolsAndUtilities</font></div></li>
+<li><div class="src-line"><a name="a29"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a30"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;Joshua&nbsp;Eichorn&nbsp;&lt;jeichorn@phpdoc.org&gt;</font></div></li>
+<li><div class="src-line"><a name="a31"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@copyright</font></strong><font color="#009999">&nbsp;2000-2007&nbsp;Joshua&nbsp;Eichorn</font></div></li>
+<li><div class="src-line"><a name="a32"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@license</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;http://www.opensource.org/licenses/lgpl-license.php&nbsp;LGPL</font></div></li>
+<li><div class="src-line"><a name="a33"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@version</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;CVS:&nbsp;$Id:&nbsp;EventStack.inc,v&nbsp;1.4&nbsp;2007/10/10&nbsp;02:27:28&nbsp;ashnazg&nbsp;Exp&nbsp;$</font></div></li>
+<li><div class="src-line"><a name="a34"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@filesource</font></strong></div></li>
+<li><div class="src-line"><a name="a35"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.phpdoc.org</font></div></li>
+<li><div class="src-line"><a name="a36"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://pear.php.net/PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a37"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@since</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.1</font></div></li>
+<li><div class="src-line"><a name="a38"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;change&nbsp;package&nbsp;to&nbsp;PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a39"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a40"></a><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a41"></a><font color="#009999">&nbsp;*&nbsp;An&nbsp;event&nbsp;Stack</font></div></li>
+<li><div class="src-line"><a name="a42"></a><font color="#009999">&nbsp;*&nbsp;</font></div></li>
+<li><div class="src-line"><a name="a43"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@category</font></strong><font color="#009999">&nbsp;ToolsAndUtilities</font></div></li>
+<li><div class="src-line"><a name="a44"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@package</font></strong><font color="#009999">&nbsp;&nbsp;phpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a45"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@author</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;Joshua&nbsp;Eichorn&nbsp;&lt;jeichorn@phpdoc.org&gt;</font></div></li>
+<li><div class="src-line"><a name="a46"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@license</font></strong><font color="#009999">&nbsp;&nbsp;http://www.opensource.org/licenses/lgpl-license.php&nbsp;LGPL</font></div></li>
+<li><div class="src-line"><a name="a47"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@version</font></strong><font color="#009999">&nbsp;&nbsp;Release:&nbsp;1.4.2</font></div></li>
+<li><div class="src-line"><a name="a48"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.phpdoc.org</font></div></li>
+<li><div class="src-line"><a name="a49"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@link</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://pear.php.net/PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a50"></a><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@todo</font></strong><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CS&nbsp;cleanup&nbsp;-&nbsp;change&nbsp;package&nbsp;to&nbsp;PhpDocumentor</font></div></li>
+<li><div class="src-line"><a name="a51"></a><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a52"></a><font color="blue">class&nbsp;</font><a href="../phpDocumentor/EventStack.html">EventStack</a></div></li>
+<li><div class="src-line"><a name="a53"></a><strong>{</strong></div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a55"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;stack</font></div></li>
+<li><div class="src-line"><a name="a56"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@var&nbsp;</font></strong><em>array&nbsp;</em></div></li>
+<li><div class="src-line"><a name="a57"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><a href="../phpDocumentor/EventStack.html#var$stack">$stack</a>&nbsp;=&nbsp;array<strong>(</strong>PARSER_EVENT_NOEVENTS<strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a60"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a61"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;The&nbsp;number&nbsp;of&nbsp;events&nbsp;in&nbsp;the&nbsp;stack</font></div></li>
+<li><div class="src-line"><a name="a62"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@var&nbsp;</font></strong><em>integer&nbsp;</em></div></li>
+<li><div class="src-line"><a name="a63"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a64"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">var&nbsp;</font><a href="../phpDocumentor/EventStack.html#var$num">$num</a>&nbsp;=&nbsp;0<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a65"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a66"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a67"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Push&nbsp;an&nbsp;event&nbsp;onto&nbsp;the&nbsp;stack</font></div></li>
+<li><div class="src-line"><a name="a68"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a69"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@param&nbsp;</font></strong><em>int&nbsp;</em><strong>$event&nbsp;</strong><font color="#009999">All&nbsp;events&nbsp;must&nbsp;be&nbsp;constants</font></div></li>
+<li><div class="src-line"><a name="a70"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a71"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>void&nbsp;</em></div></li>
+<li><div class="src-line"><a name="a72"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../phpDocumentor/EventStack.html#methodpushEvent">pushEvent</a><strong>(</strong><strong>$event</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../phpDocumentor/EventStack.html#var$num">num</a>&nbsp;=&nbsp;<a href="http://www.php.net/array_push">array_push</a><strong>(</strong><strong>$this</strong><strong>-&gt;</strong><a href="../phpDocumentor/EventStack.html#var$stack">stack</a><strong>,&nbsp;</strong><strong>$event</strong><strong>)&nbsp;</strong>-&nbsp;1<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a79"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Pop&nbsp;an&nbsp;event&nbsp;from&nbsp;the&nbsp;stack</font></div></li>
+<li><div class="src-line"><a name="a80"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a81"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>int&nbsp;</em><font color="#009999">An&nbsp;event</font></div></li>
+<li><div class="src-line"><a name="a82"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a83"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../phpDocumentor/EventStack.html#methodpopEvent">popEvent</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a84"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a85"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>$this</strong><strong>-&gt;</strong><a href="../phpDocumentor/EventStack.html#var$num">num</a>--<strong>;</strong></div></li>
+<li><div class="src-line"><a name="a86"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><a href="http://www.php.net/array_pop">array_pop</a><strong>(</strong><strong>$this</strong><strong>-&gt;</strong><a href="../phpDocumentor/EventStack.html#var$stack">stack</a><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a87"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a88"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a89"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#009999">/**</font></div></li>
+<li><div class="src-line"><a name="a90"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Get&nbsp;the&nbsp;current&nbsp;event</font></div></li>
+<li><div class="src-line"><a name="a91"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</font></div></li>
+<li><div class="src-line"><a name="a92"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@return&nbsp;</font></strong><em>int&nbsp;</em><font color="#009999">An&nbsp;event</font></div></li>
+<li><div class="src-line"><a name="a93"></a><font color="#009999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</font></div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">function&nbsp;</font><a href="../phpDocumentor/EventStack.html#methodgetEvent">getEvent</a><strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>{</strong></div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">return&nbsp;</font><strong>$this</strong><strong>-&gt;</strong><a href="../phpDocumentor/EventStack.html#var$stack">stack</a><strong>[</strong><strong>$this</strong><strong>-&gt;</strong><a href="../phpDocumentor/EventStack.html#var$num">num</a><strong>]</strong><strong>;</strong></div></li>
+<li><div class="src-line"><a name="a97"></a>&nbsp;&nbsp;&nbsp;&nbsp;<strong>}</strong></div></li>
+<li><div class="src-line"><a name="a98"></a><strong>}</strong></div></li>
+</ol></div>
+</div>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:35 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

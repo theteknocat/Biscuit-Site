@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class BiscuitModel</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class BiscuitModel
+</h2> (line <span class="linenumber">8</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---BiscuitModel.php.html">/framework/lib/BiscuitModel.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Provides database retrieval functions for the Biscuit class</h5>
+<div class="desc"><p>Provides database retrieval functions for the Biscuit class</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodfind" title="details" class="method-name">find</a>
+        (<span class="var-type">$sort_col</span>&nbsp;<span class="var-name">$sort_col</span>, <span class="var-type">$sort_dir</span>&nbsp;<span class="var-name">$sort_dir</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodfind_by_id" title="details" class="method-name">find_by_id</a>
+        (<span class="var-type">$id</span>&nbsp;<span class="var-name">$id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodfind_by_parent" title="details" class="method-name">find_by_parent</a>
+        (<span class="var-type">$parent_id</span>&nbsp;<span class="var-name">$parent_id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodfind_installed_plugins" title="details" class="method-name">find_installed_plugins</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodfind_one" title="details" class="method-name">find_one</a>
+        (<span class="var-type">$shortname</span>&nbsp;<span class="var-name">$shortname</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodfind_page_plugins" title="details" class="method-name">find_page_plugins</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$shortname</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodfull_title" title="details" class="method-name">full_title</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$page_id</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$shortname</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$separator</span> = <span class="var-default">&quot;:&quot;</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodroot_pagename" title="details" class="method-name">root_pagename</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$page_id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtitle" title="details" class="method-name">title</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$page_id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtitle_by_name" title="details" class="method-name">title_by_name</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$shortname</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtrace_path" title="details" class="method-name">trace_path</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$page_id</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$root_id</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodtrace_root" title="details" class="method-name">trace_root</a>
+        (<span class="var-type">int</span>&nbsp;<span class="var-name">$page_id</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodfind" id="methodfind"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find</strong> (line <span class="linenumber">17</span>)
+ </h4> 
+<h4><i>array</i> <strong>find(
+$sort_col
+$sort_col, $sort_dir
+$sort_dir)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch all data for all pages in the database</h5>
+<div class="desc"><p>Fetch all data for all pages in the database</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$sort_col $sort_col</strong>: string Optional - The column by which you want the results sorted</li>
+			<li><strong>$sort_dir $sort_dir</strong>: string Optional -</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Indexed array of associative arrays of database row data</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfind_by_id" id="methodfind_by_id"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find_by_id</strong> (line <span class="linenumber">51</span>)
+ </h4> 
+<h4><i>array</i> <strong>find_by_id(
+$id
+$id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch all data for one page in the database by the page's row id</h5>
+<div class="desc"><p>Fetch all data for one page in the database by the page's row id</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$id $id</strong>: int The id of the database row you want to retrieve</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Associative array of the page data</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfind_by_parent" id="methodfind_by_parent"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find_by_parent</strong> (line <span class="linenumber">61</span>)
+ </h4> 
+<h4><i>array</i> <strong>find_by_parent(
+$parent_id
+$parent_id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch all data for all pages matching a specific parent id</h5>
+<div class="desc"><p>Fetch all data for all pages matching a specific parent id</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$parent_id $parent_id</strong>: int The id of the parent page you wish to fetch data for</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Indexed array of associative arrays of page data</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfind_installed_plugins" id="methodfind_installed_plugins"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find_installed_plugins</strong> (line <span class="linenumber">68</span>)
+ </h4> 
+<h4><i>void</i> <strong>find_installed_plugins(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodfind_one" id="methodfind_one"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find_one</strong> (line <span class="linenumber">34</span>)
+ </h4> 
+<h4><i>array</i> <strong>find_one(
+$shortname
+$shortname)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch all data for one page in the database by the page's short name</h5>
+<div class="desc"><p>Fetch all data for one page in the database by the page's short name</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$shortname $shortname</strong>: string Optional - The short name of the page you wish to fetch the data for. If left blank, the name of the current page will be used</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - An associative array of the page data</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfind_page_plugins" id="methodfind_page_plugins"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method find_page_plugins</strong> (line <span class="linenumber">78</span>)
+ </h4> 
+<h4><i>array</i> <strong>find_page_plugins(
+
+$shortname)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch all the data for all the plugins associated with the current page</h5>
+<div class="desc"><p>Fetch all the data for all the plugins associated with the current page</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $shortname</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Indexed array of associative arrays of page data</li>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodfull_title" id="methodfull_title"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method full_title</strong> (line <span class="linenumber">158</span>)
+ </h4> 
+<h4><i>void</i> <strong>full_title(
+int
+$page_id, 
+$shortname, [string
+$separator = &quot;:&quot;])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch the full title of any given page starting with it's top-level parent</h5>
+<div class="desc"><p>Fetch the full title of any given page starting with it's top-level parent</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $page_id</strong>: The id of the page whose title you want to fetch</li>
+			<li><strong>string $separator</strong>: Optional - the string to separate the titles with. Defaults to &quot;:&quot;</li>
+			<li><strong> $shortname</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodroot_pagename" id="methodroot_pagename"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method root_pagename</strong> (line <span class="linenumber">110</span>)
+ </h4> 
+<h4><i>void</i> <strong>root_pagename(
+int
+$page_id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch the name of the top-level parent of any given page</h5>
+<div class="desc"><p>Fetch the name of the top-level parent of any given page</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $page_id</strong>: The id of the page whose top-level parent name you want to find</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodtitle" id="methodtitle"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method title</strong> (line <span class="linenumber">137</span>)
+ </h4> 
+<h4><i>void</i> <strong>title(
+int
+$page_id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch the title of any given page by id</h5>
+<div class="desc"><p>Fetch the title of any given page by id</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $page_id</strong>: The id of the page whose title you want to fetch</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodtitle_by_name" id="methodtitle_by_name"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method title_by_name</strong> (line <span class="linenumber">147</span>)
+ </h4> 
+<h4><i>void</i> <strong>title_by_name(
+string
+$shortname)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch the title of any given page by shortname</h5>
+<div class="desc"><p>Fetch the title of any given page by shortname</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $shortname</strong>: The shortname of the page whose title you want to fetch</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodtrace_path" id="methodtrace_path"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method trace_path</strong> (line <span class="linenumber">121</span>)
+ </h4> 
+<h4><i>void</i> <strong>trace_path(
+int
+$page_id, int
+$root_id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch an array of id's from any given page down to a specified root id</h5>
+<div class="desc"><p>Fetch an array of id's from any given page down to a specified root id</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $page_id</strong>: The id of the page to start at</li>
+			<li><strong>int $root_id</strong>: The id of the root id to stop at</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodtrace_root" id="methodtrace_root"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method trace_root</strong> (line <span class="linenumber">90</span>)
+ </h4> 
+<h4><i>void</i> <strong>trace_root(
+int
+$page_id)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Fetch the ID of the top-level parent of any given page</h5>
+<div class="desc"><p>Fetch the ID of the top-level parent of any given page</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>int $page_id</strong>: The id of the page whose top-level parent id you want to find</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:49 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class parserData</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class parserData
+</h2> (line <span class="linenumber">363</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---ParserData.inc.html">/framework/docs/phpDocumentor/ParserData.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Contains an in-memory representation of all documentable elements (<a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a>, <a href="../../phpDocumentor/ParserElements/parserFunction.html">parserFunction</a>, <a href="../../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a>, <a href="../../phpDocumentor/ParserElements/parserInclude.html">parserInclude</a>, <a href="../../phpDocumentor/ParserElements/parserClass.html">parserClass</a>, <a href="../../phpDocumentor/ParserElements/parserMethod.html">parserMethod</a>, <a href="../../phpDocumentor/ParserElements/parserVar.html">parserVar</a>) and their DocBlocks (<a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a>).</h5>
+<div class="desc"><p>Contains an in-memory representation of all documentable elements (<a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a>, <a href="../../phpDocumentor/ParserElements/parserFunction.html">parserFunction</a>, <a href="../../phpDocumentor/ParserElements/parserDefine.html">parserDefine</a>, <a href="../../phpDocumentor/ParserElements/parserInclude.html">parserInclude</a>, <a href="../../phpDocumentor/ParserElements/parserClass.html">parserClass</a>, <a href="../../phpDocumentor/ParserElements/parserMethod.html">parserMethod</a>, <a href="../../phpDocumentor/ParserElements/parserVar.html">parserVar</a>) and their DocBlocks (<a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a>).
+ This class works in coordination with <a href="../../phpDocumentor/phpDocumentor_IntermediateParser.html">phpDocumentor_IntermediateParser</a> to take output from Parser::handleEvent() and create indexes, links, and other assorted things (all documented in phpDocumentor_IntermediateParser and <a href="../../Converters/Converter.html">Converter</a>)</p></div>
+<ul>
+		<li><strong>author:</strong> - Gregory Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - Release: 1.4.2</li>
+		<li><strong>copyright:</strong> - 2002-2008 Gregory Beaver</li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>todo:</strong> - CS cleanup - change package to PhpDocumentor</li>
+		<li><strong>since:</strong> - 1.0rc1</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$classelements" title="details" class="property"><strong>$classelements</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$clean" title="details" class="property"><strong>$clean</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$docblock" title="details" class="property"><strong>$docblock</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$elements" title="details" class="property"><strong>$elements</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$links" title="details" class="property"><strong>$links</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">false|<a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a></span>
+    <a href="#var$parent" title="details" class="property"><strong>$parent</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$privateclasselements" title="details" class="property"><strong>$privateclasselements</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">array</span>
+    <a href="#var$privateelements" title="details" class="property"><strong>$privateelements</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type"><a href="../../phpDocumentor/ParserElements/parserTutorial.html">parserTutorial</a>|false</span>
+    <a href="#var$tutorial" title="details" class="property"><strong>$tutorial</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$type" title="details" class="property"><strong>$type</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$_explicitdocblock" title="details" class="property"><strong>$_explicitdocblock</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$_hasclasses" title="details" class="property"><strong>$_hasclasses</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">boolean</span>
+    <a href="#var$_hasinterfaces" title="details" class="property"><strong>$_hasinterfaces</strong></a>
+</div>
+<hr />
+<a name="var$classelements" id="var$classelements"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$classelements = array()</strong> (line <span class="linenumber">395</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed class elements</h5>
+<div class="desc"><p>array of parsed class elements</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$clean" id="var$clean"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$clean =  true</strong> (line <span class="linenumber">419</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>used by <a href="../../phpDocumentor/phpDocumentor_IntermediateParser.html#methodhandleDocBlock">phpDocumentor_IntermediateParser::handleDocBlock()</a> to</h5>
+<div class="desc"><p>used by <a href="../../phpDocumentor/phpDocumentor_IntermediateParser.html#methodhandleDocBlock">phpDocumentor_IntermediateParser::handleDocBlock()</a> to determine whether a docblock is a page-level docblock or not.  $clean is true as long as only 0 or 1 docblock has been parsed, and no element other than parserPage has been parsed</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$docblock" id="var$docblock"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$docblock =  false</strong> (line <span class="linenumber">424</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>DocBlock (<a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a>) for this page, or false if not set</h5>
+<div class="desc"><p>DocBlock (<a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a>) for this page, or false if not set</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$elements" id="var$elements"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$elements = array()</strong> (line <span class="linenumber">375</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed elements</h5>
+<div class="desc"><p>array of parsed elements</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$links" id="var$links"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$links = array()</strong> (line <span class="linenumber">411</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of links descended from <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a></h5>
+<div class="desc"><p>array of links descended from <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a></p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../../phpDocumentor/Links/pageLink.html">pageLink</a>, <a href="../../phpDocumentor/Links/defineLink.html">defineLink</a>, <a href="../../phpDocumentor/Links/classLink.html">classLink</a>, <a href="../../phpDocumentor/Links/functionLink.html">functionLink</a>, <a href="../../phpDocumentor/Links/methodLink.html">methodLink</a>, <a href="../../phpDocumentor/Links/varLink.html">varLink</a></li>
+	</ul>
+</div>
+<a name="var$parent" id="var$parent"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$parent =  false</strong> (line <span class="linenumber">370</span>)
+ </h4>
+<h4>Data type : false|<a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a></h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5><a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a> element that is this parserData's parent, or false if not set.</h5>
+<div class="desc"><p><a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a> element that is this parserData's parent, or false if not set.</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$privateclasselements" id="var$privateclasselements"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$privateclasselements = array()</strong> (line <span class="linenumber">405</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed class elements with @access private</h5>
+<div class="desc"><p>array of parsed class elements with @access private</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$privateelements" id="var$privateelements"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$privateelements = array()</strong> (line <span class="linenumber">390</span>)
+ </h4>
+<h4>Data type : array</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>array of parsed elements with @access private</h5>
+<div class="desc"><p>array of parsed elements with @access private</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$tutorial" id="var$tutorial"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$tutorial =  false</strong> (line <span class="linenumber">400</span>)
+ </h4>
+<h4>Data type : <a href="../../phpDocumentor/ParserElements/parserTutorial.html">parserTutorial</a>|false</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="var$type" id="var$type"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$type =  'page'</strong> (line <span class="linenumber">438</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Type is used by many functions to skip the hassle of if</h5>
+<div class="desc"><p>Type is used by many functions to skip the hassle of if <div class="src-code"><ol><li><div class="src-line"><a href="../../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_get_class">phpDocumentor_get_class</a><strong>(</strong><strong>$blah</strong><strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'parserBlah'</font></div></li>
+</ol></div> always 'page', used in element indexing and conversion functions found in <a href="../../Converters/Converter.html">Converter</a></p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$_explicitdocblock" id="var$_explicitdocblock"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_explicitdocblock =  false</strong> (line <span class="linenumber">430</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Flag used to determine whether a page-level docblock is present</h5>
+<div class="desc"><p>Flag used to determine whether a page-level docblock is present</p></div>
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_hasclasses" id="var$_hasclasses"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_hasclasses =  false</strong> (line <span class="linenumber">380</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<a name="var$_hasinterfaces" id="var$_hasinterfaces"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_hasinterfaces =  false</strong> (line <span class="linenumber">385</span>)
+ </h4>
+<h4>Data type : boolean</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+		<li><strong>access:</strong> - private</li>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddElement" title="details" class="method-name">addElement</a>
+        (<span class="var-type"><a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a></span>&nbsp;<span class="var-name">&$element</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodaddLink" title="details" class="method-name">addLink</a>
+        (<span class="var-type"><a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a></span>&nbsp;<span class="var-name">&$element</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$classorpackage</span> = <span class="var-default">''</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$subpackage</span> = <span class="var-default">''</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodaddTutorial" title="details" class="method-name">addTutorial</a>
+        (<span class="var-type"><a href="../../phpDocumentor/ParserElements/parserTutorial.html">parserTutorial</a></span>&nbsp;<span class="var-name">$t</span>, <span class="var-type"><a href="../../Converters/Converter.html">Converter</a></span>&nbsp;<span class="var-name">&$c</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodexplicitDocBlock" title="details" class="method-name">explicitDocBlock</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">array</span>
+        <a href="#methodgetClasses" title="details" class="method-name">getClasses</a>
+        (<span class="var-type"><a href="../../Converters/Converter.html">Converter</a></span>&nbsp;<span class="var-name">&$c</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetLink" title="details" class="method-name">&amp;getLink</a>
+        (<span class="var-type"><a href="../../Converters/Converter.html">Converter</a></span>&nbsp;<span class="var-name">&$c</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$text</span> = <span class="var-default">false</span>])
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetName" title="details" class="method-name">getName</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../../phpDocumentor/Links/tutorialLink.html">tutorialLink</a></span>
+        <a href="#methodgetTutorial" title="details" class="method-name">getTutorial</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodhasClasses" title="details" class="method-name">hasClasses</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodhasExplicitDocBlock" title="details" class="method-name">hasExplicitDocBlock</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodhasInterfaces" title="details" class="method-name">hasInterfaces</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methodisClean" title="details" class="method-name">isClean</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetDocBlock" title="details" class="method-name">setDocBlock</a>
+        (<span class="var-type"><a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a></span>&nbsp;<span class="var-name">&$docblock</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodsetParent" title="details" class="method-name">setParent</a>
+        (<span class="var-type"><a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a></span>&nbsp;<span class="var-name">&$parent</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodaddElement" id="methodaddElement"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addElement</strong> (line <span class="linenumber">449</span>)
+ </h4> 
+<h4><i>void</i> <strong>addElement(
+<a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a>
+&$element)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>add a new element to the tracking array</h5>
+<div class="desc"><p>add a new element to the tracking array</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a> &$element</strong>: add a parsed element to the                                <a href="../../phpDocumentor/ParserData/parserData.html#var$elements">$elements</a> array,                                also sets <a href="../../phpDocumentor/ParserData/parserData.html#var$clean">$clean</a> to false</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddLink" id="methodaddLink"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addLink</strong> (line <span class="linenumber">553</span>)
+ </h4> 
+<h4><i>string</i> <strong>addLink(
+<a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a>
+&$element, [string
+$classorpackage = ''], [string
+$subpackage = ''])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>adds a link</h5>
+<div class="desc"><p>adds a link</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../phpDocumentor/ParserElements/parserElement.html">parserElement</a> &$element</strong>: element to add a new link (descended from                                      <a href="../../phpDocumentor/Links/abstractLink.html">abstractLink</a>) to the                                      <a href="../../phpDocumentor/ParserData/parserData.html#var$links">$links</a> array</li>
+			<li><strong>string $classorpackage</strong>: classname for elements that are                                      class-based (this may be deprecated in                                      the future, as the classname should be                                      contained within the element.  if                                      $element is a page, this parameter is a                                      package name</li>
+			<li><strong>string $subpackage</strong>: subpackage name for page elements</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodaddTutorial" id="methodaddTutorial"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method addTutorial</strong> (line <span class="linenumber">499</span>)
+ </h4> 
+<h4><i>void</i> <strong>addTutorial(
+<a href="../../phpDocumentor/ParserElements/parserTutorial.html">parserTutorial</a>
+$t, <a href="../../Converters/Converter.html">Converter</a>
+&$c)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>adds a tutorial parser</h5>
+<div class="desc"><p>adds a tutorial parser</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../phpDocumentor/ParserElements/parserTutorial.html">parserTutorial</a> $t</strong>: a tutorial parser</li>
+			<li><strong><a href="../../Converters/Converter.html">Converter</a> &$c</strong>: the output converter</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodexplicitDocBlock" id="methodexplicitDocBlock"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method explicitDocBlock</strong> (line <span class="linenumber">532</span>)
+ </h4> 
+<h4><i>bool</i> <strong>explicitDocBlock(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Tells this page that its DocBlock was not implicit</h5>
+<div class="desc"><p>Tells this page that its DocBlock was not implicit</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetClasses" id="methodgetClasses"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getClasses</strong> (line <span class="linenumber">633</span>)
+ </h4> 
+<h4><i>array</i> <strong>getClasses(
+<a href="../../Converters/Converter.html">Converter</a>
+&$c)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>returns a list of all classes declared in a file</h5>
+<div class="desc"><p>returns a list of all classes declared in a file</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../Converters/Converter.html">Converter</a> &$c</strong>: output converter</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Format: array(                           packagename =&gt; parserClass,                           packagename =&gt; parserClass,                           ...                       )</li>
+		</ul>
+</div>
+<a name="methodgetLink" id="methodgetLink"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getLink</strong> (line <span class="linenumber">615</span>)
+ </h4> 
+<h4><i>string</i> <strong>&amp;getLink(
+<a href="../../Converters/Converter.html">Converter</a>
+&$c, [bool
+$text = false])</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>returns a link</h5>
+<div class="desc"><p>returns a link</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../Converters/Converter.html">Converter</a> &$c</strong>: the output converter</li>
+			<li><strong>bool $text</strong>: a text flag</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetName" id="methodgetName"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getName</strong> (line <span class="linenumber">650</span>)
+ </h4> 
+<h4><i>string</i> <strong>getName(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Get the output-safe filename (.</h5>
+<div class="desc"><p>Get the output-safe filename (. changed to _)</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetTutorial" id="methodgetTutorial"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getTutorial</strong> (line <span class="linenumber">512</span>)
+ </h4> 
+<h4><i><a href="../../phpDocumentor/Links/tutorialLink.html">tutorialLink</a></i> <strong>getTutorial(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>If this file has a tutorial associated with it, returns a link to the tutorial.</h5>
+<div class="desc"><p>If this file has a tutorial associated with it, returns a link to the tutorial.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodhasClasses" id="methodhasClasses"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method hasClasses</strong> (line <span class="linenumber">486</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>hasClasses(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Does this package have classes?</h5>
+<div class="desc"><p>Does this package have classes?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodhasExplicitDocBlock" id="methodhasExplicitDocBlock"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method hasExplicitDocBlock</strong> (line <span class="linenumber">522</span>)
+ </h4> 
+<h4><i>bool</i> <strong>hasExplicitDocBlock(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>If the page-level DocBlock was present in the source, returns true</h5>
+<div class="desc"><p>If the page-level DocBlock was present in the source, returns true</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodhasInterfaces" id="methodhasInterfaces"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method hasInterfaces</strong> (line <span class="linenumber">476</span>)
+ </h4> 
+<h4><i>bool</i> <strong>hasInterfaces(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Does this package have interfaces?</h5>
+<div class="desc"><p>Does this package have interfaces?</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodisClean" id="methodisClean"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method isClean</strong> (line <span class="linenumber">674</span>)
+ </h4> 
+<h4><i>bool</i> <strong>isClean(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>checks if the element is &quot;cleaned&quot; already</h5>
+<div class="desc"><p>checks if the element is &quot;cleaned&quot; already</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - returns the value of <a href="../../phpDocumentor/ParserData/parserData.html#var$clean">$clean</a></li>
+		</ul>
+</div>
+<a name="methodsetDocBlock" id="methodsetDocBlock"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setDocBlock</strong> (line <span class="linenumber">687</span>)
+ </h4> 
+<h4><i>void</i> <strong>setDocBlock(
+<a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a>
+&$docblock)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets the docblock</h5>
+<div class="desc"><p>sets the docblock</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a> &$docblock</strong>: docblock element</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>see</strong> - <a href="../../phpDocumentor/ParserDocBlock/parserDocBlock.html">parserDocBlock</a></li>
+		</ul>
+</div>
+<a name="methodsetParent" id="methodsetParent"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method setParent</strong> (line <span class="linenumber">664</span>)
+ </h4> 
+<h4><i>void</i> <strong>setParent(
+<a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a>
+&$parent)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets the parent</h5>
+<div class="desc"><p>sets the parent</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong><a href="../../phpDocumentor/ParserData/parserPage.html">parserPage</a> &$parent</strong>: parent element of this parsed data</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:22 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

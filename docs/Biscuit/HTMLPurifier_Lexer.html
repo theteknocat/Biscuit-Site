@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class HTMLPurifier_Lexer</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class HTMLPurifier_Lexer
+</h2> (line <span class="linenumber">123</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---plugins---html_purifier---php4---library---HTMLPurifier---Lexer.php.html">/framework/plugins/html_purifier/php4/library/HTMLPurifier/Lexer.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Forgivingly lexes HTML (SGML-style) markup into tokens.</h5>
+<div class="desc"><p>Forgivingly lexes HTML (SGML-style) markup into tokens.
+ A lexer parses a string of SGML-style markup and converts them into corresponding tokens.  It doesn't check for well-formedness, although its internal mechanism may make this automatic (such as the case of HTMLPurifier_Lexer_DOMLex).  There are several implementations to choose from.
+ A lexer is HTML-oriented: it might work with XML, but it's not recommended, as we adhere to a subset of the specification for optimization reasons.
+ This class should not be directly instantiated, but you may use create() to retrieve a default copy of the lexer.  Being a supertype, this class does not actually define any implementation, but offers commonly used convenience functions for subclasses.</p></div>
+<ul>
+		<li><strong>see:</strong> - <a href="../Biscuit/HTMLPurifier_Token.html">HTMLPurifier_Token</a></li>
+	</ul>
+<br /><hr />
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">mixed</span>
+    <a href="#var$_special_entity2str" title="details" class="property"><strong>$_special_entity2str</strong></a>
+</div>
+<hr />
+<a name="var$_special_entity2str" id="var$_special_entity2str"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$_special_entity2str = array(<br />                    '&amp;quot;' =&gt; '&quot;',<br />                    '&amp;amp;'  =&gt; '&amp;',<br />                    '&amp;lt;'   =&gt; '&lt;',<br />                    '&amp;gt;'   =&gt; '&gt;',<br />                    '&amp;#39;'  =&gt; &quot;'&quot;,<br />                    '&amp;#039;' =&gt; &quot;'&quot;,<br />                    '&amp;#x27;' =&gt; &quot;'&quot;<br />            )</strong> (line <span class="linenumber">214</span>)
+ </h4>
+<h4>Data type : mixed</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Most common entity to raw value conversion table for special entities.</h5>
+<div class="desc"><p>Most common entity to raw value conversion table for special entities.</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+    static         <span class="method-result">Escaped</span>
+        <a href="#methodCDATACallback" title="details" class="method-name">CDATACallback</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$matches</span>)
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">Concrete</span>
+        <a href="#methodcreate" title="details" class="method-name">create</a>
+        (<span class="var-type">$prototype</span>&nbsp;<span class="var-name">$config</span>)
+        </div>
+    <div class="method-definition">
+    static         <span class="method-result">HTML</span>
+        <a href="#methodescapeCDATA" title="details" class="method-name">escapeCDATA</a>
+        (<span class="var-type">$string</span>&nbsp;<span class="var-name">$string</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">HTMLPurifier_Lexer</span>
+        <a href="#methodHTMLPurifier_Lexer" title="details" class="method-name">HTMLPurifier_Lexer</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodescapeCommentedCDATA" title="details" class="method-name">escapeCommentedCDATA</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodextractBody" title="details" class="method-name">extractBody</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$html</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodnormalize" title="details" class="method-name">normalize</a>
+        (<span class="var-type"></span>&nbsp;<span class="var-name">$html</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$context</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">Parsed</span>
+        <a href="#methodparseData" title="details" class="method-name">parseData</a>
+        (<span class="var-type">$string</span>&nbsp;<span class="var-name">$string</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result"><a href="../Biscuit/HTMLPurifier_Token.html">HTMLPurifier_Token</a></span>
+        <a href="#methodtokenizeHTML" title="details" class="method-name">tokenizeHTML</a>
+        (<span class="var-type">$string</span>&nbsp;<span class="var-name">$string</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$config</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$context</span>)
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodCDATACallback" id="methodCDATACallback"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method CDATACallback</strong> (line <span class="linenumber">310</span>)
+ </h4> 
+<h4><i>Escaped</i> <strong>CDATACallback(
+
+$matches)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Callback function for escapeCDATA() that does the work.</h5>
+<div class="desc"><p>Callback function for escapeCDATA() that does the work.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $matches</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - internals of the CDATA section.</li>
+		</ul>
+</div>
+<a name="methodcreate" id="methodcreate"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method create</strong> (line <span class="linenumber">151</span>)
+ </h4> 
+<h4><i>Concrete</i> <strong>create(
+$prototype
+$config)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Retrieves or sets the default Lexer as a Prototype Factory.</h5>
+<div class="desc"><p>Retrieves or sets the default Lexer as a Prototype Factory.
+ Depending on what PHP version you are running, the abstract base Lexer class will determine which concrete Lexer is best for you: HTMLPurifier_Lexer_DirectLex for PHP 4, and HTMLPurifier_Lexer_DOMLex for PHP 5 and beyond.  This general rule has a few exceptions to it involving special features that only DirectLex implements.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$prototype $config</strong>: Optional prototype lexer or configuration object</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - lexer.</li>
+		</ul>
+</div>
+<a name="methodescapeCDATA" id="methodescapeCDATA"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Static Method escapeCDATA</strong> (line <span class="linenumber">281</span>)
+ </h4> 
+<h4><i>HTML</i> <strong>escapeCDATA(
+$string
+$string)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Translates CDATA sections into regular sections (through escaping).</h5>
+<div class="desc"><p>Translates CDATA sections into regular sections (through escaping).</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$string $string</strong>: HTML string to process.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - with CDATA sections escaped.</li>
+		</ul>
+</div>
+<a name="methodHTMLPurifier_Lexer" id="methodHTMLPurifier_Lexer"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor HTMLPurifier_Lexer</strong> (line <span class="linenumber">206</span>)
+ </h4> 
+<h4><i>HTMLPurifier_Lexer</i> <strong>HTMLPurifier_Lexer(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodescapeCommentedCDATA" id="methodescapeCommentedCDATA"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method escapeCommentedCDATA</strong> (line <span class="linenumber">292</span>)
+ </h4> 
+<h4><i>void</i> <strong>escapeCommentedCDATA(
+
+$string)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Special CDATA case that is especiall convoluted for &lt;script&gt;</h5>
+<div class="desc"><p>Special CDATA case that is especiall convoluted for &lt;script&gt;</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $string</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodextractBody" id="methodextractBody"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method extractBody</strong> (line <span class="linenumber">352</span>)
+ </h4> 
+<h4><i>void</i> <strong>extractBody(
+
+$html)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Takes a string of HTML (fragment or document) and returns the content</h5>
+<div class="desc"><p>Takes a string of HTML (fragment or document) and returns the content</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $html</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodnormalize" id="methodnormalize"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method normalize</strong> (line <span class="linenumber">319</span>)
+ </h4> 
+<h4><i>void</i> <strong>normalize(
+
+$html, 
+$config, 
+&$context)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Takes a piece of HTML and normalizes it by converting entities, fixing encoding, extracting bits, and other good stuff.</h5>
+<div class="desc"><p>Takes a piece of HTML and normalizes it by converting entities, fixing encoding, extracting bits, and other good stuff.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong> $html</strong>: </li>
+			<li><strong> $config</strong>: </li>
+			<li><strong> &$context</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodparseData" id="methodparseData"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method parseData</strong> (line <span class="linenumber">239</span>)
+ </h4> 
+<h4><i>Parsed</i> <strong>parseData(
+$string
+$string)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Parses special entities into the proper characters.</h5>
+<div class="desc"><p>Parses special entities into the proper characters.
+ This string will translate escaped versions of the special characters into the correct ones.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$string $string</strong>: String character data to be parsed.</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - character data.</li>
+		</ul>
+</div>
+<a name="methodtokenizeHTML" id="methodtokenizeHTML"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method tokenizeHTML</strong> (line <span class="linenumber">269</span>)
+ </h4> 
+<h4><i><a href="../Biscuit/HTMLPurifier_Token.html">HTMLPurifier_Token</a></i> <strong>tokenizeHTML(
+$string
+$string, 
+$config, 
+&$context)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Lexes an HTML string into tokens.</h5>
+<div class="desc"><p>Lexes an HTML string into tokens.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>$string $string</strong>: String HTML.</li>
+			<li><strong> $config</strong>: </li>
+			<li><strong> &$context</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - array representation of HTML.</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:18 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

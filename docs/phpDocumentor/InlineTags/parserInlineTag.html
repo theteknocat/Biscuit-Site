@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class parserInlineTag</title>
+  <link rel="stylesheet" href="../../media/stylesheet.css" />
+  <script src="../../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../../media/images/plus.gif";
+	imgMinus.src = "../../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class parserInlineTag
+</h2> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_InlineTags_frameworkdocsphpDocumentorInlineTags.inc.html#a61">61</a></span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+<a href="../../phpDocumentor/ParserData/parserBase.html">parserBase</a>
+   |
+   --parserInlineTag</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---docs---phpDocumentor---InlineTags.inc.html">/framework/docs/phpDocumentor/InlineTags.inc</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>Use this element to represent an {@inline tag} like {@link}</h5>
+<div class="desc"><p>Use this element to represent an {@inline tag} like {@link}</p></div>
+<ul>
+		<li><strong>tutorial:</strong> - <a href="../../phpDocumentor/tutorial_inlinetags.pkg.html">phpDocumentor Inline tags</a></li>
+		<li><strong>author:</strong> - Gregory Beaver &lt;<a href="mailto:cellog@php.net">cellog@php.net</a>&gt;</li>
+		<li><strong>version:</strong> - Release: 1.4.2</li>
+		<li><strong>copyright:</strong> - 2002-2008 Gregory Beaver</li>
+		<li><strong>see:</strong> - <a href="../../phpDocumentor/ParserData/parserStringWithInlineTags.html">parserStringWithInlineTags</a></li>
+		<li><strong>link:</strong> - <a href="http://pear.php.net/PhpDocumentor">http://pear.php.net/PhpDocumentor</a></li>
+		<li><strong>link:</strong> - <a href="http://www.phpdoc.org">http://www.phpdoc.org</a></li>
+		<li><strong>todo:</strong> - CS cleanup - change package to PhpDocumentor</li>
+		<li><strong>todo:</strong> - CS cleanup - change classname to PhpDocumentor_*</li>
+		<li><strong>since:</strong> - 1.0rc1</li>
+		<li><strong>license:</strong> - <a href="http://www.opensource.org/licenses/lgpl-license.php">LGPL</a></li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from parserInlineTag:</span>
+ 		<dl>
+	<dt><a href="../../phpDocumentor/InlineTags/parserLinkInlineTag.html">parserLinkInlineTag</a></dt>
+		<dd>represents inline links</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/InlineTags/parserSourceInlineTag.html">parserSourceInlineTag</a></dt>
+		<dd>represents inline source tag, used for function/method source</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/InlineTags/parserInheritdocInlineTag.html">parserInheritdocInlineTag</a></dt>
+		<dd>Represents the inheritdoc inline tag, used by classes/methods/vars to inherit</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/InlineTags/parserIdInlineTag.html">parserIdInlineTag</a></dt>
+		<dd>Represents the inline {@id} tag for tutorials</dd>
+	</dl>
+		<dl>
+	<dt><a href="../../phpDocumentor/InlineTags/parserTocInlineTag.html">parserTocInlineTag</a></dt>
+		<dd>Represents {@toc} for table of contents generation in tutorials</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$inlinetype" title="details" class="property"><strong>$inlinetype</strong></a>
+</div>
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$type" title="details" class="property"><strong>$type</strong></a>
+</div>
+<hr />
+<a name="var$inlinetype" id="var$inlinetype"><!-- --></A>
+<div style="background='#eeeeee'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$inlinetype =  ''</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_InlineTags_frameworkdocsphpDocumentorInlineTags.inc.html#a79">79</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>the name of the inline tag (like link)</h5>
+<div class="desc"><p>the name of the inline tag (like link)</p></div>
+<ul>
+	</ul>
+</div>
+<a name="var$type" id="var$type"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /> <strong class="property">$type =  'inlinetag'</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_InlineTags_frameworkdocsphpDocumentorInlineTags.inc.html#a74">74</a></span>)
+ </h4>
+<h4>Data type : string</h4>
+<p><strong>Overrides:</strong> Array<br></p><!-- ========== Info from phpDoc block ========= -->
+<h5>Element type</h5>
+<div class="desc"><p>Element type
+ Type is used by many functions to skip the hassle of
+ <div class="src-code"><ol><li><div class="src-line">&nbsp;<font color="blue">if&nbsp;</font><a href="../../phpDocumentor/_framework---docs---phpDocumentor---common.inc.php.html#functionphpDocumentor_get_class">phpDocumentor_get_class</a><strong>(</strong><strong>$blah</strong><strong>)&nbsp;</strong>==&nbsp;<font color="#66cccc">'parserBlah'</font></div></li>
+</ol></div> always &quot;inlinetag&quot;</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">parserInlineTag</span>
+        <a href="#methodparserInlineTag" title="details" class="method-name">parserInlineTag</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodgetString" title="details" class="method-name">getString</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">integer</span>
+        <a href="#methodStrlen" title="details" class="method-name">Strlen</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodparserInlineTag" id="methodparserInlineTag"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/Constructor.gif" border="0" /> <strong class="method">Constructor parserInlineTag</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_InlineTags_frameworkdocsphpDocumentorInlineTags.inc.html#a87">87</a></span>)
+ </h4> 
+<h4><i>parserInlineTag</i> <strong>parserInlineTag(
+string
+$type, string
+$value)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>sets up the tag</h5>
+<div class="desc"><p>sets up the tag</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $type</strong>: tag type (example: link)</li>
+			<li><strong>string $value</strong>: tag value (example: what to link to)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+		</ul>
+</div>
+<a name="methodgetString" id="methodgetString"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method getString</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_InlineTags_frameworkdocsphpDocumentorInlineTags.inc.html#a117">117</a></span>)
+ </h4> 
+<h4><i>string</i> <strong>getString(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/InlineTags/parserSourceInlineTag.html#methodgetString">parserSourceInlineTag::getString()</a></dt>
+		<dd>gets the source string</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>always gets an empty string</h5>
+<div class="desc"><p>always gets an empty string</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - always '', used by Parser::handleDocBlock() to                calculate the short description of a DocBlock</li>
+			<li><strong>see</strong> - <a href="../../phpDocumentor/ParserData/parserStringWithInlineTags.html#methodgetString">parserStringWithInlineTags::getString()</a></li>
+			<li><strong>see</strong> - <a href="../../phpDocumentor/ParserData/parserStringWithInlineTags.html#methodtrimmedStrlen">parserStringWithInlineTags::trimmedStrlen()</a></li>
+			<li><strong>usedby</strong> - <a href="../../phpDocumentor/ParserData/parserStringWithInlineTags.html#methodgetString">parserStringWithInlineTags::getString()</a> - removes inline tag length, as it is
+       indeterminate until conversion.</li>
+		</ul>
+</div>
+<a name="methodStrlen" id="methodStrlen"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method Strlen</strong> (line <span class="linenumber"><a href="../../__filesource/fsource_phpDocumentor_InlineTags_frameworkdocsphpDocumentorInlineTags.inc.html#a99">99</a></span>)
+ </h4> 
+<h4><i>integer</i> <strong>Strlen(
+)</strong></h4>
+	<p>Overridden in child classes as:<br />
+		<dl>
+	<dt><a href="../../phpDocumentor/InlineTags/parserSourceInlineTag.html#methodStrlen">parserSourceInlineTag::Strlen()</a></dt>
+		<dd>only used to determine blank lines.</dd>
+	</dl>
+	</p>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>get length of the tag</h5>
+<div class="desc"><p>get length of the tag</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - length of the tag</li>
+			<li><strong>todo</strong> - CS cleanup - rename to strLen for camelCase rule</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/ParserData/parserBase.html">parserBase</a></h4>
+		<h4>
+<img src="../../media/images/PublicProperty.gif" border="0" /><strong class="property"> <a href="../../phpDocumentor/ParserData/parserBase.html#var$value">parserBase::$value</a></strong> - set to different things by its descendants
+	</h4> 
+		</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+		<!-- =========== Summary =========== -->
+	<h4>Inherited From Class <a href="../../phpDocumentor/ParserData/parserBase.html">parserBase</a></h4>
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserData/parserBase.html#methodgetType">parserBase::getType()</a></strong> - gets the type
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserData/parserBase.html#methodgetValue">parserBase::getValue()</a></strong> - gets the value
+		</h4> 
+
+				<h4>
+<img src="../../media/images/PublicMethod.gif" border="0" /><strong class="method"> <a href="../../phpDocumentor/ParserData/parserBase.html#methodsetValue">parserBase::setValue()</a></strong> - sets the given value
+		</h4> 
+
+				<br />
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:17:09 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

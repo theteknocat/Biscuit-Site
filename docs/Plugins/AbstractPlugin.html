@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs For Class AbstractPlugin</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><!-- Start of Class Data -->
+<h2>
+	Class AbstractPlugin
+</h2> (line <span class="linenumber">8</span>)
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ));
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<pre>
+</pre>
+<p>
+	<b><i>Located in File: <a href="_framework---lib---AbstractPlugin.php.html">/framework/lib/AbstractPlugin.php</a></i></b><br>
+</p>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>An abstract plugin class that handles permissions, abstract database operations, and plugin database installation and updates</h5>
+<div class="desc"><p>An abstract plugin class that handles permissions, abstract database operations, and plugin database installation and updates</p></div>
+<ul>
+		<li><strong>author:</strong> - Peter Epp</li>
+	</ul>
+<br /><hr />
+<span class="type">Classes extended from AbstractPlugin:</span>
+ 		<dl>
+	<dt><a href="../Plugins/AbstractPluginController.html">AbstractPluginController</a></dt>
+		<dd>And abstract controller for use with plugins.</dd>
+	</dl>
+	</p>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+
+<h2 class="tab">Class Variables</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="var-title">
+    <span class="var-type">string</span>
+    <a href="#var$permission_actions" title="details" class="property"><strong>$permission_actions</strong></a>
+</div>
+<hr />
+<a name="var$permission_actions" id="var$permission_actions"><!-- --></A>
+<div style="background='#ffffff'">
+<h4>
+<img src="../media/images/PublicProperty.gif" border="0" /> <strong class="property">$permission_actions = array('new','edit','delete')</strong> (line <span class="linenumber">14</span>)
+ </h4>
+<h4>Data type : string</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<h5>The list of actions that require permissions by default.</h5>
+<div class="desc"><p>The list of actions that require permissions by default. You can redefine this array in your plugin if you want to change which actions require permission.</p></div>
+<ul>
+	</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+</div>
+<div class="tab-page" id="constantsTabpage">
+
+<h2 class="tab">Class Constants</h2>
+<!-- ============ VARIABLE DETAIL =========== -->
+<strong>Summary:</strong><br />
+<hr />
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "constantsTabpage" ) );</script>
+</div>
+<div class="tab-page" id="tabPage2">
+<h2 class="tab">Method Detail</h2>
+<!-- ============ METHOD DETAIL =========== -->
+<strong>Summary:</strong><br />
+<div class="method-summary">
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodaction_requires_permission" title="details" class="method-name">action_requires_permission</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$action_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodbuild_table" title="details" class="method-name">build_table</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcheck_install" title="details" class="method-name">check_install</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodcreate_table" title="details" class="method-name">create_table</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodmigrate_table" title="details" class="method-name">migrate_table</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">boolean</span>
+        <a href="#methodpermission_check" title="details" class="method-name">permission_check</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodpermission_error" title="details" class="method-name">permission_error</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">string</span>
+        <a href="#methodpermission_string_for_action" title="details" class="method-name">permission_string_for_action</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$action_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodpopulate_table" title="details" class="method-name">populate_table</a>
+        (<span class="var-type">string</span>&nbsp;<span class="var-name">$table_name</span>)
+        </div>
+    <div class="method-definition">
+            <span class="method-result">void</span>
+        <a href="#methodupload_path" title="details" class="method-name">upload_path</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_create" title="details" class="method-name">user_can_create</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_delete" title="details" class="method-name">user_can_delete</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_edit" title="details" class="method-name">user_can_edit</a>
+        ()
+        </div>
+    <div class="method-definition">
+            <span class="method-result">bool</span>
+        <a href="#methoduser_can_view" title="details" class="method-name">user_can_view</a>
+        ()
+        </div>
+</div>
+<hr />
+<A NAME='method_detail'></A>
+
+
+<a name="methodaction_requires_permission" id="methodaction_requires_permission"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method action_requires_permission</strong> (line <span class="linenumber">94</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>action_requires_permission(
+string
+$action_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Does an action require a permissions check?</h5>
+<div class="desc"><p>Does an action require a permissions check?
+ Unless otherwise defined in your plugin, all actions defined in this class's $permission_actions array do (&quot;new&quot;,&quot;edit&quot; and &quot;delete&quot;)</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $action_name</strong>: the name of an action</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodbuild_table" id="methodbuild_table"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method build_table</strong> (line <span class="linenumber">146</span>)
+ </h4> 
+<h4><i>void</i> <strong>build_table(
+string
+$table_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Calls create_table, populate_table and/or alter_table as needed to build a plugin's database table.</h5>
+<div class="desc"><p>Calls create_table, populate_table and/or alter_table as needed to build a plugin's database table.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $table_name</strong>: Name of the table to construct</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodcheck_install" id="methodcheck_install"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method check_install</strong> (line <span class="linenumber">124</span>)
+ </h4> 
+<h4><i>void</i> <strong>check_install(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Check to see if the database for this plugin is installed, and if not call the install_plugin_db function if the plugin can provide the table name.</h5>
+<div class="desc"><p>Check to see if the database for this plugin is installed, and if not call the install_plugin_db function if the plugin can provide the table name.</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodcreate_table" id="methodcreate_table"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method create_table</strong> (line <span class="linenumber">171</span>)
+ </h4> 
+<h4><i>void</i> <strong>create_table(
+string
+$table_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Create a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.</h5>
+<div class="desc"><p>Create a plugin's table. This function requires that the plugin has a &quot;db_reate_query()&quot; function that returns the appropriate SQL for creating the table
+ This function will automatically be called by the check_install() method. If you redefine the run() function in your plugin and it does not call parent::run(), you will need to call check_install() from your plugin's run function.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $table_name</strong>: The name of the table to be created</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodmigrate_table" id="methodmigrate_table"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method migrate_table</strong> (line <span class="linenumber">218</span>)
+ </h4> 
+<h4><i>void</i> <strong>migrate_table(
+string
+$table_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Perform any required database migration. would use Authenticator's users table) and it needs to modify that table for it's own use.</h5>
+<div class="desc"><p>Perform any required database migration. This method is for use when a plugin is upgraded, or when it needs to use another plugin's table (eg. UserManager would use Authenticator's users table) and it needs to modify that table for it's own use.
+ This method will first look for a method in the plugin called &quot;db_migrate_custom&quot;, and if found will run it. This allows for completely custom migration scripts for special cases. This is useful, for example, if you want to migrate data as well as alter table structures.
+ If a &quot;db_migrate_custom&quot; function is not found, it will then look for a &quot;db_migrate_query&quot; function. This function should be defined in your plugin and return a single SQL query or an array of queries to run on the define table. This is useful when the migration only involves altering table structures.
+ Migrations are kept track of using a flag in the plugins database table. This method will not be called if that flag is on. When run, it will automatically turn on the flag after migration scripts are complete whether they were successful or not.
+ This function will automatically be called by the check_install() method. If you redefine the run() function in your plugin and it does not call parent::run(), you will need to call check_install() from your plugin's run function.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $table_name</strong>: </li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methodpermission_check" id="methodpermission_check"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method permission_check</strong> (line <span class="linenumber">23</span>)
+ </h4> 
+<h4><i>boolean</i> <strong>permission_check(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A before_filter that checks for permission to access certain actions</h5>
+<div class="desc"><p>A before_filter that checks for permission to access certain actions</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Lee O'Mara</li>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodpermission_error" id="methodpermission_error"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method permission_error</strong> (line <span class="linenumber">104</span>)
+ </h4> 
+<h4><i>void</i> <strong>permission_error(
+string
+$action)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>What to do when a permission_check fails</h5>
+<div class="desc"><p>What to do when a permission_check fails</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $action</strong>: the name of an action</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodpermission_string_for_action" id="methodpermission_string_for_action"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method permission_string_for_action</strong> (line <span class="linenumber">46</span>)
+ </h4> 
+<h4><i>string</i> <strong>permission_string_for_action(
+string
+$action_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Construct a permission string for an action</h5>
+<div class="desc"><p>Construct a permission string for an action</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $action_name</strong>: Name of the action (eg. &quot;show&quot;, &quot;edit&quot;)</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>return</strong> - Permission string in the format &quot;plugins:plugin_name:action_name&quot;</li>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodpopulate_table" id="methodpopulate_table"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method populate_table</strong> (line <span class="linenumber">190</span>)
+ </h4> 
+<h4><i>void</i> <strong>populate_table(
+string
+$table_name)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Populate a plugin's table.
+ This function will automatically be called by the check_install() method. you will need to call check_install() from your plugin's run function.</h5>
+<div class="desc"><p>Populate a plugin's table. This function requires that the plugin has a &quot;db_populate_query()&quot; function that returns the appropriate SQL for populating the table
+ This function will automatically be called by the check_install() method. If you redefine the run() function in your plugin and it does not call parent::run(), you will need to call check_install() from your plugin's run function.</p></div>
+		<h4>Parameters</h4>
+	<ul>
+			<li><strong>string $table_name</strong>: The name of the table to be created</li>
+		</ul>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methodupload_path" id="methodupload_path"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method upload_path</strong> (line <span class="linenumber">114</span>)
+ </h4> 
+<h4><i>void</i> <strong>upload_path(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>Return the upload path for the current plugin.</h5>
+<div class="desc"><p>Return the upload path for the current plugin. Redefine this function in your plugin if you do not want to use the default path of &quot;/uploads/plugin_name&quot;</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+			<li><strong>abstract</strong> - </li>
+		</ul>
+</div>
+<a name="methoduser_can_create" id="methoduser_can_create"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_create</strong> (line <span class="linenumber">82</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_create(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user new permission on the current object</h5>
+<div class="desc"><p>A shortcut to checking user new permission on the current object</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_delete" id="methoduser_can_delete"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_delete</strong> (line <span class="linenumber">73</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_delete(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user delete permission on the current object</h5>
+<div class="desc"><p>A shortcut to checking user delete permission on the current object</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_edit" id="methoduser_can_edit"><!-- --></a>
+<div style="background='#eeeeee'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_edit</strong> (line <span class="linenumber">64</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_edit(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user edit permission on the current object</h5>
+<div class="desc"><p>A shortcut to checking user edit permission on the current object</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<a name="methoduser_can_view" id="methoduser_can_view"><!-- --></a>
+<div style="background='#ffffff'"><h4>
+<img src="../media/images/PublicMethod.gif" border="0" /> <strong class="method">Method user_can_view</strong> (line <span class="linenumber">55</span>)
+ </h4> 
+<h4><i>bool</i> <strong>user_can_view(
+)</strong></h4>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<h5>A shortcut to checking user show permission on the current object</h5>
+<div class="desc"><p>A shortcut to checking user show permission on the current object</p></div>
+		
+	<h4>Info</h4>
+	<ul>
+			<li><strong>author</strong> - Peter Epp</li>
+		</ul>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script></div>
+<div class="tab-page" id="iVars">
+<h2 class="tab">Inherited Variables</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iVars" ) );</script>
+<!-- =========== VAR INHERITED SUMMARY =========== -->
+<A NAME='var_inherited_summary'><!-- --></A>
+<h3>Inherited Class Variable Summary</h3>
+
+	</div>
+<div class="tab-page" id="iMethods">
+<h2 class="tab">Inherited Methods</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "iMethods" ) );</script>
+<!-- =========== INHERITED METHOD SUMMARY =========== -->
+<A NAME='functions_inherited'><!-- --></A>
+<h3>Inherited Method Summary</h3>
+
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:46 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

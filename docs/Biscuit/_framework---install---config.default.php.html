@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Docs for page config.default.php</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+  <script src="../media/lib/classTree.js"></script>
+<link id="webfx-tab-style-sheet" type="text/css" rel="stylesheet" href="../media/lib/tab.webfx.css" />
+<script type="text/javascript" src="../media/lib/tabpane.js"></script>
+  <script language="javascript" type="text/javascript" src="../media/lib/ua.js"></script>
+<script language="javascript" type="text/javascript">
+	var imgPlus = new Image();
+	var imgMinus = new Image();
+	imgPlus.src = "../media/images/plus.gif";
+	imgMinus.src = "../media/images/minus.gif";
+	
+	function showNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgMinus.src;
+		oTable.style.display = "block";
+	}
+	
+	function hideNode(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+				var oImg = document.layers["img" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+				var oImg = document.all["img" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+				var oImg = document.getElementById("img" + Node);
+        		break;
+        }
+		oImg.src = imgPlus.src;
+		oTable.style.display = "none";
+	}
+	
+	function nodeIsVisible(Node){
+        switch(navigator.family){
+        	case 'nn4':
+        		// Nav 4.x code fork...
+				var oTable = document.layers["span" + Node];
+        		break;
+        	case 'ie4':
+        		// IE 4/5 code fork...
+				var oTable = document.all["span" + Node];
+        		break;
+        	case 'gecko':
+        		// Standards Compliant code fork...
+				var oTable = document.getElementById("span" + Node);
+        		break;
+        }
+		return (oTable && oTable.style.display == "block");
+	}
+	
+	function toggleNodeVisibility(Node){
+		if (nodeIsVisible(Node)){
+			hideNode(Node);
+		}else{
+			showNode(Node);
+		}
+	}
+</script>
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><h2>File: /framework/install/config.default.php</h2>
+<div class="tab-pane" id="tabPane1">
+<script type="text/javascript">
+tp1 = new WebFXTabPane( document.getElementById( "tabPane1" ) );
+</script>
+
+<div class="tab-page" id="Description">
+<h2 class="tab">Description</h2>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+<!-- =========== Used Classes =========== -->
+<A NAME='classes_summary'><!-- --></A>
+<h3>Classes defined in this file</h3>
+
+<TABLE CELLPADDING='3' CELLSPACING='0' WIDTH='100%' CLASS="border">
+	<THEAD>
+		<TR><TD STYLE="width:20%"><h4>CLASS NAME</h4></TD><TD STYLE="width: 80%"><h4>DESCRIPTION</h4></TD></TR>
+	</THEAD>
+	<TBODY>
+			</TBODY>
+</TABLE>
+</div>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "Description" ) );</script>
+<div class="tab-page" id="tabPage1">
+<!-- ============ Includes DETAIL =========== -->
+
+<h2 class="tab">Include/Require Statements</h2>
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage1" ) );</script>
+
+
+</div>
+<div class="tab-page" id="tabPage2">
+<!-- ============ GLOBAL DETAIL =========== -->
+
+<h2 class="tab">Global Variables</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage2" ) );</script>
+
+</div>
+<div class="tab-page" id="tabPage3">
+<!-- ============ CONSTANT DETAIL =========== -->
+
+<A NAME='constant_detail'></A>
+<h2 class="tab">Constants</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage3" ) );</script>
+
+<a name="defineDBHOST"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DBHOST</strong> (line <span class="linenumber">8</span>)
+ </h4> 
+<h4>DBHOST : &quot;db_hostname_here&quot;</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDBNAME"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DBNAME</strong> (line <span class="linenumber">7</span>)
+ </h4> 
+<h4>DBNAME : &quot;db_name_here&quot;</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDBPASS"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DBPASS</strong> (line <span class="linenumber">10</span>)
+ </h4> 
+<h4>DBPASS : &quot;db_password&quot;</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDBUSER"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DBUSER</strong> (line <span class="linenumber">9</span>)
+ </h4> 
+<h4>DBUSER : &quot;db_username&quot;</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineDEBUG"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">DEBUG</strong> (line <span class="linenumber">16</span>)
+ </h4> 
+<h4>DEBUG : true</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineFW_ROOT"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">FW_ROOT</strong> (line <span class="linenumber">66</span>)
+ </h4> 
+<h4>FW_ROOT : SITE_ROOT.'/framework'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineLOGGING_LEVEL"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">LOGGING_LEVEL</strong> (line <span class="linenumber">15</span>)
+ </h4> 
+<h4>LOGGING_LEVEL : 3</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="definePEAR_PATHS"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">PEAR_PATHS</strong> (line <span class="linenumber">19</span>)
+ </h4> 
+<h4>PEAR_PATHS : ':/usr/PEAR:/usr/local/PEAR'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="definePHP_PATH"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">PHP_PATH</strong> (line <span class="linenumber">18</span>)
+ </h4> 
+<h4>PHP_PATH : ':/usr/bin/php'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineSECURE_URL"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">SECURE_URL</strong> (line <span class="linenumber">13</span>)
+ </h4> 
+<h4>SECURE_URL : &quot;http://local.domain&quot;</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineSERVER_TYPE"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">SERVER_TYPE</strong> (line <span class="linenumber">21</span>)
+ </h4> 
+<h4>SERVER_TYPE : 'LOCAL_DEV'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineSESSION_NAME"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">SESSION_NAME</strong> (line <span class="linenumber">60</span>)
+ </h4> 
+<h4>SESSION_NAME : 'Biscuit'</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineSITE_ROOT"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">SITE_ROOT</strong> (line <span class="linenumber">63</span>)
+ </h4> 
+<h4>SITE_ROOT : realpath(dirname(__FILE__).&quot;/..&quot;)</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineSTANDARD_URL"><!-- --></a>
+<div style="background='#ffffff'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">STANDARD_URL</strong> (line <span class="linenumber">12</span>)
+ </h4> 
+<h4>STANDARD_URL : &quot;http://local.domain&quot;</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+<a name="defineTEMP_DIR"><!-- --></a>
+<div style="background='#eeeeee'">
+<h4>
+  <img src="../media/images/Constant.gif" border="0" /> <strong class="property">TEMP_DIR</strong> (line <span class="linenumber">69</span>)
+ </h4> 
+<h4>TEMP_DIR : FW_ROOT.&quot;/tmp&quot;</h4>
+<!-- ========== Info from phpDoc block ========= -->
+<ul>
+	</ul>
+</div>
+</div>
+<div class="tab-page" id="tabPage4">
+<!-- ============ FUNCTION DETAIL =========== -->
+
+<h2 class="tab">Functions</h2>
+
+<script type="text/javascript">tp1.addTabPage( document.getElementById( "tabPage4" ) );</script>
+
+</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+
+setupAllTabs();
+
+//]]>
+</script>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:16:05 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>

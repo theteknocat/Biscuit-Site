@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>@name</title>
+  <link rel="stylesheet" href="../media/stylesheet.css" />
+<!-- template designed by Julien Damon based on PHPEdit's generated templates, and tweaked by Greg Beaver -->
+<body bgcolor="#ffffff" ><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="10%" align="left" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.method.pkg.html">Prev</a></td>
+<td width="80%" align="center" valign="bottom"></td>
+<td width="10%" align="right" valign="bottom"><a href=
+"../phpDocumentor/tutorial_tags.package.pkg.html">Next</a></td>
+</tr>
+</table>
+<div><a name=""></a><div class="refname"><h1>@name</h1>
+  <h2 class="refpurpose"><em>Specify an alias to use for a procedural page or global variable in displayed documentation and linking</em></h2></div>
+ <div class="refsynopsis"><font size="-1"><strong>by <em>Gregory Beaver
+    <blockquote>Tag Documentation written by <a href="mailto:cellog@php.net">cellog@php.net</a></blockquote></em></strong></font>
+   <em>Copyright 2002, Gregory Beaver</em><br />
+   (phpDocumentor 1.1+)<br />
+  <div id="cmdsynopsis"><b class="cmd">@name</b>
+    <span class = "req">$globalvariablename</span></div></div>
+ <span><a name="description"></a><h2 class="title" align="center">Description</h1><p>phpDocumentor recognizes the @name tag in global variable DocBlocks (in conjunction with <a href="../phpDocumentor/tutorial_tags.global.pkg.html">@global</a>), and uses it to rename a global variable for documentation to make it more readable.  A global variable name MUST begin with a dollar sign ($) or phpDocumentor will ignore the tag and raise an error.</p></span>
+ <span><a name="example"></a><h2 class="title" align="center">Example</h1><p>Here's an examples:</p>
+  <p><div class="src-code"><ol><li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;Now,&nbsp;when&nbsp;@global&nbsp;is&nbsp;used&nbsp;in&nbsp;a&nbsp;function,&nbsp;it&nbsp;will&nbsp;link&nbsp;to&nbsp;$baz</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@name</font></strong><font color="#009999">&nbsp;$baz</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>array&nbsp;</em><strong>$GLOBALS['baz']&nbsp;</strong></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><strong>$GLOBALS</strong><strong>[</strong><font color="#66cccc">'baz'</font><strong>]&nbsp;</strong>=&nbsp;array<strong>(</strong><font color="#66cccc">'foo'</font><strong>,</strong><font color="#66cccc">'bar'</font><strong>)</strong><strong>;</strong></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line"><font color="#009999">/**</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*&nbsp;</font><strong><font color = "#0099FF">@global&nbsp;</font></strong><em>array&nbsp;</em><font color="#009999">used&nbsp;for&nbsp;stuff</font></div></li>
+<li><div class="src-line"><font color="#009999">&nbsp;*/</font></div></li>
+<li><div class="src-line"><font color="blue">function&nbsp;</font>mine<strong>(</strong><strong>)</strong></div></li>
+<li><div class="src-line"><strong>{</strong></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">global&nbsp;</font><strong>$baz</strong><strong>;</strong></div></li>
+<li><div class="src-line"><strong>}</strong></div></li>
+</ol></div></p></span></div>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="33%" align="left" valign="top"><a href="../phpDocumentor/tutorial_tags.method.pkg.html">Prev</a></td>
+<td width="34%" align="center" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.pkg.html">Up</a></td>
+<td width="33%" align="right" valign="top"><a href=
+"../phpDocumentor/tutorial_tags.package.pkg.html">Next</a></td>
+</tr>
+
+<tr>
+<td width="33%" align="left" valign="top">@method</td>
+<td width="34%" align="center" valign="top">phpDocumentor tags</td>
+<td width="33%" align="right" valign="top">@package</td>
+</tr>
+</table>
+	<div id="credit">
+		<hr />
+		Documentation generated on Tue, 09 Sep 2008 20:15:42 -0600 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</div>
+</body>
+</html>
