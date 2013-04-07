@@ -1,10 +1,6 @@
 <?php
-	// Include the site configuration file:
-	require_once(dirname(__FILE__)."/scripts/config.php");
-	// Include Biscuit core:
-	require_once("core.php");
-	$Biscuit = new Biscuit();
-	$Biscuit->run();
-	$Biscuit->render();
-	Biscuit::end_program(true);
+	require_once(dirname(__FILE__)."/framework/bootstrap.php");
+	$Biscuit = Bootstrap::load();
+	$Biscuit->dispatch();
+	Bootstrap::end_program(true);
 ?>

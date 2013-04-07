@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /themes/
+Disallow: /css/
+Disallow: /js/
+Disallow: /framework/
+Disallow: /images/
+Disallow: /favicon.ico

@@ -1,45 +1,36 @@
-ErrorDocument 403 /index.php?page=error403
-ErrorDocument 404 /index.php?page=error404
+# Compress output of all text file types:
+AddOutputFilterByType DEFLATE text/plain text/html text/css text/javascript application/x-javascript application/javascript application/rss+xml application/atom+xml application/xml text/xml
+
+# Add far future expires to static file types:
+<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+	# Header set Expires "Thu, 15 Apr 2012 20:00:00 GMT"
+	# FileETag none
+</FilesMatch>
+
+# Define error documents (for odd cases where Biscuit doesn't handle it):
+ErrorDocument 400 /index.php?page_slug=error400
+ErrorDocument 403 /index.php?page_slug=error403
+ErrorDocument 404 /index.php?page_slug=error404
 
 php_flag session.use_trans_sid off
+# Uncomment the following lines and adjust appropriately if you need to override your server's default max file upload and POST data sizes:
+# php_value upload_max_filesize 100M
+# php_value post_max_size 102M
 
 Options +FollowSymlinks
 
 RewriteEngine On
 
-RewriteCond %{REQUEST_URI} !-d
-RewriteRule ^([^\.]+)/$ /$1 [R=301,L]
+# Remove "www" prefix if used
+RewriteCond %{HTTP_HOST} ^www\.yourdomain\.com$
+RewriteRule ^(.*)$ http://yourdomain.com/$1 [L,R=301]
 
-RewriteRule ^docs(/)?$ /docs/index.html [R,L]
+# Shortcut to error 500 page
+RewriteRule ^error500$ /framework/views/error500.php [L]
 
-RewriteRule ^logout/([^\.]+)$ /index.php?page=$1&action=logout&%{QUERY_STRING} [L]
+# Remove version number from JS or CSS filename:
+RewriteRule ^(.+)\_v([0-9]+)+\.(js|css)$ /$1.$3 [L]
 
-RewriteRule ^logout/?$ /index.php?page=index&action=logout&%{QUERY_STRING} [L]
-
-RewriteRule ^ping/([0-9]+)$ /index.php?page=index&ping_time=$1 [L]
-
-RewriteRule ^captcha/([0-9]+)$ /index.php?page=captcha [L]
-# Action rules:
-RewriteRule ^([^\.]+)/show/([0-9]+)$ /index.php?page=$1&action=show&id=$2&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/new$ /index.php?page=$1&action=new&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/edit/([0-9]+)$ /index.php?page=$1&action=edit&id=$2&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/save/([0-9a-z]+)$ /index.php?page=$1&action=save&id=$2&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/delete/([0-9]+)$ /index.php?page=$1&action=delete&id=$2&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/resort$ /index.php?page=$1&action=resort&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/send_email/([0-9]+)$ /index.php?page=$1&action=send_email&id=$2&%{QUERY_STRING} [L]
-# Photo gallery rules
-RewriteRule ^([^\.]+)/new_album$ /index.php?page=$1&action=new_album&data_type=album&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/([0-9]+)/new_photo$ /index.php?page=$1&action=new_photo&album_id=$2&data_type=photo&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/([0-9]+)/batch_add$ /index.php?page=$1&action=batch_add&album_id=$2&data_type=photo&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/show_album/([0-9]+)$ /index.php?page=$1&action=show_album&id=$2&data_type=album&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/edit_album/([0-9]+)$ /index.php?page=$1&action=edit_album&id=$2&data_type=album&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/edit_photo/([0-9]+)$ /index.php?page=$1&action=edit_photo&id=$2&data_type=photo&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/delete_album/([0-9]+)$ /index.php?page=$1&action=delete_album&id=$2&data_type=album&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/delete_photo/([0-9]+)$ /index.php?page=$1&action=delete_photo&id=$2&data_type=photo&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/album([0-9]+)\.xml$ /index.php?page=$1&action=xml_output&album_id=$2 [L]
-RewriteRule ^([^\.]+)/resort_albums$ /index.php?page=$1&action=resort_albums&%{QUERY_STRING} [L]
-RewriteRule ^([^\.]+)/resort_photos$ /index.php?page=$1&action=resort_photos&%{QUERY_STRING} [L]
-
-RewriteRule ^printer_friendly/([^\.]+)$ /index.php?page=$1&printer_friendly=1&%{QUERY_STRING} [L]
-
-RewriteRule ^([^\.]+)$ /index.php?page=$1&%{QUERY_STRING} [L]
+# Route all other requests to Biscuit:
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /index.php [QSA]
