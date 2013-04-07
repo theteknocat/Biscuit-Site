@@ -27,9 +27,6 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www\.yourdomain\.com$
 RewriteRule ^(.*)$ http://yourdomain.com/$1 [L,R=301]
 
-# Cause requests for Messages files that will never exist to send a 410 Gone response
-RewriteRule Messages(_[a-z]{2})?\.properties - [G,L]
-
 # Shortcut to error 500 page
 RewriteRule ^error500$ /framework/views/error500.php [L]
 
